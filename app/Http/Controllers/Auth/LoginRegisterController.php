@@ -11,49 +11,45 @@ use Validator;
 class LoginRegisterController extends Controller
 {
     /**
-     * @OA\Post(
-     *     path="/login",
-     *     summary="User login",
-     *     description="Logs in a user and returns an access token.",
-     *     tags={"Authentication"},
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(
-     *             required={"email", "password"},
-     *             @OA\Property(property="email", type="string", format="email", example="user@example.com"),
-     *             @OA\Property(property="password", type="string", example="password123")
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="User is logged in successfully.",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="status", type="string", example="success"),
-     *             @OA\Property(property="message", type="string", example="User is logged in successfully."),
-     *             @OA\Property(property="data",
-     *                 @OA\Property(property="token", type="string", example="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."),
-     *                 @OA\Property(property="user", type="object", ref="#/components/schemas/User")
-     *             )
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=401,
-     *         description="Invalid credentials",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="status", type="string", example="failed"),
-     *             @OA\Property(property="message", type="string", example="Invalid credentials")
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=403,
-     *         description="Validation Error",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="status", type="string", example="failed"),
-     *             @OA\Property(property="message", type="string", example="Validation Error!"),
-     *             @OA\Property(property="data", type="object", example={"email": {"The email field is required."}})
-     *         )
-     *     )
-     * )
+     * Log in a user.
+     *
+     * This endpoint allows a user to log in by providing their email and password.
+     * If the credentials are correct, it returns an access token and user information.
+     *
+     * @group Authentication
+     *
+     * @bodyParam email string required The user's email address. Example: user@example.com
+     * @bodyParam password string required The user's password. Example: password123
+     *
+     * @response 200 {
+     *   "status": "success",
+     *   "message": "User is logged in successfully.",
+     *   "data": {
+     *     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+     *     "user": {
+     *       "id": 1,
+     *       "name": "John Doe",
+     *       "email": "user@example.com",
+     *       ...
+     *     }
+     *   }
+     * }
+     * @response 401 {
+     *   "status": "failed",
+     *   "message": "Invalid credentials"
+     * }
+     * @response 403 {
+     *   "status": "failed",
+     *   "message": "Validation Error!",
+     *   "data": {
+     *     "email": [
+     *       "The email field is required."
+     *     ],
+     *     "password": [
+     *       "The password field is required."
+     *     ]
+     *   }
+     * }
      */
     public function login(Request $request)
     {
@@ -95,21 +91,17 @@ class LoginRegisterController extends Controller
 
 
     /**
-     * @OA\Post(
-     *     path="/logout",
-     *     summary="User logout",
-     *     description="Logs out the authenticated user by revoking all tokens.",
-     *     tags={"Authentication"},
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="User is logged out successfully.",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="status", type="string", example="success"),
-     *             @OA\Property(property="message", type="string", example="User is logged out successfully")
-     *         )
-     *     )
-     * )
+     * Log out the authenticated user.
+     *
+     * This endpoint logs out the authenticated user by revoking all their tokens.
+     *
+     * @group Authentication
+     * @authenticated
+     *
+     * @response 200 {
+     *   "status": "success",
+     *   "message": "User is logged out successfully"
+     * }
      */
     public function logout(Request $request)
     {

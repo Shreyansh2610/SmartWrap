@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: SmartWrap
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: 'Log in a user.'
+      operationId: logInAUser
+      description: "This endpoint allows a user to log in by providing their email and password.\nIf the credentials are correct, it returns an access token and user information."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n  \"status\": \"success\",\n  \"message\": \"User is logged in successfully.\",\n  \"data\": {\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"user@example.com\",\n      ...\n    }\n  }\n}"
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: failed
+                  message: 'Invalid credentials'
+                properties:
+                  status:
+                    type: string
+                    example: failed
+                  message:
+                    type: string
+                    example: 'Invalid credentials'
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: failed
+                  message: 'Validation Error!'
+                  data:
+                    email:
+                      - 'The email field is required.'
+                    password:
+                      - 'The password field is required.'
+                properties:
+                  status:
+                    type: string
+                    example: failed
+                  message:
+                    type: string
+                    example: 'Validation Error!'
+                  data:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        example:
+                          - 'The email field is required.'
+                        items:
+                          type: string
+                      password:
+                        type: array
+                        example:
+                          - 'The password field is required.'
+                        items:
+                          type: string
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: "The user's email address."
+                  example: user@example.com
+                password:
+                  type: string
+                  description: "The user's password."
+                  example: password123
+              required:
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Authentication
+    description: ''
