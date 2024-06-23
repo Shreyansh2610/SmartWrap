@@ -94,7 +94,78 @@ paths:
                 - email
                 - password
       security: []
+    get:
+      summary: ''
+      operationId: getApiLogin
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  type: Unauthenticated
+                properties:
+                  type:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - Endpoints
+      security: []
+  /api/logout:
+    post:
+      summary: 'Log out the authenticated user.'
+      operationId: logOutTheAuthenticatedUser
+      description: 'This endpoint logs out the authenticated user by revoking all their tokens.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'User is logged out successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'User is logged out successfully'
+      tags:
+        - Authentication
+  /api/company-profile:
+    get:
+      summary: ''
+      operationId: getApiCompanyProfile
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
 tags:
   -
     name: Authentication
+    description: ''
+  -
+    name: Endpoints
     description: ''

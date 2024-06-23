@@ -119,4 +119,24 @@ class LoginRegisterController extends Controller
             'message' => 'User is logged out successfully'
         ], 200);
     }
+
+    /**
+     * Unauthenticated user.
+     *
+     * This endpoint is user if unauthenticated so telling them to authenticate.
+     *
+     * @group Authentication
+     * @unauthenticated
+     *
+     * @response 403 {
+     *   "status": "unauthenticated",
+     *   "message": "Please login first or add token if authenticated."
+     * }
+     */
+    public function unauthenticated(Request $request) {
+        return response()->json([
+            'status' => 'unauthenticated',
+            'message' => 'Please login first or add token if authenticated.'
+        ], 403);
+    }
 }

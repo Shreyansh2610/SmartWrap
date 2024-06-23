@@ -14,8 +14,18 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::get('/login',function() {
+    return response()->json(['type'=>'Unauthenticated'],404);
+})->name('login');
 
 Route::controller(LoginRegisterController::class)->group(function() {
-    Route::post('/register', 'register');
+    // Route::post('/register', 'register');
     Route::post('/login', 'login');
+    Route::post('/logout', 'logout');
+});
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('/company-profile', function () {
+        dd('here');
+    });
 });
