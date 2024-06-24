@@ -140,6 +140,109 @@ paths:
                     example: 'User is logged out successfully'
       tags:
         - Authentication
+  /api/banks:
+    get:
+      summary: 'Get a list of all banks.'
+      operationId: getAListOfAllBanks
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}"
+      tags:
+        - 'Bank Management'
+      security: []
+    post:
+      summary: 'Store a newly created bank in the database.'
+      operationId: storeANewlyCreatedBankInTheDatabase
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Bank details is stored'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Bank details is stored'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'Validation error'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'Validation error'
+      tags:
+        - 'Bank Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bank_name:
+                  type: string
+                  description: 'The name of the bank.'
+                  example: 'Bank of America'
+                bank_address:
+                  type: string
+                  description: 'The address of the bank.'
+                  example: '123 Main St, New York, NY'
+                account_name:
+                  type: string
+                  description: 'The name of the account holder.'
+                  example: 'John Doe'
+                account_no:
+                  type: string
+                  description: 'The bank account number.'
+                  example: '1234567890'
+                ifsc_code:
+                  type: string
+                  description: 'The IFSC code of the bank.'
+                  example: BOFAUS3N
+                swift_code:
+                  type: string
+                  description: 'The SWIFT code of the bank.'
+                  example: BOFAUS3NXXX
+                bank_ad_code_no:
+                  type: string
+                  description: 'The bank AD code number.'
+                  example: AD12345678
+                iban_no:
+                  type: string
+                  description: 'The IBAN number of the bank account.'
+                  example: GB82WEST12345698765432
+              required:
+                - bank_name
+                - bank_address
+                - account_name
+                - account_no
+                - ifsc_code
+      security: []
   /api/company-profile:
     get:
       summary: ''
@@ -165,6 +268,9 @@ paths:
 tags:
   -
     name: Authentication
+    description: ''
+  -
+    name: 'Bank Management'
     description: ''
   -
     name: Endpoints
