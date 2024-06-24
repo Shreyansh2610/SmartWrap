@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "6fa75194-1f27-4293-85cc-2fdc3ab57a34",
+        "_postman_id": "32ec172f-15ba-47a0-b3d4-29e1584c1cb0",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -97,6 +97,91 @@
                             "header": [],
                             "code": 200,
                             "body": "{\n  \"status\": \"success\",\n  \"message\": \"User is logged out successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Bank Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get a list of all banks.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/banks",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/banks"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created bank in the database.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/banks",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/banks"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"bank_name\":\"Bank of America\",\"bank_address\":\"123 Main St, New York, NY\",\"account_name\":\"John Doe\",\"account_no\":\"1234567890\",\"ifsc_code\":\"BOFAUS3N\",\"swift_code\":\"BOFAUS3NXXX\",\"bank_ad_code_no\":\"AD12345678\",\"iban_no\":\"GB82WEST12345698765432\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Bank details is stored\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}",
                             "name": ""
                         }
                     ]
