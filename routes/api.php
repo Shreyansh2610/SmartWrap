@@ -28,5 +28,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
 
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/company-profile', [CompanyProfileController::class,'show']);
+    Route::put('/company-profile', [CompanyProfileController::class,'update']);
     Route::resource('banks',BankController::class)->only(['index','store']);
 });
