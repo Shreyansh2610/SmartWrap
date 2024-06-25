@@ -245,25 +245,20 @@ paths:
       security: []
   /api/company-profile:
     get:
-      summary: ''
-      operationId: getApiCompanyProfile
-      description: ''
+      summary: 'Get company profile details.'
+      operationId: getCompanyProfileDetails
+      description: 'variable is like small case and replace space with underscore'
       parameters: []
       responses:
-        401:
+        200:
           description: ''
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
+                type: string
+                example: "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"SmartWrap\",\n     },\n     ...\n ]\n}"
       tags:
-        - Endpoints
+        - 'Company Profile'
       security: []
 tags:
   -
@@ -271,6 +266,9 @@ tags:
     description: ''
   -
     name: 'Bank Management'
+    description: ''
+  -
+    name: 'Company Profile'
     description: ''
   -
     name: Endpoints

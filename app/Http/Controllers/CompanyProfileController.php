@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CompanyProfile;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\CompanyProfile;
 
 class CompanyProfileController extends Controller
 {
@@ -32,11 +33,24 @@ class CompanyProfileController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get company profile details.
+     *  variable is like small case and replace space with underscore
+     * @group Company Profile
+     *
+     * @response 200 {
+     *  "status": "success",
+     *  "comapny_profile": [
+     *      {
+     *          "id": 1,
+     *          "company_name": "SmartWrap",
+     *      },
+     *      ...
+     *  ]
+     * }
      */
-    public function show(string $id)
+    public function show()
     {
-        $companyProfile = CompanyProfile::all()->first();
+        $companyProfile = CompanyProfile::first();
         // dd($companyProfile);
         return response()->json(['type'=>'success','comapny_profile'=>$companyProfile],200);
     }
@@ -54,8 +68,24 @@ class CompanyProfileController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $companyProfile = CompanyProfile::all()->first();
-        // if($request->file[])
+        $companyProfile = CompanyProfile::first()->first();
+        if (isset($request->company_logo)) {
+            $fileName = Str::random(6);
+            $file = $request->file('company_logo');
+            $fileExt = $file->getClientOriginalExtension();
+            $fileSaved = $fileName . '.' . $fileExt;
+            $request->company_logo->move(public_path('/upload/'), $fileSaved);
+            $request['company_logo'] = public_path('/upload/'). $fileSaved;
+        }
+        if (isset($request->signature_upload)) {
+            $fileName = Str::random(6);
+            $file = $request->file('signature_upload');
+            $fileExt = $file->getClientOriginalExtension();
+            $fileSaved = $fileName . '.' . $fileExt;
+            $request->signature_upload->move(public_path('/upload/'), $fileSaved);
+            $request['signature_upload'] = public_path('/upload/'). $fileSaved;
+        }
+        $companyProfile->update($request->all());
         return response()->json(['type'=>'success','message'=>'Company Profile updated successfully'],200);
     }
 
