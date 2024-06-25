@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\CompanyProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
@@ -26,8 +27,6 @@ Route::controller(LoginRegisterController::class)->group(function() {
 });
 
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('/company-profile', function () {
-        dd('here');
-    });
+    Route::get('/company-profile', [CompanyProfileController::class,'show']);
     Route::resource('banks',BankController::class)->only(['index','store']);
 });
