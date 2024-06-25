@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "04726317-636c-4349-98fa-398795b3e76e",
+        "_postman_id": "52e3c827-4e67-488b-ba8f-3d24cb307070",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -222,7 +222,373 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"SmartWrap\",\n     },\n     ...\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http:\/\/www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http:\/\/portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N\/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\":\u00a0\"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n     ...\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update company profile details.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company-profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company-profile"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "id",
+                                    "value": "1dkjvskj-dnjdj-xnxskj",
+                                    "type": "text",
+                                    "description": "The unique identifier for the company profile."
+                                },
+                                {
+                                    "key": "company_name",
+                                    "value": "Sample Company Ltd.",
+                                    "type": "text",
+                                    "description": "The name of the company."
+                                },
+                                {
+                                    "key": "contact_person_name",
+                                    "value": "Ashish Patel",
+                                    "type": "text",
+                                    "description": "The name of the contact person."
+                                },
+                                {
+                                    "key": "otp_mobile_phone",
+                                    "value": "08796543210",
+                                    "type": "text",
+                                    "description": "The OTP mobile phone number."
+                                },
+                                {
+                                    "key": "mobile",
+                                    "value": "08796543210",
+                                    "type": "text",
+                                    "description": "The mobile phone number."
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "abc@gmail.com",
+                                    "type": "text",
+                                    "description": "The email address."
+                                },
+                                {
+                                    "key": "phone_no",
+                                    "value": "7896513",
+                                    "type": "text",
+                                    "description": "The phone number."
+                                },
+                                {
+                                    "key": "fax_no",
+                                    "value": "08796543210",
+                                    "type": "text",
+                                    "description": "The fax number."
+                                },
+                                {
+                                    "key": "website",
+                                    "value": "http:\/\/www.samplecompany.com",
+                                    "type": "text",
+                                    "description": "The company website URL."
+                                },
+                                {
+                                    "key": "company_register",
+                                    "value": "Register123",
+                                    "type": "text",
+                                    "description": "The company registration number."
+                                },
+                                {
+                                    "key": "address",
+                                    "value": "Rajkot, Gujarat, India - 360004.",
+                                    "type": "text",
+                                    "description": "The company address."
+                                },
+                                {
+                                    "key": "portal_address",
+                                    "value": "http:\/\/portal.samplecompany.com",
+                                    "type": "text",
+                                    "description": "The company portal address."
+                                },
+                                {
+                                    "key": "company_type",
+                                    "value": "Private Limited",
+                                    "type": "text",
+                                    "description": "The type of the company."
+                                },
+                                {
+                                    "key": "gst_no",
+                                    "value": "GSTIN123456789",
+                                    "type": "text",
+                                    "description": "The GST number."
+                                },
+                                {
+                                    "key": "lut_no",
+                                    "value": "LUT12345",
+                                    "type": "text",
+                                    "description": "The LUT number."
+                                },
+                                {
+                                    "key": "cin",
+                                    "value": "CIN123456789",
+                                    "type": "text",
+                                    "description": "The CIN number."
+                                },
+                                {
+                                    "key": "gst_circular_no",
+                                    "value": "CIRC123456789",
+                                    "type": "text",
+                                    "description": "The GST circular number."
+                                },
+                                {
+                                    "key": "state_code",
+                                    "value": "SC",
+                                    "type": "text",
+                                    "description": "The state code."
+                                },
+                                {
+                                    "key": "lei_no",
+                                    "value": "LEI1234567890",
+                                    "type": "text",
+                                    "description": "The LEI number."
+                                },
+                                {
+                                    "key": "field_3",
+                                    "value": "Value3",
+                                    "type": "text",
+                                    "description": "Additional field 3."
+                                },
+                                {
+                                    "key": "pan_no",
+                                    "value": "PAN123456789",
+                                    "type": "text",
+                                    "description": "The PAN number."
+                                },
+                                {
+                                    "key": "lut_expiry",
+                                    "value": "2025-12-31",
+                                    "type": "text",
+                                    "description": "The LUT expiry date."
+                                },
+                                {
+                                    "key": "rcmc_no",
+                                    "value": "RCMC123456",
+                                    "type": "text",
+                                    "description": "The RCMC number."
+                                },
+                                {
+                                    "key": "date_of_filling_rex_number",
+                                    "value": "2024-06-25",
+                                    "type": "text",
+                                    "description": "The date of filling REX number."
+                                },
+                                {
+                                    "key": "field_1",
+                                    "value": "Value1",
+                                    "type": "text",
+                                    "description": "Additional field 1."
+                                },
+                                {
+                                    "key": "field_4",
+                                    "value": "Value4",
+                                    "type": "text",
+                                    "description": "Additional field 4."
+                                },
+                                {
+                                    "key": "iec_no",
+                                    "value": "IEC123456789",
+                                    "type": "text",
+                                    "description": "The IEC number."
+                                },
+                                {
+                                    "key": "bin_no",
+                                    "value": "BIN123456",
+                                    "type": "text",
+                                    "description": "The BIN number."
+                                },
+                                {
+                                    "key": "rcmc_expiry",
+                                    "value": "2026-12-31",
+                                    "type": "text",
+                                    "description": "The RCMC expiry date."
+                                },
+                                {
+                                    "key": "circular_no",
+                                    "value": "CIRC789456123",
+                                    "type": "text",
+                                    "description": "The circular number."
+                                },
+                                {
+                                    "key": "aeo_no",
+                                    "value": "AEO123456",
+                                    "type": "text",
+                                    "description": "The AEO number."
+                                },
+                                {
+                                    "key": "field_2",
+                                    "value": "Value2",
+                                    "type": "text",
+                                    "description": "Additional field 2."
+                                },
+                                {
+                                    "key": "field_5",
+                                    "value": "Value5",
+                                    "type": "text",
+                                    "description": "Additional field 5."
+                                },
+                                {
+                                    "key": "pre_carriage_by",
+                                    "value": "Road",
+                                    "type": "text",
+                                    "description": "The mode of pre-carriage."
+                                },
+                                {
+                                    "key": "state_of_origin",
+                                    "value": "Sample State",
+                                    "type": "text",
+                                    "description": "The state of origin."
+                                },
+                                {
+                                    "key": "delivery_period",
+                                    "value": "30 days",
+                                    "type": "text",
+                                    "description": "The delivery period."
+                                },
+                                {
+                                    "key": "terms_of_delivery",
+                                    "value": "FOB",
+                                    "type": "text",
+                                    "description": "The terms of delivery."
+                                },
+                                {
+                                    "key": "place_of_receipt",
+                                    "value": "Sample Port",
+                                    "type": "text",
+                                    "description": "The place of receipt."
+                                },
+                                {
+                                    "key": "part_of_loading",
+                                    "value": "Loading Dock A",
+                                    "type": "text",
+                                    "description": "The part of loading."
+                                },
+                                {
+                                    "key": "partial_shipement",
+                                    "value": "No",
+                                    "type": "text",
+                                    "description": "Indicates if partial shipment is allowed."
+                                },
+                                {
+                                    "key": "district_of_origin",
+                                    "value": "Sample District",
+                                    "type": "text",
+                                    "description": "The district of origin."
+                                },
+                                {
+                                    "key": "trans_shipement",
+                                    "value": "No",
+                                    "type": "text",
+                                    "description": "Indicates if trans-shipment is allowed."
+                                },
+                                {
+                                    "key": "variety_of_quality",
+                                    "value": "Premium",
+                                    "type": "text",
+                                    "description": "The variety of quality."
+                                },
+                                {
+                                    "key": "range",
+                                    "value": "Range 1",
+                                    "type": "text",
+                                    "description": "The range."
+                                },
+                                {
+                                    "key": "division",
+                                    "value": "Division A",
+                                    "type": "text",
+                                    "description": "The division."
+                                },
+                                {
+                                    "key": "commissionerate",
+                                    "value": "Commissionerate 1",
+                                    "type": "text",
+                                    "description": "The commissionerate."
+                                },
+                                {
+                                    "key": "location_code",
+                                    "value": "LOC123",
+                                    "type": "text",
+                                    "description": "The location code."
+                                },
+                                {
+                                    "key": "annexure_remark",
+                                    "value": "N\/A",
+                                    "type": "text",
+                                    "description": "The annexure remark."
+                                },
+                                {
+                                    "key": "shipper_name",
+                                    "value": "Sample Shipper",
+                                    "type": "text",
+                                    "description": "The name of the shipper."
+                                },
+                                {
+                                    "key": "method_used_for_vgm",
+                                    "value": "Weighbridge",
+                                    "type": "text",
+                                    "description": "The method used for VGM."
+                                },
+                                {
+                                    "key": "weighbridge_slip_no",
+                                    "value": "WS123456",
+                                    "type": "text",
+                                    "description": "The weighbridge slip number."
+                                },
+                                {
+                                    "key": "bank_id",
+                                    "value": "fbdj54-fvd-g45bbf-5tgr4",
+                                    "type": "text",
+                                    "description": "The bank identifier."
+                                },
+                                {
+                                    "key": "company_logo",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "signature_upload",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "_method",
+                                    "value": "PUT",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": "This endpoint allows you to update the company profile details. The variables are in snake_case and should be provided in the request body. company_logo and signature_upload both send direct file only, don't refer example for both.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"status\":\"success\",\n     \"message\":\"Company Profile updated successfully\"\n}",
                             "name": ""
                         }
                     ]
@@ -276,7 +642,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",

@@ -100,6 +100,9 @@
                                                     <li class="tocify-item level-2" data-unique="company-profile-GETapi-company-profile">
                                 <a href="#company-profile-GETapi-company-profile">Get company profile details.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="company-profile-PUTapi-company-profile">
+                                <a href="#company-profile-PUTapi-company-profile">Update company profile details.</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
@@ -121,7 +124,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 25, 2024</li>
+        <li>Last updated: June 26, 2024</li>
     </ul>
 </div>
 
@@ -876,8 +879,60 @@ fetch(url, {
  &quot;status&quot;: &quot;success&quot;,
  &quot;comapny_profile&quot;: [
      {
-         &quot;id&quot;: 1,
-         &quot;company_name&quot;: &quot;SmartWrap&quot;,
+         &quot;id&quot;: 1dkjvskj-dnjdj-xnxskj,
+         &quot;company_name&quot;: &quot;Sample Company Ltd.&quot;,
+         &quot;contact_person_name&quot;:&quot;Ashish Patel&quot;,
+         &quot;otp_mobile_phone&quot;:&quot;08796543210&quot;,
+         &quot;mobile&quot;:&quot;08796543210&quot;,
+         &quot;email&quot;:&quot;abc@gmail.com&quot;,
+         &quot;phone_no&quot;:&quot;7896513&quot;,
+         &quot;fax_no&quot;:&quot;08796543210&quot;,
+         &quot;website&quot;:&quot;http://www.samplecompany.com&quot;,
+         &quot;company_register&quot;:&quot;Register123&quot;,
+         &quot;address&quot;:&quot;Rajkot, Gujarat, India - 360004.&quot;,
+         &quot;portal_address&quot;:&quot;http://portal.samplecompany.com&quot;,
+         &quot;company_type&quot;:&quot;Private Limited&quot;,
+         &quot;gst_no&quot;:&quot;GSTIN123456789&quot;,
+         &quot;lut_no&quot;:&quot;LUT12345&quot;,
+         &quot;cin&quot;:&quot;CIN123456789&quot;,
+         &quot;gst_circular_no&quot;:&quot;CIRC123456789&quot;,
+         &quot;state_code&quot;:&quot;SC&quot;,
+         &quot;lei_no&quot;:&quot;LEI1234567890&quot;,
+         &quot;field_3&quot;:&quot;Value3&quot;,
+         &quot;pan_no&quot;:&quot;PAN123456789&quot;,
+         &quot;lut_expiry&quot;:&quot;2025-12-31&quot;,
+         &quot;rcmc_no&quot;: &quot;RCMC123456&quot;,
+         &quot;date_of_filling_rex_number&quot;: &quot;2024-06-25&quot;,
+         &quot;field_1&quot;: &quot;Value1&quot;,
+         &quot;field_4&quot;: &quot;Value4&quot;,
+         &quot;iec_no&quot;: &quot;IEC123456789&quot;,
+         &quot;bin_no&quot;: &quot;BIN123456&quot;,
+         &quot;rcmc_expiry&quot;: &quot;2026-12-31&quot;,
+         &quot;circular_no&quot;: &quot;CIRC789456123&quot;,
+         &quot;aeo_no&quot;: &quot;AEO123456&quot;,
+         &quot;field_2&quot;: &quot;Value2&quot;,
+         &quot;field_5&quot;: &quot;Value5&quot;,
+         &quot;pre_carriage_by&quot;: &quot;Road&quot;,
+         &quot;state_of_origin&quot;: &quot;Sample State&quot;,
+         &quot;delivery_period&quot;: &quot;30 days&quot;,
+         &quot;terms_of_delivery&quot;: &quot;FOB&quot;,
+         &quot;place_of_receipt&quot;: &quot;Sample Port&quot;,
+         &quot;part_of_loading&quot;: &quot;Loading Dock A&quot;,
+         &quot;partial_shipement&quot;: &quot;No&quot;,
+         &quot;district_of_origin&quot;: &quot;Sample District&quot;,
+         &quot;trans_shipement&quot;: &quot;No&quot;,
+         &quot;variety_of_quality&quot;: &quot;Premium&quot;,
+         &quot;company_logo&quot;: &quot;sample_logo.png&quot;,
+         &quot;signature_upload&quot;: &quot;signature.png&quot;,
+         &quot;range&quot;: &quot;Range 1&quot;,
+         &quot;division&quot;: &quot;Division A&quot;,
+         &quot;commissionerate&quot;: &quot;Commissionerate 1&quot;,
+         &quot;location_code&quot;: &quot;LOC123&quot;,
+         &quot;annexure_remark&quot;: &quot;N/A&quot;,
+         &quot;shipper_name&quot;: &quot;Sample Shipper&quot;,
+         &quot;method_used_for_vgm&quot;: &quot;Weighbridge&quot;,
+         &quot;weighbridge_slip_no&quot;:&nbsp;&quot;WS123456&quot;,
+         &quot;bank_id&quot;:&quot;fbdj54-fvd-g45bbf-5tgr4&quot;,
      },
      ...
  ]
@@ -955,6 +1010,830 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="company-profile-PUTapi-company-profile">Update company profile details.</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows you to update the company profile details. The variables are in snake_case and should be provided in the request body. company_logo and signature_upload both send direct file only, don't refer example for both.</p>
+
+<span id="example-requests-PUTapi-company-profile">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/company-profile" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "id=1dkjvskj-dnjdj-xnxskj"\
+    --form "company_name=Sample Company Ltd."\
+    --form "contact_person_name=Ashish Patel"\
+    --form "otp_mobile_phone=08796543210"\
+    --form "mobile=08796543210"\
+    --form "email=abc@gmail.com"\
+    --form "phone_no=7896513"\
+    --form "fax_no=08796543210"\
+    --form "website=http://www.samplecompany.com"\
+    --form "company_register=Register123"\
+    --form "address=Rajkot, Gujarat, India - 360004."\
+    --form "portal_address=http://portal.samplecompany.com"\
+    --form "company_type=Private Limited"\
+    --form "gst_no=GSTIN123456789"\
+    --form "lut_no=LUT12345"\
+    --form "cin=CIN123456789"\
+    --form "gst_circular_no=CIRC123456789"\
+    --form "state_code=SC"\
+    --form "lei_no=LEI1234567890"\
+    --form "field_3=Value3"\
+    --form "pan_no=PAN123456789"\
+    --form "lut_expiry=2025-12-31"\
+    --form "rcmc_no=RCMC123456"\
+    --form "date_of_filling_rex_number=2024-06-25"\
+    --form "field_1=Value1"\
+    --form "field_4=Value4"\
+    --form "iec_no=IEC123456789"\
+    --form "bin_no=BIN123456"\
+    --form "rcmc_expiry=2026-12-31"\
+    --form "circular_no=CIRC789456123"\
+    --form "aeo_no=AEO123456"\
+    --form "field_2=Value2"\
+    --form "field_5=Value5"\
+    --form "pre_carriage_by=Road"\
+    --form "state_of_origin=Sample State"\
+    --form "delivery_period=30 days"\
+    --form "terms_of_delivery=FOB"\
+    --form "place_of_receipt=Sample Port"\
+    --form "part_of_loading=Loading Dock A"\
+    --form "partial_shipement=No"\
+    --form "district_of_origin=Sample District"\
+    --form "trans_shipement=No"\
+    --form "variety_of_quality=Premium"\
+    --form "range=Range 1"\
+    --form "division=Division A"\
+    --form "commissionerate=Commissionerate 1"\
+    --form "location_code=LOC123"\
+    --form "annexure_remark=N/A"\
+    --form "shipper_name=Sample Shipper"\
+    --form "method_used_for_vgm=Weighbridge"\
+    --form "weighbridge_slip_no=WS123456"\
+    --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php542D.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php543E.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company-profile"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('id', '1dkjvskj-dnjdj-xnxskj');
+body.append('company_name', 'Sample Company Ltd.');
+body.append('contact_person_name', 'Ashish Patel');
+body.append('otp_mobile_phone', '08796543210');
+body.append('mobile', '08796543210');
+body.append('email', 'abc@gmail.com');
+body.append('phone_no', '7896513');
+body.append('fax_no', '08796543210');
+body.append('website', 'http://www.samplecompany.com');
+body.append('company_register', 'Register123');
+body.append('address', 'Rajkot, Gujarat, India - 360004.');
+body.append('portal_address', 'http://portal.samplecompany.com');
+body.append('company_type', 'Private Limited');
+body.append('gst_no', 'GSTIN123456789');
+body.append('lut_no', 'LUT12345');
+body.append('cin', 'CIN123456789');
+body.append('gst_circular_no', 'CIRC123456789');
+body.append('state_code', 'SC');
+body.append('lei_no', 'LEI1234567890');
+body.append('field_3', 'Value3');
+body.append('pan_no', 'PAN123456789');
+body.append('lut_expiry', '2025-12-31');
+body.append('rcmc_no', 'RCMC123456');
+body.append('date_of_filling_rex_number', '2024-06-25');
+body.append('field_1', 'Value1');
+body.append('field_4', 'Value4');
+body.append('iec_no', 'IEC123456789');
+body.append('bin_no', 'BIN123456');
+body.append('rcmc_expiry', '2026-12-31');
+body.append('circular_no', 'CIRC789456123');
+body.append('aeo_no', 'AEO123456');
+body.append('field_2', 'Value2');
+body.append('field_5', 'Value5');
+body.append('pre_carriage_by', 'Road');
+body.append('state_of_origin', 'Sample State');
+body.append('delivery_period', '30 days');
+body.append('terms_of_delivery', 'FOB');
+body.append('place_of_receipt', 'Sample Port');
+body.append('part_of_loading', 'Loading Dock A');
+body.append('partial_shipement', 'No');
+body.append('district_of_origin', 'Sample District');
+body.append('trans_shipement', 'No');
+body.append('variety_of_quality', 'Premium');
+body.append('range', 'Range 1');
+body.append('division', 'Division A');
+body.append('commissionerate', 'Commissionerate 1');
+body.append('location_code', 'LOC123');
+body.append('annexure_remark', 'N/A');
+body.append('shipper_name', 'Sample Shipper');
+body.append('method_used_for_vgm', 'Weighbridge');
+body.append('weighbridge_slip_no', 'WS123456');
+body.append('bank_id', 'fbdj54-fvd-g45bbf-5tgr4');
+body.append('company_logo', document.querySelector('input[name="company_logo"]').files[0]);
+body.append('signature_upload', document.querySelector('input[name="signature_upload"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-company-profile">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Company Profile updated successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-company-profile" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-company-profile"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-company-profile"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-company-profile" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-company-profile">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-company-profile" data-method="PUT"
+      data-path="api/company-profile"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-company-profile', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-company-profile"
+                    onclick="tryItOut('PUTapi-company-profile');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-company-profile"
+                    onclick="cancelTryOut('PUTapi-company-profile');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-company-profile"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/company-profile</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-company-profile"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-company-profile"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-company-profile"
+               value="1dkjvskj-dnjdj-xnxskj"
+               data-component="body">
+    <br>
+<p>The unique identifier for the company profile. Example: <code>1dkjvskj-dnjdj-xnxskj</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="company_name"                data-endpoint="PUTapi-company-profile"
+               value="Sample Company Ltd."
+               data-component="body">
+    <br>
+<p>The name of the company. Example: <code>Sample Company Ltd.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>contact_person_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="contact_person_name"                data-endpoint="PUTapi-company-profile"
+               value="Ashish Patel"
+               data-component="body">
+    <br>
+<p>The name of the contact person. Example: <code>Ashish Patel</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>otp_mobile_phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="otp_mobile_phone"                data-endpoint="PUTapi-company-profile"
+               value="08796543210"
+               data-component="body">
+    <br>
+<p>The OTP mobile phone number. Example: <code>08796543210</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>mobile</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="mobile"                data-endpoint="PUTapi-company-profile"
+               value="08796543210"
+               data-component="body">
+    <br>
+<p>The mobile phone number. Example: <code>08796543210</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="PUTapi-company-profile"
+               value="abc@gmail.com"
+               data-component="body">
+    <br>
+<p>The email address. Example: <code>abc@gmail.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="phone_no"                data-endpoint="PUTapi-company-profile"
+               value="7896513"
+               data-component="body">
+    <br>
+<p>The phone number. Example: <code>7896513</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>fax_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="fax_no"                data-endpoint="PUTapi-company-profile"
+               value="08796543210"
+               data-component="body">
+    <br>
+<p>The fax number. Example: <code>08796543210</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>website</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="website"                data-endpoint="PUTapi-company-profile"
+               value="http://www.samplecompany.com"
+               data-component="body">
+    <br>
+<p>The company website URL. Example: <code>http://www.samplecompany.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_register</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="company_register"                data-endpoint="PUTapi-company-profile"
+               value="Register123"
+               data-component="body">
+    <br>
+<p>The company registration number. Example: <code>Register123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="address"                data-endpoint="PUTapi-company-profile"
+               value="Rajkot, Gujarat, India - 360004."
+               data-component="body">
+    <br>
+<p>The company address. Example: <code>Rajkot, Gujarat, India - 360004.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>portal_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="portal_address"                data-endpoint="PUTapi-company-profile"
+               value="http://portal.samplecompany.com"
+               data-component="body">
+    <br>
+<p>The company portal address. Example: <code>http://portal.samplecompany.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="company_type"                data-endpoint="PUTapi-company-profile"
+               value="Private Limited"
+               data-component="body">
+    <br>
+<p>The type of the company. Example: <code>Private Limited</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gst_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="gst_no"                data-endpoint="PUTapi-company-profile"
+               value="GSTIN123456789"
+               data-component="body">
+    <br>
+<p>The GST number. Example: <code>GSTIN123456789</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>lut_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="lut_no"                data-endpoint="PUTapi-company-profile"
+               value="LUT12345"
+               data-component="body">
+    <br>
+<p>The LUT number. Example: <code>LUT12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cin</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="cin"                data-endpoint="PUTapi-company-profile"
+               value="CIN123456789"
+               data-component="body">
+    <br>
+<p>The CIN number. Example: <code>CIN123456789</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gst_circular_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="gst_circular_no"                data-endpoint="PUTapi-company-profile"
+               value="CIRC123456789"
+               data-component="body">
+    <br>
+<p>The GST circular number. Example: <code>CIRC123456789</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>state_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="state_code"                data-endpoint="PUTapi-company-profile"
+               value="SC"
+               data-component="body">
+    <br>
+<p>The state code. Example: <code>SC</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>lei_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="lei_no"                data-endpoint="PUTapi-company-profile"
+               value="LEI1234567890"
+               data-component="body">
+    <br>
+<p>The LEI number. Example: <code>LEI1234567890</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>field_3</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="field_3"                data-endpoint="PUTapi-company-profile"
+               value="Value3"
+               data-component="body">
+    <br>
+<p>Additional field 3. Example: <code>Value3</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pan_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="pan_no"                data-endpoint="PUTapi-company-profile"
+               value="PAN123456789"
+               data-component="body">
+    <br>
+<p>The PAN number. Example: <code>PAN123456789</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>lut_expiry</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="lut_expiry"                data-endpoint="PUTapi-company-profile"
+               value="2025-12-31"
+               data-component="body">
+    <br>
+<p>The LUT expiry date. Example: <code>2025-12-31</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rcmc_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="rcmc_no"                data-endpoint="PUTapi-company-profile"
+               value="RCMC123456"
+               data-component="body">
+    <br>
+<p>The RCMC number. Example: <code>RCMC123456</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date_of_filling_rex_number</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="date_of_filling_rex_number"                data-endpoint="PUTapi-company-profile"
+               value="2024-06-25"
+               data-component="body">
+    <br>
+<p>The date of filling REX number. Example: <code>2024-06-25</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>field_1</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="field_1"                data-endpoint="PUTapi-company-profile"
+               value="Value1"
+               data-component="body">
+    <br>
+<p>Additional field 1. Example: <code>Value1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>field_4</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="field_4"                data-endpoint="PUTapi-company-profile"
+               value="Value4"
+               data-component="body">
+    <br>
+<p>Additional field 4. Example: <code>Value4</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>iec_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="iec_no"                data-endpoint="PUTapi-company-profile"
+               value="IEC123456789"
+               data-component="body">
+    <br>
+<p>The IEC number. Example: <code>IEC123456789</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bin_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="bin_no"                data-endpoint="PUTapi-company-profile"
+               value="BIN123456"
+               data-component="body">
+    <br>
+<p>The BIN number. Example: <code>BIN123456</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rcmc_expiry</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="rcmc_expiry"                data-endpoint="PUTapi-company-profile"
+               value="2026-12-31"
+               data-component="body">
+    <br>
+<p>The RCMC expiry date. Example: <code>2026-12-31</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>circular_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="circular_no"                data-endpoint="PUTapi-company-profile"
+               value="CIRC789456123"
+               data-component="body">
+    <br>
+<p>The circular number. Example: <code>CIRC789456123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>aeo_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="aeo_no"                data-endpoint="PUTapi-company-profile"
+               value="AEO123456"
+               data-component="body">
+    <br>
+<p>The AEO number. Example: <code>AEO123456</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>field_2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="field_2"                data-endpoint="PUTapi-company-profile"
+               value="Value2"
+               data-component="body">
+    <br>
+<p>Additional field 2. Example: <code>Value2</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>field_5</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="field_5"                data-endpoint="PUTapi-company-profile"
+               value="Value5"
+               data-component="body">
+    <br>
+<p>Additional field 5. Example: <code>Value5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pre_carriage_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="pre_carriage_by"                data-endpoint="PUTapi-company-profile"
+               value="Road"
+               data-component="body">
+    <br>
+<p>The mode of pre-carriage. Example: <code>Road</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>state_of_origin</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="state_of_origin"                data-endpoint="PUTapi-company-profile"
+               value="Sample State"
+               data-component="body">
+    <br>
+<p>The state of origin. Example: <code>Sample State</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_period</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_period"                data-endpoint="PUTapi-company-profile"
+               value="30 days"
+               data-component="body">
+    <br>
+<p>The delivery period. Example: <code>30 days</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>terms_of_delivery</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="terms_of_delivery"                data-endpoint="PUTapi-company-profile"
+               value="FOB"
+               data-component="body">
+    <br>
+<p>The terms of delivery. Example: <code>FOB</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>place_of_receipt</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="place_of_receipt"                data-endpoint="PUTapi-company-profile"
+               value="Sample Port"
+               data-component="body">
+    <br>
+<p>The place of receipt. Example: <code>Sample Port</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>part_of_loading</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="part_of_loading"                data-endpoint="PUTapi-company-profile"
+               value="Loading Dock A"
+               data-component="body">
+    <br>
+<p>The part of loading. Example: <code>Loading Dock A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>partial_shipement</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="partial_shipement"                data-endpoint="PUTapi-company-profile"
+               value="No"
+               data-component="body">
+    <br>
+<p>Indicates if partial shipment is allowed. Example: <code>No</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>district_of_origin</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="district_of_origin"                data-endpoint="PUTapi-company-profile"
+               value="Sample District"
+               data-component="body">
+    <br>
+<p>The district of origin. Example: <code>Sample District</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>trans_shipement</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="trans_shipement"                data-endpoint="PUTapi-company-profile"
+               value="No"
+               data-component="body">
+    <br>
+<p>Indicates if trans-shipment is allowed. Example: <code>No</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>variety_of_quality</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="variety_of_quality"                data-endpoint="PUTapi-company-profile"
+               value="Premium"
+               data-component="body">
+    <br>
+<p>The variety of quality. Example: <code>Premium</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_logo</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="company_logo"                data-endpoint="PUTapi-company-profile"
+               value=""
+               data-component="body">
+    <br>
+<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php542D.tmp</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="signature_upload"                data-endpoint="PUTapi-company-profile"
+               value=""
+               data-component="body">
+    <br>
+<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php543E.tmp</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="range"                data-endpoint="PUTapi-company-profile"
+               value="Range 1"
+               data-component="body">
+    <br>
+<p>The range. Example: <code>Range 1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>division</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="division"                data-endpoint="PUTapi-company-profile"
+               value="Division A"
+               data-component="body">
+    <br>
+<p>The division. Example: <code>Division A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>commissionerate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="commissionerate"                data-endpoint="PUTapi-company-profile"
+               value="Commissionerate 1"
+               data-component="body">
+    <br>
+<p>The commissionerate. Example: <code>Commissionerate 1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>location_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="location_code"                data-endpoint="PUTapi-company-profile"
+               value="LOC123"
+               data-component="body">
+    <br>
+<p>The location code. Example: <code>LOC123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>annexure_remark</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="annexure_remark"                data-endpoint="PUTapi-company-profile"
+               value="N/A"
+               data-component="body">
+    <br>
+<p>The annexure remark. Example: <code>N/A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>shipper_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="shipper_name"                data-endpoint="PUTapi-company-profile"
+               value="Sample Shipper"
+               data-component="body">
+    <br>
+<p>The name of the shipper. Example: <code>Sample Shipper</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>method_used_for_vgm</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="method_used_for_vgm"                data-endpoint="PUTapi-company-profile"
+               value="Weighbridge"
+               data-component="body">
+    <br>
+<p>The method used for VGM. Example: <code>Weighbridge</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>weighbridge_slip_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="weighbridge_slip_no"                data-endpoint="PUTapi-company-profile"
+               value="WS123456"
+               data-component="body">
+    <br>
+<p>The weighbridge slip number. Example: <code>WS123456</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_id"                data-endpoint="PUTapi-company-profile"
+               value="fbdj54-fvd-g45bbf-5tgr4"
+               data-component="body">
+    <br>
+<p>The bank identifier. Example: <code>fbdj54-fvd-g45bbf-5tgr4</code></p>
+        </div>
+        </form>
+
                 <h1 id="endpoints">Endpoints</h1>
 
     
@@ -1005,7 +1884,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
