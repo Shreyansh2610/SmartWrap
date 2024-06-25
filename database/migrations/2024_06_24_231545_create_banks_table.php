@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('banks', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('bank_name')->nullable();
-            $table->string('bank_address')->nullable();
+            $table->longText('bank_address')->nullable();
             $table->string('account_name')->nullable();
             $table->string('account_no')->nullable();
             $table->string('ifsc_code')->nullable();
