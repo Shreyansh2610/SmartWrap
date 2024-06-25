@@ -256,9 +256,264 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"SmartWrap\",\n     },\n     ...\n ]\n}"
+                example: "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http://www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http://portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\":\_\"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n     ...\n ]\n}"
       tags:
         - 'Company Profile'
+      security: []
+    put:
+      summary: 'Update company profile details.'
+      operationId: updateCompanyProfileDetails
+      description: "This endpoint allows you to update the company profile details. The variables are in snake_case and should be provided in the request body. company_logo and signature_upload both send direct file only, don't refer example for both."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Company Profile updated successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Company Profile updated successfully'
+      tags:
+        - 'Company Profile'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The unique identifier for the company profile.'
+                  example: 1dkjvskj-dnjdj-xnxskj
+                company_name:
+                  type: string
+                  description: 'The name of the company.'
+                  example: 'Sample Company Ltd.'
+                contact_person_name:
+                  type: string
+                  description: 'The name of the contact person.'
+                  example: 'Ashish Patel'
+                otp_mobile_phone:
+                  type: string
+                  description: 'The OTP mobile phone number.'
+                  example: '08796543210'
+                mobile:
+                  type: string
+                  description: 'The mobile phone number.'
+                  example: '08796543210'
+                email:
+                  type: string
+                  description: 'The email address.'
+                  example: abc@gmail.com
+                phone_no:
+                  type: string
+                  description: 'The phone number.'
+                  example: '7896513'
+                fax_no:
+                  type: string
+                  description: 'The fax number.'
+                  example: '08796543210'
+                website:
+                  type: string
+                  description: 'The company website URL.'
+                  example: 'http://www.samplecompany.com'
+                company_register:
+                  type: string
+                  description: 'The company registration number.'
+                  example: Register123
+                address:
+                  type: string
+                  description: 'The company address.'
+                  example: 'Rajkot, Gujarat, India - 360004.'
+                portal_address:
+                  type: string
+                  description: 'The company portal address.'
+                  example: 'http://portal.samplecompany.com'
+                company_type:
+                  type: string
+                  description: 'The type of the company.'
+                  example: 'Private Limited'
+                gst_no:
+                  type: string
+                  description: 'The GST number.'
+                  example: GSTIN123456789
+                lut_no:
+                  type: string
+                  description: 'The LUT number.'
+                  example: LUT12345
+                cin:
+                  type: string
+                  description: 'The CIN number.'
+                  example: CIN123456789
+                gst_circular_no:
+                  type: string
+                  description: 'The GST circular number.'
+                  example: CIRC123456789
+                state_code:
+                  type: string
+                  description: 'The state code.'
+                  example: SC
+                lei_no:
+                  type: string
+                  description: 'The LEI number.'
+                  example: LEI1234567890
+                field_3:
+                  type: string
+                  description: 'Additional field 3.'
+                  example: Value3
+                pan_no:
+                  type: string
+                  description: 'The PAN number.'
+                  example: PAN123456789
+                lut_expiry:
+                  type: date
+                  description: 'The LUT expiry date.'
+                  example: '2025-12-31'
+                rcmc_no:
+                  type: string
+                  description: 'The RCMC number.'
+                  example: RCMC123456
+                date_of_filling_rex_number:
+                  type: date
+                  description: 'The date of filling REX number.'
+                  example: '2024-06-25'
+                field_1:
+                  type: string
+                  description: 'Additional field 1.'
+                  example: Value1
+                field_4:
+                  type: string
+                  description: 'Additional field 4.'
+                  example: Value4
+                iec_no:
+                  type: string
+                  description: 'The IEC number.'
+                  example: IEC123456789
+                bin_no:
+                  type: string
+                  description: 'The BIN number.'
+                  example: BIN123456
+                rcmc_expiry:
+                  type: date
+                  description: 'The RCMC expiry date.'
+                  example: '2026-12-31'
+                circular_no:
+                  type: string
+                  description: 'The circular number.'
+                  example: CIRC789456123
+                aeo_no:
+                  type: string
+                  description: 'The AEO number.'
+                  example: AEO123456
+                field_2:
+                  type: string
+                  description: 'Additional field 2.'
+                  example: Value2
+                field_5:
+                  type: string
+                  description: 'Additional field 5.'
+                  example: Value5
+                pre_carriage_by:
+                  type: string
+                  description: 'The mode of pre-carriage.'
+                  example: Road
+                state_of_origin:
+                  type: string
+                  description: 'The state of origin.'
+                  example: 'Sample State'
+                delivery_period:
+                  type: string
+                  description: 'The delivery period.'
+                  example: '30 days'
+                terms_of_delivery:
+                  type: string
+                  description: 'The terms of delivery.'
+                  example: FOB
+                place_of_receipt:
+                  type: string
+                  description: 'The place of receipt.'
+                  example: 'Sample Port'
+                part_of_loading:
+                  type: string
+                  description: 'The part of loading.'
+                  example: 'Loading Dock A'
+                partial_shipement:
+                  type: string
+                  description: 'Indicates if partial shipment is allowed.'
+                  example: 'No'
+                district_of_origin:
+                  type: string
+                  description: 'The district of origin.'
+                  example: 'Sample District'
+                trans_shipement:
+                  type: string
+                  description: 'Indicates if trans-shipment is allowed.'
+                  example: 'No'
+                variety_of_quality:
+                  type: string
+                  description: 'The variety of quality.'
+                  example: Premium
+                company_logo:
+                  type: string
+                  format: binary
+                  description: 'The company logo file.'
+                signature_upload:
+                  type: string
+                  format: binary
+                  description: 'The signature upload file.'
+                range:
+                  type: string
+                  description: 'The range.'
+                  example: 'Range 1'
+                division:
+                  type: string
+                  description: 'The division.'
+                  example: 'Division A'
+                commissionerate:
+                  type: string
+                  description: 'The commissionerate.'
+                  example: 'Commissionerate 1'
+                location_code:
+                  type: string
+                  description: 'The location code.'
+                  example: LOC123
+                annexure_remark:
+                  type: string
+                  description: 'The annexure remark.'
+                  example: N/A
+                shipper_name:
+                  type: string
+                  description: 'The name of the shipper.'
+                  example: 'Sample Shipper'
+                method_used_for_vgm:
+                  type: string
+                  description: 'The method used for VGM.'
+                  example: Weighbridge
+                weighbridge_slip_no:
+                  type: string
+                  description: 'The weighbridge slip number.'
+                  example: WS123456
+                bank_id:
+                  type: string
+                  description: 'The bank identifier.'
+                  example: fbdj54-fvd-g45bbf-5tgr4
+              required:
+                - id
+                - company_name
+                - contact_person_name
+                - otp_mobile_phone
+                - mobile
+                - email
       security: []
 tags:
   -
