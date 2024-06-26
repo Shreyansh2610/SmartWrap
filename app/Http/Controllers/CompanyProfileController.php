@@ -39,7 +39,7 @@ class CompanyProfileController extends Controller
      *
      * @response 200 {
      *  "status": "success",
-     *  "comapny_profile": [
+     *  "comapny_profile":[
      *      {
      *          "id": 1dkjvskj-dnjdj-xnxskj,
      *          "company_name": "Sample Company Ltd.",
@@ -96,8 +96,7 @@ class CompanyProfileController extends Controller
      *          "weighbridge_slip_no": "WS123456",
      *          "bank_id":"fbdj54-fvd-g45bbf-5tgr4",
      *      },
-     *      ...
-     *  ]
+     * ]
      * }
      */
     public function show()

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "52e3c827-4e67-488b-ba8f-3d24cb307070",
+        "_postman_id": "b755bb8a-a5a1-45d4-ad19-5f793470968f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -185,6 +185,85 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Get a list of all banks.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created bank in the database.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"bank_name\":\"Bank of America\",\"bank_address\":\"123 Main St, New York, NY\",\"account_name\":\"John Doe\",\"account_no\":\"1234567890\",\"ifsc_code\":\"BOFAUS3N\",\"swift_code\":\"BOFAUS3NXXX\",\"bank_ad_code_no\":\"AD12345678\",\"iban_no\":\"GB82WEST12345698765432\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Bank details is stored\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -222,7 +301,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http:\/\/www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http:\/\/portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N\/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\":\u00a0\"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n     ...\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"comapny_profile\":[\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http:\/\/www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http:\/\/portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N\/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\":\u00a0\"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n]\n}",
                             "name": ""
                         }
                     ]
@@ -642,7 +721,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "59"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -654,6 +733,78 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "non",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "voluptate",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         }

@@ -243,6 +243,109 @@ paths:
                 - account_no
                 - ifsc_code
       security: []
+  /api/products:
+    get:
+      summary: 'Get a list of all banks.'
+      operationId: getAListOfAllBanks
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}"
+      tags:
+        - 'Bank Management'
+      security: []
+    post:
+      summary: 'Store a newly created bank in the database.'
+      operationId: storeANewlyCreatedBankInTheDatabase
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Bank details is stored'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Bank details is stored'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'Validation error'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'Validation error'
+      tags:
+        - 'Bank Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bank_name:
+                  type: string
+                  description: 'The name of the bank.'
+                  example: 'Bank of America'
+                bank_address:
+                  type: string
+                  description: 'The address of the bank.'
+                  example: '123 Main St, New York, NY'
+                account_name:
+                  type: string
+                  description: 'The name of the account holder.'
+                  example: 'John Doe'
+                account_no:
+                  type: string
+                  description: 'The bank account number.'
+                  example: '1234567890'
+                ifsc_code:
+                  type: string
+                  description: 'The IFSC code of the bank.'
+                  example: BOFAUS3N
+                swift_code:
+                  type: string
+                  description: 'The SWIFT code of the bank.'
+                  example: BOFAUS3NXXX
+                bank_ad_code_no:
+                  type: string
+                  description: 'The bank AD code number.'
+                  example: AD12345678
+                iban_no:
+                  type: string
+                  description: 'The IBAN number of the bank account.'
+                  example: GB82WEST12345698765432
+              required:
+                - bank_name
+                - bank_address
+                - account_name
+                - account_no
+                - ifsc_code
+      security: []
   /api/company-profile:
     get:
       summary: 'Get company profile details.'
@@ -256,7 +359,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n \"status\": \"success\",\n \"comapny_profile\": [\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http://www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http://portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\":\_\"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n     ...\n ]\n}"
+                example: "{\n \"status\": \"success\",\n \"comapny_profile\":[\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http://www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http://portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\":\_\"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n]\n}"
       tags:
         - 'Company Profile'
       security: []
@@ -515,6 +618,34 @@ paths:
                 - mobile
                 - email
       security: []
+  '/api/products/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product.'
+        example: non
+        required: true
+        schema:
+          type: string
 tags:
   -
     name: Authentication

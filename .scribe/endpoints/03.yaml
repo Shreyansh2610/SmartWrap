@@ -184,3 +184,186 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/products
+    metadata:
+      groupName: 'Bank Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of all banks.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "banks": [
+               {
+                   "id": 1,
+                   "bank_name": "Bank of America",
+                   "bank_address": "123 Main St, New York, NY",
+                   "account_name": "John Doe",
+                   "account_no": "1234567890",
+                   "ifsc_code": "BOFAUS3N",
+                   "swift_code": "BOFAUS3NXXX",
+                   "bank_ad_code_no": "AD12345678",
+                   "iban_no": "GB82WEST12345698765432"
+               },
+               ...
+           ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/products
+    metadata:
+      groupName: 'Bank Management'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created bank in the database.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      bank_name:
+        name: bank_name
+        description: 'The name of the bank.'
+        required: true
+        example: 'Bank of America'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_address:
+        name: bank_address
+        description: 'The address of the bank.'
+        required: true
+        example: '123 Main St, New York, NY'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      account_name:
+        name: account_name
+        description: 'The name of the account holder.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      account_no:
+        name: account_no
+        description: 'The bank account number.'
+        required: true
+        example: '1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      ifsc_code:
+        name: ifsc_code
+        description: 'The IFSC code of the bank.'
+        required: true
+        example: BOFAUS3N
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      swift_code:
+        name: swift_code
+        description: 'The SWIFT code of the bank.'
+        required: false
+        example: BOFAUS3NXXX
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ad_code_no:
+        name: bank_ad_code_no
+        description: 'The bank AD code number.'
+        required: false
+        example: AD12345678
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      iban_no:
+        name: iban_no
+        description: 'The IBAN number of the bank account.'
+        required: false
+        example: GB82WEST12345698765432
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      bank_name: 'Bank of America'
+      bank_address: '123 Main St, New York, NY'
+      account_name: 'John Doe'
+      account_no: '1234567890'
+      ifsc_code: BOFAUS3N
+      swift_code: BOFAUS3NXXX
+      bank_ad_code_no: AD12345678
+      iban_no: GB82WEST12345698765432
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "Bank details is stored"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+           "status": "error",
+           "message": "Validation error"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
