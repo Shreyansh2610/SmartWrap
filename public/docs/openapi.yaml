@@ -346,7 +346,7 @@ paths:
                 - account_no
                 - ifsc_code
       security: []
-  /api/company-profile:
+  /api/company-profile-get:
     get:
       summary: 'Get company profile details.'
       operationId: getCompanyProfileDetails
@@ -363,6 +363,7 @@ paths:
       tags:
         - 'Company Profile'
       security: []
+  /api/company-profile:
     put:
       summary: 'Update company profile details.'
       operationId: updateCompanyProfileDetails
@@ -642,7 +643,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the product.'
-        example: non
+        example: et
         required: true
         schema:
           type: string

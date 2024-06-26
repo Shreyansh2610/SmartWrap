@@ -103,8 +103,8 @@
                     <a href="#company-profile">Company Profile</a>
                 </li>
                                     <ul id="tocify-subheader-company-profile" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="company-profile-GETapi-company-profile">
-                                <a href="#company-profile-GETapi-company-profile">Get company profile details.</a>
+                                                    <li class="tocify-item level-2" data-unique="company-profile-GETapi-company-profile-get">
+                                <a href="#company-profile-GETapi-company-profile-get">Get company profile details.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="company-profile-PUTapi-company-profile">
                                 <a href="#company-profile-PUTapi-company-profile">Update company profile details.</a>
@@ -1217,27 +1217,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
     
 
-                                <h2 id="company-profile-GETapi-company-profile">Get company profile details.</h2>
+                                <h2 id="company-profile-GETapi-company-profile-get">Get company profile details.</h2>
 
 <p>
 </p>
 
 <p>variable is like small case and replace space with underscore</p>
 
-<span id="example-requests-GETapi-company-profile">
+<span id="example-requests-GETapi-company-profile-get">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company-profile" \
+    --get "http://localhost/api/company-profile-get" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company-profile"
+    "http://localhost/api/company-profile-get"
 );
 
 const headers = {
@@ -1252,7 +1252,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-company-profile">
+<span id="example-responses-GETapi-company-profile-get">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1321,43 +1321,43 @@ fetch(url, {
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-company-profile" hidden>
+<span id="execution-results-GETapi-company-profile-get" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-company-profile"></span>:
+                id="execution-response-status-GETapi-company-profile-get"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-company-profile"
+    <pre class="json"><code id="execution-response-content-GETapi-company-profile-get"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-company-profile" hidden>
+<span id="execution-error-GETapi-company-profile-get" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-company-profile">
+    <pre><code id="execution-error-message-GETapi-company-profile-get">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-company-profile" data-method="GET"
-      data-path="api/company-profile"
+<form id="form-GETapi-company-profile-get" data-method="GET"
+      data-path="api/company-profile-get"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-profile', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-profile-get', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-company-profile"
-                    onclick="tryItOut('GETapi-company-profile');">Try it out ⚡
+                    id="btn-tryout-GETapi-company-profile-get"
+                    onclick="tryItOut('GETapi-company-profile-get');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-company-profile"
-                    onclick="cancelTryOut('GETapi-company-profile');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-company-profile-get"
+                    onclick="cancelTryOut('GETapi-company-profile-get');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-company-profile"
+                    id="btn-executetryout-GETapi-company-profile-get"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1365,7 +1365,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/company-profile</code></b>
+            <b><code>api/company-profile-get</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1373,7 +1373,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-company-profile"
+                              name="Content-Type"                data-endpoint="GETapi-company-profile-get"
                value="application/json"
                data-component="header">
     <br>
@@ -1384,7 +1384,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-company-profile"
+                              name="Accept"                data-endpoint="GETapi-company-profile-get"
                value="application/json"
                data-component="header">
     <br>
@@ -1460,8 +1460,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php9F93.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php9FA4.tmp" </code></pre></div>
+    --form "company_logo=@/tmp/phpJESZMQ" \
+    --form "signature_upload=@/tmp/phpnKn4fS" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2102,7 +2102,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php9F93.tmp</code></p>
+<p>The company logo file. Example: <code>/tmp/phpJESZMQ</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -2113,7 +2113,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php9FA4.tmp</code></p>
+<p>The signature upload file. Example: <code>/tmp/phpnKn4fS</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -2359,14 +2359,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/products/non" \
+    "http://localhost/api/products/et" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/non"
+    "http://localhost/api/products/et"
 );
 
 const headers = {
@@ -2463,10 +2463,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-products--id-"
-               value="non"
+               value="et"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>non</code></p>
+<p>The ID of the product. Example: <code>et</code></p>
             </div>
                     </form>
 
@@ -2483,14 +2483,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/products/voluptate" \
+    "http://localhost/api/products/sapiente" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/voluptate"
+    "http://localhost/api/products/sapiente"
 );
 
 const headers = {
@@ -2583,10 +2583,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-products--id-"
-               value="voluptate"
+               value="sapiente"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>voluptate</code></p>
+<p>The ID of the product. Example: <code>sapiente</code></p>
             </div>
                     </form>
 

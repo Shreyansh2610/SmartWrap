@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "b755bb8a-a5a1-45d4-ad19-5f793470968f",
+        "_postman_id": "f1f2dac6-8420-48fa-9b39-f3a64491bb12",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -276,9 +276,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/company-profile",
+                            "path": "api\/company-profile-get",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/company-profile"
+                            "raw": "{{baseUrl}}\/api\/company-profile-get"
                         },
                         "method": "GET",
                         "header": [
@@ -746,7 +746,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "et",
                                     "description": "The ID of the product."
                                 }
                             ]
@@ -782,7 +782,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptate",
+                                    "value": "sapiente",
                                     "description": "The ID of the product."
                                 }
                             ]

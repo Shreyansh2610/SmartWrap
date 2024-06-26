@@ -4,7 +4,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/company-profile
+    uri: api/company-profile-get
     metadata:
       groupName: 'Company Profile'
       groupDescription: ''
