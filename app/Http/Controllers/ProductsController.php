@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
     /**
+     * Products list
+     *
      * Get a list of all products available in system.
      *
      * @group Products
@@ -38,6 +40,8 @@ class ProductsController extends Controller
     }
 
     /**
+     * Create Product
+     *
      * It store a newly created product in the system.
      *
      * @group Products
@@ -76,6 +80,8 @@ class ProductsController extends Controller
     }
 
     /**
+     * Product Update
+     *
      * It update the specified product in the system.
      *
      * @group Products
@@ -115,6 +121,8 @@ class ProductsController extends Controller
     }
 
     /**
+     * Delete Product
+     *
      * It remove the specified product from the system.
      *
      * @group Products

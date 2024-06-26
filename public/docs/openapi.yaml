@@ -243,109 +243,6 @@ paths:
                 - account_no
                 - ifsc_code
       security: []
-  /api/products:
-    get:
-      summary: 'Get a list of all banks.'
-      operationId: getAListOfAllBanks
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}"
-      tags:
-        - 'Bank Management'
-      security: []
-    post:
-      summary: 'Store a newly created bank in the database.'
-      operationId: storeANewlyCreatedBankInTheDatabase
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  status: success
-                  message: 'Bank details is stored'
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  message:
-                    type: string
-                    example: 'Bank details is stored'
-        422:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  status: error
-                  message: 'Validation error'
-                properties:
-                  status:
-                    type: string
-                    example: error
-                  message:
-                    type: string
-                    example: 'Validation error'
-      tags:
-        - 'Bank Management'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                bank_name:
-                  type: string
-                  description: 'The name of the bank.'
-                  example: 'Bank of America'
-                bank_address:
-                  type: string
-                  description: 'The address of the bank.'
-                  example: '123 Main St, New York, NY'
-                account_name:
-                  type: string
-                  description: 'The name of the account holder.'
-                  example: 'John Doe'
-                account_no:
-                  type: string
-                  description: 'The bank account number.'
-                  example: '1234567890'
-                ifsc_code:
-                  type: string
-                  description: 'The IFSC code of the bank.'
-                  example: BOFAUS3N
-                swift_code:
-                  type: string
-                  description: 'The SWIFT code of the bank.'
-                  example: BOFAUS3NXXX
-                bank_ad_code_no:
-                  type: string
-                  description: 'The bank AD code number.'
-                  example: AD12345678
-                iban_no:
-                  type: string
-                  description: 'The IBAN number of the bank account.'
-                  example: GB82WEST12345698765432
-              required:
-                - bank_name
-                - bank_address
-                - account_name
-                - account_no
-                - ifsc_code
-      security: []
   /api/company-profile-get:
     get:
       summary: 'Get company profile details.'
@@ -619,31 +516,209 @@ paths:
                 - mobile
                 - email
       security: []
+  /api/products:
+    get:
+      summary: 'Products list'
+      operationId: productsList
+      description: 'Get a list of all products available in system.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"status\": \"success\",\n \"products\": [\n     {\n         \"id\": 1dfn4k5-43tn4gkn-434,\n         \"hsn_code\": \"1234\",\n         \"product_name\": \"Product A\",\n         \"sales\": 100,\n         \"purchase\": 90,\n         \"water_absorption\": \"5%\",\n         \"field\": \"Field A\"\n     },\n     ...\n ]\n}"
+      tags:
+        - Products
+      security: []
+    post:
+      summary: 'Create Product'
+      operationId: createProduct
+      description: 'It store a newly created product in the system.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Product details are stored'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Product details are stored'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'Validation error'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'Validation error'
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hsn_code:
+                  type: string
+                  description: 'The HSN code of the product.'
+                  example: '1234'
+                product_name:
+                  type: string
+                  description: 'The name of the product.'
+                  example: 'Product A'
+                sales:
+                  type: number
+                  description: 'The sales price of the product.'
+                  example: 100.0
+                purchase:
+                  type: number
+                  description: 'The purchase price of the product.'
+                  example: 90.0
+                water_absorption:
+                  type: string
+                  description: 'The water absorption rate of the product.'
+                  example: '5'
+                field:
+                  type: string
+                  description: 'The field of the product.'
+                  example: 'Field A'
+              required:
+                - hsn_code
+                - product_name
+                - sales
+                - purchase
+      security: []
   '/api/products/{id}':
     put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
+      summary: 'Product Update'
+      operationId: productUpdate
+      description: 'It update the specified product in the system.'
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Product details are updated'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Product details are updated'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'Validation error'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'Validation error'
       tags:
-        - Endpoints
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hsn_code:
+                  type: string
+                  description: 'The HSN code of the product.'
+                  example: '1234'
+                product_name:
+                  type: string
+                  description: 'The name of the product.'
+                  example: 'Product A'
+                sales:
+                  type: number
+                  description: 'The sales price of the product.'
+                  example: 100.0
+                purchase:
+                  type: number
+                  description: 'The purchase price of the product.'
+                  example: 90.0
+                water_absorption:
+                  type: string
+                  description: 'The water absorption rate of the product.'
+                  example: '10'
+                field:
+                  type: string
+                  description: 'The field of the product.'
+                  example: 'Field A'
+              required:
+                - hsn_code
+                - product_name
+                - sales
+                - purchase
       security: []
     delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
+      summary: 'Delete Product'
+      operationId: deleteProduct
+      description: 'It remove the specified product from the system.'
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Product details are deleted'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Product details are deleted'
       tags:
-        - Endpoints
+        - Products
       security: []
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the product.'
-        example: et
+        description: 'The ID of the product to update.'
+        example: '1'
         required: true
         schema:
           type: string
@@ -659,4 +734,7 @@ tags:
     description: ''
   -
     name: Endpoints
+    description: ''
+  -
+    name: Products
     description: ''

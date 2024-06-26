@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyProfileController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
@@ -33,5 +34,5 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::resource('banks',BankController::class)->only(['index','store']);
 
-    Route::resource('products',BankController::class)->only(['index','store','update','destroy']);
+    Route::resource('products',ProductsController::class)->only(['index','store','update','destroy']);
 });

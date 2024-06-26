@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "f1f2dac6-8420-48fa-9b39-f3a64491bb12",
+        "_postman_id": "8cf7320d-52a2-4f12-aeaa-0a90d6a7f824",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -150,85 +150,6 @@
                             "path": "api\/banks",
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/banks"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"bank_name\":\"Bank of America\",\"bank_address\":\"123 Main St, New York, NY\",\"account_name\":\"John Doe\",\"account_no\":\"1234567890\",\"ifsc_code\":\"BOFAUS3N\",\"swift_code\":\"BOFAUS3NXXX\",\"bank_ad_code_no\":\"AD12345678\",\"iban_no\":\"GB82WEST12345698765432\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [],
-                            "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"message\": \"Bank details is stored\"\n}",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 422,
-                            "body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Get a list of all banks.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/products",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/products"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [],
-                            "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created bank in the database.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/products",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/products"
                         },
                         "method": "POST",
                         "header": [
@@ -733,9 +654,94 @@
                             "name": ""
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "description": "",
+            "item": [
+                {
+                    "name": "Products list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get a list of all products available in system.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"products\": [\n     {\n         \"id\": 1dfn4k5-43tn4gkn-434,\n         \"hsn_code\": \"1234\",\n         \"product_name\": \"Product A\",\n         \"sales\": 100,\n         \"purchase\": 90,\n         \"water_absorption\": \"5%\",\n         \"field\": \"Field A\"\n     },\n     ...\n ]\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Create Product",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"5\",\"field\":\"Field A\"}"
+                        },
+                        "description": "It store a newly created product in the system.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Product details are stored\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Product Update",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -746,8 +752,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
-                                    "description": "The ID of the product."
+                                    "value": "1",
+                                    "description": "The ID of the product to update."
                                 }
                             ]
                         },
@@ -762,16 +768,32 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"10\",\"field\":\"Field A\"}"
+                        },
+                        "description": "It update the specified product in the system.",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Product details are updated\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Delete Product",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -782,8 +804,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sapiente",
-                                    "description": "The ID of the product."
+                                    "value": "1453mk-545tmkm4-3tvekvek",
+                                    "description": "The ID of the product to delete."
                                 }
                             ]
                         },
@@ -799,12 +821,19 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
+                        "description": "It remove the specified product from the system.",
                         "auth": {
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Product details are deleted\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         }
