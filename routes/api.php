@@ -35,4 +35,6 @@ Route::middleware(['auth:api'])->group(function () {
     Route::resource('banks',BankController::class)->only(['index','store']);
 
     Route::resource('products',ProductsController::class)->only(['index','store','update','destroy']);
+
+    Route::resource('sizes',ProductsController::class)->only(['index','store','update','destroy']);
 });
