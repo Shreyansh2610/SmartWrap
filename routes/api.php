@@ -27,7 +27,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
 });
 
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('/company-profile', [CompanyProfileController::class,'show']);
+    Route::get('/company-profile-get', [CompanyProfileController::class,'show']);
 
     Route::put('/company-profile', [CompanyProfileController::class,'update']);
 
