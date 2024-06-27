@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "8cf7320d-52a2-4f12-aeaa-0a90d6a7f824",
+        "_postman_id": "9d18c0bb-2c97-439e-a7fa-b317aa6095b6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -831,6 +831,192 @@
                             "header": [],
                             "code": 200,
                             "body": "{\n \"status\": \"success\",\n \"message\": \"Product details are deleted\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Sizes",
+            "description": "",
+            "item": [
+                {
+                    "name": "Sizes list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/sizes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/sizes"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get a list of all sizes available in system.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"sizes\": [\n     {\n         \"id\": 1dfn4k5-43tn4gkn-434,\n         \"size_in_cm\": \"50\",\n         \"size_in_mm\": \"550\",\n         \"product_name\": \"Product A\",\n         \"hsn_code\": \"9035\",\n         \"thickness\": \"15mm\",\n         \"micron\": \"500\",\n         \"grade\": null,\n         \"width\": null,\n     },\n     ...\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Size",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/sizes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/sizes"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+                        },
+                        "description": "Store a newly created size in the database.\nThis endpoint allows you to store size details. The variables should be provided in the request body.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Size details are stored\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"size_in_cm\": [\n         \"Size in centimeters is required\",\n         \"Size in centimeters must be numeric\"\n     ],\n     \"size_in_mm\": [\n         \"Size in millimeters is required\",\n         \"Size in millimeters must be numeric\"\n     ],\n     \"product_name\": [\n         \"Product Name is required\"\n     ],\n     \"hsn_code\": [\n         \"HSN code is required\"\n     ],\n     \"thickness\": [\n         \"Thickness is required\"\n     ],\n     \"micron\": [\n         \"Micron is required\",\n         \"Micron must be numeric\"\n     ]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Size",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/sizes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/sizes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the size to update."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+                        },
+                        "description": "Update the specified size in the database.\nThis endpoint allows you to update size details by providing the size ID and the updated information.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Size details are updated\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"size_in_cm\": [\n         \"Size in centimeters is required\",\n         \"Size in centimeters must be numeric\"\n     ],\n     \"size_in_mm\": [\n         \"Size in millimeters is required\",\n         \"Size in millimeters must be numeric\"\n     ],\n     \"product_name\": [\n         \"Product Name is required\"\n     ],\n     \"hsn_code\": [\n         \"HSN code is required\"\n     ],\n     \"thickness\": [\n         \"Thickness is required\"\n     ],\n     \"micron\": [\n         \"Micron is required\",\n         \"Micron must be numeric\"\n     ]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete Size",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/sizes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/sizes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1fkj58-4nci34-fk48i",
+                                    "description": "The ID of the size to delete."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified size from the database.\nThis endpoint allows you to delete a size by providing its ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Size is deleted\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 442,
+                            "body": "{\n 'status': 'error',\n \"message\": \"No records found\"\n}",
                             "name": ""
                         }
                     ]

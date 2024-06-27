@@ -134,6 +134,25 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-sizes" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="sizes">
+                    <a href="#sizes">Sizes</a>
+                </li>
+                                    <ul id="tocify-subheader-sizes" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="sizes-GETapi-sizes">
+                                <a href="#sizes-GETapi-sizes">Sizes list</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sizes-POSTapi-sizes">
+                                <a href="#sizes-POSTapi-sizes">Create Size</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sizes-PUTapi-sizes--id-">
+                                <a href="#sizes-PUTapi-sizes--id-">Update Size</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="sizes-DELETEapi-sizes--id-">
+                                <a href="#sizes-DELETEapi-sizes--id-">Delete Size</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -143,7 +162,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 26, 2024</li>
+        <li>Last updated: June 27, 2024</li>
     </ul>
 </div>
 
@@ -1096,8 +1115,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\phpF755.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\phpF756.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php8F4C.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php8F5C.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1738,7 +1757,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpF755.tmp</code></p>
+<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php8F4C.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1749,7 +1768,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpF756.tmp</code></p>
+<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php8F5C.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -2686,6 +2705,822 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="url">
     <br>
 <p>The ID of the product to delete. Example: <code>1453mk-545tmkm4-3tvekvek</code></p>
+            </div>
+                    </form>
+
+                <h1 id="sizes">Sizes</h1>
+
+    
+
+                                <h2 id="sizes-GETapi-sizes">Sizes list</h2>
+
+<p>
+</p>
+
+<p>Get a list of all sizes available in system.</p>
+
+<span id="example-requests-GETapi-sizes">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/sizes" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/sizes"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-sizes">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &quot;status&quot;: &quot;success&quot;,
+ &quot;sizes&quot;: [
+     {
+         &quot;id&quot;: 1dfn4k5-43tn4gkn-434,
+         &quot;size_in_cm&quot;: &quot;50&quot;,
+         &quot;size_in_mm&quot;: &quot;550&quot;,
+         &quot;product_name&quot;: &quot;Product A&quot;,
+         &quot;hsn_code&quot;: &quot;9035&quot;,
+         &quot;thickness&quot;: &quot;15mm&quot;,
+         &quot;micron&quot;: &quot;500&quot;,
+         &quot;grade&quot;: null,
+         &quot;width&quot;: null,
+     },
+     ...
+ ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-sizes" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-sizes"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-sizes"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-sizes" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-sizes">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-sizes" data-method="GET"
+      data-path="api/sizes"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-sizes', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-sizes"
+                    onclick="tryItOut('GETapi-sizes');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-sizes"
+                    onclick="cancelTryOut('GETapi-sizes');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-sizes"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/sizes</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-sizes"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-sizes"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="sizes-POSTapi-sizes">Create Size</h2>
+
+<p>
+</p>
+
+<p>Store a newly created size in the database.
+This endpoint allows you to store size details. The variables should be provided in the request body.</p>
+
+<span id="example-requests-POSTapi-sizes">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/sizes" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"size_in_cm\": \"100\",
+    \"size_in_mm\": \"1000\",
+    \"product_name\": \"Product A\",
+    \"hsn_code\": \"1234\",
+    \"thickness\": \"5\",
+    \"micron\": \"50\",
+    \"grade\": \"Grade A\",
+    \"width\": \"200\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/sizes"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "size_in_cm": "100",
+    "size_in_mm": "1000",
+    "product_name": "Product A",
+    "hsn_code": "1234",
+    "thickness": "5",
+    "micron": "50",
+    "grade": "Grade A",
+    "width": "200"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-sizes">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Size details are stored&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;errors&quot;: {
+        &quot;size_in_cm&quot;: [
+            &quot;Size in centimeters is required&quot;,
+            &quot;Size in centimeters must be numeric&quot;
+        ],
+        &quot;size_in_mm&quot;: [
+            &quot;Size in millimeters is required&quot;,
+            &quot;Size in millimeters must be numeric&quot;
+        ],
+        &quot;product_name&quot;: [
+            &quot;Product Name is required&quot;
+        ],
+        &quot;hsn_code&quot;: [
+            &quot;HSN code is required&quot;
+        ],
+        &quot;thickness&quot;: [
+            &quot;Thickness is required&quot;
+        ],
+        &quot;micron&quot;: [
+            &quot;Micron is required&quot;,
+            &quot;Micron must be numeric&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-sizes" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-sizes"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-sizes"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-sizes" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-sizes">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-sizes" data-method="POST"
+      data-path="api/sizes"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-sizes', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-sizes"
+                    onclick="tryItOut('POSTapi-sizes');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-sizes"
+                    onclick="cancelTryOut('POSTapi-sizes');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-sizes"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/sizes</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-sizes"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-sizes"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>size_in_cm</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="size_in_cm"                data-endpoint="POSTapi-sizes"
+               value="100"
+               data-component="body">
+    <br>
+<p>The size in centimeters. Example: <code>100</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>size_in_mm</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="size_in_mm"                data-endpoint="POSTapi-sizes"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The size in millimeters. Example: <code>1000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>product_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="product_name"                data-endpoint="POSTapi-sizes"
+               value="Product A"
+               data-component="body">
+    <br>
+<p>The name of the product. Example: <code>Product A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="hsn_code"                data-endpoint="POSTapi-sizes"
+               value="1234"
+               data-component="body">
+    <br>
+<p>The HSN code of the product. Example: <code>1234</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>thickness</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="thickness"                data-endpoint="POSTapi-sizes"
+               value="5"
+               data-component="body">
+    <br>
+<p>The thickness of the product. Example: <code>5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>micron</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="micron"                data-endpoint="POSTapi-sizes"
+               value="50"
+               data-component="body">
+    <br>
+<p>The micron value of the product. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>grade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="grade"                data-endpoint="POSTapi-sizes"
+               value="Grade A"
+               data-component="body">
+    <br>
+<p>The grade of the product. Example: <code>Grade A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>width</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="width"                data-endpoint="POSTapi-sizes"
+               value="200"
+               data-component="body">
+    <br>
+<p>The width of the product. Example: <code>200</code></p>
+        </div>
+        </form>
+
+                    <h2 id="sizes-PUTapi-sizes--id-">Update Size</h2>
+
+<p>
+</p>
+
+<p>Update the specified size in the database.
+This endpoint allows you to update size details by providing the size ID and the updated information.</p>
+
+<span id="example-requests-PUTapi-sizes--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/sizes/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"size_in_cm\": \"100\",
+    \"size_in_mm\": \"1000\",
+    \"product_name\": \"Product A\",
+    \"hsn_code\": \"1234\",
+    \"thickness\": \"5\",
+    \"micron\": \"50\",
+    \"grade\": \"Grade A\",
+    \"width\": \"200\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/sizes/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "size_in_cm": "100",
+    "size_in_mm": "1000",
+    "product_name": "Product A",
+    "hsn_code": "1234",
+    "thickness": "5",
+    "micron": "50",
+    "grade": "Grade A",
+    "width": "200"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-sizes--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Size details are updated&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;errors&quot;: {
+        &quot;size_in_cm&quot;: [
+            &quot;Size in centimeters is required&quot;,
+            &quot;Size in centimeters must be numeric&quot;
+        ],
+        &quot;size_in_mm&quot;: [
+            &quot;Size in millimeters is required&quot;,
+            &quot;Size in millimeters must be numeric&quot;
+        ],
+        &quot;product_name&quot;: [
+            &quot;Product Name is required&quot;
+        ],
+        &quot;hsn_code&quot;: [
+            &quot;HSN code is required&quot;
+        ],
+        &quot;thickness&quot;: [
+            &quot;Thickness is required&quot;
+        ],
+        &quot;micron&quot;: [
+            &quot;Micron is required&quot;,
+            &quot;Micron must be numeric&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-sizes--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-sizes--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-sizes--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-sizes--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-sizes--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-sizes--id-" data-method="PUT"
+      data-path="api/sizes/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-sizes--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-sizes--id-"
+                    onclick="tryItOut('PUTapi-sizes--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-sizes--id-"
+                    onclick="cancelTryOut('PUTapi-sizes--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-sizes--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/sizes/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/sizes/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-sizes--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-sizes--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-sizes--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the size to update. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>size_in_cm</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="size_in_cm"                data-endpoint="PUTapi-sizes--id-"
+               value="100"
+               data-component="body">
+    <br>
+<p>The size in centimeters. Example: <code>100</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>size_in_mm</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="size_in_mm"                data-endpoint="PUTapi-sizes--id-"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The size in millimeters. Example: <code>1000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>product_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="product_name"                data-endpoint="PUTapi-sizes--id-"
+               value="Product A"
+               data-component="body">
+    <br>
+<p>The name of the product. Example: <code>Product A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="hsn_code"                data-endpoint="PUTapi-sizes--id-"
+               value="1234"
+               data-component="body">
+    <br>
+<p>The HSN code of the product. Example: <code>1234</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>thickness</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="thickness"                data-endpoint="PUTapi-sizes--id-"
+               value="5"
+               data-component="body">
+    <br>
+<p>The thickness of the product. Example: <code>5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>micron</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="micron"                data-endpoint="PUTapi-sizes--id-"
+               value="50"
+               data-component="body">
+    <br>
+<p>The micron value of the product. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>grade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="grade"                data-endpoint="PUTapi-sizes--id-"
+               value="Grade A"
+               data-component="body">
+    <br>
+<p>The grade of the product. Example: <code>Grade A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>width</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="width"                data-endpoint="PUTapi-sizes--id-"
+               value="200"
+               data-component="body">
+    <br>
+<p>The width of the product. Example: <code>200</code></p>
+        </div>
+        </form>
+
+                    <h2 id="sizes-DELETEapi-sizes--id-">Delete Size</h2>
+
+<p>
+</p>
+
+<p>Remove the specified size from the database.
+This endpoint allows you to delete a size by providing its ID.</p>
+
+<span id="example-requests-DELETEapi-sizes--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/sizes/1fkj58-4nci34-fk48i" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/sizes/1fkj58-4nci34-fk48i"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-sizes--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Size is deleted&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (442):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &#039;status&#039;: &#039;error&#039;,
+ &quot;message&quot;: &quot;No records found&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-sizes--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-sizes--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-sizes--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-sizes--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-sizes--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-sizes--id-" data-method="DELETE"
+      data-path="api/sizes/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-sizes--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-sizes--id-"
+                    onclick="tryItOut('DELETEapi-sizes--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-sizes--id-"
+                    onclick="cancelTryOut('DELETEapi-sizes--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-sizes--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/sizes/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-sizes--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-sizes--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-sizes--id-"
+               value="1fkj58-4nci34-fk48i"
+               data-component="url">
+    <br>
+<p>The ID of the size to delete. Example: <code>1fkj58-4nci34-fk48i</code></p>
             </div>
                     </form>
 

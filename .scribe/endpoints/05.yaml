@@ -1,0 +1,435 @@
+name: Sizes
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/sizes
+    metadata:
+      groupName: Sizes
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Sizes list'
+      description: 'Get a list of all sizes available in system.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "sizes": [
+               {
+                   "id": 1dfn4k5-43tn4gkn-434,
+                   "size_in_cm": "50",
+                   "size_in_mm": "550",
+                   "product_name": "Product A",
+                   "hsn_code": "9035",
+                   "thickness": "15mm",
+                   "micron": "500",
+                   "grade": null,
+                   "width": null,
+               },
+               ...
+           ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/sizes
+    metadata:
+      groupName: Sizes
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Size'
+      description: |-
+        Store a newly created size in the database.
+        This endpoint allows you to store size details. The variables should be provided in the request body.
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      size_in_cm:
+        name: size_in_cm
+        description: 'The size in centimeters.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      size_in_mm:
+        name: size_in_mm
+        description: 'The size in millimeters.'
+        required: true
+        example: '1000'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      product_name:
+        name: product_name
+        description: 'The name of the product.'
+        required: true
+        example: 'Product A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      hsn_code:
+        name: hsn_code
+        description: 'The HSN code of the product.'
+        required: true
+        example: '1234'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      thickness:
+        name: thickness
+        description: 'The thickness of the product.'
+        required: true
+        example: '5'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      micron:
+        name: micron
+        description: 'The micron value of the product.'
+        required: true
+        example: '50'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      grade:
+        name: grade
+        description: 'The grade of the product.'
+        required: false
+        example: 'Grade A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      width:
+        name: width
+        description: 'The width of the product.'
+        required: false
+        example: '200'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      size_in_cm: '100'
+      size_in_mm: '1000'
+      product_name: 'Product A'
+      hsn_code: '1234'
+      thickness: '5'
+      micron: '50'
+      grade: 'Grade A'
+      width: '200'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "Size details are stored"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+           "errors": {
+               "size_in_cm": [
+                   "Size in centimeters is required",
+                   "Size in centimeters must be numeric"
+               ],
+               "size_in_mm": [
+                   "Size in millimeters is required",
+                   "Size in millimeters must be numeric"
+               ],
+               "product_name": [
+                   "Product Name is required"
+               ],
+               "hsn_code": [
+                   "HSN code is required"
+               ],
+               "thickness": [
+                   "Thickness is required"
+               ],
+               "micron": [
+                   "Micron is required",
+                   "Micron must be numeric"
+               ]
+           }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/sizes/{id}'
+    metadata:
+      groupName: Sizes
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Size'
+      description: |-
+        Update the specified size in the database.
+        This endpoint allows you to update size details by providing the size ID and the updated information.
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the size to update.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: '1'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      size_in_cm:
+        name: size_in_cm
+        description: 'The size in centimeters.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      size_in_mm:
+        name: size_in_mm
+        description: 'The size in millimeters.'
+        required: true
+        example: '1000'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      product_name:
+        name: product_name
+        description: 'The name of the product.'
+        required: true
+        example: 'Product A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      hsn_code:
+        name: hsn_code
+        description: 'The HSN code of the product.'
+        required: true
+        example: '1234'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      thickness:
+        name: thickness
+        description: 'The thickness of the product.'
+        required: true
+        example: '5'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      micron:
+        name: micron
+        description: 'The micron value of the product.'
+        required: true
+        example: '50'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      grade:
+        name: grade
+        description: 'The grade of the product.'
+        required: false
+        example: 'Grade A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      width:
+        name: width
+        description: 'The width of the product.'
+        required: false
+        example: '200'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      size_in_cm: '100'
+      size_in_mm: '1000'
+      product_name: 'Product A'
+      hsn_code: '1234'
+      thickness: '5'
+      micron: '50'
+      grade: 'Grade A'
+      width: '200'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "Size details are updated"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+           "errors": {
+               "size_in_cm": [
+                   "Size in centimeters is required",
+                   "Size in centimeters must be numeric"
+               ],
+               "size_in_mm": [
+                   "Size in millimeters is required",
+                   "Size in millimeters must be numeric"
+               ],
+               "product_name": [
+                   "Product Name is required"
+               ],
+               "hsn_code": [
+                   "HSN code is required"
+               ],
+               "thickness": [
+                   "Thickness is required"
+               ],
+               "micron": [
+                   "Micron is required",
+                   "Micron must be numeric"
+               ]
+           }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/sizes/{id}'
+    metadata:
+      groupName: Sizes
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Size'
+      description: |-
+        Remove the specified size from the database.
+        This endpoint allows you to delete a size by providing its ID.
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the size to delete.'
+        required: true
+        example: 1fkj58-4nci34-fk48i
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 1fkj58-4nci34-fk48i
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "Size is deleted"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 442
+        content: |-
+          {
+           'status': 'error',
+           "message": "No records found"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

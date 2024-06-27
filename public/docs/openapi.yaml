@@ -722,6 +722,339 @@ paths:
         required: true
         schema:
           type: string
+  /api/sizes:
+    get:
+      summary: 'Sizes list'
+      operationId: sizesList
+      description: 'Get a list of all sizes available in system.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"status\": \"success\",\n \"sizes\": [\n     {\n         \"id\": 1dfn4k5-43tn4gkn-434,\n         \"size_in_cm\": \"50\",\n         \"size_in_mm\": \"550\",\n         \"product_name\": \"Product A\",\n         \"hsn_code\": \"9035\",\n         \"thickness\": \"15mm\",\n         \"micron\": \"500\",\n         \"grade\": null,\n         \"width\": null,\n     },\n     ...\n ]\n}"
+      tags:
+        - Sizes
+      security: []
+    post:
+      summary: 'Create Size'
+      operationId: createSize
+      description: "Store a newly created size in the database.\nThis endpoint allows you to store size details. The variables should be provided in the request body."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Size details are stored'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Size details are stored'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    size_in_cm:
+                      - 'Size in centimeters is required'
+                      - 'Size in centimeters must be numeric'
+                    size_in_mm:
+                      - 'Size in millimeters is required'
+                      - 'Size in millimeters must be numeric'
+                    product_name:
+                      - 'Product Name is required'
+                    hsn_code:
+                      - 'HSN code is required'
+                    thickness:
+                      - 'Thickness is required'
+                    micron:
+                      - 'Micron is required'
+                      - 'Micron must be numeric'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      size_in_cm:
+                        type: array
+                        example:
+                          - 'Size in centimeters is required'
+                          - 'Size in centimeters must be numeric'
+                        items:
+                          type: string
+                      size_in_mm:
+                        type: array
+                        example:
+                          - 'Size in millimeters is required'
+                          - 'Size in millimeters must be numeric'
+                        items:
+                          type: string
+                      product_name:
+                        type: array
+                        example:
+                          - 'Product Name is required'
+                        items:
+                          type: string
+                      hsn_code:
+                        type: array
+                        example:
+                          - 'HSN code is required'
+                        items:
+                          type: string
+                      thickness:
+                        type: array
+                        example:
+                          - 'Thickness is required'
+                        items:
+                          type: string
+                      micron:
+                        type: array
+                        example:
+                          - 'Micron is required'
+                          - 'Micron must be numeric'
+                        items:
+                          type: string
+      tags:
+        - Sizes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                size_in_cm:
+                  type: numeric
+                  description: 'The size in centimeters.'
+                  example: '100'
+                size_in_mm:
+                  type: numeric
+                  description: 'The size in millimeters.'
+                  example: '1000'
+                product_name:
+                  type: string
+                  description: 'The name of the product.'
+                  example: 'Product A'
+                hsn_code:
+                  type: string
+                  description: 'The HSN code of the product.'
+                  example: '1234'
+                thickness:
+                  type: string
+                  description: 'The thickness of the product.'
+                  example: '5'
+                micron:
+                  type: numeric
+                  description: 'The micron value of the product.'
+                  example: '50'
+                grade:
+                  type: string
+                  description: 'The grade of the product.'
+                  example: 'Grade A'
+                width:
+                  type: string
+                  description: 'The width of the product.'
+                  example: '200'
+              required:
+                - size_in_cm
+                - size_in_mm
+                - product_name
+                - hsn_code
+                - thickness
+                - micron
+      security: []
+  '/api/sizes/{id}':
+    put:
+      summary: 'Update Size'
+      operationId: updateSize
+      description: "Update the specified size in the database.\nThis endpoint allows you to update size details by providing the size ID and the updated information."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Size details are updated'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Size details are updated'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    size_in_cm:
+                      - 'Size in centimeters is required'
+                      - 'Size in centimeters must be numeric'
+                    size_in_mm:
+                      - 'Size in millimeters is required'
+                      - 'Size in millimeters must be numeric'
+                    product_name:
+                      - 'Product Name is required'
+                    hsn_code:
+                      - 'HSN code is required'
+                    thickness:
+                      - 'Thickness is required'
+                    micron:
+                      - 'Micron is required'
+                      - 'Micron must be numeric'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      size_in_cm:
+                        type: array
+                        example:
+                          - 'Size in centimeters is required'
+                          - 'Size in centimeters must be numeric'
+                        items:
+                          type: string
+                      size_in_mm:
+                        type: array
+                        example:
+                          - 'Size in millimeters is required'
+                          - 'Size in millimeters must be numeric'
+                        items:
+                          type: string
+                      product_name:
+                        type: array
+                        example:
+                          - 'Product Name is required'
+                        items:
+                          type: string
+                      hsn_code:
+                        type: array
+                        example:
+                          - 'HSN code is required'
+                        items:
+                          type: string
+                      thickness:
+                        type: array
+                        example:
+                          - 'Thickness is required'
+                        items:
+                          type: string
+                      micron:
+                        type: array
+                        example:
+                          - 'Micron is required'
+                          - 'Micron must be numeric'
+                        items:
+                          type: string
+      tags:
+        - Sizes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                size_in_cm:
+                  type: numeric
+                  description: 'The size in centimeters.'
+                  example: '100'
+                size_in_mm:
+                  type: numeric
+                  description: 'The size in millimeters.'
+                  example: '1000'
+                product_name:
+                  type: string
+                  description: 'The name of the product.'
+                  example: 'Product A'
+                hsn_code:
+                  type: string
+                  description: 'The HSN code of the product.'
+                  example: '1234'
+                thickness:
+                  type: string
+                  description: 'The thickness of the product.'
+                  example: '5'
+                micron:
+                  type: numeric
+                  description: 'The micron value of the product.'
+                  example: '50'
+                grade:
+                  type: string
+                  description: 'The grade of the product.'
+                  example: 'Grade A'
+                width:
+                  type: string
+                  description: 'The width of the product.'
+                  example: '200'
+              required:
+                - size_in_cm
+                - size_in_mm
+                - product_name
+                - hsn_code
+                - thickness
+                - micron
+      security: []
+    delete:
+      summary: 'Delete Size'
+      operationId: deleteSize
+      description: "Remove the specified size from the database.\nThis endpoint allows you to delete a size by providing its ID."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Size is deleted'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Size is deleted'
+        442:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n 'status': 'error',\n \"message\": \"No records found\"\n}"
+      tags:
+        - Sizes
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the size to update.'
+        example: '1'
+        required: true
+        schema:
+          type: string
 tags:
   -
     name: Authentication
@@ -737,4 +1070,7 @@ tags:
     description: ''
   -
     name: Products
+    description: ''
+  -
+    name: Sizes
     description: ''
