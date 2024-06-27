@@ -202,7 +202,7 @@ class CompanyRawMaterialsController extends Controller
      *
      * @response 200 {
      *  "status": "success",
-     *  "message": "Size is deleted"
+     *  "message": "Raw material is deleted"
      * }
      * @response 404 {
      *  "status": "error",
@@ -215,7 +215,7 @@ class CompanyRawMaterialsController extends Controller
             CompanyRawMaterial::findOrFail($id)->delete();
             return response()->json([
                 'status' => 'success',
-                'message' => 'Size is deleted'
+                'message' => 'Raw material is deleted'
             ], 200);
         } else {
             return response()->json([

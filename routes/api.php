@@ -3,6 +3,7 @@
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\CompanyRawMaterialsController;
+use App\Http\Controllers\FinishGoodsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SizeController;
 use App\Models\CompanyRawMaterial;
@@ -42,5 +43,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::resource('sizes',SizeController::class)->only(['index','store','update','destroy']);
 
     Route::resource('company-raw-material',CompanyRawMaterialsController::class)->only(['index','store','update','destroy']);
+
+    Route::resource('finish-goods',FinishGoodsController::class)->only(['index','store','update','destroy']);
 
 });
