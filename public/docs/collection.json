@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "9d18c0bb-2c97-439e-a7fa-b317aa6095b6",
+        "_postman_id": "325e0dcd-f9d7-47d1-aecc-95efab8dfbd4",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -596,6 +596,192 @@
             ]
         },
         {
+            "name": "Company Raw Materials",
+            "description": "",
+            "item": [
+                {
+                    "name": "Raw Materials list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company-raw-material",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company-raw-material"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display a listing of the company raw materials.\nThis endpoint returns a list of all company raw materials.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1dfd-4tfv-4gdgr,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000\n     },\n     ...\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Raw Material",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company-raw-material",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company-raw-material"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\"}"
+                        },
+                        "description": "Store a newly created company raw material in storage.\nThis endpoint allows you to create a new company raw material.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Materials are stored\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Raw Mateial",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company-raw-material\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company-raw-material\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the company raw material to update."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\"}"
+                        },
+                        "description": "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Materials are updated\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete Raw Materials",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company-raw-material\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company-raw-material\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the company raw material to delete."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified company raw material from storage.\nThis endpoint allows you to delete a company raw material by providing its ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Size is deleted\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"No records found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Endpoints",
             "description": "",
             "item": [
@@ -1015,7 +1201,7 @@
                         },
                         {
                             "header": [],
-                            "code": 442,
+                            "code": 404,
                             "body": "{\n 'status': 'error',\n \"message\": \"No records found\"\n}",
                             "name": ""
                         }

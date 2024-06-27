@@ -105,6 +105,25 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-company-raw-materials" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="company-raw-materials">
+                    <a href="#company-raw-materials">Company Raw Materials</a>
+                </li>
+                                    <ul id="tocify-subheader-company-raw-materials" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="company-raw-materials-GETapi-company-raw-material">
+                                <a href="#company-raw-materials-GETapi-company-raw-material">Raw Materials list</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="company-raw-materials-POSTapi-company-raw-material">
+                                <a href="#company-raw-materials-POSTapi-company-raw-material">Create Raw Material</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="company-raw-materials-PUTapi-company-raw-material--id-">
+                                <a href="#company-raw-materials-PUTapi-company-raw-material--id-">Update Raw Mateial</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="company-raw-materials-DELETEapi-company-raw-material--id-">
+                                <a href="#company-raw-materials-DELETEapi-company-raw-material--id-">Delete Raw Materials</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
@@ -1115,8 +1134,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php8F4C.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php8F5C.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php78C.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php838.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1757,7 +1776,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php8F4C.tmp</code></p>
+<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php78C.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1768,7 +1787,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php8F5C.tmp</code></p>
+<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php838.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -1870,6 +1889,773 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The bank identifier. Example: <code>fbdj54-fvd-g45bbf-5tgr4</code></p>
         </div>
         </form>
+
+                <h1 id="company-raw-materials">Company Raw Materials</h1>
+
+    
+
+                                <h2 id="company-raw-materials-GETapi-company-raw-material">Raw Materials list</h2>
+
+<p>
+</p>
+
+<p>Display a listing of the company raw materials.
+This endpoint returns a list of all company raw materials.</p>
+
+<span id="example-requests-GETapi-company-raw-material">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/company-raw-material" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company-raw-material"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-company-raw-material">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &quot;status&quot;: &quot;success&quot;,
+ &quot;company_raw_materials&quot;: [
+     {
+         &quot;id&quot;: 1dfd-4tfv-4gdgr,
+         &quot;company_name&quot;: &quot;Company A&quot;,
+         &quot;total_pallet&quot;: 10,
+         &quot;bag_per_pallet&quot;: 20,
+         &quot;total_bag&quot;: 200,
+         &quot;weight_per_bag&quot;: 50,
+         &quot;total_weight&quot;: 10000
+     },
+     ...
+ ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-company-raw-material" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-company-raw-material"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-company-raw-material"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-company-raw-material" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-company-raw-material">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-company-raw-material" data-method="GET"
+      data-path="api/company-raw-material"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-raw-material', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-company-raw-material"
+                    onclick="tryItOut('GETapi-company-raw-material');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-company-raw-material"
+                    onclick="cancelTryOut('GETapi-company-raw-material');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-company-raw-material"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/company-raw-material</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-company-raw-material"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-company-raw-material"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="company-raw-materials-POSTapi-company-raw-material">Create Raw Material</h2>
+
+<p>
+</p>
+
+<p>Store a newly created company raw material in storage.
+This endpoint allows you to create a new company raw material.</p>
+
+<span id="example-requests-POSTapi-company-raw-material">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/company-raw-material" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"company_name\": \"Company A\",
+    \"total_pallet\": \"10\",
+    \"bag_per_pallet\": \"20\",
+    \"total_bag\": \"200\",
+    \"weight_per_bag\": \"50\",
+    \"total_weight\": \"10000\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company-raw-material"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "company_name": "Company A",
+    "total_pallet": "10",
+    "bag_per_pallet": "20",
+    "total_bag": "200",
+    "weight_per_bag": "50",
+    "total_weight": "10000"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-company-raw-material">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Company Raw Materials are stored&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;errors&quot;: {
+        &quot;company_name&quot;: [
+            &quot;Company Name is required&quot;
+        ],
+        &quot;total_pallet&quot;: [
+            &quot;Total Pallet is required&quot;,
+            &quot;Total Pallet must be numeric&quot;
+        ],
+        &quot;bag_per_pallet&quot;: [
+            &quot;Bag Per Pallet is required&quot;,
+            &quot;Bag Per Pallet must be numeric&quot;
+        ],
+        &quot;total_bag&quot;: [
+            &quot;Total Bag is required&quot;,
+            &quot;Total Bag must be numeric&quot;
+        ],
+        &quot;weight_per_bag&quot;: [
+            &quot;Weight Per Bag is required&quot;,
+            &quot;Weight Per Bag must be numeric&quot;
+        ],
+        &quot;total_weight&quot;: [
+            &quot;Total Weight is required&quot;,
+            &quot;Total Weight must be numeric&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-company-raw-material" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-company-raw-material"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-company-raw-material"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-company-raw-material" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-company-raw-material">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-company-raw-material" data-method="POST"
+      data-path="api/company-raw-material"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-company-raw-material', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-company-raw-material"
+                    onclick="tryItOut('POSTapi-company-raw-material');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-company-raw-material"
+                    onclick="cancelTryOut('POSTapi-company-raw-material');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-company-raw-material"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/company-raw-material</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-company-raw-material"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-company-raw-material"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="company_name"                data-endpoint="POSTapi-company-raw-material"
+               value="Company A"
+               data-component="body">
+    <br>
+<p>The name of the company. Example: <code>Company A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_pallet</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_pallet"                data-endpoint="POSTapi-company-raw-material"
+               value="10"
+               data-component="body">
+    <br>
+<p>The total number of pallets. Example: <code>10</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bag_per_pallet</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bag_per_pallet"                data-endpoint="POSTapi-company-raw-material"
+               value="20"
+               data-component="body">
+    <br>
+<p>The number of bags per pallet. Example: <code>20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_bag</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_bag"                data-endpoint="POSTapi-company-raw-material"
+               value="200"
+               data-component="body">
+    <br>
+<p>The total number of bags. Example: <code>200</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>weight_per_bag</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="weight_per_bag"                data-endpoint="POSTapi-company-raw-material"
+               value="50"
+               data-component="body">
+    <br>
+<p>The weight per bag. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_weight</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_weight"                data-endpoint="POSTapi-company-raw-material"
+               value="10000"
+               data-component="body">
+    <br>
+<p>The total weight. Example: <code>10000</code></p>
+        </div>
+        </form>
+
+                    <h2 id="company-raw-materials-PUTapi-company-raw-material--id-">Update Raw Mateial</h2>
+
+<p>
+</p>
+
+<p>Update the specified company raw material in storage.
+This endpoint allows you to update an existing company raw material by providing its ID and the updated information.</p>
+
+<span id="example-requests-PUTapi-company-raw-material--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/company-raw-material/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"company_name\": \"Company A\",
+    \"total_pallet\": \"10\",
+    \"bag_per_pallet\": \"20\",
+    \"total_bag\": \"200\",
+    \"weight_per_bag\": \"50\",
+    \"total_weight\": \"10000\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company-raw-material/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "company_name": "Company A",
+    "total_pallet": "10",
+    "bag_per_pallet": "20",
+    "total_bag": "200",
+    "weight_per_bag": "50",
+    "total_weight": "10000"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-company-raw-material--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Company Raw Materials are updated&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;errors&quot;: {
+        &quot;company_name&quot;: [
+            &quot;Company Name is required&quot;
+        ],
+        &quot;total_pallet&quot;: [
+            &quot;Total Pallet is required&quot;,
+            &quot;Total Pallet must be numeric&quot;
+        ],
+        &quot;bag_per_pallet&quot;: [
+            &quot;Bag Per Pallet is required&quot;,
+            &quot;Bag Per Pallet must be numeric&quot;
+        ],
+        &quot;total_bag&quot;: [
+            &quot;Total Bag is required&quot;,
+            &quot;Total Bag must be numeric&quot;
+        ],
+        &quot;weight_per_bag&quot;: [
+            &quot;Weight Per Bag is required&quot;,
+            &quot;Weight Per Bag must be numeric&quot;
+        ],
+        &quot;total_weight&quot;: [
+            &quot;Total Weight is required&quot;,
+            &quot;Total Weight must be numeric&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-company-raw-material--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-company-raw-material--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-company-raw-material--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-company-raw-material--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-company-raw-material--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-company-raw-material--id-" data-method="PUT"
+      data-path="api/company-raw-material/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-company-raw-material--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-company-raw-material--id-"
+                    onclick="tryItOut('PUTapi-company-raw-material--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-company-raw-material--id-"
+                    onclick="cancelTryOut('PUTapi-company-raw-material--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-company-raw-material--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/company-raw-material/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/company-raw-material/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the company raw material to update. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>company_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="company_name"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="Company A"
+               data-component="body">
+    <br>
+<p>The name of the company. Example: <code>Company A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_pallet</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_pallet"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="10"
+               data-component="body">
+    <br>
+<p>The total number of pallets. Example: <code>10</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bag_per_pallet</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bag_per_pallet"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="20"
+               data-component="body">
+    <br>
+<p>The number of bags per pallet. Example: <code>20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_bag</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_bag"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="200"
+               data-component="body">
+    <br>
+<p>The total number of bags. Example: <code>200</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>weight_per_bag</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="weight_per_bag"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="50"
+               data-component="body">
+    <br>
+<p>The weight per bag. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_weight</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_weight"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="10000"
+               data-component="body">
+    <br>
+<p>The total weight. Example: <code>10000</code></p>
+        </div>
+        </form>
+
+                    <h2 id="company-raw-materials-DELETEapi-company-raw-material--id-">Delete Raw Materials</h2>
+
+<p>
+</p>
+
+<p>Remove the specified company raw material from storage.
+This endpoint allows you to delete a company raw material by providing its ID.</p>
+
+<span id="example-requests-DELETEapi-company-raw-material--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/company-raw-material/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company-raw-material/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-company-raw-material--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Size is deleted&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;No records found&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-company-raw-material--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-company-raw-material--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-company-raw-material--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-company-raw-material--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-company-raw-material--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-company-raw-material--id-" data-method="DELETE"
+      data-path="api/company-raw-material/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-company-raw-material--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-company-raw-material--id-"
+                    onclick="tryItOut('DELETEapi-company-raw-material--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-company-raw-material--id-"
+                    onclick="cancelTryOut('DELETEapi-company-raw-material--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-company-raw-material--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/company-raw-material/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-company-raw-material--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-company-raw-material--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-company-raw-material--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the company raw material to delete. Example: <code>1</code></p>
+            </div>
+                    </form>
 
                 <h1 id="endpoints">Endpoints</h1>
 
@@ -3431,7 +4217,7 @@ fetch(url, {
 }</code>
  </pre>
             <blockquote>
-            <p>Example response (442):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <pre>
 

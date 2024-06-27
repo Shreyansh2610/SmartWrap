@@ -245,7 +245,7 @@ class SizeController extends Controller
      *  "status": "success",
      *  "message": "Size is deleted"
      * }
-     * @response 442 {
+     * @response 404 {
      *  'status': 'error',
      *  "message": "No records found"
      * }
@@ -262,7 +262,7 @@ class SizeController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'No records found'
-            ], 442);
+            ], 404);
         }
 
     }

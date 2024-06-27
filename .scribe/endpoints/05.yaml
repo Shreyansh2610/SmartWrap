@@ -418,7 +418,7 @@ endpoints:
         description: ''
         custom: []
       -
-        status: 442
+        status: 404
         content: |-
           {
            'status': 'error',

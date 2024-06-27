@@ -516,6 +516,340 @@ paths:
                 - mobile
                 - email
       security: []
+  /api/company-raw-material:
+    get:
+      summary: 'Raw Materials list'
+      operationId: rawMaterialsList
+      description: "Display a listing of the company raw materials.\nThis endpoint returns a list of all company raw materials."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1dfd-4tfv-4gdgr,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000\n     },\n     ...\n ]\n}"
+      tags:
+        - 'Company Raw Materials'
+      security: []
+    post:
+      summary: 'Create Raw Material'
+      operationId: createRawMaterial
+      description: "Store a newly created company raw material in storage.\nThis endpoint allows you to create a new company raw material."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Company Raw Materials are stored'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Company Raw Materials are stored'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    company_name:
+                      - 'Company Name is required'
+                    total_pallet:
+                      - 'Total Pallet is required'
+                      - 'Total Pallet must be numeric'
+                    bag_per_pallet:
+                      - 'Bag Per Pallet is required'
+                      - 'Bag Per Pallet must be numeric'
+                    total_bag:
+                      - 'Total Bag is required'
+                      - 'Total Bag must be numeric'
+                    weight_per_bag:
+                      - 'Weight Per Bag is required'
+                      - 'Weight Per Bag must be numeric'
+                    total_weight:
+                      - 'Total Weight is required'
+                      - 'Total Weight must be numeric'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      company_name:
+                        type: array
+                        example:
+                          - 'Company Name is required'
+                        items:
+                          type: string
+                      total_pallet:
+                        type: array
+                        example:
+                          - 'Total Pallet is required'
+                          - 'Total Pallet must be numeric'
+                        items:
+                          type: string
+                      bag_per_pallet:
+                        type: array
+                        example:
+                          - 'Bag Per Pallet is required'
+                          - 'Bag Per Pallet must be numeric'
+                        items:
+                          type: string
+                      total_bag:
+                        type: array
+                        example:
+                          - 'Total Bag is required'
+                          - 'Total Bag must be numeric'
+                        items:
+                          type: string
+                      weight_per_bag:
+                        type: array
+                        example:
+                          - 'Weight Per Bag is required'
+                          - 'Weight Per Bag must be numeric'
+                        items:
+                          type: string
+                      total_weight:
+                        type: array
+                        example:
+                          - 'Total Weight is required'
+                          - 'Total Weight must be numeric'
+                        items:
+                          type: string
+      tags:
+        - 'Company Raw Materials'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company_name:
+                  type: string
+                  description: 'The name of the company.'
+                  example: 'Company A'
+                total_pallet:
+                  type: numeric
+                  description: 'The total number of pallets.'
+                  example: '10'
+                bag_per_pallet:
+                  type: numeric
+                  description: 'The number of bags per pallet.'
+                  example: '20'
+                total_bag:
+                  type: numeric
+                  description: 'The total number of bags.'
+                  example: '200'
+                weight_per_bag:
+                  type: numeric
+                  description: 'The weight per bag.'
+                  example: '50'
+                total_weight:
+                  type: numeric
+                  description: 'The total weight.'
+                  example: '10000'
+              required:
+                - company_name
+                - total_pallet
+                - bag_per_pallet
+                - total_bag
+                - weight_per_bag
+                - total_weight
+      security: []
+  '/api/company-raw-material/{id}':
+    put:
+      summary: 'Update Raw Mateial'
+      operationId: updateRawMateial
+      description: "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Company Raw Materials are updated'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Company Raw Materials are updated'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    company_name:
+                      - 'Company Name is required'
+                    total_pallet:
+                      - 'Total Pallet is required'
+                      - 'Total Pallet must be numeric'
+                    bag_per_pallet:
+                      - 'Bag Per Pallet is required'
+                      - 'Bag Per Pallet must be numeric'
+                    total_bag:
+                      - 'Total Bag is required'
+                      - 'Total Bag must be numeric'
+                    weight_per_bag:
+                      - 'Weight Per Bag is required'
+                      - 'Weight Per Bag must be numeric'
+                    total_weight:
+                      - 'Total Weight is required'
+                      - 'Total Weight must be numeric'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      company_name:
+                        type: array
+                        example:
+                          - 'Company Name is required'
+                        items:
+                          type: string
+                      total_pallet:
+                        type: array
+                        example:
+                          - 'Total Pallet is required'
+                          - 'Total Pallet must be numeric'
+                        items:
+                          type: string
+                      bag_per_pallet:
+                        type: array
+                        example:
+                          - 'Bag Per Pallet is required'
+                          - 'Bag Per Pallet must be numeric'
+                        items:
+                          type: string
+                      total_bag:
+                        type: array
+                        example:
+                          - 'Total Bag is required'
+                          - 'Total Bag must be numeric'
+                        items:
+                          type: string
+                      weight_per_bag:
+                        type: array
+                        example:
+                          - 'Weight Per Bag is required'
+                          - 'Weight Per Bag must be numeric'
+                        items:
+                          type: string
+                      total_weight:
+                        type: array
+                        example:
+                          - 'Total Weight is required'
+                          - 'Total Weight must be numeric'
+                        items:
+                          type: string
+      tags:
+        - 'Company Raw Materials'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company_name:
+                  type: string
+                  description: 'The name of the company.'
+                  example: 'Company A'
+                total_pallet:
+                  type: numeric
+                  description: 'The total number of pallets.'
+                  example: '10'
+                bag_per_pallet:
+                  type: numeric
+                  description: 'The number of bags per pallet.'
+                  example: '20'
+                total_bag:
+                  type: numeric
+                  description: 'The total number of bags.'
+                  example: '200'
+                weight_per_bag:
+                  type: numeric
+                  description: 'The weight per bag.'
+                  example: '50'
+                total_weight:
+                  type: numeric
+                  description: 'The total weight.'
+                  example: '10000'
+              required:
+                - company_name
+                - total_pallet
+                - bag_per_pallet
+                - total_bag
+                - weight_per_bag
+                - total_weight
+      security: []
+    delete:
+      summary: 'Delete Raw Materials'
+      operationId: deleteRawMaterials
+      description: "Remove the specified company raw material from storage.\nThis endpoint allows you to delete a company raw material by providing its ID."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Size is deleted'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Size is deleted'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'No records found'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'No records found'
+      tags:
+        - 'Company Raw Materials'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the company raw material to update.'
+        example: '1'
+        required: true
+        schema:
+          type: string
   /api/products:
     get:
       summary: 'Products list'
@@ -1036,7 +1370,7 @@ paths:
                   message:
                     type: string
                     example: 'Size is deleted'
-        442:
+        404:
           description: ''
           content:
             text/plain:
@@ -1064,6 +1398,9 @@ tags:
     description: ''
   -
     name: 'Company Profile'
+    description: ''
+  -
+    name: 'Company Raw Materials'
     description: ''
   -
     name: Endpoints

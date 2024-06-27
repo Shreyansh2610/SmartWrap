@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyProfileController;
+use App\Http\Controllers\CompanyRawMaterialsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SizeController;
+use App\Models\CompanyRawMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
@@ -38,4 +40,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::resource('products',ProductsController::class)->only(['index','store','update','destroy']);
 
     Route::resource('sizes',SizeController::class)->only(['index','store','update','destroy']);
+
+    Route::resource('company-raw-material',CompanyRawMaterialsController::class)->only(['index','store','update','destroy']);
+
 });
