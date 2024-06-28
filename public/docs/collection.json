@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "325e0dcd-f9d7-47d1-aecc-95efab8dfbd4",
+        "_postman_id": "6c92be63-a983-426f-962b-40f68e93b7ee",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -768,7 +768,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"message\": \"Size is deleted\"\n}",
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Raw material is deleted\"\n}",
                             "name": ""
                         },
                         {
@@ -837,6 +837,192 @@
                             ],
                             "code": 404,
                             "body": "{\"type\":\"Unauthenticated\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Finish Goods",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the finish goods.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint returns a list of all finish goods with their associated product and size details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": 1,\n         \"product_id\": 1,\n         \"size_id\": 1,\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"product\": {\n             \"id\": 1,\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": 1,\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created finish good in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":1,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
+                        },
+                        "description": "This endpoint allows you to create a new finish good.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is saved\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified finish good in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the finish good to update."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":1,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
+                        },
+                        "description": "This endpoint allows you to update an existing finish good by providing its ID and the updated information.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is updated\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified finish good from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the finish good to delete."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a finish good by providing its ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is deleted\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"No records found\"\n}",
                             "name": ""
                         }
                     ]

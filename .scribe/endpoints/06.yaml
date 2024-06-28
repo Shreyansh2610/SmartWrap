@@ -342,7 +342,7 @@ endpoints:
         content: |-
           {
            "status": "success",
-           "message": "Size is deleted"
+           "message": "Raw material is deleted"
           }
         headers: []
         description: ''

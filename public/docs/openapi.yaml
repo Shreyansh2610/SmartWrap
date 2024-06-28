@@ -814,14 +814,14 @@ paths:
                 type: object
                 example:
                   status: success
-                  message: 'Size is deleted'
+                  message: 'Raw material is deleted'
                 properties:
                   status:
                     type: string
                     example: success
                   message:
                     type: string
-                    example: 'Size is deleted'
+                    example: 'Raw material is deleted'
         404:
           description: ''
           content:
@@ -846,6 +846,518 @@ paths:
         in: path
         name: id
         description: 'The ID of the company raw material to update.'
+        example: '1'
+        required: true
+        schema:
+          type: string
+  /api/finish-goods:
+    get:
+      summary: 'Display a listing of the finish goods.'
+      operationId: displayAListingOfTheFinishGoods
+      description: 'This endpoint returns a list of all finish goods with their associated product and size details.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  finishGoods:
+                    -
+                      id: 1
+                      product_id: 1
+                      size_id: 1
+                      sqm_per_roll: 100
+                      roll_quantity: 10
+                      total_sqm: 1000
+                      pallet: 'Pallet 1'
+                      pallet_name: 'Pallet A'
+                      details: 'Details of finish goods'
+                      boxes: 5
+                      product:
+                        id: 1
+                        product_name: 'Product A'
+                      size:
+                        id: 1
+                        size_in_cm: 100
+                        size_in_mm: 1000
+                        micron: 50
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  finishGoods:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        product_id: 1
+                        size_id: 1
+                        sqm_per_roll: 100
+                        roll_quantity: 10
+                        total_sqm: 1000
+                        pallet: 'Pallet 1'
+                        pallet_name: 'Pallet A'
+                        details: 'Details of finish goods'
+                        boxes: 5
+                        product:
+                          id: 1
+                          product_name: 'Product A'
+                        size:
+                          id: 1
+                          size_in_cm: 100
+                          size_in_mm: 1000
+                          micron: 50
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        product_id:
+                          type: integer
+                          example: 1
+                        size_id:
+                          type: integer
+                          example: 1
+                        sqm_per_roll:
+                          type: integer
+                          example: 100
+                        roll_quantity:
+                          type: integer
+                          example: 10
+                        total_sqm:
+                          type: integer
+                          example: 1000
+                        pallet:
+                          type: string
+                          example: 'Pallet 1'
+                        pallet_name:
+                          type: string
+                          example: 'Pallet A'
+                        details:
+                          type: string
+                          example: 'Details of finish goods'
+                        boxes:
+                          type: integer
+                          example: 5
+                        product:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            product_name:
+                              type: string
+                              example: 'Product A'
+                        size:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            size_in_cm:
+                              type: integer
+                              example: 100
+                            size_in_mm:
+                              type: integer
+                              example: 1000
+                            micron:
+                              type: integer
+                              example: 50
+      tags:
+        - 'Finish Goods'
+      security: []
+    post:
+      summary: 'Store a newly created finish good in storage.'
+      operationId: storeANewlyCreatedFinishGoodInStorage
+      description: 'This endpoint allows you to create a new finish good.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Finish Goods is saved'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Finish Goods is saved'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    product_id:
+                      - 'Product is required'
+                    size_id:
+                      - 'Size is required'
+                    sqm_per_roll:
+                      - 'Sqm Per Roll is required'
+                      - 'Sqm Per Roll must be numeric'
+                    roll_quantity:
+                      - 'Roll Quantity is required'
+                      - 'Roll Quantity must be numeric'
+                    total_sqm:
+                      - 'Total Sqm is required'
+                      - 'Total Sqm must be numeric'
+                    pallet:
+                      - 'Pallet is required'
+                    pallet_name:
+                      - 'Pallet Name is required'
+                    details:
+                      - 'Details is required'
+                    boxes:
+                      - 'Boxes is required'
+                      - 'Boxes must be numeric'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      product_id:
+                        type: array
+                        example:
+                          - 'Product is required'
+                        items:
+                          type: string
+                      size_id:
+                        type: array
+                        example:
+                          - 'Size is required'
+                        items:
+                          type: string
+                      sqm_per_roll:
+                        type: array
+                        example:
+                          - 'Sqm Per Roll is required'
+                          - 'Sqm Per Roll must be numeric'
+                        items:
+                          type: string
+                      roll_quantity:
+                        type: array
+                        example:
+                          - 'Roll Quantity is required'
+                          - 'Roll Quantity must be numeric'
+                        items:
+                          type: string
+                      total_sqm:
+                        type: array
+                        example:
+                          - 'Total Sqm is required'
+                          - 'Total Sqm must be numeric'
+                        items:
+                          type: string
+                      pallet:
+                        type: array
+                        example:
+                          - 'Pallet is required'
+                        items:
+                          type: string
+                      pallet_name:
+                        type: array
+                        example:
+                          - 'Pallet Name is required'
+                        items:
+                          type: string
+                      details:
+                        type: array
+                        example:
+                          - 'Details is required'
+                        items:
+                          type: string
+                      boxes:
+                        type: array
+                        example:
+                          - 'Boxes is required'
+                          - 'Boxes must be numeric'
+                        items:
+                          type: string
+      tags:
+        - 'Finish Goods'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+                  description: 'The ID of the product.'
+                  example: 1
+                size_id:
+                  type: integer
+                  description: 'The ID of the size.'
+                  example: 1
+                sqm_per_roll:
+                  type: numeric
+                  description: 'The square meters per roll.'
+                  example: '100'
+                roll_quantity:
+                  type: numeric
+                  description: 'The quantity of rolls.'
+                  example: '10'
+                total_sqm:
+                  type: numeric
+                  description: 'The total square meters.'
+                  example: '1000'
+                pallet:
+                  type: string
+                  description: 'The pallet information.'
+                  example: 'Pallet 1'
+                pallet_name:
+                  type: string
+                  description: 'The name of the pallet.'
+                  example: 'Pallet A'
+                details:
+                  type: string
+                  description: 'The details of the finish goods.'
+                  example: 'Details of finish goods'
+                boxes:
+                  type: numeric
+                  description: 'The number of boxes.'
+                  example: '5'
+              required:
+                - product_id
+                - size_id
+                - sqm_per_roll
+                - roll_quantity
+                - total_sqm
+                - pallet
+                - pallet_name
+                - details
+                - boxes
+      security: []
+  '/api/finish-goods/{id}':
+    put:
+      summary: 'Update the specified finish good in storage.'
+      operationId: updateTheSpecifiedFinishGoodInStorage
+      description: 'This endpoint allows you to update an existing finish good by providing its ID and the updated information.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Finish Goods is updated'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Finish Goods is updated'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    product_id:
+                      - 'Product is required'
+                    size_id:
+                      - 'Size is required'
+                    sqm_per_roll:
+                      - 'Sqm Per Roll is required'
+                      - 'Sqm Per Roll must be numeric'
+                    roll_quantity:
+                      - 'Roll Quantity is required'
+                      - 'Roll Quantity must be numeric'
+                    total_sqm:
+                      - 'Total Sqm is required'
+                      - 'Total Sqm must be numeric'
+                    pallet:
+                      - 'Pallet is required'
+                    pallet_name:
+                      - 'Pallet Name is required'
+                    details:
+                      - 'Details is required'
+                    boxes:
+                      - 'Boxes is required'
+                      - 'Boxes must be numeric'
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      product_id:
+                        type: array
+                        example:
+                          - 'Product is required'
+                        items:
+                          type: string
+                      size_id:
+                        type: array
+                        example:
+                          - 'Size is required'
+                        items:
+                          type: string
+                      sqm_per_roll:
+                        type: array
+                        example:
+                          - 'Sqm Per Roll is required'
+                          - 'Sqm Per Roll must be numeric'
+                        items:
+                          type: string
+                      roll_quantity:
+                        type: array
+                        example:
+                          - 'Roll Quantity is required'
+                          - 'Roll Quantity must be numeric'
+                        items:
+                          type: string
+                      total_sqm:
+                        type: array
+                        example:
+                          - 'Total Sqm is required'
+                          - 'Total Sqm must be numeric'
+                        items:
+                          type: string
+                      pallet:
+                        type: array
+                        example:
+                          - 'Pallet is required'
+                        items:
+                          type: string
+                      pallet_name:
+                        type: array
+                        example:
+                          - 'Pallet Name is required'
+                        items:
+                          type: string
+                      details:
+                        type: array
+                        example:
+                          - 'Details is required'
+                        items:
+                          type: string
+                      boxes:
+                        type: array
+                        example:
+                          - 'Boxes is required'
+                          - 'Boxes must be numeric'
+                        items:
+                          type: string
+      tags:
+        - 'Finish Goods'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: integer
+                  description: 'The ID of the product.'
+                  example: 1
+                size_id:
+                  type: integer
+                  description: 'The ID of the size.'
+                  example: 1
+                sqm_per_roll:
+                  type: numeric
+                  description: 'The square meters per roll.'
+                  example: '100'
+                roll_quantity:
+                  type: numeric
+                  description: 'The quantity of rolls.'
+                  example: '10'
+                total_sqm:
+                  type: numeric
+                  description: 'The total square meters.'
+                  example: '1000'
+                pallet:
+                  type: string
+                  description: 'The pallet information.'
+                  example: 'Pallet 1'
+                pallet_name:
+                  type: string
+                  description: 'The name of the pallet.'
+                  example: 'Pallet A'
+                details:
+                  type: string
+                  description: 'The details of the finish goods.'
+                  example: 'Details of finish goods'
+                boxes:
+                  type: numeric
+                  description: 'The number of boxes.'
+                  example: '5'
+              required:
+                - product_id
+                - size_id
+                - sqm_per_roll
+                - roll_quantity
+                - total_sqm
+                - pallet
+                - pallet_name
+                - details
+                - boxes
+      security: []
+    delete:
+      summary: 'Remove the specified finish good from storage.'
+      operationId: removeTheSpecifiedFinishGoodFromStorage
+      description: 'This endpoint allows you to delete a finish good by providing its ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'Finish Goods is deleted'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'Finish Goods is deleted'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'No records found'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'No records found'
+      tags:
+        - 'Finish Goods'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the finish good to update.'
         example: '1'
         required: true
         schema:
@@ -1404,6 +1916,9 @@ tags:
     description: ''
   -
     name: Endpoints
+    description: ''
+  -
+    name: 'Finish Goods'
     description: ''
   -
     name: Products
