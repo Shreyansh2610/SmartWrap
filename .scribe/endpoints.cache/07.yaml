@@ -34,9 +34,9 @@ endpoints:
            "status": "success",
            "finishGoods": [
                {
-                   "id": 1,
-                   "product_id": 1,
-                   "size_id": 1,
+                   "id": 15fjl5-4f45t-5g456y-g5t,
+                   "product_id": 1g5l67-54yb6-8u567-65g,
+                   "size_id": 1g5l67-54yb6-8u567-65g5,
                    "sqm_per_roll": 100,
                    "roll_quantity": 10,
                    "total_sqm": 1000,
@@ -45,11 +45,11 @@ endpoints:
                    "details": "Details of finish goods",
                    "boxes": 5,
                    "product": {
-                       "id": 1,
+                       "id": 1g5l67-54yb6-8u567-65g,
                        "product_name": "Product A"
                    },
                    "size": {
-                       "id": 1,
+                       "id": 1g5l67-54yb6-8u567-65g5,
                        "size_in_cm": 100,
                        "size_in_mm": 1000,
                        "micron": 50
@@ -91,7 +91,7 @@ endpoints:
         name: product_id
         description: 'The ID of the product.'
         required: true
-        example: 1
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: true
@@ -169,7 +169,7 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      product_id: 1
+      product_id: 15
       size_id: 1
       sqm_per_roll: '100'
       roll_quantity: '10'
@@ -237,13 +237,13 @@ endpoints:
         name: id
         description: 'The ID of the finish good to update.'
         required: true
-        example: '1'
+        example: 1dlfgl5-5rth-5fhfgh-b56-gthf
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: '1'
+      id: 1dlfgl5-5rth-5fhfgh-b56-gthf
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -260,7 +260,7 @@ endpoints:
         name: size_id
         description: 'The ID of the size.'
         required: true
-        example: 1
+        example: 154
         type: integer
         enumValues: []
         exampleWasSpecified: true
@@ -330,7 +330,7 @@ endpoints:
         custom: []
     cleanBodyParameters:
       product_id: 1
-      size_id: 1
+      size_id: 154
       sqm_per_roll: '100'
       roll_quantity: '10'
       total_sqm: '1000'
@@ -396,13 +396,13 @@ endpoints:
         name: id
         description: 'The ID of the finish good to delete.'
         required: true
-        example: '1'
+        example: tghtyjh67-54-gt-6-344
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: '1'
+      id: tghtyjh67-54-gt-6-344
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

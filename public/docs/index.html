@@ -1153,8 +1153,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php24EF.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php256D.tmp" </code></pre></div>
+    --form "company_logo=@/tmp/phpDLmnHc" \
+    --form "signature_upload=@/tmp/php0Hdmbb" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1795,7 +1795,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php24EF.tmp</code></p>
+<p>The company logo file. Example: <code>/tmp/phpDLmnHc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1806,7 +1806,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Example: <code>C:\Users\shrey\AppData\Local\Temp\php256D.tmp</code></p>
+<p>The signature upload file. Example: <code>/tmp/php0Hdmbb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -2852,31 +2852,31 @@ fetch(url, {
                 <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;finishGoods&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;product_id&quot;: 1,
-            &quot;size_id&quot;: 1,
-            &quot;sqm_per_roll&quot;: 100,
-            &quot;roll_quantity&quot;: 10,
-            &quot;total_sqm&quot;: 1000,
-            &quot;pallet&quot;: &quot;Pallet 1&quot;,
-            &quot;pallet_name&quot;: &quot;Pallet A&quot;,
-            &quot;details&quot;: &quot;Details of finish goods&quot;,
-            &quot;boxes&quot;: 5,
-            &quot;product&quot;: {
-                &quot;id&quot;: 1,
-                &quot;product_name&quot;: &quot;Product A&quot;
-            },
-            &quot;size&quot;: {
-                &quot;id&quot;: 1,
-                &quot;size_in_cm&quot;: 100,
-                &quot;size_in_mm&quot;: 1000,
-                &quot;micron&quot;: 50
-            }
-        }
-    ]
+ &quot;status&quot;: &quot;success&quot;,
+ &quot;finishGoods&quot;: [
+     {
+         &quot;id&quot;: 15fjl5-4f45t-5g456y-g5t,
+         &quot;product_id&quot;: 1g5l67-54yb6-8u567-65g,
+         &quot;size_id&quot;: 1g5l67-54yb6-8u567-65g5,
+         &quot;sqm_per_roll&quot;: 100,
+         &quot;roll_quantity&quot;: 10,
+         &quot;total_sqm&quot;: 1000,
+         &quot;pallet&quot;: &quot;Pallet 1&quot;,
+         &quot;pallet_name&quot;: &quot;Pallet A&quot;,
+         &quot;details&quot;: &quot;Details of finish goods&quot;,
+         &quot;boxes&quot;: 5,
+         &quot;product&quot;: {
+             &quot;id&quot;: 1g5l67-54yb6-8u567-65g,
+             &quot;product_name&quot;: &quot;Product A&quot;
+         },
+         &quot;size&quot;: {
+             &quot;id&quot;: 1g5l67-54yb6-8u567-65g5,
+             &quot;size_in_cm&quot;: 100,
+             &quot;size_in_mm&quot;: 1000,
+             &quot;micron&quot;: 50
+         }
+     }
+ ]
 }</code>
  </pre>
     </span>
@@ -2968,7 +2968,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"product_id\": 1,
+    \"product_id\": 15,
     \"size_id\": 1,
     \"sqm_per_roll\": \"100\",
     \"roll_quantity\": \"10\",
@@ -2992,7 +2992,7 @@ const headers = {
 };
 
 let body = {
-    "product_id": 1,
+    "product_id": 15,
     "size_id": 1,
     "sqm_per_roll": "100",
     "roll_quantity": "10",
@@ -3140,10 +3140,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="product_id"                data-endpoint="POSTapi-finish-goods"
-               value="1"
+               value="15"
                data-component="body">
     <br>
-<p>The ID of the product. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>15</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>size_id</code></b>&nbsp;&nbsp;
@@ -3248,12 +3248,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/finish-goods/1" \
+    "http://localhost/api/finish-goods/1dlfgl5-5rth-5fhfgh-b56-gthf" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"product_id\": 1,
-    \"size_id\": 1,
+    \"size_id\": 154,
     \"sqm_per_roll\": \"100\",
     \"roll_quantity\": \"10\",
     \"total_sqm\": \"1000\",
@@ -3267,7 +3267,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/finish-goods/1"
+    "http://localhost/api/finish-goods/1dlfgl5-5rth-5fhfgh-b56-gthf"
 );
 
 const headers = {
@@ -3277,7 +3277,7 @@ const headers = {
 
 let body = {
     "product_id": 1,
-    "size_id": 1,
+    "size_id": 154,
     "sqm_per_roll": "100",
     "roll_quantity": "10",
     "total_sqm": "1000",
@@ -3428,10 +3428,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-finish-goods--id-"
-               value="1"
+               value="1dlfgl5-5rth-5fhfgh-b56-gthf"
                data-component="url">
     <br>
-<p>The ID of the finish good to update. Example: <code>1</code></p>
+<p>The ID of the finish good to update. Example: <code>1dlfgl5-5rth-5fhfgh-b56-gthf</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3451,10 +3451,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="size_id"                data-endpoint="PUTapi-finish-goods--id-"
-               value="1"
+               value="154"
                data-component="body">
     <br>
-<p>The ID of the size. Example: <code>1</code></p>
+<p>The ID of the size. Example: <code>154</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sqm_per_roll</code></b>&nbsp;&nbsp;
@@ -3548,14 +3548,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/finish-goods/1" \
+    "http://localhost/api/finish-goods/tghtyjh67-54-gt-6-344" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/finish-goods/1"
+    "http://localhost/api/finish-goods/tghtyjh67-54-gt-6-344"
 );
 
 const headers = {
@@ -3668,10 +3668,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-finish-goods--id-"
-               value="1"
+               value="tghtyjh67-54-gt-6-344"
                data-component="url">
     <br>
-<p>The ID of the finish good to delete. Example: <code>1</code></p>
+<p>The ID of the finish good to delete. Example: <code>tghtyjh67-54-gt-6-344</code></p>
             </div>
                     </form>
 

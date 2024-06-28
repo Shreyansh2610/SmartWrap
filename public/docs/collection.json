@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "6c92be63-a983-426f-962b-40f68e93b7ee",
+        "_postman_id": "7f62d83f-d105-464d-af9d-c620af7437c6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -877,7 +877,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": 1,\n         \"product_id\": 1,\n         \"size_id\": 1,\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"product\": {\n             \"id\": 1,\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": 1,\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": 15fjl5-4f45t-5g456y-g5t,\n         \"product_id\": 1g5l67-54yb6-8u567-65g,\n         \"size_id\": 1g5l67-54yb6-8u567-65g5,\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"product\": {\n             \"id\": 1g5l67-54yb6-8u567-65g,\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": 1g5l67-54yb6-8u567-65g5,\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
                             "name": ""
                         }
                     ]
@@ -904,7 +904,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":1,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
+                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
                         },
                         "description": "This endpoint allows you to create a new finish good.",
                         "auth": {
@@ -938,7 +938,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "1dlfgl5-5rth-5fhfgh-b56-gthf",
                                     "description": "The ID of the finish good to update."
                                 }
                             ]
@@ -956,7 +956,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":1,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
+                            "raw": "{\"product_id\":1,\"size_id\":154,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
                         },
                         "description": "This endpoint allows you to update an existing finish good by providing its ID and the updated information.",
                         "auth": {
@@ -990,7 +990,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "tghtyjh67-54-gt-6-344",
                                     "description": "The ID of the finish good to delete."
                                 }
                             ]

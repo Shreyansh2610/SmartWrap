@@ -18,9 +18,9 @@ class FinishGoodsController extends Controller
      *  "status": "success",
      *  "finishGoods": [
      *      {
-     *          "id": 1,
-     *          "product_id": 1,
-     *          "size_id": 1,
+     *          "id": 15fjl5-4f45t-5g456y-g5t,
+     *          "product_id": 1g5l67-54yb6-8u567-65g,
+     *          "size_id": 1g5l67-54yb6-8u567-65g5,
      *          "sqm_per_roll": 100,
      *          "roll_quantity": 10,
      *          "total_sqm": 1000,
@@ -29,11 +29,11 @@ class FinishGoodsController extends Controller
      *          "details": "Details of finish goods",
      *          "boxes": 5,
      *          "product": {
-     *              "id": 1,
+     *              "id": 1g5l67-54yb6-8u567-65g,
      *              "product_name": "Product A"
      *          },
      *          "size": {
-     *              "id": 1,
+     *              "id": 1g5l67-54yb6-8u567-65g5,
      *              "size_in_cm": 100,
      *              "size_in_mm": 1000,
      *              "micron": 50
@@ -63,8 +63,8 @@ class FinishGoodsController extends Controller
      *
      * @group Finish Goods
      *
-     * @bodyParam product_id int required The ID of the product. Example: 1
-     * @bodyParam size_id int required The ID of the size. Example: 1
+     * @bodyParam product_id int required The ID of the product. Example: 15fjl5-4f45t-5g456y-g5t
+     * @bodyParam size_id int required The ID of the size. Example: 1g5l67-54yb6-8u567-65g5
      * @bodyParam sqm_per_roll numeric required The square meters per roll. Example: 100
      * @bodyParam roll_quantity numeric required The quantity of rolls. Example: 10
      * @bodyParam total_sqm numeric required The total square meters. Example: 1000
@@ -153,9 +153,9 @@ class FinishGoodsController extends Controller
      *
      * @group Finish Goods
      *
-     * @urlParam id string required The ID of the finish good to update. Example: 1
-     * @bodyParam product_id int required The ID of the product. Example: 1
-     * @bodyParam size_id int required The ID of the size. Example: 1
+     * @urlParam id string required The ID of the finish good to update. Example: 1dlfgl5-5rth-5fhfgh-b56-gthf
+     * @bodyParam product_id int required The ID of the product. Example: 1dlfgl5-5rth-5fhfgh-b56-gthft
+     * @bodyParam size_id int required The ID of the size. Example: 154dlfgl5-5rth-5fhfgh-b56-gthft
      * @bodyParam sqm_per_roll numeric required The square meters per roll. Example: 100
      * @bodyParam roll_quantity numeric required The quantity of rolls. Example: 10
      * @bodyParam total_sqm numeric required The total square meters. Example: 1000
@@ -243,7 +243,7 @@ class FinishGoodsController extends Controller
      *
      * @group Finish Goods
      *
-     * @urlParam id string required The ID of the finish good to delete. Example: 1
+     * @urlParam id string required The ID of the finish good to delete. Example: tghtyjh67-54-gt-6-344
      *
      * @response 200 {
      *  "status": "success",

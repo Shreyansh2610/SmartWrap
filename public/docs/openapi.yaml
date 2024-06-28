@@ -860,114 +860,10 @@ paths:
         200:
           description: ''
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
-                example:
-                  status: success
-                  finishGoods:
-                    -
-                      id: 1
-                      product_id: 1
-                      size_id: 1
-                      sqm_per_roll: 100
-                      roll_quantity: 10
-                      total_sqm: 1000
-                      pallet: 'Pallet 1'
-                      pallet_name: 'Pallet A'
-                      details: 'Details of finish goods'
-                      boxes: 5
-                      product:
-                        id: 1
-                        product_name: 'Product A'
-                      size:
-                        id: 1
-                        size_in_cm: 100
-                        size_in_mm: 1000
-                        micron: 50
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  finishGoods:
-                    type: array
-                    example:
-                      -
-                        id: 1
-                        product_id: 1
-                        size_id: 1
-                        sqm_per_roll: 100
-                        roll_quantity: 10
-                        total_sqm: 1000
-                        pallet: 'Pallet 1'
-                        pallet_name: 'Pallet A'
-                        details: 'Details of finish goods'
-                        boxes: 5
-                        product:
-                          id: 1
-                          product_name: 'Product A'
-                        size:
-                          id: 1
-                          size_in_cm: 100
-                          size_in_mm: 1000
-                          micron: 50
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                          example: 1
-                        product_id:
-                          type: integer
-                          example: 1
-                        size_id:
-                          type: integer
-                          example: 1
-                        sqm_per_roll:
-                          type: integer
-                          example: 100
-                        roll_quantity:
-                          type: integer
-                          example: 10
-                        total_sqm:
-                          type: integer
-                          example: 1000
-                        pallet:
-                          type: string
-                          example: 'Pallet 1'
-                        pallet_name:
-                          type: string
-                          example: 'Pallet A'
-                        details:
-                          type: string
-                          example: 'Details of finish goods'
-                        boxes:
-                          type: integer
-                          example: 5
-                        product:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              example: 1
-                            product_name:
-                              type: string
-                              example: 'Product A'
-                        size:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                              example: 1
-                            size_in_cm:
-                              type: integer
-                              example: 100
-                            size_in_mm:
-                              type: integer
-                              example: 1000
-                            micron:
-                              type: integer
-                              example: 50
+                type: string
+                example: "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": 15fjl5-4f45t-5g456y-g5t,\n         \"product_id\": 1g5l67-54yb6-8u567-65g,\n         \"size_id\": 1g5l67-54yb6-8u567-65g5,\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"product\": {\n             \"id\": 1g5l67-54yb6-8u567-65g,\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": 1g5l67-54yb6-8u567-65g5,\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}"
       tags:
         - 'Finish Goods'
       security: []
@@ -1097,7 +993,7 @@ paths:
                 product_id:
                   type: integer
                   description: 'The ID of the product.'
-                  example: 1
+                  example: 15
                 size_id:
                   type: integer
                   description: 'The ID of the size.'
@@ -1272,7 +1168,7 @@ paths:
                 size_id:
                   type: integer
                   description: 'The ID of the size.'
-                  example: 1
+                  example: 154
                 sqm_per_roll:
                   type: numeric
                   description: 'The square meters per roll.'
@@ -1358,7 +1254,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the finish good to update.'
-        example: '1'
+        example: 1dlfgl5-5rth-5fhfgh-b56-gthf
         required: true
         schema:
           type: string
