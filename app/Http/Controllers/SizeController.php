@@ -126,7 +126,7 @@ class SizeController extends Controller
             'product_name' => $request->product_name,
             'hsn_code' => $request->hsn_code,
             'thickness' => $request->thickness,
-            'micron' => $request->field,
+            'micron' => $request->micron,
             'grade' => $request->grade,
             'width' => $request->width,
         ]);
@@ -221,7 +221,7 @@ class SizeController extends Controller
             'product_name' => $request->product_name,
             'hsn_code' => $request->hsn_code,
             'thickness' => $request->thickness,
-            'micron' => $request->field,
+            'micron' => $request->micron,
             'grade' => $request->grade,
             'width' => $request->width,
         ]);
