@@ -34,7 +34,7 @@ class CompanyProfileController extends Controller
 
     /**
      * Get company profile details.
-     *  variable is like small case and replace space with underscore
+     *  variable is like small case and replace space with underscore. Use "/upload/file_name" path for company logo and signature.
      * @group Company Profile
      *
      * @response 200 {
