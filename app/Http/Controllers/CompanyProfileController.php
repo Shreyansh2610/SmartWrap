@@ -165,8 +165,8 @@ class CompanyProfileController extends Controller
      * @bodyParam district_of_origin string The district of origin. Example: Sample District
      * @bodyParam trans_shipement string Indicates if trans-shipment is allowed. Example: No
      * @bodyParam variety_of_quality string The variety of quality. Example: Premium
-     * @bodyParam company_logo file The company logo file. Example: null
-     * @bodyParam signature_upload file The signature upload file. Example: null
+     * @bodyParam company_logo file The company logo file. Select file only. Example: null
+     * @bodyParam signature_upload file The signature upload file. Select file only. Example: null
      * @bodyParam range string The range. Example: Range 1
      * @bodyParam division string The division. Example: Division A
      * @bodyParam commissionerate string The commissionerate. Example: Commissionerate 1
@@ -184,7 +184,8 @@ class CompanyProfileController extends Controller
      */
     public function update(Request $request)
     {
-        $companyProfile = CompanyProfile::first()->first();
+
+        $companyProfile = CompanyProfile::first();
         if (isset($request->company_logo)) {
             $fileName = Str::random(6);
             $file = $request->file('company_logo');

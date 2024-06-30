@@ -247,7 +247,7 @@ paths:
     get:
       summary: 'Get company profile details.'
       operationId: getCompanyProfileDetails
-      description: 'variable is like small case and replace space with underscore'
+      description: 'variable is like small case and replace space with underscore. Use "/upload/file_name" path for company logo and signature.'
       parameters: []
       responses:
         200:
@@ -467,11 +467,11 @@ paths:
                 company_logo:
                   type: string
                   format: binary
-                  description: 'The company logo file.'
+                  description: 'The company logo file. Select file only.'
                 signature_upload:
                   type: string
                   format: binary
-                  description: 'The signature upload file.'
+                  description: 'The signature upload file. Select file only.'
                 range:
                   type: string
                   description: 'The range.'

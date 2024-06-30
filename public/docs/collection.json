@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "7f62d83f-d105-464d-af9d-c620af7437c6",
+        "_postman_id": "2363985b-bab9-43e5-a179-011267e08975",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -213,7 +213,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "variable is like small case and replace space with underscore",
+                        "description": "variable is like small case and replace space with underscore. Use \"\/upload\/file_name\" path for company logo and signature.",
                         "auth": {
                             "type": "noauth"
                         }

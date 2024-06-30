@@ -11,7 +11,7 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Get company profile details.'
-      description: 'variable is like small case and replace space with underscore'
+      description: 'variable is like small case and replace space with underscore. Use "/upload/file_name" path for company logo and signature.'
       authenticated: false
       custom: []
     headers:
@@ -508,7 +508,7 @@ endpoints:
         custom: []
       company_logo:
         name: company_logo
-        description: 'The company logo file.'
+        description: 'The company logo file. Select file only.'
         required: false
         example: null
         type: file
@@ -517,7 +517,7 @@ endpoints:
         custom: []
       signature_upload:
         name: signature_upload
-        description: 'The signature upload file.'
+        description: 'The signature upload file. Select file only.'
         required: false
         example: null
         type: file
