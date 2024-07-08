@@ -122,6 +122,12 @@
                                                                                 <li class="tocify-item level-2" data-unique="company-raw-materials-DELETEapi-company-raw-material--id-">
                                 <a href="#company-raw-materials-DELETEapi-company-raw-material--id-">Delete Raw Materials</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="company-raw-materials-GETapi-company-raw-material-calculation">
+                                <a href="#company-raw-materials-GETapi-company-raw-material-calculation">Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="company-raw-materials-GETapi-finish-goods-calculation">
+                                <a href="#company-raw-materials-GETapi-finish-goods-calculation">Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
@@ -200,7 +206,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 30, 2024</li>
+        <li>Last updated: July 9, 2024</li>
     </ul>
 </div>
 
@@ -1153,8 +1159,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php19A0.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php19B1.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php7CDB.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php7CEC.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1795,7 +1801,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php19A0.tmp</code></p>
+<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php7CDB.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1806,7 +1812,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php19B1.tmp</code></p>
+<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php7CEC.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -2676,6 +2682,336 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                    <h2 id="company-raw-materials-GETapi-company-raw-material-calculation">Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.</h2>
+
+<p>
+</p>
+
+<p>This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
+The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.</p>
+
+<span id="example-requests-GETapi-company-raw-material-calculation">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/company-raw-material-calculation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"date_filter\": \"2023-06-25\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/company-raw-material-calculation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "date_filter": "2023-06-25"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-company-raw-material-calculation">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;company_raw_materials&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;company_name&quot;: &quot;Company A&quot;,
+            &quot;total_pallet&quot;: 10,
+            &quot;bag_per_pallet&quot;: 50,
+            &quot;total_bag&quot;: 500,
+            &quot;weight_per_bag&quot;: 20,
+            &quot;total_weight&quot;: 10000
+        }
+    ],
+    &quot;totalPalletCount&quot;: 10,
+    &quot;totalBagCount&quot;: 500,
+    &quot;totalBagPerPalletCount&quot;: 50,
+    &quot;totalWeightPerBagCount&quot;: 20,
+    &quot;totalWeightCount&quot;: 10000
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Invalid date format&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-company-raw-material-calculation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-company-raw-material-calculation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-company-raw-material-calculation"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-company-raw-material-calculation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-company-raw-material-calculation">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-company-raw-material-calculation" data-method="GET"
+      data-path="api/company-raw-material-calculation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company-raw-material-calculation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-company-raw-material-calculation"
+                    onclick="tryItOut('GETapi-company-raw-material-calculation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-company-raw-material-calculation"
+                    onclick="cancelTryOut('GETapi-company-raw-material-calculation');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-company-raw-material-calculation"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/company-raw-material-calculation</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-company-raw-material-calculation"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-company-raw-material-calculation"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date_filter</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date_filter"                data-endpoint="GETapi-company-raw-material-calculation"
+               value="2023-06-25"
+               data-component="body">
+    <br>
+<p>The date to filter the company raw materials by. Example: <code>2023-06-25</code></p>
+        </div>
+        </form>
+
+                    <h2 id="company-raw-materials-GETapi-finish-goods-calculation">Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.</h2>
+
+<p>
+</p>
+
+<p>This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
+The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.</p>
+
+<span id="example-requests-GETapi-finish-goods-calculation">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/finish-goods-calculation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"date_filter\": \"2023-06-25\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/finish-goods-calculation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "date_filter": "2023-06-25"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-finish-goods-calculation">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;company_raw_materials&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;company_name&quot;: &quot;Company A&quot;,
+            &quot;total_pallet&quot;: 10,
+            &quot;bag_per_pallet&quot;: 50,
+            &quot;total_bag&quot;: 500,
+            &quot;weight_per_bag&quot;: 20,
+            &quot;total_weight&quot;: 10000
+        }
+    ],
+    &quot;totalPalletCount&quot;: 10,
+    &quot;totalBagCount&quot;: 500,
+    &quot;totalBagPerPalletCount&quot;: 50,
+    &quot;totalWeightPerBagCount&quot;: 20,
+    &quot;totalWeightCount&quot;: 10000
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Invalid date format&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-finish-goods-calculation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-finish-goods-calculation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-finish-goods-calculation"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-finish-goods-calculation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-finish-goods-calculation">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-finish-goods-calculation" data-method="GET"
+      data-path="api/finish-goods-calculation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-finish-goods-calculation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-finish-goods-calculation"
+                    onclick="tryItOut('GETapi-finish-goods-calculation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-finish-goods-calculation"
+                    onclick="cancelTryOut('GETapi-finish-goods-calculation');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-finish-goods-calculation"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/finish-goods-calculation</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-finish-goods-calculation"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-finish-goods-calculation"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date_filter</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date_filter"                data-endpoint="GETapi-finish-goods-calculation"
+               value="2023-06-25"
+               data-component="body">
+    <br>
+<p>The date to filter the company raw materials by. Example: <code>2023-06-25</code></p>
+        </div>
+        </form>
+
                 <h1 id="endpoints">Endpoints</h1>
 
     
@@ -2726,7 +3062,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 

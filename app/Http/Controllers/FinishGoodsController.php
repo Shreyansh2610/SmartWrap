@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\FinishGoods;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class FinishGoodsController extends Controller
 {
@@ -268,5 +269,81 @@ class FinishGoodsController extends Controller
                 'message' => 'No records found'
             ], 404);
         }
+    }
+
+    /**
+     * Finish Goods Calculation
+     *
+     * Calculate the totals for micron, square meters per roll, roll quantity, total square meters, and boxes.
+     * This endpoint calculates the sum of various properties of finish goods created on a specific date.
+     * The properties include micron count, square meters per roll count, roll quantity count, total square meters count, and boxes count.
+     *
+     * @group Finish Goods
+     *
+     * @bodyParam date_filter string required The date filter to calculate totals for the specified date (2023-06-15 or 15-06-2023). Example: 2023-06-15
+     *
+     * @response 200 {
+     *  "status": "success",
+     *  "finishGoods": [
+     *      {
+     *          "id": 1,
+     *          "product_id": 1dvm4i-4fh48-34jf84-4jci4,
+     *          "size_id": 5j5m4i-4fh48-34jf84-4jci4,
+     *          "sqm_per_roll": 100,
+     *          "roll_quantity": 10,
+     *          "total_sqm": 1000,
+     *          "pallet": "Pallet 1",
+     *          "pallet_name": "Pallet A",
+     *          "details": "Details of finish goods",
+     *          "boxes": 5,
+     *          "product": {
+     *              "id": 1dvm4i-4fh48-34jf84-4jci4,
+     *              "product_name": "Product A"
+     *          },
+     *          "size": {
+     *              "id": 5j5m4i-4fh48-34jf84-4jci4,
+     *              "size_in_cm": 100,
+     *              "size_in_mm": 1000,
+     *              "micron": 50
+     *          }
+     *      }
+     *  ],
+     *  "micronCount": 50,
+     *  "sqmPerRollCount": 100,
+     *  "rollQuantityCount": 10,
+     *  "totalSqmCount": 1000,
+     *  "boxesCount": 5
+     * }
+     */
+    public function calculation(Request $request)
+    {
+        $micronCount = 0;
+        $sqmPerRollCount = 0;
+        $rollQuantityCount = 0;
+        $totalSqmCount = 0;
+        $boxesCount = 0;
+        $finishGoods = FinishGoods::with([
+            'product:id,product_name',
+            'size:id,size_in_cm,size_in_mm,micron'
+        ])->where('created_at', 'LIKE', '%' . Carbon::parse($request->date_filter)->toDateString() . '%')
+            ->select('id', 'product_id', 'size_id', 'sqm_per_roll', 'roll_quantity', 'total_sqm', 'pallet', 'pallet_name', 'details', 'boxes')
+            ->get()->each(function ($finishGood) use (&$micronCount, &$sqmPerRollCount, &$rollQuantityCount, &$totalSqmCount, &$boxesCount) {
+                $micronCount = $micronCount + $finishGood->size->micron;
+                $sqmPerRollCount = $sqmPerRollCount + $finishGood->sqm_per_roll;
+                $rollQuantityCount = $rollQuantityCount + $finishGood->roll_quantity;
+                $totalSqmCount = $totalSqmCount + $finishGood->total_sqm;
+                $boxesCount = $boxesCount + $finishGood->boxes;
+                return $finishGood;
+            });
+
+        return response()->json([
+            'status' => 'success',
+            'finishGoods' => $finishGoods,
+            'micronCount' => $micronCount,
+            'sqmPerRollCount' => $sqmPerRollCount,
+            'rollQuantityCount' => $rollQuantityCount,
+            'totalSqmCount' => $totalSqmCount,
+            'boxesCount' => $boxesCount,
+        ], 200);
     }
 }

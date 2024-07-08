@@ -363,3 +363,157 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/company-raw-material-calculation
+    metadata:
+      groupName: 'Company Raw Materials'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.'
+      description: |-
+        This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
+        The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      date_filter:
+        name: date_filter
+        description: 'The date to filter the company raw materials by.'
+        required: true
+        example: '2023-06-25'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      date_filter: '2023-06-25'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "company_raw_materials": [
+               {
+                   "id": 1,
+                   "company_name": "Company A",
+                   "total_pallet": 10,
+                   "bag_per_pallet": 50,
+                   "total_bag": 500,
+                   "weight_per_bag": 20,
+                   "total_weight": 10000
+               }
+           ],
+           "totalPalletCount": 10,
+           "totalBagCount": 500,
+           "totalBagPerPalletCount": 50,
+           "totalWeightPerBagCount": 20,
+           "totalWeightCount": 10000
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+           "status": "error",
+           "message": "Invalid date format"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/finish-goods-calculation
+    metadata:
+      groupName: 'Company Raw Materials'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.'
+      description: |-
+        This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
+        The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      date_filter:
+        name: date_filter
+        description: 'The date to filter the company raw materials by.'
+        required: true
+        example: '2023-06-25'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      date_filter: '2023-06-25'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "company_raw_materials": [
+               {
+                   "id": 1,
+                   "company_name": "Company A",
+                   "total_pallet": 10,
+                   "bag_per_pallet": 50,
+                   "total_bag": 500,
+                   "weight_per_bag": 20,
+                   "total_weight": 10000
+               }
+           ],
+           "totalPalletCount": 10,
+           "totalBagCount": 500,
+           "totalBagPerPalletCount": 50,
+           "totalWeightPerBagCount": 20,
+           "totalWeightCount": 10000
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+           "status": "error",
+           "message": "Invalid date format"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

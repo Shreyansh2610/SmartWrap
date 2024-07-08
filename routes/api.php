@@ -45,5 +45,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::resource('company-raw-material',CompanyRawMaterialsController::class)->only(['index','store','update','destroy']);
 
     Route::resource('finish-goods',FinishGoodsController::class)->only(['index','store','update','destroy']);
+    Route::get('/company-raw-material-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('company-raw-material.calculation');
+    Route::get('/finish-goods-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('finish-goods.calculation');
 
 });

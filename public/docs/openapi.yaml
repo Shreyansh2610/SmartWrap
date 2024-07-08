@@ -850,6 +850,236 @@ paths:
         required: true
         schema:
           type: string
+  /api/company-raw-material-calculation:
+    get:
+      summary: 'Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.'
+      operationId: calculateTheTotalsForPalletsBagsBagsPerPalletWeightPerBagAndTotalWeight
+      description: "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  company_raw_materials:
+                    -
+                      id: 1
+                      company_name: 'Company A'
+                      total_pallet: 10
+                      bag_per_pallet: 50
+                      total_bag: 500
+                      weight_per_bag: 20
+                      total_weight: 10000
+                  totalPalletCount: 10
+                  totalBagCount: 500
+                  totalBagPerPalletCount: 50
+                  totalWeightPerBagCount: 20
+                  totalWeightCount: 10000
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  company_raw_materials:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        company_name: 'Company A'
+                        total_pallet: 10
+                        bag_per_pallet: 50
+                        total_bag: 500
+                        weight_per_bag: 20
+                        total_weight: 10000
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        company_name:
+                          type: string
+                          example: 'Company A'
+                        total_pallet:
+                          type: integer
+                          example: 10
+                        bag_per_pallet:
+                          type: integer
+                          example: 50
+                        total_bag:
+                          type: integer
+                          example: 500
+                        weight_per_bag:
+                          type: integer
+                          example: 20
+                        total_weight:
+                          type: integer
+                          example: 10000
+                  totalPalletCount:
+                    type: integer
+                    example: 10
+                  totalBagCount:
+                    type: integer
+                    example: 500
+                  totalBagPerPalletCount:
+                    type: integer
+                    example: 50
+                  totalWeightPerBagCount:
+                    type: integer
+                    example: 20
+                  totalWeightCount:
+                    type: integer
+                    example: 10000
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'Invalid date format'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'Invalid date format'
+      tags:
+        - 'Company Raw Materials'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date_filter:
+                  type: string
+                  description: 'The date to filter the company raw materials by.'
+                  example: '2023-06-25'
+              required:
+                - date_filter
+      security: []
+  /api/finish-goods-calculation:
+    get:
+      summary: 'Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.'
+      operationId: calculateTheTotalsForPalletsBagsBagsPerPalletWeightPerBagAndTotalWeight
+      description: "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  company_raw_materials:
+                    -
+                      id: 1
+                      company_name: 'Company A'
+                      total_pallet: 10
+                      bag_per_pallet: 50
+                      total_bag: 500
+                      weight_per_bag: 20
+                      total_weight: 10000
+                  totalPalletCount: 10
+                  totalBagCount: 500
+                  totalBagPerPalletCount: 50
+                  totalWeightPerBagCount: 20
+                  totalWeightCount: 10000
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  company_raw_materials:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        company_name: 'Company A'
+                        total_pallet: 10
+                        bag_per_pallet: 50
+                        total_bag: 500
+                        weight_per_bag: 20
+                        total_weight: 10000
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        company_name:
+                          type: string
+                          example: 'Company A'
+                        total_pallet:
+                          type: integer
+                          example: 10
+                        bag_per_pallet:
+                          type: integer
+                          example: 50
+                        total_bag:
+                          type: integer
+                          example: 500
+                        weight_per_bag:
+                          type: integer
+                          example: 20
+                        total_weight:
+                          type: integer
+                          example: 10000
+                  totalPalletCount:
+                    type: integer
+                    example: 10
+                  totalBagCount:
+                    type: integer
+                    example: 500
+                  totalBagPerPalletCount:
+                    type: integer
+                    example: 50
+                  totalWeightPerBagCount:
+                    type: integer
+                    example: 20
+                  totalWeightCount:
+                    type: integer
+                    example: 10000
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: error
+                  message: 'Invalid date format'
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: 'Invalid date format'
+      tags:
+        - 'Company Raw Materials'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date_filter:
+                  type: string
+                  description: 'The date to filter the company raw materials by.'
+                  example: '2023-06-25'
+              required:
+                - date_filter
+      security: []
   /api/finish-goods:
     get:
       summary: 'Display a listing of the finish goods.'

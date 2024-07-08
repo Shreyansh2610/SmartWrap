@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "2363985b-bab9-43e5-a179-011267e08975",
+        "_postman_id": "4d362923-7760-4905-b611-2e1eaafbdef0",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -778,6 +778,94 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company-raw-material-calculation",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company-raw-material-calculation"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"date_filter\":\"2023-06-25\"}"
+                        },
+                        "description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 50,\n         \"total_bag\": 500,\n         \"weight_per_bag\": 20,\n         \"total_weight\": 10000\n     }\n ],\n \"totalPalletCount\": 10,\n \"totalBagCount\": 500,\n \"totalBagPerPalletCount\": 50,\n \"totalWeightPerBagCount\": 20,\n \"totalWeightCount\": 10000\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Invalid date format\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods-calculation",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods-calculation"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"date_filter\":\"2023-06-25\"}"
+                        },
+                        "description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 50,\n         \"total_bag\": 500,\n         \"weight_per_bag\": 20,\n         \"total_weight\": 10000\n     }\n ],\n \"totalPalletCount\": 10,\n \"totalBagCount\": 500,\n \"totalBagPerPalletCount\": 50,\n \"totalWeightPerBagCount\": 20,\n \"totalWeightCount\": 10000\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Invalid date format\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -828,7 +916,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
