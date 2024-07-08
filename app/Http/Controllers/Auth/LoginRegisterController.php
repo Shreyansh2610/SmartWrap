@@ -1,5 +1,5 @@
 <?php
-
+// php artisan passport:install --uuids
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
