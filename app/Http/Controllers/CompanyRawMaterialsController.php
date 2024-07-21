@@ -360,4 +360,69 @@ class CompanyRawMaterialsController extends Controller
             'message' => 'Company Raw Material deleted successfully'
         ], 200);
     }
+
+    /**
+     * Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.
+     *
+     * This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
+     * The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.
+     *
+     * @group Company Raw Materials
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @bodyParam date_filter string required The date to filter the company raw materials by. Example: 2023-06-25
+     *
+     * @response 200 {
+     *  "status": "success",
+     *  "company_raw_materials": [
+     *      {
+     *          "id": 1,
+     *          "company_name": "Company A",
+     *          "total_pallet": 10,
+     *          "bag_per_pallet": 50,
+     *          "total_bag": 500,
+     *          "weight_per_bag": 20,
+     *          "total_weight": 10000
+     *      }
+     *  ],
+     *  "totalPalletCount": 10,
+     *  "totalBagCount": 500,
+     *  "totalBagPerPalletCount": 50,
+     *  "totalWeightPerBagCount": 20,
+     *  "totalWeightCount": 10000
+     * }
+     *
+     * @response 422 {
+     *  "status": "error",
+     *  "message": "Invalid date format"
+     * }
+     */
+    public function calculation(Request $request)
+    {
+        $totalPalletCount = 0;
+        $totalBagCount = 0;
+        $totalBagPerPalletCount = 0;
+        $totalWeightPerBagCount = 0;
+        $totalWeightCount = 0;
+        $companyRawMaterials = CompanyRawMaterial::select('id', 'company_name', 'total_pallet', 'bag_per_pallet', 'total_bag', 'weight_per_bag', 'total_weight')
+        ->where('created_at', 'LIKE', '%' . Carbon::parse($request->date_filter)->toDateString() . '%')
+        ->get()
+            ->each(function ($companyRawMaterial) use (&$totalBagPerPalletCount,&$totalPalletCount, &$totalBagCount, &$totalWeightPerBagCount, &$totalWeightCount) {
+                $totalPalletCount = $totalPalletCount + $companyRawMaterial->total_pallet;
+                $totalBagCount = $totalBagCount + $companyRawMaterial->total_bag;
+                $totalBagPerPalletCount = $totalBagPerPalletCount + $companyRawMaterial->bag_per_pallet;
+                $totalWeightPerBagCount = $totalWeightPerBagCount + $companyRawMaterial->weight_per_bag;
+                $totalWeightCount = $totalWeightCount + $companyRawMaterial->total_weight;
+                return $companyRawMaterial;
+            });
+        return response()->json([
+            'status' => 'success',
+            'company_raw_materials' => $companyRawMaterials,
+            'totalPalletCount' => $totalPalletCount,
+            'totalBagCount' => $totalBagCount,
+            'totalBagPerPalletCount' => $totalBagPerPalletCount,
+            'totalWeightPerBagCount' => $totalWeightPerBagCount,
+            'totalWeightCount' => $totalWeightCount,
+        ], 200);
+    }
 }

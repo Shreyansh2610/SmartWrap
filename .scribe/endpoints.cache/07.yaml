@@ -34,9 +34,9 @@ endpoints:
            "status": "success",
            "finishGoods": [
                {
-                   "id": 15fjl5-4f45t-5g456y-g5t,
-                   "product_id": 1g5l67-54yb6-8u567-65g,
-                   "size_id": 1g5l67-54yb6-8u567-65g5,
+                   "id": "15fjl5-4f45t-5g456y-g5t",
+                   "product_id": "1g5l67-54yb6-8u567-65g",
+                   "size_id": "1g5l67-54yb6-8u567-65g5",
                    "sqm_per_roll": 100,
                    "roll_quantity": 10,
                    "total_sqm": 1000,
@@ -44,12 +44,22 @@ endpoints:
                    "pallet_name": "Pallet A",
                    "details": "Details of finish goods",
                    "boxes": 5,
+                   "order_purchase_date": "2023-06-25",
+                   "good_details": "Details about the goods",
+                   "company": "Company A",
+                   "description_of_goods": "Description of goods",
+                   "qty_in_storage_start": 50,
+                   "qty_issued": 10,
+                   "qty_in_storage_end": 40,
+                   "qty_returned": 5,
+                   "wastage": 2,
+                   "actual_qty_consumed": 8,
                    "product": {
-                       "id": 1g5l67-54yb6-8u567-65g,
+                       "id": "1g5l67-54yb6-8u567-65g",
                        "product_name": "Product A"
                    },
                    "size": {
-                       "id": 1g5l67-54yb6-8u567-65g5,
+                       "id": "1g5l67-54yb6-8u567-65g5",
                        "size_in_cm": 100,
                        "size_in_mm": 1000,
                        "micron": 50
@@ -168,6 +178,96 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
+      order_purchase_date:
+        name: order_purchase_date
+        description: 'The order purchase date.'
+        required: true
+        example: '2023-06-15'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      good_details:
+        name: good_details
+        description: 'The details of the goods.'
+        required: true
+        example: '"Good details"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      company:
+        name: company
+        description: 'The name of the company.'
+        required: true
+        example: '"Company A"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description_of_goods:
+        name: description_of_goods
+        description: 'The description of the goods.'
+        required: true
+        example: '"Description of goods"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_start:
+        name: qty_in_storage_start
+        description: 'The quantity in storage at the start.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_issued:
+        name: qty_issued
+        description: 'The quantity issued.'
+        required: true
+        example: '10'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_end:
+        name: qty_in_storage_end
+        description: 'The quantity in storage at the end.'
+        required: true
+        example: '90'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_returned:
+        name: qty_returned
+        description: 'The quantity returned.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      wastage:
+        name: wastage
+        description: 'The wastage quantity.'
+        required: true
+        example: '2'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      actual_qty_consumed:
+        name: actual_qty_consumed
+        description: 'The actual quantity consumed.'
+        required: true
+        example: '8'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
     cleanBodyParameters:
       product_id: 15
       size_id: 1
@@ -178,6 +278,16 @@ endpoints:
       pallet_name: 'Pallet A'
       details: 'Details of finish goods'
       boxes: '5'
+      order_purchase_date: '2023-06-15'
+      good_details: '"Good details"'
+      company: '"Company A"'
+      description_of_goods: '"Description of goods"'
+      qty_in_storage_start: '100'
+      qty_issued: '10'
+      qty_in_storage_end: '90'
+      qty_returned: '5'
+      wastage: '2'
+      actual_qty_consumed: '8'
     fileParameters: []
     responses:
       -
@@ -226,7 +336,7 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Update the specified finish good in storage.'
-      description: 'This endpoint allows you to update an existing finish good by providing its ID and the updated information.'
+      description: 'This endpoint allows you to update an existing finish good.'
       authenticated: false
       custom: []
     headers:
@@ -235,15 +345,15 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the finish good to update.'
+        description: 'The ID of the finish good.'
         required: true
-        example: 1dlfgl5-5rth-5fhfgh-b56-gthf
-        type: string
+        example: 15
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: 1dlfgl5-5rth-5fhfgh-b56-gthf
+      id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -251,7 +361,7 @@ endpoints:
         name: product_id
         description: 'The ID of the product.'
         required: true
-        example: 1
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: true
@@ -260,7 +370,7 @@ endpoints:
         name: size_id
         description: 'The ID of the size.'
         required: true
-        example: 154
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: true
@@ -328,9 +438,99 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
+      order_purchase_date:
+        name: order_purchase_date
+        description: 'The order purchase date.'
+        required: true
+        example: '2023-06-15'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      good_details:
+        name: good_details
+        description: 'The details of the goods.'
+        required: true
+        example: '"Good details"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      company:
+        name: company
+        description: 'The name of the company.'
+        required: true
+        example: '"Company A"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description_of_goods:
+        name: description_of_goods
+        description: 'The description of the goods.'
+        required: true
+        example: '"Description of goods"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_start:
+        name: qty_in_storage_start
+        description: 'The quantity in storage at the start.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_issued:
+        name: qty_issued
+        description: 'The quantity issued.'
+        required: true
+        example: '10'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_end:
+        name: qty_in_storage_end
+        description: 'The quantity in storage at the end.'
+        required: true
+        example: '90'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_returned:
+        name: qty_returned
+        description: 'The quantity returned.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      wastage:
+        name: wastage
+        description: 'The wastage quantity.'
+        required: true
+        example: '2'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      actual_qty_consumed:
+        name: actual_qty_consumed
+        description: 'The actual quantity consumed.'
+        required: true
+        example: '8'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
     cleanBodyParameters:
-      product_id: 1
-      size_id: 154
+      product_id: 15
+      size_id: 1
       sqm_per_roll: '100'
       roll_quantity: '10'
       total_sqm: '1000'
@@ -338,6 +538,16 @@ endpoints:
       pallet_name: 'Pallet A'
       details: 'Details of finish goods'
       boxes: '5'
+      order_purchase_date: '2023-06-15'
+      good_details: '"Good details"'
+      company: '"Company A"'
+      description_of_goods: '"Description of goods"'
+      qty_in_storage_start: '100'
+      qty_issued: '10'
+      qty_in_storage_end: '90'
+      qty_returned: '5'
+      wastage: '2'
+      actual_qty_consumed: '8'
     fileParameters: []
     responses:
       -
@@ -385,7 +595,7 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Remove the specified finish good from storage.'
-      description: 'This endpoint allows you to delete a finish good by providing its ID.'
+      description: 'This endpoint allows you to delete a finish good by its ID.'
       authenticated: false
       custom: []
     headers:
@@ -394,15 +604,15 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the finish good to delete.'
+        description: 'The ID of the finish good.'
         required: true
-        example: tghtyjh67-54-gt-6-344
-        type: string
+        example: 15
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: tghtyjh67-54-gt-6-344
+      id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -423,8 +633,7 @@ endpoints:
         status: 404
         content: |-
           {
-           "status": "error",
-           "message": "No records found"
+           "message": "Finish Goods not found"
           }
         headers: []
         description: ''

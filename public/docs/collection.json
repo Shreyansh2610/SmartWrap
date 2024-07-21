@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "4d362923-7760-4905-b611-2e1eaafbdef0",
+        "_postman_id": "54967380-ef7c-4824-b5bd-63cd88722118",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -629,7 +629,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1dfd-4tfv-4gdgr,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000\n     },\n     ...\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": \"1dfd-4tfv-4gdgr\",\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000,\n         \"supplier_name\": \"Supplier A\",\n         \"purchase_order_no\": \"PO12345\",\n         \"sales_order_no\": \"SO12345\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty\": 100,\n         \"weight_per_pcs\": 10,\n         \"payment_terms\": \"Net 30\",\n         \"invoice_date\": \"2023-06-25\",\n         \"status\": \"Received\",\n         \"received_date\": \"2023-06-26\"\n     },\n     ...\n ]\n}",
                             "name": ""
                         }
                     ]
@@ -656,7 +656,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\"}"
+                            "raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
                         },
                         "description": "Store a newly created company raw material in storage.\nThis endpoint allows you to create a new company raw material.",
                         "auth": {
@@ -673,13 +673,13 @@
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"]\n }\n}",
+                            "body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"],\n     \"supplier_name\": [\"Supplier Name is required\"],\n     \"purchase_order_no\": [\"Purchase Order No is required\"],\n     \"sales_order_no\": [\"Sales Order No is required\"],\n     \"description_of_goods\": [\"Description Of Goods is required\"],\n     \"qty\": [\"Quantity is required\"],\n     \"weight_per_pcs\": [\"Weight Per Piece is required\"],\n     \"payment_terms\": [\"Payment Terms are required\"],\n     \"invoice_date\": [\"Invoice Date is required\"],\n     \"status\": [\"Status is required\"],\n     \"received_date\": [\"Received Date is required\"]\n }\n}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Update Raw Mateial",
+                    "name": "Update Raw Material",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -708,7 +708,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\"}"
+                            "raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
                         },
                         "description": "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information.",
                         "auth": {
@@ -719,19 +719,25 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Materials are updated\"\n}",
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Material updated successfully\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n \"message\": \"Raw Material not found\"\n}",
                             "name": ""
                         },
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"]\n }\n}",
+                            "body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"],\n     \"supplier_name\": [\"Supplier Name is required\"],\n     \"purchase_order_no\": [\"Purchase Order No is required\"],\n     \"sales_order_no\": [\"Sales Order No is required\"],\n     \"description_of_goods\": [\"Description Of Goods is required\"],\n     \"qty\": [\"Quantity is required\"],\n     \"weight_per_pcs\": [\"Weight Per Piece is required\"],\n     \"payment_terms\": [\"Payment Terms are required\"],\n     \"invoice_date\": [\"Invoice Date is required\"],\n     \"status\": [\"Status is required\"],\n     \"received_date\": [\"Received Date is required\"]\n }\n}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Delete Raw Materials",
+                    "name": "Delete Raw Material",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -768,13 +774,13 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"message\": \"Raw material is deleted\"\n}",
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Material deleted successfully\"\n}",
                             "name": ""
                         },
                         {
                             "header": [],
                             "code": 404,
-                            "body": "{\n \"status\": \"error\",\n \"message\": \"No records found\"\n}",
+                            "body": "{\n \"message\": \"Raw Material not found\"\n}",
                             "name": ""
                         }
                     ]
@@ -965,7 +971,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": 15fjl5-4f45t-5g456y-g5t,\n         \"product_id\": 1g5l67-54yb6-8u567-65g,\n         \"size_id\": 1g5l67-54yb6-8u567-65g5,\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"product\": {\n             \"id\": 1g5l67-54yb6-8u567-65g,\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": 1g5l67-54yb6-8u567-65g5,\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"product_id\": \"1g5l67-54yb6-8u567-65g\",\n         \"size_id\": \"1g5l67-54yb6-8u567-65g5\",\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"order_purchase_date\": \"2023-06-25\",\n         \"good_details\": \"Details about the goods\",\n         \"company\": \"Company A\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty_in_storage_start\": 50,\n         \"qty_issued\": 10,\n         \"qty_in_storage_end\": 40,\n         \"qty_returned\": 5,\n         \"wastage\": 2,\n         \"actual_qty_consumed\": 8,\n         \"product\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g\",\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g5\",\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
                             "name": ""
                         }
                     ]
@@ -992,7 +998,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
+                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
                         },
                         "description": "This endpoint allows you to create a new finish good.",
                         "auth": {
@@ -1026,8 +1032,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1dlfgl5-5rth-5fhfgh-b56-gthf",
-                                    "description": "The ID of the finish good to update."
+                                    "value": "15",
+                                    "description": "The ID of the finish good."
                                 }
                             ]
                         },
@@ -1044,9 +1050,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":1,\"size_id\":154,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\"}"
+                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
                         },
-                        "description": "This endpoint allows you to update an existing finish good by providing its ID and the updated information.",
+                        "description": "This endpoint allows you to update an existing finish good.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1078,8 +1084,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "tghtyjh67-54-gt-6-344",
-                                    "description": "The ID of the finish good to delete."
+                                    "value": "15",
+                                    "description": "The ID of the finish good."
                                 }
                             ]
                         },
@@ -1095,7 +1101,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This endpoint allows you to delete a finish good by providing its ID.",
+                        "description": "This endpoint allows you to delete a finish good by its ID.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1110,7 +1116,7 @@
                         {
                             "header": [],
                             "code": 404,
-                            "body": "{\n \"status\": \"error\",\n \"message\": \"No records found\"\n}",
+                            "body": "{\n \"message\": \"Finish Goods not found\"\n}",
                             "name": ""
                         }
                     ]

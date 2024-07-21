@@ -529,7 +529,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1dfd-4tfv-4gdgr,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000\n     },\n     ...\n ]\n}"
+                example: "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": \"1dfd-4tfv-4gdgr\",\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000,\n         \"supplier_name\": \"Supplier A\",\n         \"purchase_order_no\": \"PO12345\",\n         \"sales_order_no\": \"SO12345\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty\": 100,\n         \"weight_per_pcs\": 10,\n         \"payment_terms\": \"Net 30\",\n         \"invoice_date\": \"2023-06-25\",\n         \"status\": \"Received\",\n         \"received_date\": \"2023-06-26\"\n     },\n     ...\n ]\n}"
       tags:
         - 'Company Raw Materials'
       security: []
@@ -580,6 +580,26 @@ paths:
                     total_weight:
                       - 'Total Weight is required'
                       - 'Total Weight must be numeric'
+                    supplier_name:
+                      - 'Supplier Name is required'
+                    purchase_order_no:
+                      - 'Purchase Order No is required'
+                    sales_order_no:
+                      - 'Sales Order No is required'
+                    description_of_goods:
+                      - 'Description Of Goods is required'
+                    qty:
+                      - 'Quantity is required'
+                    weight_per_pcs:
+                      - 'Weight Per Piece is required'
+                    payment_terms:
+                      - 'Payment Terms are required'
+                    invoice_date:
+                      - 'Invoice Date is required'
+                    status:
+                      - 'Status is required'
+                    received_date:
+                      - 'Received Date is required'
                 properties:
                   errors:
                     type: object
@@ -625,6 +645,66 @@ paths:
                           - 'Total Weight must be numeric'
                         items:
                           type: string
+                      supplier_name:
+                        type: array
+                        example:
+                          - 'Supplier Name is required'
+                        items:
+                          type: string
+                      purchase_order_no:
+                        type: array
+                        example:
+                          - 'Purchase Order No is required'
+                        items:
+                          type: string
+                      sales_order_no:
+                        type: array
+                        example:
+                          - 'Sales Order No is required'
+                        items:
+                          type: string
+                      description_of_goods:
+                        type: array
+                        example:
+                          - 'Description Of Goods is required'
+                        items:
+                          type: string
+                      qty:
+                        type: array
+                        example:
+                          - 'Quantity is required'
+                        items:
+                          type: string
+                      weight_per_pcs:
+                        type: array
+                        example:
+                          - 'Weight Per Piece is required'
+                        items:
+                          type: string
+                      payment_terms:
+                        type: array
+                        example:
+                          - 'Payment Terms are required'
+                        items:
+                          type: string
+                      invoice_date:
+                        type: array
+                        example:
+                          - 'Invoice Date is required'
+                        items:
+                          type: string
+                      status:
+                        type: array
+                        example:
+                          - 'Status is required'
+                        items:
+                          type: string
+                      received_date:
+                        type: array
+                        example:
+                          - 'Received Date is required'
+                        items:
+                          type: string
       tags:
         - 'Company Raw Materials'
       requestBody:
@@ -658,6 +738,46 @@ paths:
                   type: numeric
                   description: 'The total weight.'
                   example: '10000'
+                supplier_name:
+                  type: string
+                  description: 'The name of the supplier.'
+                  example: 'Supplier A'
+                purchase_order_no:
+                  type: string
+                  description: 'The purchase order number.'
+                  example: PO12345
+                sales_order_no:
+                  type: string
+                  description: 'The sales order number.'
+                  example: SO12345
+                description_of_goods:
+                  type: string
+                  description: 'The description of goods.'
+                  example: 'Description of goods'
+                qty:
+                  type: numeric
+                  description: 'The quantity of goods.'
+                  example: '100'
+                weight_per_pcs:
+                  type: numeric
+                  description: 'The weight per piece.'
+                  example: '10'
+                payment_terms:
+                  type: string
+                  description: 'The payment terms.'
+                  example: 'Net 30'
+                invoice_date:
+                  type: date
+                  description: 'The invoice date.'
+                  example: '2023-06-25'
+                status:
+                  type: string
+                  description: 'The status of the raw materials.'
+                  example: Received
+                received_date:
+                  type: date
+                  description: 'The received date.'
+                  example: '2023-06-26'
               required:
                 - company_name
                 - total_pallet
@@ -665,11 +785,21 @@ paths:
                 - total_bag
                 - weight_per_bag
                 - total_weight
+                - supplier_name
+                - purchase_order_no
+                - sales_order_no
+                - description_of_goods
+                - qty
+                - weight_per_pcs
+                - payment_terms
+                - invoice_date
+                - status
+                - received_date
       security: []
   '/api/company-raw-material/{id}':
     put:
-      summary: 'Update Raw Mateial'
-      operationId: updateRawMateial
+      summary: 'Update Raw Material'
+      operationId: updateRawMaterial
       description: "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information."
       parameters: []
       responses:
@@ -681,14 +811,26 @@ paths:
                 type: object
                 example:
                   status: success
-                  message: 'Company Raw Materials are updated'
+                  message: 'Company Raw Material updated successfully'
                 properties:
                   status:
                     type: string
                     example: success
                   message:
                     type: string
-                    example: 'Company Raw Materials are updated'
+                    example: 'Company Raw Material updated successfully'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Raw Material not found'
+                properties:
+                  message:
+                    type: string
+                    example: 'Raw Material not found'
         422:
           description: ''
           content:
@@ -714,6 +856,26 @@ paths:
                     total_weight:
                       - 'Total Weight is required'
                       - 'Total Weight must be numeric'
+                    supplier_name:
+                      - 'Supplier Name is required'
+                    purchase_order_no:
+                      - 'Purchase Order No is required'
+                    sales_order_no:
+                      - 'Sales Order No is required'
+                    description_of_goods:
+                      - 'Description Of Goods is required'
+                    qty:
+                      - 'Quantity is required'
+                    weight_per_pcs:
+                      - 'Weight Per Piece is required'
+                    payment_terms:
+                      - 'Payment Terms are required'
+                    invoice_date:
+                      - 'Invoice Date is required'
+                    status:
+                      - 'Status is required'
+                    received_date:
+                      - 'Received Date is required'
                 properties:
                   errors:
                     type: object
@@ -759,6 +921,66 @@ paths:
                           - 'Total Weight must be numeric'
                         items:
                           type: string
+                      supplier_name:
+                        type: array
+                        example:
+                          - 'Supplier Name is required'
+                        items:
+                          type: string
+                      purchase_order_no:
+                        type: array
+                        example:
+                          - 'Purchase Order No is required'
+                        items:
+                          type: string
+                      sales_order_no:
+                        type: array
+                        example:
+                          - 'Sales Order No is required'
+                        items:
+                          type: string
+                      description_of_goods:
+                        type: array
+                        example:
+                          - 'Description Of Goods is required'
+                        items:
+                          type: string
+                      qty:
+                        type: array
+                        example:
+                          - 'Quantity is required'
+                        items:
+                          type: string
+                      weight_per_pcs:
+                        type: array
+                        example:
+                          - 'Weight Per Piece is required'
+                        items:
+                          type: string
+                      payment_terms:
+                        type: array
+                        example:
+                          - 'Payment Terms are required'
+                        items:
+                          type: string
+                      invoice_date:
+                        type: array
+                        example:
+                          - 'Invoice Date is required'
+                        items:
+                          type: string
+                      status:
+                        type: array
+                        example:
+                          - 'Status is required'
+                        items:
+                          type: string
+                      received_date:
+                        type: array
+                        example:
+                          - 'Received Date is required'
+                        items:
+                          type: string
       tags:
         - 'Company Raw Materials'
       requestBody:
@@ -792,6 +1014,46 @@ paths:
                   type: numeric
                   description: 'The total weight.'
                   example: '10000'
+                supplier_name:
+                  type: string
+                  description: 'The name of the supplier.'
+                  example: 'Supplier A'
+                purchase_order_no:
+                  type: string
+                  description: 'The purchase order number.'
+                  example: PO12345
+                sales_order_no:
+                  type: string
+                  description: 'The sales order number.'
+                  example: SO12345
+                description_of_goods:
+                  type: string
+                  description: 'The description of goods.'
+                  example: 'Description of goods'
+                qty:
+                  type: numeric
+                  description: 'The quantity of goods.'
+                  example: '100'
+                weight_per_pcs:
+                  type: numeric
+                  description: 'The weight per piece.'
+                  example: '10'
+                payment_terms:
+                  type: string
+                  description: 'The payment terms.'
+                  example: 'Net 30'
+                invoice_date:
+                  type: date
+                  description: 'The invoice date.'
+                  example: '2023-06-25'
+                status:
+                  type: string
+                  description: 'The status of the raw materials.'
+                  example: Received
+                received_date:
+                  type: date
+                  description: 'The received date.'
+                  example: '2023-06-26'
               required:
                 - company_name
                 - total_pallet
@@ -799,10 +1061,20 @@ paths:
                 - total_bag
                 - weight_per_bag
                 - total_weight
+                - supplier_name
+                - purchase_order_no
+                - sales_order_no
+                - description_of_goods
+                - qty
+                - weight_per_pcs
+                - payment_terms
+                - invoice_date
+                - status
+                - received_date
       security: []
     delete:
-      summary: 'Delete Raw Materials'
-      operationId: deleteRawMaterials
+      summary: 'Delete Raw Material'
+      operationId: deleteRawMaterial
       description: "Remove the specified company raw material from storage.\nThis endpoint allows you to delete a company raw material by providing its ID."
       parameters: []
       responses:
@@ -814,14 +1086,14 @@ paths:
                 type: object
                 example:
                   status: success
-                  message: 'Raw material is deleted'
+                  message: 'Company Raw Material deleted successfully'
                 properties:
                   status:
                     type: string
                     example: success
                   message:
                     type: string
-                    example: 'Raw material is deleted'
+                    example: 'Company Raw Material deleted successfully'
         404:
           description: ''
           content:
@@ -829,15 +1101,11 @@ paths:
               schema:
                 type: object
                 example:
-                  status: error
-                  message: 'No records found'
+                  message: 'Raw Material not found'
                 properties:
-                  status:
-                    type: string
-                    example: error
                   message:
                     type: string
-                    example: 'No records found'
+                    example: 'Raw Material not found'
       tags:
         - 'Company Raw Materials'
       security: []
@@ -1090,10 +1358,164 @@ paths:
         200:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": 15fjl5-4f45t-5g456y-g5t,\n         \"product_id\": 1g5l67-54yb6-8u567-65g,\n         \"size_id\": 1g5l67-54yb6-8u567-65g5,\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"product\": {\n             \"id\": 1g5l67-54yb6-8u567-65g,\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": 1g5l67-54yb6-8u567-65g5,\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}"
+                type: object
+                example:
+                  status: success
+                  finishGoods:
+                    -
+                      id: 15fjl5-4f45t-5g456y-g5t
+                      product_id: 1g5l67-54yb6-8u567-65g
+                      size_id: 1g5l67-54yb6-8u567-65g5
+                      sqm_per_roll: 100
+                      roll_quantity: 10
+                      total_sqm: 1000
+                      pallet: 'Pallet 1'
+                      pallet_name: 'Pallet A'
+                      details: 'Details of finish goods'
+                      boxes: 5
+                      order_purchase_date: '2023-06-25'
+                      good_details: 'Details about the goods'
+                      company: 'Company A'
+                      description_of_goods: 'Description of goods'
+                      qty_in_storage_start: 50
+                      qty_issued: 10
+                      qty_in_storage_end: 40
+                      qty_returned: 5
+                      wastage: 2
+                      actual_qty_consumed: 8
+                      product:
+                        id: 1g5l67-54yb6-8u567-65g
+                        product_name: 'Product A'
+                      size:
+                        id: 1g5l67-54yb6-8u567-65g5
+                        size_in_cm: 100
+                        size_in_mm: 1000
+                        micron: 50
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  finishGoods:
+                    type: array
+                    example:
+                      -
+                        id: 15fjl5-4f45t-5g456y-g5t
+                        product_id: 1g5l67-54yb6-8u567-65g
+                        size_id: 1g5l67-54yb6-8u567-65g5
+                        sqm_per_roll: 100
+                        roll_quantity: 10
+                        total_sqm: 1000
+                        pallet: 'Pallet 1'
+                        pallet_name: 'Pallet A'
+                        details: 'Details of finish goods'
+                        boxes: 5
+                        order_purchase_date: '2023-06-25'
+                        good_details: 'Details about the goods'
+                        company: 'Company A'
+                        description_of_goods: 'Description of goods'
+                        qty_in_storage_start: 50
+                        qty_issued: 10
+                        qty_in_storage_end: 40
+                        qty_returned: 5
+                        wastage: 2
+                        actual_qty_consumed: 8
+                        product:
+                          id: 1g5l67-54yb6-8u567-65g
+                          product_name: 'Product A'
+                        size:
+                          id: 1g5l67-54yb6-8u567-65g5
+                          size_in_cm: 100
+                          size_in_mm: 1000
+                          micron: 50
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 15fjl5-4f45t-5g456y-g5t
+                        product_id:
+                          type: string
+                          example: 1g5l67-54yb6-8u567-65g
+                        size_id:
+                          type: string
+                          example: 1g5l67-54yb6-8u567-65g5
+                        sqm_per_roll:
+                          type: integer
+                          example: 100
+                        roll_quantity:
+                          type: integer
+                          example: 10
+                        total_sqm:
+                          type: integer
+                          example: 1000
+                        pallet:
+                          type: string
+                          example: 'Pallet 1'
+                        pallet_name:
+                          type: string
+                          example: 'Pallet A'
+                        details:
+                          type: string
+                          example: 'Details of finish goods'
+                        boxes:
+                          type: integer
+                          example: 5
+                        order_purchase_date:
+                          type: string
+                          example: '2023-06-25'
+                        good_details:
+                          type: string
+                          example: 'Details about the goods'
+                        company:
+                          type: string
+                          example: 'Company A'
+                        description_of_goods:
+                          type: string
+                          example: 'Description of goods'
+                        qty_in_storage_start:
+                          type: integer
+                          example: 50
+                        qty_issued:
+                          type: integer
+                          example: 10
+                        qty_in_storage_end:
+                          type: integer
+                          example: 40
+                        qty_returned:
+                          type: integer
+                          example: 5
+                        wastage:
+                          type: integer
+                          example: 2
+                        actual_qty_consumed:
+                          type: integer
+                          example: 8
+                        product:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 1g5l67-54yb6-8u567-65g
+                            product_name:
+                              type: string
+                              example: 'Product A'
+                        size:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 1g5l67-54yb6-8u567-65g5
+                            size_in_cm:
+                              type: integer
+                              example: 100
+                            size_in_mm:
+                              type: integer
+                              example: 1000
+                            micron:
+                              type: integer
+                              example: 50
       tags:
         - 'Finish Goods'
       security: []
@@ -1256,6 +1678,46 @@ paths:
                   type: numeric
                   description: 'The number of boxes.'
                   example: '5'
+                order_purchase_date:
+                  type: date
+                  description: 'The order purchase date.'
+                  example: '2023-06-15'
+                good_details:
+                  type: string
+                  description: 'The details of the goods.'
+                  example: '"Good details"'
+                company:
+                  type: string
+                  description: 'The name of the company.'
+                  example: '"Company A"'
+                description_of_goods:
+                  type: string
+                  description: 'The description of the goods.'
+                  example: '"Description of goods"'
+                qty_in_storage_start:
+                  type: numeric
+                  description: 'The quantity in storage at the start.'
+                  example: '100'
+                qty_issued:
+                  type: numeric
+                  description: 'The quantity issued.'
+                  example: '10'
+                qty_in_storage_end:
+                  type: numeric
+                  description: 'The quantity in storage at the end.'
+                  example: '90'
+                qty_returned:
+                  type: numeric
+                  description: 'The quantity returned.'
+                  example: '5'
+                wastage:
+                  type: numeric
+                  description: 'The wastage quantity.'
+                  example: '2'
+                actual_qty_consumed:
+                  type: numeric
+                  description: 'The actual quantity consumed.'
+                  example: '8'
               required:
                 - product_id
                 - size_id
@@ -1266,12 +1728,22 @@ paths:
                 - pallet_name
                 - details
                 - boxes
+                - order_purchase_date
+                - good_details
+                - company
+                - description_of_goods
+                - qty_in_storage_start
+                - qty_issued
+                - qty_in_storage_end
+                - qty_returned
+                - wastage
+                - actual_qty_consumed
       security: []
   '/api/finish-goods/{id}':
     put:
       summary: 'Update the specified finish good in storage.'
       operationId: updateTheSpecifiedFinishGoodInStorage
-      description: 'This endpoint allows you to update an existing finish good by providing its ID and the updated information.'
+      description: 'This endpoint allows you to update an existing finish good.'
       parameters: []
       responses:
         200:
@@ -1394,11 +1866,11 @@ paths:
                 product_id:
                   type: integer
                   description: 'The ID of the product.'
-                  example: 1
+                  example: 15
                 size_id:
                   type: integer
                   description: 'The ID of the size.'
-                  example: 154
+                  example: 1
                 sqm_per_roll:
                   type: numeric
                   description: 'The square meters per roll.'
@@ -1427,6 +1899,46 @@ paths:
                   type: numeric
                   description: 'The number of boxes.'
                   example: '5'
+                order_purchase_date:
+                  type: date
+                  description: 'The order purchase date.'
+                  example: '2023-06-15'
+                good_details:
+                  type: string
+                  description: 'The details of the goods.'
+                  example: '"Good details"'
+                company:
+                  type: string
+                  description: 'The name of the company.'
+                  example: '"Company A"'
+                description_of_goods:
+                  type: string
+                  description: 'The description of the goods.'
+                  example: '"Description of goods"'
+                qty_in_storage_start:
+                  type: numeric
+                  description: 'The quantity in storage at the start.'
+                  example: '100'
+                qty_issued:
+                  type: numeric
+                  description: 'The quantity issued.'
+                  example: '10'
+                qty_in_storage_end:
+                  type: numeric
+                  description: 'The quantity in storage at the end.'
+                  example: '90'
+                qty_returned:
+                  type: numeric
+                  description: 'The quantity returned.'
+                  example: '5'
+                wastage:
+                  type: numeric
+                  description: 'The wastage quantity.'
+                  example: '2'
+                actual_qty_consumed:
+                  type: numeric
+                  description: 'The actual quantity consumed.'
+                  example: '8'
               required:
                 - product_id
                 - size_id
@@ -1437,11 +1949,21 @@ paths:
                 - pallet_name
                 - details
                 - boxes
+                - order_purchase_date
+                - good_details
+                - company
+                - description_of_goods
+                - qty_in_storage_start
+                - qty_issued
+                - qty_in_storage_end
+                - qty_returned
+                - wastage
+                - actual_qty_consumed
       security: []
     delete:
       summary: 'Remove the specified finish good from storage.'
       operationId: removeTheSpecifiedFinishGoodFromStorage
-      description: 'This endpoint allows you to delete a finish good by providing its ID.'
+      description: 'This endpoint allows you to delete a finish good by its ID.'
       parameters: []
       responses:
         200:
@@ -1467,15 +1989,11 @@ paths:
               schema:
                 type: object
                 example:
-                  status: error
-                  message: 'No records found'
+                  message: 'Finish Goods not found'
                 properties:
-                  status:
-                    type: string
-                    example: error
                   message:
                     type: string
-                    example: 'No records found'
+                    example: 'Finish Goods not found'
       tags:
         - 'Finish Goods'
       security: []
@@ -1483,11 +2001,11 @@ paths:
       -
         in: path
         name: id
-        description: 'The ID of the finish good to update.'
-        example: 1dlfgl5-5rth-5fhfgh-b56-gthf
+        description: 'The ID of the finish good.'
+        example: 15
         required: true
         schema:
-          type: string
+          type: integer
   /api/products:
     get:
       summary: 'Products list'
