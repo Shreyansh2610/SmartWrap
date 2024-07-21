@@ -1,19 +1,17 @@
-name: 'Company Raw Materials'
+name: 'Finish Goods'
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/company-raw-material
+    uri: api/finish-goods
     metadata:
-      groupName: 'Company Raw Materials'
+      groupName: 'Finish Goods'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Raw Materials list'
-      description: |-
-        Display a listing of the company raw materials.
-        This endpoint returns a list of all company raw materials.
+      title: 'Display a listing of the finish goods.'
+      description: 'This endpoint returns a list of all finish goods with their associated product and size details.'
       authenticated: false
       custom: []
     headers:
@@ -32,27 +30,39 @@ endpoints:
         content: |-
           {
            "status": "success",
-           "company_raw_materials": [
+           "finishGoods": [
                {
-                   "id": "1dfd-4tfv-4gdgr",
-                   "company_name": "Company A",
-                   "total_pallet": 10,
-                   "bag_per_pallet": 20,
-                   "total_bag": 200,
-                   "weight_per_bag": 50,
-                   "total_weight": 10000,
-                   "supplier_name": "Supplier A",
-                   "purchase_order_no": "PO12345",
-                   "sales_order_no": "SO12345",
+                   "id": "15fjl5-4f45t-5g456y-g5t",
+                   "product_id": "1g5l67-54yb6-8u567-65g",
+                   "size_id": "1g5l67-54yb6-8u567-65g5",
+                   "sqm_per_roll": 100,
+                   "roll_quantity": 10,
+                   "total_sqm": 1000,
+                   "pallet": "Pallet 1",
+                   "pallet_name": "Pallet A",
+                   "details": "Details of finish goods",
+                   "boxes": 5,
+                   "order_purchase_date": "2023-06-25",
+                   "good_details": "Details about the goods",
+                   "company": "Company A",
                    "description_of_goods": "Description of goods",
-                   "qty": 100,
-                   "weight_per_pcs": 10,
-                   "payment_terms": "Net 30",
-                   "invoice_date": "2023-06-25",
-                   "status": "Received",
-                   "received_date": "2023-06-26"
-               },
-               ...
+                   "qty_in_storage_start": 50,
+                   "qty_issued": 10,
+                   "qty_in_storage_end": 40,
+                   "qty_returned": 5,
+                   "wastage": 2,
+                   "actual_qty_consumed": 8,
+                   "product": {
+                       "id": "1g5l67-54yb6-8u567-65g",
+                       "product_name": "Product A"
+                   },
+                   "size": {
+                       "id": "1g5l67-54yb6-8u567-65g5",
+                       "size_in_cm": 100,
+                       "size_in_mm": 1000,
+                       "micron": 50
+                   }
+               }
            ]
           }
         headers: []
@@ -67,16 +77,14 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/company-raw-material
+    uri: api/finish-goods
     metadata:
-      groupName: 'Company Raw Materials'
+      groupName: 'Finish Goods'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create Raw Material'
-      description: |-
-        Store a newly created company raw material in storage.
-        This endpoint allows you to create a new company raw material.
+      title: 'Store a newly created finish good in storage.'
+      description: 'This endpoint allows you to create a new finish good.'
       authenticated: false
       custom: []
     headers:
@@ -87,167 +95,197 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      company_name:
-        name: company_name
-        description: 'The name of the company.'
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
         required: true
-        example: 'Company A'
-        type: string
+        example: 15
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      total_pallet:
-        name: total_pallet
-        description: 'The total number of pallets.'
+      size_id:
+        name: size_id
+        description: 'The ID of the size.'
         required: true
-        example: '10'
-        type: numeric
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      bag_per_pallet:
-        name: bag_per_pallet
-        description: 'The number of bags per pallet.'
-        required: true
-        example: '20'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      total_bag:
-        name: total_bag
-        description: 'The total number of bags.'
-        required: true
-        example: '200'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      weight_per_bag:
-        name: weight_per_bag
-        description: 'The weight per bag.'
-        required: true
-        example: '50'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      total_weight:
-        name: total_weight
-        description: 'The total weight.'
-        required: true
-        example: '10000'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      supplier_name:
-        name: supplier_name
-        description: 'The name of the supplier.'
-        required: true
-        example: 'Supplier A'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      purchase_order_no:
-        name: purchase_order_no
-        description: 'The purchase order number.'
-        required: true
-        example: PO12345
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      sales_order_no:
-        name: sales_order_no
-        description: 'The sales order number.'
-        required: true
-        example: SO12345
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      description_of_goods:
-        name: description_of_goods
-        description: 'The description of goods.'
-        required: true
-        example: 'Description of goods'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      qty:
-        name: qty
-        description: 'The quantity of goods.'
+      sqm_per_roll:
+        name: sqm_per_roll
+        description: 'The square meters per roll.'
         required: true
         example: '100'
         type: numeric
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      weight_per_pcs:
-        name: weight_per_pcs
-        description: 'The weight per piece.'
+      roll_quantity:
+        name: roll_quantity
+        description: 'The quantity of rolls.'
         required: true
         example: '10'
         type: numeric
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      payment_terms:
-        name: payment_terms
-        description: 'The payment terms.'
+      total_sqm:
+        name: total_sqm
+        description: 'The total square meters.'
         required: true
-        example: 'Net 30'
+        example: '1000'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      pallet:
+        name: pallet
+        description: 'The pallet information.'
+        required: true
+        example: 'Pallet 1'
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      invoice_date:
-        name: invoice_date
-        description: 'The invoice date.'
+      pallet_name:
+        name: pallet_name
+        description: 'The name of the pallet.'
         required: true
-        example: '2023-06-25'
-        type: date
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      status:
-        name: status
-        description: 'The status of the raw materials.'
-        required: true
-        example: Received
+        example: 'Pallet A'
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      received_date:
-        name: received_date
-        description: 'The received date.'
+      details:
+        name: details
+        description: 'The details of the finish goods.'
         required: true
-        example: '2023-06-26'
+        example: 'Details of finish goods'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      boxes:
+        name: boxes
+        description: 'The number of boxes.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      order_purchase_date:
+        name: order_purchase_date
+        description: 'The order purchase date.'
+        required: true
+        example: '2023-06-15'
         type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      good_details:
+        name: good_details
+        description: 'The details of the goods.'
+        required: true
+        example: '"Good details"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      company:
+        name: company
+        description: 'The name of the company.'
+        required: true
+        example: '"Company A"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description_of_goods:
+        name: description_of_goods
+        description: 'The description of the goods.'
+        required: true
+        example: '"Description of goods"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_start:
+        name: qty_in_storage_start
+        description: 'The quantity in storage at the start.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_issued:
+        name: qty_issued
+        description: 'The quantity issued.'
+        required: true
+        example: '10'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_end:
+        name: qty_in_storage_end
+        description: 'The quantity in storage at the end.'
+        required: true
+        example: '90'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_returned:
+        name: qty_returned
+        description: 'The quantity returned.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      wastage:
+        name: wastage
+        description: 'The wastage quantity.'
+        required: true
+        example: '2'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      actual_qty_consumed:
+        name: actual_qty_consumed
+        description: 'The actual quantity consumed.'
+        required: true
+        example: '8'
+        type: numeric
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      company_name: 'Company A'
-      total_pallet: '10'
-      bag_per_pallet: '20'
-      total_bag: '200'
-      weight_per_bag: '50'
-      total_weight: '10000'
-      supplier_name: 'Supplier A'
-      purchase_order_no: PO12345
-      sales_order_no: SO12345
-      description_of_goods: 'Description of goods'
-      qty: '100'
-      weight_per_pcs: '10'
-      payment_terms: 'Net 30'
-      invoice_date: '2023-06-25'
-      status: Received
-      received_date: '2023-06-26'
+      product_id: 15
+      size_id: 1
+      sqm_per_roll: '100'
+      roll_quantity: '10'
+      total_sqm: '1000'
+      pallet: 'Pallet 1'
+      pallet_name: 'Pallet A'
+      details: 'Details of finish goods'
+      boxes: '5'
+      order_purchase_date: '2023-06-15'
+      good_details: '"Good details"'
+      company: '"Company A"'
+      description_of_goods: '"Description of goods"'
+      qty_in_storage_start: '100'
+      qty_issued: '10'
+      qty_in_storage_end: '90'
+      qty_returned: '5'
+      wastage: '2'
+      actual_qty_consumed: '8'
     fileParameters: []
     responses:
       -
@@ -255,7 +293,7 @@ endpoints:
         content: |-
           {
            "status": "success",
-           "message": "Company Raw Materials are stored"
+           "message": "Finish Goods is saved"
           }
         headers: []
         description: ''
@@ -265,22 +303,15 @@ endpoints:
         content: |-
           {
            "errors": {
-               "company_name": ["Company Name is required"],
-               "total_pallet": ["Total Pallet is required", "Total Pallet must be numeric"],
-               "bag_per_pallet": ["Bag Per Pallet is required", "Bag Per Pallet must be numeric"],
-               "total_bag": ["Total Bag is required", "Total Bag must be numeric"],
-               "weight_per_bag": ["Weight Per Bag is required", "Weight Per Bag must be numeric"],
-               "total_weight": ["Total Weight is required", "Total Weight must be numeric"],
-               "supplier_name": ["Supplier Name is required"],
-               "purchase_order_no": ["Purchase Order No is required"],
-               "sales_order_no": ["Sales Order No is required"],
-               "description_of_goods": ["Description Of Goods is required"],
-               "qty": ["Quantity is required"],
-               "weight_per_pcs": ["Weight Per Piece is required"],
-               "payment_terms": ["Payment Terms are required"],
-               "invoice_date": ["Invoice Date is required"],
-               "status": ["Status is required"],
-               "received_date": ["Received Date is required"]
+               "product_id": ["Product is required"],
+               "size_id": ["Size is required"],
+               "sqm_per_roll": ["Sqm Per Roll is required", "Sqm Per Roll must be numeric"],
+               "roll_quantity": ["Roll Quantity is required", "Roll Quantity must be numeric"],
+               "total_sqm": ["Total Sqm is required", "Total Sqm must be numeric"],
+               "pallet": ["Pallet is required"],
+               "pallet_name": ["Pallet Name is required"],
+               "details": ["Details is required"],
+               "boxes": ["Boxes is required", "Boxes must be numeric"]
            }
           }
         headers: []
@@ -296,16 +327,14 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/company-raw-material/{id}'
+    uri: 'api/finish-goods/{id}'
     metadata:
-      groupName: 'Company Raw Materials'
+      groupName: 'Finish Goods'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Raw Material'
-      description: |-
-        Update the specified company raw material in storage.
-        This endpoint allows you to update an existing company raw material by providing its ID and the updated information.
+      title: 'Update the specified finish good in storage.'
+      description: 'This endpoint allows you to update an existing finish good.'
       authenticated: false
       custom: []
     headers:
@@ -314,179 +343,209 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the company raw material to update.'
+        description: 'The ID of the finish good.'
         required: true
-        example: '1'
-        type: string
+        example: 15
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: '1'
+      id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      company_name:
-        name: company_name
-        description: 'The name of the company.'
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
         required: true
-        example: 'Company A'
-        type: string
+        example: 15
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      total_pallet:
-        name: total_pallet
-        description: 'The total number of pallets.'
+      size_id:
+        name: size_id
+        description: 'The ID of the size.'
         required: true
-        example: '10'
-        type: numeric
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      bag_per_pallet:
-        name: bag_per_pallet
-        description: 'The number of bags per pallet.'
-        required: true
-        example: '20'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      total_bag:
-        name: total_bag
-        description: 'The total number of bags.'
-        required: true
-        example: '200'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      weight_per_bag:
-        name: weight_per_bag
-        description: 'The weight per bag.'
-        required: true
-        example: '50'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      total_weight:
-        name: total_weight
-        description: 'The total weight.'
-        required: true
-        example: '10000'
-        type: numeric
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      supplier_name:
-        name: supplier_name
-        description: 'The name of the supplier.'
-        required: true
-        example: 'Supplier A'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      purchase_order_no:
-        name: purchase_order_no
-        description: 'The purchase order number.'
-        required: true
-        example: PO12345
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      sales_order_no:
-        name: sales_order_no
-        description: 'The sales order number.'
-        required: true
-        example: SO12345
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      description_of_goods:
-        name: description_of_goods
-        description: 'The description of goods.'
-        required: true
-        example: 'Description of goods'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      qty:
-        name: qty
-        description: 'The quantity of goods.'
+      sqm_per_roll:
+        name: sqm_per_roll
+        description: 'The square meters per roll.'
         required: true
         example: '100'
         type: numeric
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      weight_per_pcs:
-        name: weight_per_pcs
-        description: 'The weight per piece.'
+      roll_quantity:
+        name: roll_quantity
+        description: 'The quantity of rolls.'
         required: true
         example: '10'
         type: numeric
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      payment_terms:
-        name: payment_terms
-        description: 'The payment terms.'
+      total_sqm:
+        name: total_sqm
+        description: 'The total square meters.'
         required: true
-        example: 'Net 30'
+        example: '1000'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      pallet:
+        name: pallet
+        description: 'The pallet information.'
+        required: true
+        example: 'Pallet 1'
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      invoice_date:
-        name: invoice_date
-        description: 'The invoice date.'
+      pallet_name:
+        name: pallet_name
+        description: 'The name of the pallet.'
         required: true
-        example: '2023-06-25'
-        type: date
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-      status:
-        name: status
-        description: 'The status of the raw materials.'
-        required: true
-        example: Received
+        example: 'Pallet A'
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      received_date:
-        name: received_date
-        description: 'The received date.'
+      details:
+        name: details
+        description: 'The details of the finish goods.'
         required: true
-        example: '2023-06-26'
+        example: 'Details of finish goods'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      boxes:
+        name: boxes
+        description: 'The number of boxes.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      order_purchase_date:
+        name: order_purchase_date
+        description: 'The order purchase date.'
+        required: true
+        example: '2023-06-15'
         type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      good_details:
+        name: good_details
+        description: 'The details of the goods.'
+        required: true
+        example: '"Good details"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      company:
+        name: company
+        description: 'The name of the company.'
+        required: true
+        example: '"Company A"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description_of_goods:
+        name: description_of_goods
+        description: 'The description of the goods.'
+        required: true
+        example: '"Description of goods"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_start:
+        name: qty_in_storage_start
+        description: 'The quantity in storage at the start.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_issued:
+        name: qty_issued
+        description: 'The quantity issued.'
+        required: true
+        example: '10'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_end:
+        name: qty_in_storage_end
+        description: 'The quantity in storage at the end.'
+        required: true
+        example: '90'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_returned:
+        name: qty_returned
+        description: 'The quantity returned.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      wastage:
+        name: wastage
+        description: 'The wastage quantity.'
+        required: true
+        example: '2'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      actual_qty_consumed:
+        name: actual_qty_consumed
+        description: 'The actual quantity consumed.'
+        required: true
+        example: '8'
+        type: numeric
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      company_name: 'Company A'
-      total_pallet: '10'
-      bag_per_pallet: '20'
-      total_bag: '200'
-      weight_per_bag: '50'
-      total_weight: '10000'
-      supplier_name: 'Supplier A'
-      purchase_order_no: PO12345
-      sales_order_no: SO12345
-      description_of_goods: 'Description of goods'
-      qty: '100'
-      weight_per_pcs: '10'
-      payment_terms: 'Net 30'
-      invoice_date: '2023-06-25'
-      status: Received
-      received_date: '2023-06-26'
+      product_id: 15
+      size_id: 1
+      sqm_per_roll: '100'
+      roll_quantity: '10'
+      total_sqm: '1000'
+      pallet: 'Pallet 1'
+      pallet_name: 'Pallet A'
+      details: 'Details of finish goods'
+      boxes: '5'
+      order_purchase_date: '2023-06-15'
+      good_details: '"Good details"'
+      company: '"Company A"'
+      description_of_goods: '"Description of goods"'
+      qty_in_storage_start: '100'
+      qty_issued: '10'
+      qty_in_storage_end: '90'
+      qty_returned: '5'
+      wastage: '2'
+      actual_qty_consumed: '8'
     fileParameters: []
     responses:
       -
@@ -494,16 +553,7 @@ endpoints:
         content: |-
           {
            "status": "success",
-           "message": "Company Raw Material updated successfully"
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-           "message": "Raw Material not found"
+           "message": "Finish Goods is updated"
           }
         headers: []
         description: ''
@@ -513,22 +563,15 @@ endpoints:
         content: |-
           {
            "errors": {
-               "company_name": ["Company Name is required"],
-               "total_pallet": ["Total Pallet is required", "Total Pallet must be numeric"],
-               "bag_per_pallet": ["Bag Per Pallet is required", "Bag Per Pallet must be numeric"],
-               "total_bag": ["Total Bag is required", "Total Bag must be numeric"],
-               "weight_per_bag": ["Weight Per Bag is required", "Weight Per Bag must be numeric"],
-               "total_weight": ["Total Weight is required", "Total Weight must be numeric"],
-               "supplier_name": ["Supplier Name is required"],
-               "purchase_order_no": ["Purchase Order No is required"],
-               "sales_order_no": ["Sales Order No is required"],
-               "description_of_goods": ["Description Of Goods is required"],
-               "qty": ["Quantity is required"],
-               "weight_per_pcs": ["Weight Per Piece is required"],
-               "payment_terms": ["Payment Terms are required"],
-               "invoice_date": ["Invoice Date is required"],
-               "status": ["Status is required"],
-               "received_date": ["Received Date is required"]
+               "product_id": ["Product is required"],
+               "size_id": ["Size is required"],
+               "sqm_per_roll": ["Sqm Per Roll is required", "Sqm Per Roll must be numeric"],
+               "roll_quantity": ["Roll Quantity is required", "Roll Quantity must be numeric"],
+               "total_sqm": ["Total Sqm is required", "Total Sqm must be numeric"],
+               "pallet": ["Pallet is required"],
+               "pallet_name": ["Pallet Name is required"],
+               "details": ["Details is required"],
+               "boxes": ["Boxes is required", "Boxes must be numeric"]
            }
           }
         headers: []
@@ -543,16 +586,14 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/company-raw-material/{id}'
+    uri: 'api/finish-goods/{id}'
     metadata:
-      groupName: 'Company Raw Materials'
+      groupName: 'Finish Goods'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Delete Raw Material'
-      description: |-
-        Remove the specified company raw material from storage.
-        This endpoint allows you to delete a company raw material by providing its ID.
+      title: 'Remove the specified finish good from storage.'
+      description: 'This endpoint allows you to delete a finish good by its ID.'
       authenticated: false
       custom: []
     headers:
@@ -561,15 +602,15 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the company raw material to delete.'
+        description: 'The ID of the finish good.'
         required: true
-        example: '1'
-        type: string
+        example: 15
+        type: integer
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: '1'
+      id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -581,7 +622,7 @@ endpoints:
         content: |-
           {
            "status": "success",
-           "message": "Company Raw Material deleted successfully"
+           "message": "Finish Goods is deleted"
           }
         headers: []
         description: ''
@@ -590,161 +631,7 @@ endpoints:
         status: 404
         content: |-
           {
-           "message": "Raw Material not found"
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/company-raw-material-calculation
-    metadata:
-      groupName: 'Company Raw Materials'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.'
-      description: |-
-        This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
-        The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      date_filter:
-        name: date_filter
-        description: 'The date to filter the company raw materials by.'
-        required: true
-        example: '2023-06-25'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-    cleanBodyParameters:
-      date_filter: '2023-06-25'
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "status": "success",
-           "company_raw_materials": [
-               {
-                   "id": 1,
-                   "company_name": "Company A",
-                   "total_pallet": 10,
-                   "bag_per_pallet": 50,
-                   "total_bag": 500,
-                   "weight_per_bag": 20,
-                   "total_weight": 10000
-               }
-           ],
-           "totalPalletCount": 10,
-           "totalBagCount": 500,
-           "totalBagPerPalletCount": 50,
-           "totalWeightPerBagCount": 20,
-           "totalWeightCount": 10000
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 422
-        content: |-
-          {
-           "status": "error",
-           "message": "Invalid date format"
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/finish-goods-calculation
-    metadata:
-      groupName: 'Company Raw Materials'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.'
-      description: |-
-        This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.
-        The properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count.
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      date_filter:
-        name: date_filter
-        description: 'The date to filter the company raw materials by.'
-        required: true
-        example: '2023-06-25'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        custom: []
-    cleanBodyParameters:
-      date_filter: '2023-06-25'
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "status": "success",
-           "company_raw_materials": [
-               {
-                   "id": 1,
-                   "company_name": "Company A",
-                   "total_pallet": 10,
-                   "bag_per_pallet": 50,
-                   "total_bag": 500,
-                   "weight_per_bag": 20,
-                   "total_weight": 10000
-               }
-           ],
-           "totalPalletCount": 10,
-           "totalBagCount": 500,
-           "totalBagPerPalletCount": 50,
-           "totalWeightPerBagCount": 20,
-           "totalWeightCount": 10000
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 422
-        content: |-
-          {
-           "status": "error",
-           "message": "Invalid date format"
+           "message": "Finish Goods not found"
           }
         headers: []
         description: ''
