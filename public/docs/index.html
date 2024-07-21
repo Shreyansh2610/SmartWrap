@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://api.smartwrapfilms.com";
+        var tryItOutBaseUrl = "https://api.smartwrapfilms.com";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -130,6 +130,16 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-login">
+                                <a href="#endpoints-GETapi-login">GET api/login</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-finish-goods" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="finish-goods">
                     <a href="#finish-goods">Finish Goods</a>
@@ -205,7 +215,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://api.smartwrapfilms.com</code>
+    <strong>Base URL</strong>: <code>https://api.smartwrapfilms.com</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -232,7 +242,7 @@ If the credentials are correct, it returns an access token and user information.
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/login" \
+    "https://api.smartwrapfilms.com/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -244,7 +254,7 @@ If the credentials are correct, it returns an access token and user information.
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/login"
+    "https://api.smartwrapfilms.com/api/login"
 );
 
 const headers = {
@@ -422,14 +432,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/logout" \
+    "https://api.smartwrapfilms.com/api/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/logout"
+    "https://api.smartwrapfilms.com/api/logout"
 );
 
 const headers = {
@@ -544,14 +554,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/banks" \
+    --get "https://api.smartwrapfilms.com/api/banks" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/banks"
+    "https://api.smartwrapfilms.com/api/banks"
 );
 
 const headers = {
@@ -675,7 +685,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/banks" \
+    "https://api.smartwrapfilms.com/api/banks" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -693,7 +703,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/banks"
+    "https://api.smartwrapfilms.com/api/banks"
 );
 
 const headers = {
@@ -919,14 +929,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/company-profile-get" \
+    --get "https://api.smartwrapfilms.com/api/company-profile-get" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-profile-get"
+    "https://api.smartwrapfilms.com/api/company-profile-get"
 );
 
 const headers = {
@@ -1094,7 +1104,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.smartwrapfilms.com/api/company-profile" \
+    "https://api.smartwrapfilms.com/api/company-profile" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "id=1dkjvskj-dnjdj-xnxskj"\
@@ -1149,13 +1159,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\phpB61E.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\phpB61F.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php1B9A.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php1BAA.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-profile"
+    "https://api.smartwrapfilms.com/api/company-profile"
 );
 
 const headers = {
@@ -1791,7 +1801,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpB61E.tmp</code></p>
+<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php1B9A.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1802,7 +1812,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpB61F.tmp</code></p>
+<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php1BAA.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -1923,14 +1933,14 @@ This endpoint returns a list of all company raw materials.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/company-raw-material" \
+    --get "https://api.smartwrapfilms.com/api/company-raw-material" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-raw-material"
+    "https://api.smartwrapfilms.com/api/company-raw-material"
 );
 
 const headers = {
@@ -2063,7 +2073,7 @@ This endpoint allows you to create a new company raw material.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/company-raw-material" \
+    "https://api.smartwrapfilms.com/api/company-raw-material" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2089,7 +2099,7 @@ This endpoint allows you to create a new company raw material.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-raw-material"
+    "https://api.smartwrapfilms.com/api/company-raw-material"
 );
 
 const headers = {
@@ -2461,7 +2471,7 @@ This endpoint allows you to update an existing company raw material by providing
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.smartwrapfilms.com/api/company-raw-material/1" \
+    "https://api.smartwrapfilms.com/api/company-raw-material/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2487,7 +2497,7 @@ This endpoint allows you to update an existing company raw material by providing
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-raw-material/1"
+    "https://api.smartwrapfilms.com/api/company-raw-material/1"
 );
 
 const headers = {
@@ -2884,14 +2894,14 @@ This endpoint allows you to delete a company raw material by providing its ID.</
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.smartwrapfilms.com/api/company-raw-material/1" \
+    "https://api.smartwrapfilms.com/api/company-raw-material/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-raw-material/1"
+    "https://api.smartwrapfilms.com/api/company-raw-material/1"
 );
 
 const headers = {
@@ -3024,7 +3034,7 @@ The properties include total pallet count, total bag count, total bags per palle
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/company-raw-material-calculation" \
+    --get "https://api.smartwrapfilms.com/api/company-raw-material-calculation" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3035,7 +3045,7 @@ The properties include total pallet count, total bag count, total bags per palle
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/company-raw-material-calculation"
+    "https://api.smartwrapfilms.com/api/company-raw-material-calculation"
 );
 
 const headers = {
@@ -3189,7 +3199,7 @@ The properties include total pallet count, total bag count, total bags per palle
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/finish-goods-calculation" \
+    --get "https://api.smartwrapfilms.com/api/finish-goods-calculation" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3200,7 +3210,7 @@ The properties include total pallet count, total bag count, total bags per palle
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/finish-goods-calculation"
+    "https://api.smartwrapfilms.com/api/finish-goods-calculation"
 );
 
 const headers = {
@@ -3340,6 +3350,136 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-login">GET api/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://api.smartwrapfilms.com/api/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-login">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;type&quot;: &quot;Unauthenticated&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-login" data-method="GET"
+      data-path="api/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-login"
+                    onclick="tryItOut('GETapi-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-login"
+                    onclick="cancelTryOut('GETapi-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
                 <h1 id="finish-goods">Finish Goods</h1>
 
     
@@ -3357,14 +3497,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/finish-goods" \
+    --get "https://api.smartwrapfilms.com/api/finish-goods" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/finish-goods"
+    "https://api.smartwrapfilms.com/api/finish-goods"
 );
 
 const headers = {
@@ -3508,7 +3648,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/finish-goods" \
+    "https://api.smartwrapfilms.com/api/finish-goods" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3537,7 +3677,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/finish-goods"
+    "https://api.smartwrapfilms.com/api/finish-goods"
 );
 
 const headers = {
@@ -3922,7 +4062,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.smartwrapfilms.com/api/finish-goods/15" \
+    "https://api.smartwrapfilms.com/api/finish-goods/15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3951,7 +4091,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/finish-goods/15"
+    "https://api.smartwrapfilms.com/api/finish-goods/15"
 );
 
 const headers = {
@@ -4352,14 +4492,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.smartwrapfilms.com/api/finish-goods/15" \
+    "https://api.smartwrapfilms.com/api/finish-goods/15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/finish-goods/15"
+    "https://api.smartwrapfilms.com/api/finish-goods/15"
 );
 
 const headers = {
@@ -4495,14 +4635,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/products" \
+    --get "https://api.smartwrapfilms.com/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/products"
+    "https://api.smartwrapfilms.com/api/products"
 );
 
 const headers = {
@@ -4624,7 +4764,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/products" \
+    "https://api.smartwrapfilms.com/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4640,7 +4780,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/products"
+    "https://api.smartwrapfilms.com/api/products"
 );
 
 const headers = {
@@ -4838,7 +4978,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.smartwrapfilms.com/api/products/1" \
+    "https://api.smartwrapfilms.com/api/products/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4854,7 +4994,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/products/1"
+    "https://api.smartwrapfilms.com/api/products/1"
 );
 
 const headers = {
@@ -5068,14 +5208,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.smartwrapfilms.com/api/products/1453mk-545tmkm4-3tvekvek" \
+    "https://api.smartwrapfilms.com/api/products/1453mk-545tmkm4-3tvekvek" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/products/1453mk-545tmkm4-3tvekvek"
+    "https://api.smartwrapfilms.com/api/products/1453mk-545tmkm4-3tvekvek"
 );
 
 const headers = {
@@ -5202,14 +5342,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.smartwrapfilms.com/api/sizes" \
+    --get "https://api.smartwrapfilms.com/api/sizes" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/sizes"
+    "https://api.smartwrapfilms.com/api/sizes"
 );
 
 const headers = {
@@ -5334,7 +5474,7 @@ This endpoint allows you to store size details. The variables should be provided
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://api.smartwrapfilms.com/api/sizes" \
+    "https://api.smartwrapfilms.com/api/sizes" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5352,7 +5492,7 @@ This endpoint allows you to store size details. The variables should be provided
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/sizes"
+    "https://api.smartwrapfilms.com/api/sizes"
 );
 
 const headers = {
@@ -5596,7 +5736,7 @@ This endpoint allows you to update size details by providing the size ID and the
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.smartwrapfilms.com/api/sizes/1" \
+    "https://api.smartwrapfilms.com/api/sizes/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5614,7 +5754,7 @@ This endpoint allows you to update size details by providing the size ID and the
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/sizes/1"
+    "https://api.smartwrapfilms.com/api/sizes/1"
 );
 
 const headers = {
@@ -5874,14 +6014,14 @@ This endpoint allows you to delete a size by providing its ID.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.smartwrapfilms.com/api/sizes/1fkj58-4nci34-fk48i" \
+    "https://api.smartwrapfilms.com/api/sizes/1fkj58-4nci34-fk48i" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.smartwrapfilms.com/api/sizes/1fkj58-4nci34-fk48i"
+    "https://api.smartwrapfilms.com/api/sizes/1fkj58-4nci34-fk48i"
 );
 
 const headers = {
