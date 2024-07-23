@@ -31,7 +31,7 @@ return new class extends Migration
             // company reg. detail
             $table->string('gst_no')->nullable();
             $table->string('lut_no')->nullable();
-            $table->string('cin_no')->nullable();
+            $table->string('cin')->nullable();
             $table->string('gst_circular_no')->nullable();
             $table->string('state_code')->nullable();
             $table->string('lei_no')->nullable();
@@ -58,14 +58,14 @@ return new class extends Migration
             $table->string('part_of_loading')->nullable();
             $table->string('partial_shipment')->nullable();
             $table->string('district_of_origin')->nullable();
-            $table->string('trans_shipment')->nullable();
+            $table->string('trans_shipement')->nullable();
             $table->string('variety_of_quality')->nullable();
             $table->longText('company_logo')->nullable();
             $table->longText('signature_upload')->nullable();
             // annexure detail
             $table->string('range')->nullable();
             $table->string('division')->nullable();
-            $table->string('commissionsionerate')->nullable();
+            $table->string('commissionerate')->nullable();
             $table->string('location_code')->nullable();
             $table->string('annexure_remark')->nullable();
             // vgm detail
