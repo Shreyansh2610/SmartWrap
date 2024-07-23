@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "a6f25632-b4d5-4777-af04-a8ea03826e41",
+        "_postman_id": "a7d49f8d-453c-460f-83c7-c59e159bc5df",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -940,7 +940,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",

@@ -39,7 +39,7 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::apiResource('sizes',SizeController::class)->except(['show']);
 
-    Route::apiResource('company-raw-material',CompanyRawMaterialsController::class);
+    Route::apiResource('company-raw-material',CompanyRawMaterialsController::class)->except(['show']);
 
     Route::apiResource('finish-goods',FinishGoodsController::class)->except(['show']);
     Route::get('/company-raw-material-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('company-raw-material.calculation');
