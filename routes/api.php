@@ -33,15 +33,15 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::put('/company-profile', [CompanyProfileController::class,'update']);
 
-    Route::resource('banks',BankController::class)->except(['create','destroy','show','edit','update']);
+    Route::apiResource('banks',BankController::class)->except(['destroy','show','update']);
 
-    Route::resource('products',ProductsController::class)->except(['show','edit','create']);
+    Route::apiResource('products',ProductsController::class)->except(['show']);
 
-    Route::resource('sizes',SizeController::class)->except(['show','edit','create']);
+    Route::apiResource('sizes',SizeController::class)->except(['show']);
 
-    Route::resource('company-raw-material',CompanyRawMaterialsController::class);
+    Route::apiResource('company-raw-material',CompanyRawMaterialsController::class);
 
-    Route::resource('finish-goods',FinishGoodsController::class)->except(['show','edit','create']);
+    Route::apiResource('finish-goods',FinishGoodsController::class)->except(['show']);
     Route::get('/company-raw-material-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('company-raw-material.calculation');
     Route::get('/finish-goods-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('finish-goods.calculation');
 
