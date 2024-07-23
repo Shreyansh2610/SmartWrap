@@ -56,7 +56,7 @@ return new class extends Migration
             $table->string('terms_of_delivery')->nullable();
             $table->string('place_of_receipt')->nullable();
             $table->string('part_of_loading')->nullable();
-            $table->string('partial_shipment')->nullable();
+            $table->string('partial_shipement')->nullable();
             $table->string('district_of_origin')->nullable();
             $table->string('trans_shipement')->nullable();
             $table->string('variety_of_quality')->nullable();
