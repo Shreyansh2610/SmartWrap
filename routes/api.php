@@ -25,13 +25,10 @@ Route::get('/login',function() {
     return response()->json(['type'=>'Unauthenticated'],404);
 })->name('login');
 
-Route::controller(LoginRegisterController::class)->group(function() {
-    // Route::post('/register', 'register');
-    Route::post('/login', 'login');
-    Route::post('/logout', 'logout');
-});
-
+Route::post('/login',[LoginRegisterController::class, 'login']);
 Route::middleware(['auth:api'])->group(function () {
+    Route::post('/logout', [LoginRegisterController::class, 'logout']);
+
     Route::get('/company-profile-get', [CompanyProfileController::class,'show']);
 
     Route::put('/company-profile', [CompanyProfileController::class,'update']);
