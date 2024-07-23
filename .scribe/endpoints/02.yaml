@@ -605,6 +605,33 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
+      export_under_detail_1:
+        name: export_under_detail_1
+        description: 'Export Detail 1.'
+        required: false
+        example: 'Export Detail 1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      export_under_detail_2:
+        name: export_under_detail_2
+        description: 'Export Detail 2.'
+        required: false
+        example: 'Export Detail 2'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      export_remarks:
+        name: export_remarks
+        description: 'Export Remarks.'
+        required: false
+        example: 'Export Remarks Example'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
     cleanBodyParameters:
       id: 1dkjvskj-dnjdj-xnxskj
       company_name: 'Sample Company Ltd.'
@@ -658,6 +685,9 @@ endpoints:
       method_used_for_vgm: Weighbridge
       weighbridge_slip_no: WS123456
       bank_id: fbdj54-fvd-g45bbf-5tgr4
+      export_under_detail_1: 'Export Detail 1'
+      export_under_detail_2: 'Export Detail 2'
+      export_remarks: 'Export Remarks Example'
     fileParameters:
       company_logo: null
       signature_upload: null

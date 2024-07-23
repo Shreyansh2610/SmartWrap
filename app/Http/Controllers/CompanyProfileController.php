@@ -176,6 +176,9 @@ class CompanyProfileController extends Controller
      * @bodyParam method_used_for_vgm string The method used for VGM. Example: Weighbridge
      * @bodyParam weighbridge_slip_no string The weighbridge slip number. Example: WS123456
      * @bodyParam bank_id string The bank identifier. Example: fbdj54-fvd-g45bbf-5tgr4
+     * @bodyParam export_under_detail_1 string Export Detail 1. Example: Export Detail 1
+     * @bodyParam export_under_detail_2 string Export Detail 2. Example: Export Detail 2
+     * @bodyParam export_remarks string Export Remarks. Example: Export Remarks Example
      *
      * @response 200 {
      *      "status":"success",

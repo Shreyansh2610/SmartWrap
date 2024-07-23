@@ -206,7 +206,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 21, 2024</li>
+        <li>Last updated: July 23, 2024</li>
     </ul>
 </div>
 
@@ -1159,8 +1159,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "method_used_for_vgm=Weighbridge"\
     --form "weighbridge_slip_no=WS123456"\
     --form "bank_id=fbdj54-fvd-g45bbf-5tgr4"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php1B9A.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php1BAA.tmp" </code></pre></div>
+    --form "export_under_detail_1=Export Detail 1"\
+    --form "export_under_detail_2=Export Detail 2"\
+    --form "export_remarks=Export Remarks Example"\
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php3533.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php360E.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1226,6 +1229,9 @@ body.append('shipper_name', 'Sample Shipper');
 body.append('method_used_for_vgm', 'Weighbridge');
 body.append('weighbridge_slip_no', 'WS123456');
 body.append('bank_id', 'fbdj54-fvd-g45bbf-5tgr4');
+body.append('export_under_detail_1', 'Export Detail 1');
+body.append('export_under_detail_2', 'Export Detail 2');
+body.append('export_remarks', 'Export Remarks Example');
 body.append('company_logo', document.querySelector('input[name="company_logo"]').files[0]);
 body.append('signature_upload', document.querySelector('input[name="signature_upload"]').files[0]);
 
@@ -1801,7 +1807,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php1B9A.tmp</code></p>
+<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php3533.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1812,7 +1818,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php1BAA.tmp</code></p>
+<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php360E.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -1912,6 +1918,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>The bank identifier. Example: <code>fbdj54-fvd-g45bbf-5tgr4</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>export_under_detail_1</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="export_under_detail_1"                data-endpoint="PUTapi-company-profile"
+               value="Export Detail 1"
+               data-component="body">
+    <br>
+<p>Export Detail 1. Example: <code>Export Detail 1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>export_under_detail_2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="export_under_detail_2"                data-endpoint="PUTapi-company-profile"
+               value="Export Detail 2"
+               data-component="body">
+    <br>
+<p>Export Detail 2. Example: <code>Export Detail 2</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>export_remarks</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="export_remarks"                data-endpoint="PUTapi-company-profile"
+               value="Export Remarks Example"
+               data-component="body">
+    <br>
+<p>Export Remarks. Example: <code>Export Remarks Example</code></p>
         </div>
         </form>
 

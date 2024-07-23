@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "d5c2f764-7b4c-4269-90a1-28c852477546",
+        "_postman_id": "76bdb878-0879-43fa-982e-6dace32320dc",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -561,6 +561,24 @@
                                     "value": "fbdj54-fvd-g45bbf-5tgr4",
                                     "type": "text",
                                     "description": "The bank identifier."
+                                },
+                                {
+                                    "key": "export_under_detail_1",
+                                    "value": "Export Detail 1",
+                                    "type": "text",
+                                    "description": "Export Detail 1."
+                                },
+                                {
+                                    "key": "export_under_detail_2",
+                                    "value": "Export Detail 2",
+                                    "type": "text",
+                                    "description": "Export Detail 2."
+                                },
+                                {
+                                    "key": "export_remarks",
+                                    "value": "Export Remarks Example",
+                                    "type": "text",
+                                    "description": "Export Remarks."
                                 },
                                 {
                                     "key": "company_logo",

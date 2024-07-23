@@ -508,6 +508,18 @@ paths:
                   type: string
                   description: 'The bank identifier.'
                   example: fbdj54-fvd-g45bbf-5tgr4
+                export_under_detail_1:
+                  type: string
+                  description: 'Export Detail 1.'
+                  example: 'Export Detail 1'
+                export_under_detail_2:
+                  type: string
+                  description: 'Export Detail 2.'
+                  example: 'Export Detail 2'
+                export_remarks:
+                  type: string
+                  description: 'Export Remarks.'
+                  example: 'Export Remarks Example'
               required:
                 - id
                 - company_name
