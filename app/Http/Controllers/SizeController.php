@@ -38,7 +38,7 @@ class SizeController extends Controller
         $sizes = Size::select('id', 'size_in_cm', 'size_in_mm', 'product_name', 'hsn_code', 'thickness', 'micron', 'grade', 'width')->get()->toArray();
         return response()->json([
             'status' => 'success',
-            'products' => $sizes,
+            'sizes' => $sizes,
         ], 200);
     }
 
