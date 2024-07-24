@@ -6,7 +6,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/company-raw-material-get
+    uri: api/company-raw-material
     metadata:
       groupName: 'Company Raw Materials'
       groupDescription: ''
@@ -297,6 +297,7 @@ endpoints:
   -
     httpMethods:
       - PUT
+      - PATCH
     uri: 'api/company-raw-material/{id}'
     metadata:
       groupName: 'Company Raw Materials'

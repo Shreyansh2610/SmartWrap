@@ -6,7 +6,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/banks-get
+    uri: api/banks
     metadata:
       groupName: 'Bank Management'
       groupDescription: ''

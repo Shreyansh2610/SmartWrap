@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'https://api.smartwrapfilms.com'
+    url: 'http://localhost:8000'
 paths:
   /api/login:
     post:
@@ -140,7 +140,7 @@ paths:
                     example: 'User is logged out successfully'
       tags:
         - Authentication
-  /api/banks-get:
+  /api/banks:
     get:
       summary: 'Get a list of all banks.'
       operationId: getAListOfAllBanks
@@ -157,7 +157,6 @@ paths:
       tags:
         - 'Bank Management'
       security: []
-  /api/banks:
     post:
       summary: 'Store a newly created bank in the database.'
       operationId: storeANewlyCreatedBankInTheDatabase
@@ -529,7 +528,7 @@ paths:
                 - mobile
                 - email
       security: []
-  /api/company-raw-material-get:
+  /api/company-raw-material:
     get:
       summary: 'Raw Materials list'
       operationId: rawMaterialsList
@@ -546,7 +545,6 @@ paths:
       tags:
         - 'Company Raw Materials'
       security: []
-  /api/company-raw-material:
     post:
       summary: 'Create Raw Material'
       operationId: createRawMaterial
@@ -2020,178 +2018,7 @@ paths:
         required: true
         schema:
           type: integer
-  /api/finish-goods-get:
-    get:
-      summary: 'Display a listing of the finish goods.'
-      operationId: displayAListingOfTheFinishGoods
-      description: 'This endpoint returns a list of all finish goods with their associated product and size details.'
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  status: success
-                  finishGoods:
-                    -
-                      id: 15fjl5-4f45t-5g456y-g5t
-                      product_id: 1g5l67-54yb6-8u567-65g
-                      size_id: 1g5l67-54yb6-8u567-65g5
-                      sqm_per_roll: 100
-                      roll_quantity: 10
-                      total_sqm: 1000
-                      pallet: 'Pallet 1'
-                      pallet_name: 'Pallet A'
-                      details: 'Details of finish goods'
-                      boxes: 5
-                      order_purchase_date: '2023-06-25'
-                      good_details: 'Details about the goods'
-                      company: 'Company A'
-                      description_of_goods: 'Description of goods'
-                      qty_in_storage_start: 50
-                      qty_issued: 10
-                      qty_in_storage_end: 40
-                      qty_returned: 5
-                      wastage: 2
-                      actual_qty_consumed: 8
-                      product:
-                        id: 1g5l67-54yb6-8u567-65g
-                        product_name: 'Product A'
-                      size:
-                        id: 1g5l67-54yb6-8u567-65g5
-                        size_in_cm: 100
-                        size_in_mm: 1000
-                        micron: 50
-                properties:
-                  status:
-                    type: string
-                    example: success
-                  finishGoods:
-                    type: array
-                    example:
-                      -
-                        id: 15fjl5-4f45t-5g456y-g5t
-                        product_id: 1g5l67-54yb6-8u567-65g
-                        size_id: 1g5l67-54yb6-8u567-65g5
-                        sqm_per_roll: 100
-                        roll_quantity: 10
-                        total_sqm: 1000
-                        pallet: 'Pallet 1'
-                        pallet_name: 'Pallet A'
-                        details: 'Details of finish goods'
-                        boxes: 5
-                        order_purchase_date: '2023-06-25'
-                        good_details: 'Details about the goods'
-                        company: 'Company A'
-                        description_of_goods: 'Description of goods'
-                        qty_in_storage_start: 50
-                        qty_issued: 10
-                        qty_in_storage_end: 40
-                        qty_returned: 5
-                        wastage: 2
-                        actual_qty_consumed: 8
-                        product:
-                          id: 1g5l67-54yb6-8u567-65g
-                          product_name: 'Product A'
-                        size:
-                          id: 1g5l67-54yb6-8u567-65g5
-                          size_in_cm: 100
-                          size_in_mm: 1000
-                          micron: 50
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          example: 15fjl5-4f45t-5g456y-g5t
-                        product_id:
-                          type: string
-                          example: 1g5l67-54yb6-8u567-65g
-                        size_id:
-                          type: string
-                          example: 1g5l67-54yb6-8u567-65g5
-                        sqm_per_roll:
-                          type: integer
-                          example: 100
-                        roll_quantity:
-                          type: integer
-                          example: 10
-                        total_sqm:
-                          type: integer
-                          example: 1000
-                        pallet:
-                          type: string
-                          example: 'Pallet 1'
-                        pallet_name:
-                          type: string
-                          example: 'Pallet A'
-                        details:
-                          type: string
-                          example: 'Details of finish goods'
-                        boxes:
-                          type: integer
-                          example: 5
-                        order_purchase_date:
-                          type: string
-                          example: '2023-06-25'
-                        good_details:
-                          type: string
-                          example: 'Details about the goods'
-                        company:
-                          type: string
-                          example: 'Company A'
-                        description_of_goods:
-                          type: string
-                          example: 'Description of goods'
-                        qty_in_storage_start:
-                          type: integer
-                          example: 50
-                        qty_issued:
-                          type: integer
-                          example: 10
-                        qty_in_storage_end:
-                          type: integer
-                          example: 40
-                        qty_returned:
-                          type: integer
-                          example: 5
-                        wastage:
-                          type: integer
-                          example: 2
-                        actual_qty_consumed:
-                          type: integer
-                          example: 8
-                        product:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              example: 1g5l67-54yb6-8u567-65g
-                            product_name:
-                              type: string
-                              example: 'Product A'
-                        size:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              example: 1g5l67-54yb6-8u567-65g5
-                            size_in_cm:
-                              type: integer
-                              example: 100
-                            size_in_mm:
-                              type: integer
-                              example: 1000
-                            micron:
-                              type: integer
-                              example: 50
-      tags:
-        - 'Finish Goods'
-      security: []
-  /api/products-get:
+  /api/products:
     get:
       summary: 'Products list'
       operationId: productsList
@@ -2208,7 +2035,6 @@ paths:
       tags:
         - Products
       security: []
-  /api/products:
     post:
       summary: 'Create Product'
       operationId: createProduct
@@ -2398,7 +2224,7 @@ paths:
         required: true
         schema:
           type: string
-  /api/sizes-get:
+  /api/sizes:
     get:
       summary: 'Sizes list'
       operationId: sizesList
@@ -2415,7 +2241,6 @@ paths:
       tags:
         - Sizes
       security: []
-  /api/sizes:
     post:
       summary: 'Create Size'
       operationId: createSize
