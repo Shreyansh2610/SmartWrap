@@ -4,7 +4,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/sizes
+    uri: api/sizes-get
     metadata:
       groupName: Sizes
       groupDescription: ''
@@ -210,7 +210,6 @@ endpoints:
   -
     httpMethods:
       - PUT
-      - PATCH
     uri: 'api/sizes/{id}'
     metadata:
       groupName: Sizes

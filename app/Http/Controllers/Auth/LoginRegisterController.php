@@ -19,8 +19,8 @@ class LoginRegisterController extends Controller
      *
      * @group Authentication
      *
-     * @bodyParam email string required The user's email address. Example: user@example.com
-     * @bodyParam password string required The user's password. Example: password123
+     * @bodyParam email string required The user's email address. Example: smartwrap.admin@gmail.com
+     * @bodyParam password string required The user's password. Example: smartwrap@admin2610
      *
      * @response 200 {
      *   "status": "success",

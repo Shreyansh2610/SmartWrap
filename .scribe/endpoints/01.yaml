@@ -28,7 +28,7 @@ endpoints:
         name: email
         description: "The user's email address."
         required: true
-        example: user@example.com
+        example: smartwrap.admin@gmail.com
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -37,14 +37,14 @@ endpoints:
         name: password
         description: "The user's password."
         required: true
-        example: password123
+        example: smartwrap@admin2610
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      email: user@example.com
-      password: password123
+      email: smartwrap.admin@gmail.com
+      password: smartwrap@admin2610
     fileParameters: []
     responses:
       -

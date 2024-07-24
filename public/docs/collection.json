@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "a7d49f8d-453c-460f-83c7-c59e159bc5df",
+        "_postman_id": "c38394df-5bea-4953-a408-23bbfb8f27cf",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"user@example.com\",\"password\":\"password123\"}"
+                            "raw": "{\"email\":\"smartwrap.admin@gmail.com\",\"password\":\"smartwrap@admin2610\"}"
                         },
                         "description": "This endpoint allows a user to log in by providing their email and password.\nIf the credentials are correct, it returns an access token and user information.",
                         "auth": {
@@ -112,9 +112,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/banks",
+                            "path": "api\/banks-get",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/banks"
+                            "raw": "{{baseUrl}}\/api\/banks-get"
                         },
                         "method": "GET",
                         "header": [
@@ -622,9 +622,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/company-raw-material",
+                            "path": "api\/company-raw-material-get",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/company-raw-material"
+                            "raw": "{{baseUrl}}\/api\/company-raw-material-get"
                         },
                         "method": "GET",
                         "header": [
@@ -940,7 +940,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "59"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1138,6 +1138,142 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Display a listing of the finish goods.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods-get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods-get"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint returns a list of all finish goods with their associated product and size details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"product_id\": \"1g5l67-54yb6-8u567-65g\",\n         \"size_id\": \"1g5l67-54yb6-8u567-65g5\",\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"order_purchase_date\": \"2023-06-25\",\n         \"good_details\": \"Details about the goods\",\n         \"company\": \"Company A\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty_in_storage_start\": 50,\n         \"qty_issued\": 10,\n         \"qty_in_storage_end\": 40,\n         \"qty_returned\": 5,\n         \"wastage\": 2,\n         \"actual_qty_consumed\": 8,\n         \"product\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g\",\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g5\",\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified finish good in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the finish good."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+                        },
+                        "description": "This endpoint allows you to update an existing finish good.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is updated\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified finish good from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/finish-goods\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/finish-goods\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the finish good."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint allows you to delete a finish good by its ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is deleted\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n \"message\": \"Finish Goods not found\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1150,9 +1286,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/products",
+                            "path": "api\/products-get",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/products"
+                            "raw": "{{baseUrl}}\/api\/products-get"
                         },
                         "method": "GET",
                         "header": [
@@ -1330,9 +1466,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/sizes",
+                            "path": "api\/sizes-get",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/sizes"
+                            "raw": "{{baseUrl}}\/api\/sizes-get"
                         },
                         "method": "GET",
                         "header": [

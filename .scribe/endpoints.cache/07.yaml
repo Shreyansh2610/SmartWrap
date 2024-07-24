@@ -644,3 +644,394 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/finish-goods-get
+    metadata:
+      groupName: 'Finish Goods'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the finish goods.'
+      description: 'This endpoint returns a list of all finish goods with their associated product and size details.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "finishGoods": [
+               {
+                   "id": "15fjl5-4f45t-5g456y-g5t",
+                   "product_id": "1g5l67-54yb6-8u567-65g",
+                   "size_id": "1g5l67-54yb6-8u567-65g5",
+                   "sqm_per_roll": 100,
+                   "roll_quantity": 10,
+                   "total_sqm": 1000,
+                   "pallet": "Pallet 1",
+                   "pallet_name": "Pallet A",
+                   "details": "Details of finish goods",
+                   "boxes": 5,
+                   "order_purchase_date": "2023-06-25",
+                   "good_details": "Details about the goods",
+                   "company": "Company A",
+                   "description_of_goods": "Description of goods",
+                   "qty_in_storage_start": 50,
+                   "qty_issued": 10,
+                   "qty_in_storage_end": 40,
+                   "qty_returned": 5,
+                   "wastage": 2,
+                   "actual_qty_consumed": 8,
+                   "product": {
+                       "id": "1g5l67-54yb6-8u567-65g",
+                       "product_name": "Product A"
+                   },
+                   "size": {
+                       "id": "1g5l67-54yb6-8u567-65g5",
+                       "size_in_cm": 100,
+                       "size_in_mm": 1000,
+                       "micron": 50
+                   }
+               }
+           ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/finish-goods/{id}'
+    metadata:
+      groupName: 'Finish Goods'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified finish good in storage.'
+      description: 'This endpoint allows you to update an existing finish good.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the finish good.'
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      size_id:
+        name: size_id
+        description: 'The ID of the size.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sqm_per_roll:
+        name: sqm_per_roll
+        description: 'The square meters per roll.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      roll_quantity:
+        name: roll_quantity
+        description: 'The quantity of rolls.'
+        required: true
+        example: '10'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_sqm:
+        name: total_sqm
+        description: 'The total square meters.'
+        required: true
+        example: '1000'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      pallet:
+        name: pallet
+        description: 'The pallet information.'
+        required: true
+        example: 'Pallet 1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      pallet_name:
+        name: pallet_name
+        description: 'The name of the pallet.'
+        required: true
+        example: 'Pallet A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      details:
+        name: details
+        description: 'The details of the finish goods.'
+        required: true
+        example: 'Details of finish goods'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      boxes:
+        name: boxes
+        description: 'The number of boxes.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      order_purchase_date:
+        name: order_purchase_date
+        description: 'The order purchase date.'
+        required: true
+        example: '2023-06-15'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      good_details:
+        name: good_details
+        description: 'The details of the goods.'
+        required: true
+        example: '"Good details"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      company:
+        name: company
+        description: 'The name of the company.'
+        required: true
+        example: '"Company A"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description_of_goods:
+        name: description_of_goods
+        description: 'The description of the goods.'
+        required: true
+        example: '"Description of goods"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_start:
+        name: qty_in_storage_start
+        description: 'The quantity in storage at the start.'
+        required: true
+        example: '100'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_issued:
+        name: qty_issued
+        description: 'The quantity issued.'
+        required: true
+        example: '10'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_in_storage_end:
+        name: qty_in_storage_end
+        description: 'The quantity in storage at the end.'
+        required: true
+        example: '90'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      qty_returned:
+        name: qty_returned
+        description: 'The quantity returned.'
+        required: true
+        example: '5'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      wastage:
+        name: wastage
+        description: 'The wastage quantity.'
+        required: true
+        example: '2'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      actual_qty_consumed:
+        name: actual_qty_consumed
+        description: 'The actual quantity consumed.'
+        required: true
+        example: '8'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      product_id: 15
+      size_id: 1
+      sqm_per_roll: '100'
+      roll_quantity: '10'
+      total_sqm: '1000'
+      pallet: 'Pallet 1'
+      pallet_name: 'Pallet A'
+      details: 'Details of finish goods'
+      boxes: '5'
+      order_purchase_date: '2023-06-15'
+      good_details: '"Good details"'
+      company: '"Company A"'
+      description_of_goods: '"Description of goods"'
+      qty_in_storage_start: '100'
+      qty_issued: '10'
+      qty_in_storage_end: '90'
+      qty_returned: '5'
+      wastage: '2'
+      actual_qty_consumed: '8'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "Finish Goods is updated"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: |-
+          {
+           "errors": {
+               "product_id": ["Product is required"],
+               "size_id": ["Size is required"],
+               "sqm_per_roll": ["Sqm Per Roll is required", "Sqm Per Roll must be numeric"],
+               "roll_quantity": ["Roll Quantity is required", "Roll Quantity must be numeric"],
+               "total_sqm": ["Total Sqm is required", "Total Sqm must be numeric"],
+               "pallet": ["Pallet is required"],
+               "pallet_name": ["Pallet Name is required"],
+               "details": ["Details is required"],
+               "boxes": ["Boxes is required", "Boxes must be numeric"]
+           }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/finish-goods/{id}'
+    metadata:
+      groupName: 'Finish Goods'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified finish good from storage.'
+      description: 'This endpoint allows you to delete a finish good by its ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the finish good.'
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "Finish Goods is deleted"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+           "message": "Finish Goods not found"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

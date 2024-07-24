@@ -4,7 +4,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/products
+    uri: api/products-get
     metadata:
       groupName: Products
       groupDescription: ''
@@ -165,7 +165,6 @@ endpoints:
   -
     httpMethods:
       - PUT
-      - PATCH
     uri: 'api/products/{id}'
     metadata:
       groupName: Products
