@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8000"
+            "value": "https:\/\/api.smartwrapfilms.com"
         }
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "364ce45f-2e34-43b6-a395-6310f2ee57bb",
+        "_postman_id": "47300089-e911-4349-980e-ef8103be5004",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
