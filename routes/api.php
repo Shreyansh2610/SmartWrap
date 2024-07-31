@@ -4,6 +4,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\CompanyRawMaterialsController;
 use App\Http\Controllers\FinishGoodsController;
+use App\Http\Controllers\PoReportController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SizeController;
 use App\Models\CompanyRawMaterial;
@@ -61,6 +62,9 @@ Route::middleware(['auth:api'])->group(function () {
     // Route::post('/finish-goods',[FinishGoodsController::class,'store']);
     // Route::put('/finish-goods/{id}',[FinishGoodsController::class,'update']);
     // Route::delete('/finish-goods/{id}',[FinishGoodsController::class,'destroy']);
+
+    Route::apiResource('po-reports',PoReportController::class)->except(['show']);
+    Route::post('/po-reports-get',[PoReportController::class,'show']);
 
     Route::get('/company-raw-material-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('company-raw-material.calculation');
     Route::get('/finish-goods-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('finish-goods.calculation');

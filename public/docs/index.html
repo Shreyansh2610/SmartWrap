@@ -159,6 +159,28 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-po-reports" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="po-reports">
+                    <a href="#po-reports">PO Reports</a>
+                </li>
+                                    <ul id="tocify-subheader-po-reports" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="po-reports-GETapi-po-reports">
+                                <a href="#po-reports-GETapi-po-reports">Display a listing of the PO Reports.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="po-reports-POSTapi-po-reports">
+                                <a href="#po-reports-POSTapi-po-reports">Store a newly created PO Report in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="po-reports-PUTapi-po-reports--id-">
+                                <a href="#po-reports-PUTapi-po-reports--id-">Update the specified PO Report in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="po-reports-DELETEapi-po-reports--id-">
+                                <a href="#po-reports-DELETEapi-po-reports--id-">Remove the specified PO Report from storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="po-reports-POSTapi-po-reports-get">
+                                <a href="#po-reports-POSTapi-po-reports-get">Display the specified PO Report.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-products" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="products">
                     <a href="#products">Products</a>
@@ -206,7 +228,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 25, 2024</li>
+        <li>Last updated: August 1, 2024</li>
     </ul>
 </div>
 
@@ -1162,8 +1184,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "export_under_detail_1=Export Detail 1"\
     --form "export_under_detail_2=Export Detail 2"\
     --form "export_remarks=Export Remarks Example"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php3022.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php3033.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\phpBAD0.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\phpBB7D.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1807,7 +1829,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php3022.tmp</code></p>
+<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpBAD0.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1818,7 +1840,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php3033.tmp</code></p>
+<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpBB7D.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -4656,6 +4678,1634 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The ID of the finish good. Example: <code>15</code></p>
             </div>
                     </form>
+
+                <h1 id="po-reports">PO Reports</h1>
+
+    
+
+                                <h2 id="po-reports-GETapi-po-reports">Display a listing of the PO Reports.</h2>
+
+<p>
+</p>
+
+<p>This endpoint returns a list of all PO Reports created by the authenticated user,
+including associated product details.</p>
+
+<span id="example-requests-GETapi-po-reports">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://api.smartwrapfilms.com/api/po-reports" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/po-reports"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-po-reports">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;poReports&quot;: [
+        {
+            &quot;id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+            &quot;po_no&quot;: &quot;PO12345&quot;,
+            &quot;po_date&quot;: &quot;2023-06-25&quot;,
+            &quot;quotation_no&quot;: &quot;Q12345&quot;,
+            &quot;quotation_date&quot;: &quot;2023-06-20&quot;,
+            &quot;buyer_name&quot;: &quot;Buyer A&quot;,
+            &quot;buyer_address&quot;: &quot;123 Street, City, Country&quot;,
+            &quot;buyer_pan&quot;: &quot;ABCDE1234F&quot;,
+            &quot;buyer_iec&quot;: &quot;IEC1234567&quot;,
+            &quot;buyer_gst&quot;: &quot;GST123456&quot;,
+            &quot;buyer_mail&quot;: &quot;buyer@example.com&quot;,
+            &quot;buyer_contact_person&quot;: &quot;John Doe&quot;,
+            &quot;buyer_contact_no&quot;: &quot;1234567890&quot;,
+            &quot;created_by&quot;: 1,
+            &quot;igst&quot;: 18,
+            &quot;sgst&quot;: 9,
+            &quot;cgst&quot;: 9,
+            &quot;total_value&quot;: 1000,
+            &quot;amount_in_words&quot;: &quot;One Thousand&quot;,
+            &quot;notes_1&quot;: &quot;Note 1&quot;,
+            &quot;notes_2&quot;: &quot;Note 2&quot;,
+            &quot;notes_3&quot;: &quot;Note 3&quot;,
+            &quot;notes_4&quot;: &quot;Note 4&quot;,
+            &quot;poReportProducts&quot;: [
+                {
+                    &quot;id&quot;: &quot;12345jl5-4f45t-5g45&quot;,
+                    &quot;po_report_id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+                    &quot;product_description&quot;: &quot;Product A&quot;,
+                    &quot;hsn_code&quot;: &quot;1234&quot;,
+                    &quot;quantity&quot;: 10,
+                    &quot;unit&quot;: &quot;pcs&quot;,
+                    &quot;rate&quot;: 100,
+                    &quot;amount&quot;: 1000
+                }
+            ]
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-po-reports" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-po-reports"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-po-reports"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-po-reports" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-po-reports">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-po-reports" data-method="GET"
+      data-path="api/po-reports"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-po-reports', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-po-reports"
+                    onclick="tryItOut('GETapi-po-reports');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-po-reports"
+                    onclick="cancelTryOut('GETapi-po-reports');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-po-reports"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/po-reports</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-po-reports"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-po-reports"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="po-reports-POSTapi-po-reports">Store a newly created PO Report in storage.</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows for the creation of a new PO Report along with its associated product details.</p>
+
+<span id="example-requests-POSTapi-po-reports">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://api.smartwrapfilms.com/api/po-reports" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"po_no\": \"fugit\",
+    \"po_date\": \"sit\",
+    \"quotation_no\": \"doloribus\",
+    \"quotation_date\": \"possimus\",
+    \"buyer_name\": \"similique\",
+    \"buyer_address\": \"velit\",
+    \"buyer_pan\": \"omnis\",
+    \"buyer_iec\": \"qui\",
+    \"buyer_gst\": \"vero\",
+    \"buyer_mail\": \"consequuntur\",
+    \"buyer_contact_person\": \"optio\",
+    \"buyer_contact_no\": \"facere\",
+    \"igst\": \"qui\",
+    \"sgst\": \"sit\",
+    \"cgst\": \"ad\",
+    \"total_value\": \"cumque\",
+    \"amount_in_words\": \"eum\",
+    \"products\": [
+        \"eum\"
+    ],
+    \"notes_1\": \"et\",
+    \"notes_2\": \"eveniet\",
+    \"notes_3\": \"odit\",
+    \"notes_4\": \"et\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/po-reports"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "po_no": "fugit",
+    "po_date": "sit",
+    "quotation_no": "doloribus",
+    "quotation_date": "possimus",
+    "buyer_name": "similique",
+    "buyer_address": "velit",
+    "buyer_pan": "omnis",
+    "buyer_iec": "qui",
+    "buyer_gst": "vero",
+    "buyer_mail": "consequuntur",
+    "buyer_contact_person": "optio",
+    "buyer_contact_no": "facere",
+    "igst": "qui",
+    "sgst": "sit",
+    "cgst": "ad",
+    "total_value": "cumque",
+    "amount_in_words": "eum",
+    "products": [
+        "eum"
+    ],
+    "notes_1": "et",
+    "notes_2": "eveniet",
+    "notes_3": "odit",
+    "notes_4": "et"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-po-reports">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;PO Report added successfully.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &quot;status&quot;: &quot;error&quot;,
+ &quot;errors&quot;: {
+     &quot;po_no&quot;: [&quot;The PO number is required.&quot;],
+     &quot;po_date&quot;: [&quot;The PO date is required.&quot;],
+     ...
+ }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-po-reports" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-po-reports"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-po-reports"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-po-reports" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-po-reports">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-po-reports" data-method="POST"
+      data-path="api/po-reports"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-po-reports', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-po-reports"
+                    onclick="tryItOut('POSTapi-po-reports');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-po-reports"
+                    onclick="cancelTryOut('POSTapi-po-reports');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-po-reports"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/po-reports</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-po-reports"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-po-reports"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>po_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="po_no"                data-endpoint="POSTapi-po-reports"
+               value="fugit"
+               data-component="body">
+    <br>
+<p>The PO number. Example: <code>fugit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>po_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="po_date"                data-endpoint="POSTapi-po-reports"
+               value="sit"
+               data-component="body">
+    <br>
+<p>The date of the PO. Example: <code>sit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quotation_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="quotation_no"                data-endpoint="POSTapi-po-reports"
+               value="doloribus"
+               data-component="body">
+    <br>
+<p>The quotation number. Example: <code>doloribus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quotation_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="quotation_date"                data-endpoint="POSTapi-po-reports"
+               value="possimus"
+               data-component="body">
+    <br>
+<p>The date of the quotation. Example: <code>possimus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_name"                data-endpoint="POSTapi-po-reports"
+               value="similique"
+               data-component="body">
+    <br>
+<p>The name of the buyer. Example: <code>similique</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_address"                data-endpoint="POSTapi-po-reports"
+               value="velit"
+               data-component="body">
+    <br>
+<p>The address of the buyer. Example: <code>velit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_pan</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_pan"                data-endpoint="POSTapi-po-reports"
+               value="omnis"
+               data-component="body">
+    <br>
+<p>The PAN of the buyer. Example: <code>omnis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_iec</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_iec"                data-endpoint="POSTapi-po-reports"
+               value="qui"
+               data-component="body">
+    <br>
+<p>The IEC of the buyer. Example: <code>qui</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_gst</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_gst"                data-endpoint="POSTapi-po-reports"
+               value="vero"
+               data-component="body">
+    <br>
+<p>The GST number of the buyer. Example: <code>vero</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_mail</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_mail"                data-endpoint="POSTapi-po-reports"
+               value="consequuntur"
+               data-component="body">
+    <br>
+<p>The email of the buyer. Example: <code>consequuntur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_contact_person</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_contact_person"                data-endpoint="POSTapi-po-reports"
+               value="optio"
+               data-component="body">
+    <br>
+<p>The contact person of the buyer. Example: <code>optio</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_contact_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_contact_no"                data-endpoint="POSTapi-po-reports"
+               value="facere"
+               data-component="body">
+    <br>
+<p>The contact number of the buyer. Example: <code>facere</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>igst</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="igst"                data-endpoint="POSTapi-po-reports"
+               value="qui"
+               data-component="body">
+    <br>
+<p>The IGST amount. Example: <code>qui</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sgst</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sgst"                data-endpoint="POSTapi-po-reports"
+               value="sit"
+               data-component="body">
+    <br>
+<p>The SGST amount. Example: <code>sit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cgst</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="cgst"                data-endpoint="POSTapi-po-reports"
+               value="ad"
+               data-component="body">
+    <br>
+<p>The CGST amount. Example: <code>ad</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_value</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_value"                data-endpoint="POSTapi-po-reports"
+               value="cumque"
+               data-component="body">
+    <br>
+<p>The total value of the PO. Example: <code>cumque</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="amount_in_words"                data-endpoint="POSTapi-po-reports"
+               value="eum"
+               data-component="body">
+    <br>
+<p>The total value in words. Example: <code>eum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>products</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>The array of product details.</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>product_description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.product_description"                data-endpoint="POSTapi-po-reports"
+               value="voluptas"
+               data-component="body">
+    <br>
+<p>Example: <code>voluptas</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.hsn_code"                data-endpoint="POSTapi-po-reports"
+               value="magni"
+               data-component="body">
+    <br>
+<p>Example: <code>magni</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.quantity"                data-endpoint="POSTapi-po-reports"
+               value="optio"
+               data-component="body">
+    <br>
+<p>Example: <code>optio</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.unit"                data-endpoint="POSTapi-po-reports"
+               value="sed"
+               data-component="body">
+    <br>
+<p>Example: <code>sed</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.rate"                data-endpoint="POSTapi-po-reports"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.amount"                data-endpoint="POSTapi-po-reports"
+               value="autem"
+               data-component="body">
+    <br>
+<p>Example: <code>autem</code></p>
+                    </div>
+                                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>*</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>product_description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.product_description"                data-endpoint="POSTapi-po-reports"
+               value="beatae"
+               data-component="body">
+    <br>
+<p>The description of the product. Example: <code>beatae</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.hsn_code"                data-endpoint="POSTapi-po-reports"
+               value="ab"
+               data-component="body">
+    <br>
+<p>The HSN code of the product. Example: <code>ab</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.quantity"                data-endpoint="POSTapi-po-reports"
+               value="magnam"
+               data-component="body">
+    <br>
+<p>The quantity of the product. Example: <code>magnam</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.unit"                data-endpoint="POSTapi-po-reports"
+               value="aliquam"
+               data-component="body">
+    <br>
+<p>The unit of the product. Example: <code>aliquam</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.rate"                data-endpoint="POSTapi-po-reports"
+               value="possimus"
+               data-component="body">
+    <br>
+<p>The rate of the product. Example: <code>possimus</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.amount"                data-endpoint="POSTapi-po-reports"
+               value="ab"
+               data-component="body">
+    <br>
+<p>The amount of the product. Example: <code>ab</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_1</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_1"                data-endpoint="POSTapi-po-reports"
+               value="et"
+               data-component="body">
+    <br>
+<p>optional Additional notes 1. Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_2"                data-endpoint="POSTapi-po-reports"
+               value="eveniet"
+               data-component="body">
+    <br>
+<p>optional Additional notes 2. Example: <code>eveniet</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_3</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_3"                data-endpoint="POSTapi-po-reports"
+               value="odit"
+               data-component="body">
+    <br>
+<p>optional Additional notes 3. Example: <code>odit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_4</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_4"                data-endpoint="POSTapi-po-reports"
+               value="et"
+               data-component="body">
+    <br>
+<p>optional Additional notes 4. Example: <code>et</code></p>
+        </div>
+        </form>
+
+                    <h2 id="po-reports-PUTapi-po-reports--id-">Update the specified PO Report in storage.</h2>
+
+<p>
+</p>
+
+<p>This endpoint allows for updating a specific PO Report by its ID,
+including associated product details.</p>
+
+<span id="example-requests-PUTapi-po-reports--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://api.smartwrapfilms.com/api/po-reports/officia" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"po_no\": \"alias\",
+    \"po_date\": \"iusto\",
+    \"quotation_no\": \"illum\",
+    \"quotation_date\": \"rerum\",
+    \"buyer_name\": \"eveniet\",
+    \"buyer_address\": \"voluptatum\",
+    \"buyer_pan\": \"doloremque\",
+    \"buyer_iec\": \"rem\",
+    \"buyer_gst\": \"corporis\",
+    \"buyer_mail\": \"enim\",
+    \"buyer_contact_person\": \"tempore\",
+    \"buyer_contact_no\": \"id\",
+    \"igst\": \"accusamus\",
+    \"sgst\": \"quisquam\",
+    \"cgst\": \"pariatur\",
+    \"total_value\": \"dolorum\",
+    \"amount_in_words\": \"rerum\",
+    \"products\": [
+        \"quae\"
+    ],
+    \"notes_1\": \"et\",
+    \"notes_2\": \"sapiente\",
+    \"notes_3\": \"saepe\",
+    \"notes_4\": \"iure\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/po-reports/officia"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "po_no": "alias",
+    "po_date": "iusto",
+    "quotation_no": "illum",
+    "quotation_date": "rerum",
+    "buyer_name": "eveniet",
+    "buyer_address": "voluptatum",
+    "buyer_pan": "doloremque",
+    "buyer_iec": "rem",
+    "buyer_gst": "corporis",
+    "buyer_mail": "enim",
+    "buyer_contact_person": "tempore",
+    "buyer_contact_no": "id",
+    "igst": "accusamus",
+    "sgst": "quisquam",
+    "cgst": "pariatur",
+    "total_value": "dolorum",
+    "amount_in_words": "rerum",
+    "products": [
+        "quae"
+    ],
+    "notes_1": "et",
+    "notes_2": "sapiente",
+    "notes_3": "saepe",
+    "notes_4": "iure"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-po-reports--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;PO Report updated successfully.&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &quot;status&quot;: &quot;error&quot;,
+ &quot;errors&quot;: {
+     &quot;po_no&quot;: [&quot;The PO number is required.&quot;],
+     &quot;po_date&quot;: [&quot;The PO date is required.&quot;],
+     ...
+ }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-po-reports--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-po-reports--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-po-reports--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-po-reports--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-po-reports--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-po-reports--id-" data-method="PUT"
+      data-path="api/po-reports/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-po-reports--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-po-reports--id-"
+                    onclick="tryItOut('PUTapi-po-reports--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-po-reports--id-"
+                    onclick="cancelTryOut('PUTapi-po-reports--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-po-reports--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/po-reports/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/po-reports/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-po-reports--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-po-reports--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-po-reports--id-"
+               value="officia"
+               data-component="url">
+    <br>
+<p>The ID of the PO Report. Example: <code>officia</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>po_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="po_no"                data-endpoint="PUTapi-po-reports--id-"
+               value="alias"
+               data-component="body">
+    <br>
+<p>The PO number. Example: <code>alias</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>po_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="po_date"                data-endpoint="PUTapi-po-reports--id-"
+               value="iusto"
+               data-component="body">
+    <br>
+<p>The date of the PO. Example: <code>iusto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quotation_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="quotation_no"                data-endpoint="PUTapi-po-reports--id-"
+               value="illum"
+               data-component="body">
+    <br>
+<p>The quotation number. Example: <code>illum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quotation_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="quotation_date"                data-endpoint="PUTapi-po-reports--id-"
+               value="rerum"
+               data-component="body">
+    <br>
+<p>The date of the quotation. Example: <code>rerum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_name"                data-endpoint="PUTapi-po-reports--id-"
+               value="eveniet"
+               data-component="body">
+    <br>
+<p>The name of the buyer. Example: <code>eveniet</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_address"                data-endpoint="PUTapi-po-reports--id-"
+               value="voluptatum"
+               data-component="body">
+    <br>
+<p>The address of the buyer. Example: <code>voluptatum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_pan</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_pan"                data-endpoint="PUTapi-po-reports--id-"
+               value="doloremque"
+               data-component="body">
+    <br>
+<p>The PAN of the buyer. Example: <code>doloremque</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_iec</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_iec"                data-endpoint="PUTapi-po-reports--id-"
+               value="rem"
+               data-component="body">
+    <br>
+<p>The IEC of the buyer. Example: <code>rem</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_gst</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_gst"                data-endpoint="PUTapi-po-reports--id-"
+               value="corporis"
+               data-component="body">
+    <br>
+<p>The GST number of the buyer. Example: <code>corporis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_mail</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_mail"                data-endpoint="PUTapi-po-reports--id-"
+               value="enim"
+               data-component="body">
+    <br>
+<p>The email of the buyer. Example: <code>enim</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_contact_person</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_contact_person"                data-endpoint="PUTapi-po-reports--id-"
+               value="tempore"
+               data-component="body">
+    <br>
+<p>The contact person of the buyer. Example: <code>tempore</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_contact_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_contact_no"                data-endpoint="PUTapi-po-reports--id-"
+               value="id"
+               data-component="body">
+    <br>
+<p>The contact number of the buyer. Example: <code>id</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>igst</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="igst"                data-endpoint="PUTapi-po-reports--id-"
+               value="accusamus"
+               data-component="body">
+    <br>
+<p>The IGST amount. Example: <code>accusamus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sgst</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sgst"                data-endpoint="PUTapi-po-reports--id-"
+               value="quisquam"
+               data-component="body">
+    <br>
+<p>The SGST amount. Example: <code>quisquam</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cgst</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="cgst"                data-endpoint="PUTapi-po-reports--id-"
+               value="pariatur"
+               data-component="body">
+    <br>
+<p>The CGST amount. Example: <code>pariatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_value</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="total_value"                data-endpoint="PUTapi-po-reports--id-"
+               value="dolorum"
+               data-component="body">
+    <br>
+<p>The total value of the PO. Example: <code>dolorum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="amount_in_words"                data-endpoint="PUTapi-po-reports--id-"
+               value="rerum"
+               data-component="body">
+    <br>
+<p>The total value in words. Example: <code>rerum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>products</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>The array of product details.</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>product_description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.product_description"                data-endpoint="PUTapi-po-reports--id-"
+               value="unde"
+               data-component="body">
+    <br>
+<p>Example: <code>unde</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.hsn_code"                data-endpoint="PUTapi-po-reports--id-"
+               value="rem"
+               data-component="body">
+    <br>
+<p>Example: <code>rem</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.quantity"                data-endpoint="PUTapi-po-reports--id-"
+               value="voluptas"
+               data-component="body">
+    <br>
+<p>Example: <code>voluptas</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.unit"                data-endpoint="PUTapi-po-reports--id-"
+               value="libero"
+               data-component="body">
+    <br>
+<p>Example: <code>libero</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.rate"                data-endpoint="PUTapi-po-reports--id-"
+               value="natus"
+               data-component="body">
+    <br>
+<p>Example: <code>natus</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.0.amount"                data-endpoint="PUTapi-po-reports--id-"
+               value="eaque"
+               data-component="body">
+    <br>
+<p>Example: <code>eaque</code></p>
+                    </div>
+                                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>*</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>product_description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.product_description"                data-endpoint="PUTapi-po-reports--id-"
+               value="velit"
+               data-component="body">
+    <br>
+<p>The description of the product. Example: <code>velit</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.hsn_code"                data-endpoint="PUTapi-po-reports--id-"
+               value="voluptas"
+               data-component="body">
+    <br>
+<p>The HSN code of the product. Example: <code>voluptas</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.quantity"                data-endpoint="PUTapi-po-reports--id-"
+               value="ut"
+               data-component="body">
+    <br>
+<p>The quantity of the product. Example: <code>ut</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.unit"                data-endpoint="PUTapi-po-reports--id-"
+               value="illo"
+               data-component="body">
+    <br>
+<p>The unit of the product. Example: <code>illo</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.rate"                data-endpoint="PUTapi-po-reports--id-"
+               value="cum"
+               data-component="body">
+    <br>
+<p>The rate of the product. Example: <code>cum</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.amount"                data-endpoint="PUTapi-po-reports--id-"
+               value="enim"
+               data-component="body">
+    <br>
+<p>The amount of the product. Example: <code>enim</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_1</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_1"                data-endpoint="PUTapi-po-reports--id-"
+               value="et"
+               data-component="body">
+    <br>
+<p>optional Additional notes 1. Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_2</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_2"                data-endpoint="PUTapi-po-reports--id-"
+               value="sapiente"
+               data-component="body">
+    <br>
+<p>optional Additional notes 2. Example: <code>sapiente</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_3</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_3"                data-endpoint="PUTapi-po-reports--id-"
+               value="saepe"
+               data-component="body">
+    <br>
+<p>optional Additional notes 3. Example: <code>saepe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes_4</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes_4"                data-endpoint="PUTapi-po-reports--id-"
+               value="iure"
+               data-component="body">
+    <br>
+<p>optional Additional notes 4. Example: <code>iure</code></p>
+        </div>
+        </form>
+
+                    <h2 id="po-reports-DELETEapi-po-reports--id-">Remove the specified PO Report from storage.</h2>
+
+<p>
+</p>
+
+<p>This endpoint deletes a specific PO Report by its ID,
+including associated product details.</p>
+
+<span id="example-requests-DELETEapi-po-reports--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://api.smartwrapfilms.com/api/po-reports/earum" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/po-reports/earum"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-po-reports--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;PO Report deleted successfully.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-po-reports--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-po-reports--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-po-reports--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-po-reports--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-po-reports--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-po-reports--id-" data-method="DELETE"
+      data-path="api/po-reports/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-po-reports--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-po-reports--id-"
+                    onclick="tryItOut('DELETEapi-po-reports--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-po-reports--id-"
+                    onclick="cancelTryOut('DELETEapi-po-reports--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-po-reports--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/po-reports/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-po-reports--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-po-reports--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-po-reports--id-"
+               value="earum"
+               data-component="url">
+    <br>
+<p>The ID of the PO Report. Example: <code>earum</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="po-reports-POSTapi-po-reports-get">Display the specified PO Report.</h2>
+
+<p>
+</p>
+
+<p>This endpoint returns the details of a specific PO Report by its PO number,
+including associated product details.</p>
+
+<span id="example-requests-POSTapi-po-reports-get">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://api.smartwrapfilms.com/api/po-reports-get?po_no=non" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/po-reports-get"
+);
+
+const params = {
+    "po_no": "non",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-po-reports-get">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;poReports&quot;: {
+        &quot;id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+        &quot;po_no&quot;: &quot;PO12345&quot;,
+        &quot;po_date&quot;: &quot;2023-06-25&quot;,
+        &quot;quotation_no&quot;: &quot;Q12345&quot;,
+        &quot;quotation_date&quot;: &quot;2023-06-20&quot;,
+        &quot;buyer_name&quot;: &quot;Buyer A&quot;,
+        &quot;buyer_address&quot;: &quot;123 Street, City, Country&quot;,
+        &quot;buyer_pan&quot;: &quot;ABCDE1234F&quot;,
+        &quot;buyer_iec&quot;: &quot;IEC1234567&quot;,
+        &quot;buyer_gst&quot;: &quot;GST123456&quot;,
+        &quot;buyer_mail&quot;: &quot;buyer@example.com&quot;,
+        &quot;buyer_contact_person&quot;: &quot;John Doe&quot;,
+        &quot;buyer_contact_no&quot;: &quot;1234567890&quot;,
+        &quot;created_by&quot;: 1,
+        &quot;igst&quot;: 18,
+        &quot;sgst&quot;: 9,
+        &quot;cgst&quot;: 9,
+        &quot;total_value&quot;: 1000,
+        &quot;amount_in_words&quot;: &quot;One Thousand&quot;,
+        &quot;notes_1&quot;: &quot;Note 1&quot;,
+        &quot;notes_2&quot;: &quot;Note 2&quot;,
+        &quot;notes_3&quot;: &quot;Note 3&quot;,
+        &quot;notes_4&quot;: &quot;Note 4&quot;,
+        &quot;poReportProducts&quot;: [
+            {
+                &quot;id&quot;: &quot;12345&quot;,
+                &quot;po_report_id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+                &quot;product_description&quot;: &quot;Product A&quot;,
+                &quot;hsn_code&quot;: &quot;1234&quot;,
+                &quot;quantity&quot;: 10,
+                &quot;unit&quot;: &quot;pcs&quot;,
+                &quot;rate&quot;: 100,
+                &quot;amount&quot;: 1000
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-po-reports-get" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-po-reports-get"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-po-reports-get"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-po-reports-get" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-po-reports-get">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-po-reports-get" data-method="POST"
+      data-path="api/po-reports-get"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-po-reports-get', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-po-reports-get"
+                    onclick="tryItOut('POSTapi-po-reports-get');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-po-reports-get"
+                    onclick="cancelTryOut('POSTapi-po-reports-get');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-po-reports-get"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/po-reports-get</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-po-reports-get"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-po-reports-get"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>po_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="po_no"                data-endpoint="POSTapi-po-reports-get"
+               value="non"
+               data-component="query">
+    <br>
+<p>The PO number of the PO Report. Example: <code>non</code></p>
+            </div>
+                </form>
 
                 <h1 id="products">Products</h1>
 

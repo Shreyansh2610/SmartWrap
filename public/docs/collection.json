@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "47300089-e911-4349-980e-ef8103be5004",
+        "_postman_id": "6ab5cd8e-8a32-4dc2-af3b-2d849ff58c49",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1135,6 +1135,228 @@
                             "header": [],
                             "code": 404,
                             "body": "{\n \"message\": \"Finish Goods not found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "PO Reports",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the PO Reports.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/po-reports",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/po-reports"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint returns a list of all PO Reports created by the authenticated user,\nincluding associated product details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"poReports\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"po_no\": \"PO12345\",\n         \"po_date\": \"2023-06-25\",\n         \"quotation_no\": \"Q12345\",\n         \"quotation_date\": \"2023-06-20\",\n         \"buyer_name\": \"Buyer A\",\n         \"buyer_address\": \"123 Street, City, Country\",\n         \"buyer_pan\": \"ABCDE1234F\",\n         \"buyer_iec\": \"IEC1234567\",\n         \"buyer_gst\": \"GST123456\",\n         \"buyer_mail\": \"buyer@example.com\",\n         \"buyer_contact_person\": \"John Doe\",\n         \"buyer_contact_no\": \"1234567890\",\n         \"created_by\": 1,\n         \"igst\": 18,\n         \"sgst\": 9,\n         \"cgst\": 9,\n         \"total_value\": 1000,\n         \"amount_in_words\": \"One Thousand\",\n         \"notes_1\": \"Note 1\",\n         \"notes_2\": \"Note 2\",\n         \"notes_3\": \"Note 3\",\n         \"notes_4\": \"Note 4\",\n         \"poReportProducts\": [\n             {\n                 \"id\": \"12345jl5-4f45t-5g45\",\n                 \"po_report_id\": \"15fjl5-4f45t-5g456y-g5t\",\n                 \"product_description\": \"Product A\",\n                 \"hsn_code\": \"1234\",\n                 \"quantity\": 10,\n                 \"unit\": \"pcs\",\n                 \"rate\": 100,\n                 \"amount\": 1000\n             }\n         ]\n     }\n ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created PO Report in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/po-reports",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/po-reports"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"po_no\":\"fugit\",\"po_date\":\"sit\",\"quotation_no\":\"doloribus\",\"quotation_date\":\"possimus\",\"buyer_name\":\"similique\",\"buyer_address\":\"velit\",\"buyer_pan\":\"omnis\",\"buyer_iec\":\"qui\",\"buyer_gst\":\"vero\",\"buyer_mail\":\"consequuntur\",\"buyer_contact_person\":\"optio\",\"buyer_contact_no\":\"facere\",\"igst\":\"qui\",\"sgst\":\"sit\",\"cgst\":\"ad\",\"total_value\":\"cumque\",\"amount_in_words\":\"eum\",\"products\":[\"eum\"],\"notes_1\":\"et\",\"notes_2\":\"eveniet\",\"notes_3\":\"odit\",\"notes_4\":\"et\"}"
+                        },
+                        "description": "This endpoint allows for the creation of a new PO Report along with its associated product details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"PO Report added successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"errors\": {\n     \"po_no\": [\"The PO number is required.\"],\n     \"po_date\": [\"The PO date is required.\"],\n     ...\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified PO Report in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/po-reports\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/po-reports\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "officia",
+                                    "description": "The ID of the PO Report."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"po_no\":\"alias\",\"po_date\":\"iusto\",\"quotation_no\":\"illum\",\"quotation_date\":\"rerum\",\"buyer_name\":\"eveniet\",\"buyer_address\":\"voluptatum\",\"buyer_pan\":\"doloremque\",\"buyer_iec\":\"rem\",\"buyer_gst\":\"corporis\",\"buyer_mail\":\"enim\",\"buyer_contact_person\":\"tempore\",\"buyer_contact_no\":\"id\",\"igst\":\"accusamus\",\"sgst\":\"quisquam\",\"cgst\":\"pariatur\",\"total_value\":\"dolorum\",\"amount_in_words\":\"rerum\",\"products\":[\"quae\"],\"notes_1\":\"et\",\"notes_2\":\"sapiente\",\"notes_3\":\"saepe\",\"notes_4\":\"iure\"}"
+                        },
+                        "description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"PO Report updated successfully.\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"status\": \"error\",\n \"errors\": {\n     \"po_no\": [\"The PO number is required.\"],\n     \"po_date\": [\"The PO date is required.\"],\n     ...\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified PO Report from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/po-reports\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/po-reports\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "earum",
+                                    "description": "The ID of the PO Report."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint deletes a specific PO Report by its ID,\nincluding associated product details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"PO Report deleted successfully.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified PO Report.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/po-reports-get",
+                            "query": [
+                                {
+                                    "key": "po_no",
+                                    "value": "non",
+                                    "description": "The PO number of the PO Report.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=non"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint returns the details of a specific PO Report by its PO number,\nincluding associated product details.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"poReports\": {\n     \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n     \"po_no\": \"PO12345\",\n     \"po_date\": \"2023-06-25\",\n     \"quotation_no\": \"Q12345\",\n     \"quotation_date\": \"2023-06-20\",\n     \"buyer_name\": \"Buyer A\",\n     \"buyer_address\": \"123 Street, City, Country\",\n     \"buyer_pan\": \"ABCDE1234F\",\n     \"buyer_iec\": \"IEC1234567\",\n     \"buyer_gst\": \"GST123456\",\n     \"buyer_mail\": \"buyer@example.com\",\n     \"buyer_contact_person\": \"John Doe\",\n     \"buyer_contact_no\": \"1234567890\",\n     \"created_by\": 1,\n     \"igst\": 18,\n     \"sgst\": 9,\n     \"cgst\": 9,\n     \"total_value\": 1000,\n     \"amount_in_words\": \"One Thousand\",\n     \"notes_1\": \"Note 1\",\n     \"notes_2\": \"Note 2\",\n     \"notes_3\": \"Note 3\",\n     \"notes_4\": \"Note 4\",\n     \"poReportProducts\": [\n         {\n             \"id\": \"12345\",\n             \"po_report_id\": \"15fjl5-4f45t-5g456y-g5t\",\n             \"product_description\": \"Product A\",\n             \"hsn_code\": \"1234\",\n             \"quantity\": 10,\n             \"unit\": \"pcs\",\n             \"rate\": 100,\n             \"amount\": 1000\n         }\n     ]\n }\n}",
                             "name": ""
                         }
                     ]
