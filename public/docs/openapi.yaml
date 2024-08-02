@@ -2264,94 +2264,126 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: fugit
+                  example: optio
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: sit
+                  example: laboriosam
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: doloribus
+                  example: sapiente
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: possimus
+                  example: fugit
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: similique
+                  example: minima
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: velit
+                  example: sit
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: omnis
+                  example: quia
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: qui
+                  example: neque
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: vero
+                  example: eos
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: consequuntur
+                  example: beatae
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: optio
+                  example: minus
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: facere
+                  example: impedit
+                supplier_name:
+                  type: string
+                  description: 'The name of the supplier.'
+                  example: id
+                supplier_address:
+                  type: string
+                  description: 'The address of the supplier.'
+                  example: consequatur
+                supplier_pan:
+                  type: string
+                  description: 'The PAN of the supplier.'
+                  example: laboriosam
+                supplier_iec:
+                  type: string
+                  description: 'The IEC of the supplier.'
+                  example: qui
+                supplier_gst:
+                  type: string
+                  description: 'The GST number of the supplier.'
+                  example: sed
+                supplier_mail:
+                  type: string
+                  description: 'The email of the supplier.'
+                  example: qui
+                supplier_contact_person:
+                  type: string
+                  description: 'The contact person of the supplier.'
+                  example: quisquam
+                supplier_contact_no:
+                  type: string
+                  description: 'The contact number of the supplier.'
+                  example: debitis
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: qui
+                  example: distinctio
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: sit
+                  example: sed
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: ad
+                  example: eum
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: cumque
+                  example: ut
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: eum
+                  example: at
+                notes_1:
+                  type: string
+                  description: 'optional Additional notes 1.'
+                  example: maiores
+                notes_2:
+                  type: string
+                  description: 'optional Additional notes 2.'
+                  example: quidem
+                notes_3:
+                  type: string
+                  description: 'optional Additional notes 3.'
+                  example: assumenda
+                notes_4:
+                  type: string
+                  description: 'optional Additional notes 4.'
+                  example: pariatur
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - eum
+                    - ut
                   items:
                     type: string
-                notes_1:
-                  type: string
-                  description: 'optional Additional notes 1.'
-                  example: et
-                notes_2:
-                  type: string
-                  description: 'optional Additional notes 2.'
-                  example: eveniet
-                notes_3:
-                  type: string
-                  description: 'optional Additional notes 3.'
-                  example: odit
-                notes_4:
-                  type: string
-                  description: 'optional Additional notes 4.'
-                  example: et
               required:
                 - po_no
                 - po_date
@@ -2365,6 +2397,14 @@ paths:
                 - buyer_mail
                 - buyer_contact_person
                 - buyer_contact_no
+                - supplier_name
+                - supplier_address
+                - supplier_pan
+                - supplier_iec
+                - supplier_gst
+                - supplier_mail
+                - supplier_contact_person
+                - supplier_contact_no
                 - igst
                 - sgst
                 - cgst
@@ -2414,94 +2454,126 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: alias
+                  example: doloremque
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: iusto
+                  example: consequuntur
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: illum
+                  example: quae
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: rerum
+                  example: ipsam
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: eveniet
+                  example: quis
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: voluptatum
+                  example: modi
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: doloremque
+                  example: laborum
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: rem
+                  example: animi
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: corporis
+                  example: assumenda
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: enim
+                  example: quia
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: tempore
+                  example: eos
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: id
+                  example: animi
+                supplier_name:
+                  type: string
+                  description: 'The name of the supplier.'
+                  example: doloribus
+                supplier_address:
+                  type: string
+                  description: 'The address of the supplier.'
+                  example: ea
+                supplier_pan:
+                  type: string
+                  description: 'The PAN of the supplier.'
+                  example: possimus
+                supplier_iec:
+                  type: string
+                  description: 'The IEC of the supplier.'
+                  example: aperiam
+                supplier_gst:
+                  type: string
+                  description: 'The GST number of the supplier.'
+                  example: ducimus
+                supplier_mail:
+                  type: string
+                  description: 'The email of the supplier.'
+                  example: voluptas
+                supplier_contact_person:
+                  type: string
+                  description: 'The contact person of the supplier.'
+                  example: unde
+                supplier_contact_no:
+                  type: string
+                  description: 'The contact number of the supplier.'
+                  example: qui
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: accusamus
+                  example: rerum
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: quisquam
+                  example: voluptatem
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: pariatur
+                  example: aut
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: dolorum
+                  example: fugit
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: rerum
+                  example: eligendi
+                notes_1:
+                  type: string
+                  description: 'optional Additional notes 1.'
+                  example: iusto
+                notes_2:
+                  type: string
+                  description: 'optional Additional notes 2.'
+                  example: provident
+                notes_3:
+                  type: string
+                  description: 'optional Additional notes 3.'
+                  example: distinctio
+                notes_4:
+                  type: string
+                  description: 'optional Additional notes 4.'
+                  example: accusantium
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - quae
+                    - excepturi
                   items:
                     type: string
-                notes_1:
-                  type: string
-                  description: 'optional Additional notes 1.'
-                  example: et
-                notes_2:
-                  type: string
-                  description: 'optional Additional notes 2.'
-                  example: sapiente
-                notes_3:
-                  type: string
-                  description: 'optional Additional notes 3.'
-                  example: saepe
-                notes_4:
-                  type: string
-                  description: 'optional Additional notes 4.'
-                  example: iure
               required:
                 - po_no
                 - po_date
@@ -2515,6 +2587,14 @@ paths:
                 - buyer_mail
                 - buyer_contact_person
                 - buyer_contact_no
+                - supplier_name
+                - supplier_address
+                - supplier_pan
+                - supplier_iec
+                - supplier_gst
+                - supplier_mail
+                - supplier_contact_person
+                - supplier_contact_no
                 - igst
                 - sgst
                 - cgst
@@ -2552,7 +2632,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the PO Report.'
-        example: officia
+        example: voluptatem
         required: true
         schema:
           type: string
@@ -2566,12 +2646,12 @@ paths:
           in: query
           name: po_no
           description: 'The PO number of the PO Report.'
-          example: non
+          example: qui
           required: true
           schema:
             type: string
             description: 'The PO number of the PO Report.'
-            example: non
+            example: qui
       responses:
         200:
           description: ''

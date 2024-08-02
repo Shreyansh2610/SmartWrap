@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "6ab5cd8e-8a32-4dc2-af3b-2d849ff58c49",
+        "_postman_id": "20d1b68f-298d-44f4-b34f-e63006103d6a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1202,7 +1202,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"po_no\":\"fugit\",\"po_date\":\"sit\",\"quotation_no\":\"doloribus\",\"quotation_date\":\"possimus\",\"buyer_name\":\"similique\",\"buyer_address\":\"velit\",\"buyer_pan\":\"omnis\",\"buyer_iec\":\"qui\",\"buyer_gst\":\"vero\",\"buyer_mail\":\"consequuntur\",\"buyer_contact_person\":\"optio\",\"buyer_contact_no\":\"facere\",\"igst\":\"qui\",\"sgst\":\"sit\",\"cgst\":\"ad\",\"total_value\":\"cumque\",\"amount_in_words\":\"eum\",\"products\":[\"eum\"],\"notes_1\":\"et\",\"notes_2\":\"eveniet\",\"notes_3\":\"odit\",\"notes_4\":\"et\"}"
+                            "raw": "{\"po_no\":\"optio\",\"po_date\":\"laboriosam\",\"quotation_no\":\"sapiente\",\"quotation_date\":\"fugit\",\"buyer_name\":\"minima\",\"buyer_address\":\"sit\",\"buyer_pan\":\"quia\",\"buyer_iec\":\"neque\",\"buyer_gst\":\"eos\",\"buyer_mail\":\"beatae\",\"buyer_contact_person\":\"minus\",\"buyer_contact_no\":\"impedit\",\"supplier_name\":\"id\",\"supplier_address\":\"consequatur\",\"supplier_pan\":\"laboriosam\",\"supplier_iec\":\"qui\",\"supplier_gst\":\"sed\",\"supplier_mail\":\"qui\",\"supplier_contact_person\":\"quisquam\",\"supplier_contact_no\":\"debitis\",\"igst\":\"distinctio\",\"sgst\":\"sed\",\"cgst\":\"eum\",\"total_value\":\"ut\",\"amount_in_words\":\"at\",\"notes_1\":\"maiores\",\"notes_2\":\"quidem\",\"notes_3\":\"assumenda\",\"notes_4\":\"pariatur\",\"products\":[\"ut\"]}"
                         },
                         "description": "This endpoint allows for the creation of a new PO Report along with its associated product details.",
                         "auth": {
@@ -1236,7 +1236,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "officia",
+                                    "value": "voluptatem",
                                     "description": "The ID of the PO Report."
                                 }
                             ]
@@ -1254,7 +1254,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"po_no\":\"alias\",\"po_date\":\"iusto\",\"quotation_no\":\"illum\",\"quotation_date\":\"rerum\",\"buyer_name\":\"eveniet\",\"buyer_address\":\"voluptatum\",\"buyer_pan\":\"doloremque\",\"buyer_iec\":\"rem\",\"buyer_gst\":\"corporis\",\"buyer_mail\":\"enim\",\"buyer_contact_person\":\"tempore\",\"buyer_contact_no\":\"id\",\"igst\":\"accusamus\",\"sgst\":\"quisquam\",\"cgst\":\"pariatur\",\"total_value\":\"dolorum\",\"amount_in_words\":\"rerum\",\"products\":[\"quae\"],\"notes_1\":\"et\",\"notes_2\":\"sapiente\",\"notes_3\":\"saepe\",\"notes_4\":\"iure\"}"
+                            "raw": "{\"po_no\":\"doloremque\",\"po_date\":\"consequuntur\",\"quotation_no\":\"quae\",\"quotation_date\":\"ipsam\",\"buyer_name\":\"quis\",\"buyer_address\":\"modi\",\"buyer_pan\":\"laborum\",\"buyer_iec\":\"animi\",\"buyer_gst\":\"assumenda\",\"buyer_mail\":\"quia\",\"buyer_contact_person\":\"eos\",\"buyer_contact_no\":\"animi\",\"supplier_name\":\"doloribus\",\"supplier_address\":\"ea\",\"supplier_pan\":\"possimus\",\"supplier_iec\":\"aperiam\",\"supplier_gst\":\"ducimus\",\"supplier_mail\":\"voluptas\",\"supplier_contact_person\":\"unde\",\"supplier_contact_no\":\"qui\",\"igst\":\"rerum\",\"sgst\":\"voluptatem\",\"cgst\":\"aut\",\"total_value\":\"fugit\",\"amount_in_words\":\"eligendi\",\"notes_1\":\"iusto\",\"notes_2\":\"provident\",\"notes_3\":\"distinctio\",\"notes_4\":\"accusantium\",\"products\":[\"excepturi\"]}"
                         },
                         "description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details.",
                         "auth": {
@@ -1288,7 +1288,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "earum",
+                                    "value": "voluptate",
                                     "description": "The ID of the PO Report."
                                 }
                             ]
@@ -1328,12 +1328,12 @@
                             "query": [
                                 {
                                     "key": "po_no",
-                                    "value": "non",
+                                    "value": "qui",
                                     "description": "The PO number of the PO Report.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=non"
+                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=qui"
                         },
                         "method": "POST",
                         "header": [
