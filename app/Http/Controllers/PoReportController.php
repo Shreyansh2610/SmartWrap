@@ -82,6 +82,14 @@ class PoReportController extends Controller
                 'buyer_mail',
                 'buyer_contact_person',
                 'buyer_contact_no',
+                'supplier_name',
+                'supplier_address',
+                'supplier_pan',
+                'supplier_iec',
+                'supplier_gst',
+                'supplier_mail',
+                'supplier_contact_person',
+                'supplier_contact_no',
                 'created_by',
                 'igst',
                 'sgst',
@@ -134,6 +142,14 @@ class PoReportController extends Controller
      * @bodyParam buyer_mail string required The email of the buyer.
      * @bodyParam buyer_contact_person string required The contact person of the buyer.
      * @bodyParam buyer_contact_no string required The contact number of the buyer.
+     * @bodyParam supplier_name string required The name of the supplier.
+     * @bodyParam supplier_address string required The address of the supplier.
+     * @bodyParam supplier_pan string required The PAN of the supplier.
+     * @bodyParam supplier_iec string required The IEC of the supplier.
+     * @bodyParam supplier_gst string required The GST number of the supplier.
+     * @bodyParam supplier_mail string required The email of the supplier.
+     * @bodyParam supplier_contact_person string required The contact person of the supplier.
+     * @bodyParam supplier_contact_no string required The contact number of the supplier.
      * @bodyParam igst numeric required The IGST amount.
      * @bodyParam sgst numeric required The SGST amount.
      * @bodyParam cgst numeric required The CGST amount.
@@ -167,41 +183,41 @@ class PoReportController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'po_no' => 'required',
-                'po_date' => 'required',
-                'quotation_no' => 'required',
-                'quotation_date' => 'required',
-                'buyer_name' => 'required',
-                'buyer_address' => 'required',
-                'buyer_pan' => 'required',
-                'buyer_iec' => 'required',
-                'buyer_gst' => 'required',
-                'buyer_mail' => 'required',
-                'buyer_contact_person' => 'required',
-                'buyer_contact_no' => 'required',
-                'igst' => 'required',
-                'sgst' => 'required',
-                'cgst' => 'required',
-                'total_value' => 'required',
-                'amount_in_words' => 'required',
-                'products.*.product_description' => 'required',
-                'products.*.hsn_code' => 'required',
-                'products.*.quantity' => 'required',
-                'products.*.unit' => 'required',
-                'products.*.rate' => 'required',
-                'products.*.amount' => 'required',
-            ],
-            [
-                'required' => ':attribute is required',
-                'numeric' => ':attribute must be numeric',
-            ],
-        );
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
+        // $validator = Validator::make(
+        //     $request->all(),
+        //     [
+        //         'po_no' => 'required',
+        //         'po_date' => 'required',
+        //         'quotation_no' => 'required',
+        //         'quotation_date' => 'required',
+        //         'buyer_name' => 'required',
+        //         'buyer_address' => 'required',
+        //         'buyer_pan' => 'required',
+        //         'buyer_iec' => 'required',
+        //         'buyer_gst' => 'required',
+        //         'buyer_mail' => 'required',
+        //         'buyer_contact_person' => 'required',
+        //         'buyer_contact_no' => 'required',
+        //         'igst' => 'required',
+        //         'sgst' => 'required',
+        //         'cgst' => 'required',
+        //         'total_value' => 'required',
+        //         'amount_in_words' => 'required',
+        //         'products.*.product_description' => 'required',
+        //         'products.*.hsn_code' => 'required',
+        //         'products.*.quantity' => 'required',
+        //         'products.*.unit' => 'required',
+        //         'products.*.rate' => 'required',
+        //         'products.*.amount' => 'required',
+        //     ],
+        //     [
+        //         'required' => ':attribute is required',
+        //         'numeric' => ':attribute must be numeric',
+        //     ],
+        // );
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()], 422);
+        // }
 
         $poReport = PoReport::firstOrCreate([
             'po_no' => $request->po_no,
@@ -216,6 +232,14 @@ class PoReportController extends Controller
             'buyer_mail' => $request->buyer_mail,
             'buyer_contact_person' => $request->buyer_contact_person,
             'buyer_contact_no' => $request->buyer_contact_no,
+            'supplier_name' => $request->supplier_name,
+            'supplier_address' => $request->supplier_address,
+            'supplier_pan' => $request->supplier_pan,
+            'supplier_iec' => $request->supplier_iec,
+            'supplier_gst' => $request->supplier_gst,
+            'supplier_mail' => $request->supplier_mail,
+            'supplier_contact_person' => $request->supplier_contact_person,
+            'supplier_contact_no' => $request->supplier_contact_no,
             'igst' => $request->igst,
             'sgst' => $request->sgst,
             'cgst' => $request->cgst,
@@ -316,6 +340,14 @@ class PoReportController extends Controller
                 'buyer_mail',
                 'buyer_contact_person',
                 'buyer_contact_no',
+                'supplier_name',
+                'supplier_address',
+                'supplier_pan',
+                'supplier_iec',
+                'supplier_gst',
+                'supplier_mail',
+                'supplier_contact_person',
+                'supplier_contact_no',
                 'created_by',
                 'igst',
                 'sgst',
@@ -373,6 +405,14 @@ class PoReportController extends Controller
      * @bodyParam buyer_mail string required The email of the buyer.
      * @bodyParam buyer_contact_person string required The contact person of the buyer.
      * @bodyParam buyer_contact_no string required The contact number of the buyer.
+     * @bodyParam supplier_name string required The name of the supplier.
+     * @bodyParam supplier_address string required The address of the supplier.
+     * @bodyParam supplier_pan string required The PAN of the supplier.
+     * @bodyParam supplier_iec string required The IEC of the supplier.
+     * @bodyParam supplier_gst string required The GST number of the supplier.
+     * @bodyParam supplier_mail string required The email of the supplier.
+     * @bodyParam supplier_contact_person string required The contact person of the supplier.
+     * @bodyParam supplier_contact_no string required The contact number of the supplier.
      * @bodyParam igst numeric required The IGST amount.
      * @bodyParam sgst numeric required The SGST amount.
      * @bodyParam cgst numeric required The CGST amount.
@@ -406,41 +446,41 @@ class PoReportController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'po_no' => 'required',
-                'po_date' => 'required',
-                'quotation_no' => 'required',
-                'quotation_date' => 'required',
-                'buyer_name' => 'required',
-                'buyer_address' => 'required',
-                'buyer_pan' => 'required',
-                'buyer_iec' => 'required',
-                'buyer_gst' => 'required',
-                'buyer_mail' => 'required',
-                'buyer_contact_person' => 'required',
-                'buyer_contact_no' => 'required',
-                'igst' => 'required',
-                'sgst' => 'required',
-                'cgst' => 'required',
-                'total_value' => 'required',
-                'amount_in_words' => 'required',
-                'products.*.product_description' => 'required',
-                'products.*.hsn_code' => 'required',
-                'products.*.quantity' => 'required',
-                'products.*.unit' => 'required',
-                'products.*.rate' => 'required',
-                'products.*.amount' => 'required',
-            ],
-            [
-                'required' => ':attribute is required',
-                'numeric' => ':attribute must be numeric',
-            ],
-        );
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
+        // $validator = Validator::make(
+        //     $request->all(),
+        //     [
+        //         'po_no' => 'required',
+        //         'po_date' => 'required',
+        //         'quotation_no' => 'required',
+        //         'quotation_date' => 'required',
+        //         'buyer_name' => 'required',
+        //         'buyer_address' => 'required',
+        //         'buyer_pan' => 'required',
+        //         'buyer_iec' => 'required',
+        //         'buyer_gst' => 'required',
+        //         'buyer_mail' => 'required',
+        //         'buyer_contact_person' => 'required',
+        //         'buyer_contact_no' => 'required',
+        //         'igst' => 'required',
+        //         'sgst' => 'required',
+        //         'cgst' => 'required',
+        //         'total_value' => 'required',
+        //         'amount_in_words' => 'required',
+        //         'products.*.product_description' => 'required',
+        //         'products.*.hsn_code' => 'required',
+        //         'products.*.quantity' => 'required',
+        //         'products.*.unit' => 'required',
+        //         'products.*.rate' => 'required',
+        //         'products.*.amount' => 'required',
+        //     ],
+        //     [
+        //         'required' => ':attribute is required',
+        //         'numeric' => ':attribute must be numeric',
+        //     ],
+        // );
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()], 422);
+        // }
 
         $poReport = PoReport::find($id)->update([
             'po_no' => $request->po_no,
@@ -455,6 +495,14 @@ class PoReportController extends Controller
             'buyer_mail' => $request->buyer_mail,
             'buyer_contact_person' => $request->buyer_contact_person,
             'buyer_contact_no' => $request->buyer_contact_no,
+            'supplier_name' => $request->supplier_name,
+            'supplier_address' => $request->supplier_address,
+            'supplier_pan' => $request->supplier_pan,
+            'supplier_iec' => $request->supplier_iec,
+            'supplier_gst' => $request->supplier_gst,
+            'supplier_mail' => $request->supplier_mail,
+            'supplier_contact_person' => $request->supplier_contact_person,
+            'supplier_contact_no' => $request->supplier_contact_no,
             'igst' => $request->igst,
             'sgst' => $request->sgst,
             'cgst' => $request->cgst,
