@@ -73,7 +73,7 @@ endpoints:
                    "bank_ad_code": "AD12345",
                    "bank_swift_code": "SWIFT12345",
                    "payment_terms": "30 days",
-                   "payment_delivery_time": "15 days",
+                   "payment_delivery_time": "2024-05-13 17:05:06",
                    "payment_delivery_terms": "FOB",
                    "notes": "Special instructions",
                    "piReportProducts": [
@@ -454,7 +454,7 @@ endpoints:
         name: payment_delivery_time
         description: 'The payment delivery time.'
         required: true
-        example: '15 days'
+        example: '2024-05-13 17:05:06'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -482,7 +482,7 @@ endpoints:
         description: 'The list of products associated with the PI Report.'
         required: true
         example:
-          - tempora
+          - est
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -623,11 +623,11 @@ endpoints:
       bank_ad_code: AD12345
       bank_swift_code: SWIFT12345
       payment_terms: '30 days'
-      payment_delivery_time: '15 days'
+      payment_delivery_time: '2024-05-13 17:05:06'
       payment_delivery_terms: FOB
       notes: 'Special instructions'
       products:
-        - tempora
+        - est
     fileParameters: []
     responses:
       -
@@ -1006,7 +1006,7 @@ endpoints:
         name: payment_delivery_time
         description: 'The payment delivery time.'
         required: true
-        example: '15 days'
+        example: '2024-05-13 17:05:06'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -1034,7 +1034,7 @@ endpoints:
         description: 'The list of products associated with the PI Report.'
         required: true
         example:
-          - consequatur
+          - rerum
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -1175,11 +1175,11 @@ endpoints:
       bank_ad_code: AD12345
       bank_swift_code: SWIFT12345
       payment_terms: '30 days'
-      payment_delivery_time: '15 days'
+      payment_delivery_time: '2024-05-13 17:05:06'
       payment_delivery_terms: FOB
       notes: 'Special instructions'
       products:
-        - consequatur
+        - rerum
     fileParameters: []
     responses:
       -
@@ -1325,7 +1325,7 @@ endpoints:
                "bank_ad_code": "AD12345",
                "bank_swift_code": "SWIFT12345",
                "payment_terms": "30 days",
-               "payment_delivery_time": "15 days",
+               "payment_delivery_time": "2024-05-13 17:05:06",
                "payment_delivery_terms": "FOB",
                "notes": "Special instructions",
                "piReportProducts": [

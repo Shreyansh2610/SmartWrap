@@ -57,7 +57,7 @@ class PiReportExportController extends Controller
      *          "bank_ad_code": "AD12345",
      *          "bank_swift_code": "SWIFT12345",
      *          "payment_terms": "30 days",
-     *          "payment_delivery_time": "15 days",
+     *          "payment_delivery_time": "2024-05-13 17:05:06",
      *          "payment_delivery_terms": "FOB",
      *          "notes": "Special instructions",
      *          "piReportProducts": [
@@ -187,7 +187,7 @@ class PiReportExportController extends Controller
      * @bodyParam bank_ad_code string required The AD code of the bank. Example: AD12345
      * @bodyParam bank_swift_code string required The SWIFT code of the bank. Example: SWIFT12345
      * @bodyParam payment_terms string required The payment terms. Example: 30 days
-     * @bodyParam payment_delivery_time string required The payment delivery time. Example: 15 days
+     * @bodyParam payment_delivery_time string required The payment delivery time. Example: 2024-05-13 17:05:06
      * @bodyParam payment_delivery_terms string required The payment delivery terms. Example: FOB
      * @bodyParam notes string optional Any additional notes. Example: Special instructions
      * @bodyParam products array required The list of products associated with the PI Report.
@@ -322,7 +322,7 @@ class PiReportExportController extends Controller
      *      "bank_ad_code": "AD12345",
      *      "bank_swift_code": "SWIFT12345",
      *      "payment_terms": "30 days",
-     *      "payment_delivery_time": "15 days",
+     *      "payment_delivery_time": "2024-05-13 17:05:06",
      *      "payment_delivery_terms": "FOB",
      *      "notes": "Special instructions",
      *      "piReportProducts": [
@@ -445,7 +445,7 @@ class PiReportExportController extends Controller
      * @bodyParam bank_ad_code string required The AD code of the bank. Example: AD12345
      * @bodyParam bank_swift_code string required The SWIFT code of the bank. Example: SWIFT12345
      * @bodyParam payment_terms string required The payment terms. Example: 30 days
-     * @bodyParam payment_delivery_time string required The payment delivery time. Example: 15 days
+     * @bodyParam payment_delivery_time string required The payment delivery time. Example: 2024-05-13 17:05:06
      * @bodyParam payment_delivery_terms string required The payment delivery terms. Example: FOB
      * @bodyParam notes string optional Any additional notes. Example: Special instructions
      * @bodyParam products array required The list of products associated with the PI Report.

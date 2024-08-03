@@ -2072,7 +2072,7 @@ paths:
                       bank_ad_code: AD12345
                       bank_swift_code: SWIFT12345
                       payment_terms: '30 days'
-                      payment_delivery_time: '15 days'
+                      payment_delivery_time: '2024-05-13 17:05:06'
                       payment_delivery_terms: FOB
                       notes: 'Special instructions'
                       piReportProducts:
@@ -2135,7 +2135,7 @@ paths:
                         bank_ad_code: AD12345
                         bank_swift_code: SWIFT12345
                         payment_terms: '30 days'
-                        payment_delivery_time: '15 days'
+                        payment_delivery_time: '2024-05-13 17:05:06'
                         payment_delivery_terms: FOB
                         notes: 'Special instructions'
                         piReportProducts:
@@ -2269,7 +2269,7 @@ paths:
                           example: '30 days'
                         payment_delivery_time:
                           type: string
-                          example: '15 days'
+                          example: '2024-05-13 17:05:06'
                         payment_delivery_terms:
                           type: string
                           example: FOB
@@ -2516,7 +2516,7 @@ paths:
                 payment_delivery_time:
                   type: string
                   description: 'The payment delivery time.'
-                  example: '15 days'
+                  example: '2024-05-13 17:05:06'
                 payment_delivery_terms:
                   type: string
                   description: 'The payment delivery terms.'
@@ -2529,7 +2529,7 @@ paths:
                   type: array
                   description: 'The list of products associated with the PI Report.'
                   example:
-                    - tempora
+                    - est
                   items:
                     type: string
               required:
@@ -2752,7 +2752,7 @@ paths:
                 payment_delivery_time:
                   type: string
                   description: 'The payment delivery time.'
-                  example: '15 days'
+                  example: '2024-05-13 17:05:06'
                 payment_delivery_terms:
                   type: string
                   description: 'The payment delivery terms.'
@@ -2765,7 +2765,7 @@ paths:
                   type: array
                   description: 'The list of products associated with the PI Report.'
                   example:
-                    - consequatur
+                    - rerum
                   items:
                     type: string
               required:
@@ -2896,7 +2896,7 @@ paths:
                     bank_ad_code: AD12345
                     bank_swift_code: SWIFT12345
                     payment_terms: '30 days'
-                    payment_delivery_time: '15 days'
+                    payment_delivery_time: '2024-05-13 17:05:06'
                     payment_delivery_terms: FOB
                     notes: 'Special instructions'
                     piReportProducts:
@@ -3034,7 +3034,7 @@ paths:
                         example: '30 days'
                       payment_delivery_time:
                         type: string
-                        example: '15 days'
+                        example: '2024-05-13 17:05:06'
                       payment_delivery_terms:
                         type: string
                         example: FOB
@@ -3358,15 +3358,15 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: unde
+                  example: eveniet
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: velit
+                  example: officia
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: et
+                  example: ipsum
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
@@ -3374,108 +3374,108 @@ paths:
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: ipsa
+                  example: dolores
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: aspernatur
+                  example: alias
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: vel
+                  example: id
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: adipisci
+                  example: dolores
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: tempora
+                  example: neque
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: excepturi
+                  example: voluptatem
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: eos
+                  example: quae
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: quia
+                  example: eligendi
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: et
+                  example: in
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: accusantium
+                  example: aperiam
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: quasi
+                  example: in
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: eum
+                  example: dolorem
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: est
+                  example: dolor
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: optio
+                  example: earum
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: cum
+                  example: veniam
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: eum
+                  example: modi
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: omnis
+                  example: dolorum
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: delectus
+                  example: et
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: laboriosam
+                  example: ducimus
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: est
+                  example: facere
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: rerum
+                  example: assumenda
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: assumenda
+                  example: labore
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: omnis
+                  example: hic
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: amet
+                  example: est
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: reiciendis
+                  example: voluptatum
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - ut
+                    - culpa
                   items:
                     type: string
               required:
@@ -3548,124 +3548,124 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: ipsa
+                  example: architecto
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: laudantium
+                  example: aliquid
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: aliquam
+                  example: corporis
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: et
+                  example: aperiam
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: repellat
+                  example: sed
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: nihil
+                  example: modi
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: doloremque
+                  example: rerum
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: harum
+                  example: esse
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: fugiat
+                  example: itaque
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: quidem
+                  example: culpa
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: veritatis
+                  example: voluptas
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: voluptates
+                  example: aliquid
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: est
+                  example: quo
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: sed
+                  example: iusto
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: natus
+                  example: doloremque
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: soluta
+                  example: corrupti
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: et
+                  example: ratione
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: et
+                  example: sed
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: velit
+                  example: occaecati
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: beatae
+                  example: adipisci
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: autem
+                  example: id
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: consequatur
+                  example: vel
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: quia
+                  example: in
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: ab
+                  example: eos
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: ut
+                  example: nam
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: in
+                  example: ea
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: et
+                  example: ab
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: tempora
+                  example: consequatur
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: temporibus
+                  example: distinctio
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - voluptatem
+                    - fugit
                   items:
                     type: string
               required:
@@ -3726,7 +3726,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the PO Report.'
-        example: ea
+        example: soluta
         required: true
         schema:
           type: string
@@ -3740,12 +3740,12 @@ paths:
           in: query
           name: po_no
           description: 'The PO number of the PO Report.'
-          example: quod
+          example: delectus
           required: true
           schema:
             type: string
             description: 'The PO number of the PO Report.'
-            example: quod
+            example: delectus
       responses:
         200:
           description: ''
