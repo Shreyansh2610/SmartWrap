@@ -4,6 +4,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\CompanyRawMaterialsController;
 use App\Http\Controllers\FinishGoodsController;
+use App\Http\Controllers\PiReportDomesticController;
 use App\Http\Controllers\PiReportExportController;
 use App\Http\Controllers\PoReportController;
 use App\Http\Controllers\PiReportController;
@@ -70,6 +71,9 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::apiResource('pi-reports-export',PiReportExportController::class)->except(['show']);
     Route::post('/pi-reports-export-get',[PiReportExportController::class,'show']);
+
+    Route::apiResource('pi-reports-domestic',PiReportDomesticController::class)->except(['show']);
+    Route::post('/pi-reports-domestic-get',[PiReportDomesticController::class,'show']);
 
     Route::get('/company-raw-material-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('company-raw-material.calculation');
     Route::get('/finish-goods-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('finish-goods.calculation');

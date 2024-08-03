@@ -2018,6 +2018,520 @@ paths:
         required: true
         schema:
           type: integer
+  /api/pi-reports-domestic:
+    get:
+      summary: 'Display the get all PI Report Domestic resource.'
+      operationId: displayTheGetAllPIReportDomesticResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n    \"status\": \"success\",\n    \"piReportsExport\": [\n     {\n        \"id\": 1xv5-545g7-5tgr,\n        \"pi_no\": \"PI001\",\n        \"date\": \"2023-01-01\",\n        \"buyer_order_no\": \"BO123\",\n        \"buyer_order_date\": \"2022-12-15\",\n        \"supplier_name\": \"Supplier Inc.\",\n        \"supplier_address\": \"123 Supplier St.\",\n        \"supplier_pan\": \"ABCDE1234F\",\n        \"supplier_gst\": \"29ABCDE1234F1Z5\",\n        \"exporter_gst\": \"27ABCDE1234F1Z1\",\n        \"supplier_mail\": \"supplier@example.com\",\n        \"supplier_contact_person\": \"John Doe\",\n        \"supplier_contact_no\": \"1234567890\",\n        \"consignee_name\": \"Consignee Ltd.\",\n        \"consignee_address\": \"456 Consignee Rd.\",\n        \"consignee_pan\": \"FGHIJ5678K\",\n        \"consignee_iec\": \"0306060070\",\n        \"consignee_gst\": \"24FGHIJ5678K1Z2\",\n        \"consignee_mail\": \"consignee@example.com\",\n        \"consignee_contact_person\": \"Jane Smith\",\n        \"consignee_contact_no\": \"0987654321\",\n        \"igst\": 18,\n        \"sgst\": 9,\n        \"cgst\": 9,\n        \"total_fob_value\": 10000.00,\n        \"amount_in_words\": \"Ten Thousand Only\",\n        \"bank_name\": \"Bank of Export\",\n        \"bank_address\": \"789 Bank St.\",\n        \"bank_account_no\": \"123456789012\",\n        \"bank_ifsc_code\": \"BKID0001234\",\n        \"bank_ad_code\": \"AD1234567890\",\n        \"bank_swift_code\": \"BKIDINBBXXX\",\n        \"payment_terms\": \"Net 30 days\",\n        \"payment_delivery_time\": \"2024-08-25 14:16:56\",\n        \"payment_delivery_terms\": \"FOB\",\n        \"notes\": \"Urgent delivery required.\",\n        \"piReportProducts\": [\n            {\n                \"id\": 1,\n                \"pi_report_domestic_id\": 1,\n                \"description\": \"Product A\",\n                \"hsn_code\": \"1001\",\n                \"no_of_box\": 10,\n                \"quantity\": 100,\n                \"unit\": 5,  // Number of units\n                \"rate\": 100.00,\n                \"amount\": 10000.00\n            }\n        ]\n    },\n     ...\n    ]\n}"
+      tags:
+        - 'PI Reports Domestic'
+      security: []
+    post:
+      summary: 'Store the specified PI Report.'
+      operationId: storeTheSpecifiedPIReport
+      description: 'This endpoint stores the details of a specific PI Report.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'PI Report Export added successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'PI Report Export added successfully'
+      tags:
+        - 'PI Reports Domestic'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pi_no:
+                  type: string
+                  description: 'The PI number.'
+                  example: PI001
+                date:
+                  type: string
+                  description: 'The date of the PI report in YYYY-MM-DD format.'
+                  example: '2023-01-01'
+                buyer_order_no:
+                  type: string
+                  description: 'The buyer order number.'
+                  example: BO123
+                buyer_order_date:
+                  type: string
+                  description: 'The date of the buyer order in YYYY-MM-DD format.'
+                  example: '2022-12-15'
+                supplier_name:
+                  type: string
+                  description: 'The name of the supplier.'
+                  example: 'Supplier Inc.'
+                supplier_address:
+                  type: string
+                  description: 'The address of the supplier.'
+                  example: '123 Supplier St.'
+                supplier_pan:
+                  type: string
+                  description: 'The PAN number of the supplier.'
+                  example: ABCDE1234F
+                supplier_gst:
+                  type: string
+                  description: 'The GST number of the supplier.'
+                  example: 29ABCDE1234F1Z5
+                supplier_mail:
+                  type: string
+                  description: 'The email of the supplier.'
+                  example: supplier@example.com
+                supplier_contact_person:
+                  type: string
+                  description: 'The contact person of the supplier.'
+                  example: 'John Doe'
+                supplier_contact_no:
+                  type: string
+                  description: 'The contact number of the supplier.'
+                  example: '1234567890'
+                consignee_name:
+                  type: string
+                  description: 'The name of the consignee.'
+                  example: 'Consignee Ltd.'
+                consignee_address:
+                  type: string
+                  description: 'The address of the consignee.'
+                  example: '456 Consignee Rd.'
+                consignee_pan:
+                  type: string
+                  description: 'The PAN number of the consignee.'
+                  example: FGHIJ5678K
+                consignee_iec:
+                  type: string
+                  description: 'The IEC code of the consignee.'
+                  example: '0306060070'
+                consignee_gst:
+                  type: string
+                  description: 'The GST number of the consignee.'
+                  example: 24FGHIJ5678K1Z2
+                consignee_mail:
+                  type: string
+                  description: 'The email of the consignee.'
+                  example: consignee@example.com
+                consignee_contact_person:
+                  type: string
+                  description: 'The contact person of the consignee.'
+                  example: 'Jane Smith'
+                consignee_contact_no:
+                  type: string
+                  description: 'The contact number of the consignee.'
+                  example: '0987654321'
+                igst:
+                  type: string
+                  description: 'The IGST percentage.'
+                  example: '18'
+                sgst:
+                  type: string
+                  description: 'The SGST percentage.'
+                  example: '9'
+                cgst:
+                  type: string
+                  description: 'The CGST percentage.'
+                  example: '9'
+                total_fob_value:
+                  type: numeric
+                  description: 'The total FOB value of the report.'
+                  example: '10000.00'
+                amount_in_words:
+                  type: string
+                  description: 'The total amount in words.'
+                  example: 'Ten Thousand Only'
+                bank_name:
+                  type: string
+                  description: 'The name of the bank.'
+                  example: 'Bank of Export'
+                bank_address:
+                  type: string
+                  description: 'The address of the bank.'
+                  example: '789 Bank St.'
+                bank_account_no:
+                  type: string
+                  description: 'The bank account number.'
+                  example: '123456789012'
+                bank_ifsc_code:
+                  type: string
+                  description: 'The bank IFSC code.'
+                  example: BKID0001234
+                bank_ad_code:
+                  type: string
+                  description: 'The bank AD code.'
+                  example: AD1234567890
+                bank_swift_code:
+                  type: string
+                  description: 'The bank SWIFT code.'
+                  example: BKIDINBBXXX
+                payment_terms:
+                  type: string
+                  description: 'The payment terms.'
+                  example: 'Net 30 days'
+                payment_delivery_time:
+                  type: string
+                  description: 'The delivery time.'
+                  example: '2024-05-11 14:15:03'
+                payment_delivery_terms:
+                  type: string
+                  description: 'The delivery terms.'
+                  example: FOB
+                notes:
+                  type: string
+                  description: 'optional Any additional notes.'
+                  example: 'Urgent delivery required.'
+                products:
+                  type: array
+                  description: 'List of products included in the report.'
+                  example:
+                    -
+                      description: 'Product A'
+                      hsn_code: '1001'
+                      no_of_box: 10
+                      quantity: 100
+                      unit: 5
+                      rate_in_usd: 100.0
+                      amount: 10000.0
+                  items:
+                    type: string
+              required:
+                - pi_no
+                - date
+                - buyer_order_no
+                - buyer_order_date
+                - supplier_name
+                - supplier_address
+                - supplier_pan
+                - supplier_gst
+                - supplier_mail
+                - supplier_contact_person
+                - supplier_contact_no
+                - consignee_name
+                - consignee_address
+                - consignee_pan
+                - consignee_iec
+                - consignee_gst
+                - consignee_mail
+                - consignee_contact_person
+                - consignee_contact_no
+                - igst
+                - sgst
+                - cgst
+                - total_fob_value
+                - amount_in_words
+                - bank_name
+                - bank_address
+                - bank_account_no
+                - bank_ifsc_code
+                - bank_ad_code
+                - bank_swift_code
+                - payment_terms
+                - payment_delivery_time
+                - payment_delivery_terms
+                - products
+      security: []
+  '/api/pi-reports-domestic/{id}':
+    put:
+      summary: 'Update the specified PI Report.'
+      operationId: updateTheSpecifiedPIReport
+      description: 'This endpoint updates the details of a specific PI Report by its ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'PI Report Export updated successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'PI Report Export updated successfully'
+      tags:
+        - 'PI Reports Domestic'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pi_no:
+                  type: string
+                  description: 'The PI number.'
+                  example: PI001
+                date:
+                  type: string
+                  description: 'The date of the PI report in YYYY-MM-DD format.'
+                  example: '2023-01-01'
+                buyer_order_no:
+                  type: string
+                  description: 'The buyer order number.'
+                  example: BO123
+                buyer_order_date:
+                  type: string
+                  description: 'The date of the buyer order in YYYY-MM-DD format.'
+                  example: '2022-12-15'
+                supplier_name:
+                  type: string
+                  description: 'The name of the supplier.'
+                  example: 'Supplier Inc.'
+                supplier_address:
+                  type: string
+                  description: 'The address of the supplier.'
+                  example: '123 Supplier St.'
+                supplier_pan:
+                  type: string
+                  description: 'The PAN number of the supplier.'
+                  example: ABCDE1234F
+                supplier_gst:
+                  type: string
+                  description: 'The GST number of the supplier.'
+                  example: 29ABCDE1234F1Z5
+                supplier_mail:
+                  type: string
+                  description: 'The email of the supplier.'
+                  example: supplier@example.com
+                supplier_contact_person:
+                  type: string
+                  description: 'The contact person of the supplier.'
+                  example: 'John Doe'
+                supplier_contact_no:
+                  type: string
+                  description: 'The contact number of the supplier.'
+                  example: '1234567890'
+                consignee_name:
+                  type: string
+                  description: 'The name of the consignee.'
+                  example: 'Consignee Ltd.'
+                consignee_address:
+                  type: string
+                  description: 'The address of the consignee.'
+                  example: '456 Consignee Rd.'
+                consignee_pan:
+                  type: string
+                  description: 'The PAN number of the consignee.'
+                  example: FGHIJ5678K
+                consignee_iec:
+                  type: string
+                  description: 'The IEC code of the consignee.'
+                  example: '0306060070'
+                consignee_gst:
+                  type: string
+                  description: 'The GST number of the consignee.'
+                  example: 24FGHIJ5678K1Z2
+                consignee_mail:
+                  type: string
+                  description: 'The email of the consignee.'
+                  example: consignee@example.com
+                consignee_contact_person:
+                  type: string
+                  description: 'The contact person of the consignee.'
+                  example: 'Jane Smith'
+                consignee_contact_no:
+                  type: string
+                  description: 'The contact number of the consignee.'
+                  example: '0987654321'
+                igst:
+                  type: string
+                  description: 'The IGST percentage.'
+                  example: '18'
+                sgst:
+                  type: string
+                  description: 'The SGST percentage.'
+                  example: '9'
+                cgst:
+                  type: string
+                  description: 'The CGST percentage.'
+                  example: '9'
+                total_fob_value:
+                  type: numeric
+                  description: 'The total FOB value of the report.'
+                  example: '10000.00'
+                amount_in_words:
+                  type: string
+                  description: 'The total amount in words.'
+                  example: 'Ten Thousand Only'
+                bank_name:
+                  type: string
+                  description: 'The name of the bank.'
+                  example: 'Bank of Export'
+                bank_address:
+                  type: string
+                  description: 'The address of the bank.'
+                  example: '789 Bank St.'
+                bank_account_no:
+                  type: string
+                  description: 'The bank account number.'
+                  example: '123456789012'
+                bank_ifsc_code:
+                  type: string
+                  description: 'The bank IFSC code.'
+                  example: BKID0001234
+                bank_ad_code:
+                  type: string
+                  description: 'The bank AD code.'
+                  example: AD1234567890
+                bank_swift_code:
+                  type: string
+                  description: 'The bank SWIFT code.'
+                  example: BKIDINBBXXX
+                payment_terms:
+                  type: string
+                  description: 'The payment terms.'
+                  example: 'Net 30 days'
+                payment_delivery_time:
+                  type: string
+                  description: 'The delivery time.'
+                  example: '2024-05-11 14:15:03'
+                payment_delivery_terms:
+                  type: string
+                  description: 'The delivery terms.'
+                  example: FOB
+                notes:
+                  type: string
+                  description: 'optional Any additional notes.'
+                  example: 'Urgent delivery required.'
+                products:
+                  type: array
+                  description: 'List of products included in the report.'
+                  example:
+                    -
+                      description: 'Product A'
+                      hsn_code: '1001'
+                      no_of_box: 10
+                      quantity: 100
+                      unit: 5
+                      rate_in_usd: 100.0
+                      amount: 10000.0
+                  items:
+                    type: string
+              required:
+                - pi_no
+                - date
+                - buyer_order_no
+                - buyer_order_date
+                - supplier_name
+                - supplier_address
+                - supplier_pan
+                - supplier_gst
+                - supplier_mail
+                - supplier_contact_person
+                - supplier_contact_no
+                - consignee_name
+                - consignee_address
+                - consignee_pan
+                - consignee_iec
+                - consignee_gst
+                - consignee_mail
+                - consignee_contact_person
+                - consignee_contact_no
+                - igst
+                - sgst
+                - cgst
+                - total_fob_value
+                - amount_in_words
+                - bank_name
+                - bank_address
+                - bank_account_no
+                - bank_ifsc_code
+                - bank_ad_code
+                - bank_swift_code
+                - payment_terms
+                - payment_delivery_time
+                - payment_delivery_terms
+                - products
+      security: []
+    delete:
+      summary: 'Remove the specified PI Report.'
+      operationId: removeTheSpecifiedPIReport
+      description: 'This endpoint deletes a specific PI Report by its ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'PI Report Domestic deleted successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'PI Report Domestic deleted successfully'
+      tags:
+        - 'PI Reports Export'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the PI Report.'
+        example: 15fjl5-4f45t-5g456y-g5t
+        required: true
+        schema:
+          type: string
+  /api/pi-reports-domestic-get:
+    post:
+      summary: 'Display the specified PI Report Domestic resource.'
+      operationId: displayTheSpecifiedPIReportDomesticResource
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n    \"status\": \"success\",\n    \"piReportsExport\": {\n        \"id\": 1xv5-545g7-5tgr,\n        \"pi_no\": \"PI001\",\n        \"date\": \"2023-01-01\",\n        \"buyer_order_no\": \"BO123\",\n        \"buyer_order_date\": \"2022-12-15\",\n        \"supplier_name\": \"Supplier Inc.\",\n        \"supplier_address\": \"123 Supplier St.\",\n        \"supplier_pan\": \"ABCDE1234F\",\n        \"supplier_gst\": \"29ABCDE1234F1Z5\",\n        \"exporter_gst\": \"27ABCDE1234F1Z1\",\n        \"supplier_mail\": \"supplier@example.com\",\n        \"supplier_contact_person\": \"John Doe\",\n        \"supplier_contact_no\": \"1234567890\",\n        \"consignee_name\": \"Consignee Ltd.\",\n        \"consignee_address\": \"456 Consignee Rd.\",\n        \"consignee_pan\": \"FGHIJ5678K\",\n        \"consignee_iec\": \"0306060070\",\n        \"consignee_gst\": \"24FGHIJ5678K1Z2\",\n        \"consignee_mail\": \"consignee@example.com\",\n        \"consignee_contact_person\": \"Jane Smith\",\n        \"consignee_contact_no\": \"0987654321\",\n        \"igst\": 18,\n        \"sgst\": 9,\n        \"cgst\": 9,\n        \"total_fob_value\": 10000.00,\n        \"amount_in_words\": \"Ten Thousand Only\",\n        \"bank_name\": \"Bank of Export\",\n        \"bank_address\": \"789 Bank St.\",\n        \"bank_account_no\": \"123456789012\",\n        \"bank_ifsc_code\": \"BKID0001234\",\n        \"bank_ad_code\": \"AD1234567890\",\n        \"bank_swift_code\": \"BKIDINBBXXX\",\n        \"payment_terms\": \"Net 30 days\",\n        \"payment_delivery_time\": \"2024-08-25 14:16:56\",\n        \"payment_delivery_terms\": \"FOB\",\n        \"notes\": \"Urgent delivery required.\",\n        \"piReportProducts\": [\n            {\n                \"id\": 1,\n                \"pi_report_domestic_id\": 1,\n                \"description\": \"Product A\",\n                \"hsn_code\": \"1001\",\n                \"no_of_box\": 10,\n                \"quantity\": 100,\n                \"unit\": 5,  // Number of units\n                \"rate\": 100.00,\n                \"amount\": 10000.00\n            }\n        ]\n    }\n}"
+      tags:
+        - 'PI Reports Domestic'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pi_no:
+                  type: string
+                  description: 'to get value.'
+                  example: PI654
+      security: []
   /api/pi-reports-export:
     get:
       summary: 'Display a listing of the PI Reports.'
@@ -2336,7 +2850,7 @@ paths:
                                 type: integer
                                 example: 1000
       tags:
-        - 'PI Reports'
+        - 'PI Reports Export'
       security: []
     post:
       summary: 'Store a newly created PI Report.'
@@ -2361,7 +2875,7 @@ paths:
                     type: string
                     example: 'PI Report Export added successfully'
       tags:
-        - 'PI Reports'
+        - 'PI Reports Export'
       requestBody:
         required: true
         content:
@@ -2529,7 +3043,7 @@ paths:
                   type: array
                   description: 'The list of products associated with the PI Report.'
                   example:
-                    - est
+                    - aut
                   items:
                     type: string
               required:
@@ -2597,7 +3111,7 @@ paths:
                     type: string
                     example: 'PI Report Export updated successfully'
       tags:
-        - 'PI Reports'
+        - 'PI Reports Export'
       requestBody:
         required: true
         content:
@@ -2765,7 +3279,7 @@ paths:
                   type: array
                   description: 'The list of products associated with the PI Report.'
                   example:
-                    - rerum
+                    - sed
                   items:
                     type: string
               required:
@@ -2832,7 +3346,7 @@ paths:
                     type: string
                     example: 'PI Report Export deleted successfully'
       tags:
-        - 'PI Reports'
+        - 'PI Reports Export'
       security: []
     parameters:
       -
@@ -3101,7 +3615,7 @@ paths:
                               type: number
                               example: 1000.0
       tags:
-        - 'PI Reports'
+        - 'PI Reports Export'
       security: []
     parameters:
       -
@@ -3358,124 +3872,124 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: eveniet
+                  example: qui
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: officia
+                  example: eveniet
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: ipsum
+                  example: eaque
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: consequatur
+                  example: dolor
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: dolores
+                  example: et
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: alias
+                  example: atque
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: id
+                  example: debitis
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: dolores
+                  example: voluptas
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: neque
+                  example: qui
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: voluptatem
+                  example: maxime
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: quae
+                  example: corrupti
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: eligendi
+                  example: eaque
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: in
+                  example: cupiditate
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: aperiam
+                  example: qui
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: in
+                  example: rerum
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: dolorem
+                  example: magni
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: dolor
+                  example: est
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: earum
+                  example: et
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: veniam
+                  example: sit
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: modi
+                  example: nihil
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: dolorum
+                  example: hic
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: et
+                  example: est
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: ducimus
+                  example: saepe
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: facere
+                  example: veniam
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: assumenda
+                  example: voluptatem
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: labore
+                  example: in
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: hic
+                  example: doloribus
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: est
+                  example: perspiciatis
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: voluptatum
+                  example: distinctio
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - culpa
+                    - eligendi
                   items:
                     type: string
               required:
@@ -3548,124 +4062,124 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: architecto
+                  example: omnis
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: aliquid
+                  example: itaque
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: corporis
+                  example: qui
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: aperiam
+                  example: consectetur
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: sed
+                  example: neque
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: modi
+                  example: quisquam
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: rerum
+                  example: nihil
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: esse
+                  example: culpa
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: itaque
+                  example: natus
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: culpa
+                  example: excepturi
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: voluptas
+                  example: eligendi
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: aliquid
+                  example: odio
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: quo
+                  example: facilis
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: iusto
+                  example: fugit
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: doloremque
+                  example: iste
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: corrupti
+                  example: rerum
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: ratione
+                  example: et
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: sed
+                  example: quidem
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: occaecati
+                  example: velit
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: adipisci
+                  example: aspernatur
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: id
+                  example: dolores
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: vel
+                  example: ad
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: in
+                  example: numquam
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: eos
+                  example: dolor
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: nam
+                  example: laudantium
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: ea
+                  example: molestias
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: ab
+                  example: optio
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: consequatur
+                  example: omnis
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: distinctio
+                  example: fuga
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - fugit
+                    - cum
                   items:
                     type: string
               required:
@@ -3726,7 +4240,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the PO Report.'
-        example: soluta
+        example: ut
         required: true
         schema:
           type: string
@@ -3740,12 +4254,12 @@ paths:
           in: query
           name: po_no
           description: 'The PO number of the PO Report.'
-          example: delectus
+          example: repellat
           required: true
           schema:
             type: string
             description: 'The PO number of the PO Report.'
-            example: delectus
+            example: repellat
       responses:
         200:
           description: ''
@@ -4466,7 +4980,10 @@ tags:
     name: 'Finish Goods'
     description: ''
   -
-    name: 'PI Reports'
+    name: 'PI Reports Domestic'
+    description: ''
+  -
+    name: 'PI Reports Export'
     description: ''
   -
     name: 'PO Reports'

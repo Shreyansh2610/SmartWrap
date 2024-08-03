@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "1841914f-7306-4af7-9b24-6c79431f4a71",
+        "_postman_id": "7705c53e-3801-4d60-96ef-f1351f173bee",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1142,7 +1142,178 @@
             ]
         },
         {
-            "name": "PI Reports",
+            "name": "PI Reports Domestic",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display the get all PI Report Domestic resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pi-reports-domestic",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pi-reports-domestic"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": \"success\",\n    \"piReportsExport\": [\n     {\n        \"id\": 1xv5-545g7-5tgr,\n        \"pi_no\": \"PI001\",\n        \"date\": \"2023-01-01\",\n        \"buyer_order_no\": \"BO123\",\n        \"buyer_order_date\": \"2022-12-15\",\n        \"supplier_name\": \"Supplier Inc.\",\n        \"supplier_address\": \"123 Supplier St.\",\n        \"supplier_pan\": \"ABCDE1234F\",\n        \"supplier_gst\": \"29ABCDE1234F1Z5\",\n        \"exporter_gst\": \"27ABCDE1234F1Z1\",\n        \"supplier_mail\": \"supplier@example.com\",\n        \"supplier_contact_person\": \"John Doe\",\n        \"supplier_contact_no\": \"1234567890\",\n        \"consignee_name\": \"Consignee Ltd.\",\n        \"consignee_address\": \"456 Consignee Rd.\",\n        \"consignee_pan\": \"FGHIJ5678K\",\n        \"consignee_iec\": \"0306060070\",\n        \"consignee_gst\": \"24FGHIJ5678K1Z2\",\n        \"consignee_mail\": \"consignee@example.com\",\n        \"consignee_contact_person\": \"Jane Smith\",\n        \"consignee_contact_no\": \"0987654321\",\n        \"igst\": 18,\n        \"sgst\": 9,\n        \"cgst\": 9,\n        \"total_fob_value\": 10000.00,\n        \"amount_in_words\": \"Ten Thousand Only\",\n        \"bank_name\": \"Bank of Export\",\n        \"bank_address\": \"789 Bank St.\",\n        \"bank_account_no\": \"123456789012\",\n        \"bank_ifsc_code\": \"BKID0001234\",\n        \"bank_ad_code\": \"AD1234567890\",\n        \"bank_swift_code\": \"BKIDINBBXXX\",\n        \"payment_terms\": \"Net 30 days\",\n        \"payment_delivery_time\": \"2024-08-25 14:16:56\",\n        \"payment_delivery_terms\": \"FOB\",\n        \"notes\": \"Urgent delivery required.\",\n        \"piReportProducts\": [\n            {\n                \"id\": 1,\n                \"pi_report_domestic_id\": 1,\n                \"description\": \"Product A\",\n                \"hsn_code\": \"1001\",\n                \"no_of_box\": 10,\n                \"quantity\": 100,\n                \"unit\": 5,  \/\/ Number of units\n                \"rate\": 100.00,\n                \"amount\": 10000.00\n            }\n        ]\n    },\n     ...\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store the specified PI Report.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pi-reports-domestic",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pi-reports-domestic",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15fjl5-4f45t-5g456y-g5t",
+                                    "description": "The ID of the PI Report."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"pi_no\":\"PI001\",\"date\":\"2023-01-01\",\"buyer_order_no\":\"BO123\",\"buyer_order_date\":\"2022-12-15\",\"supplier_name\":\"Supplier Inc.\",\"supplier_address\":\"123 Supplier St.\",\"supplier_pan\":\"ABCDE1234F\",\"supplier_gst\":\"29ABCDE1234F1Z5\",\"supplier_mail\":\"supplier@example.com\",\"supplier_contact_person\":\"John Doe\",\"supplier_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee Ltd.\",\"consignee_address\":\"456 Consignee Rd.\",\"consignee_pan\":\"FGHIJ5678K\",\"consignee_iec\":\"0306060070\",\"consignee_gst\":\"24FGHIJ5678K1Z2\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Smith\",\"consignee_contact_no\":\"0987654321\",\"igst\":\"18\",\"sgst\":\"9\",\"cgst\":\"9\",\"total_fob_value\":\"10000.00\",\"amount_in_words\":\"Ten Thousand Only\",\"bank_name\":\"Bank of Export\",\"bank_address\":\"789 Bank St.\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"BKID0001234\",\"bank_ad_code\":\"AD1234567890\",\"bank_swift_code\":\"BKIDINBBXXX\",\"payment_terms\":\"Net 30 days\",\"payment_delivery_time\":\"2024-05-11 14:15:03\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Urgent delivery required.\",\"products\":[{\"description\":\"Product A\",\"hsn_code\":\"1001\",\"no_of_box\":10,\"quantity\":100,\"unit\":5,\"rate_in_usd\":100,\"amount\":10000}]}"
+                        },
+                        "description": "This endpoint stores the details of a specific PI Report.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export added successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified PI Report.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pi-reports-domestic\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pi-reports-domestic\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15fjl5-4f45t-5g456y-g5t",
+                                    "description": "The ID of the PI Report."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"pi_no\":\"PI001\",\"date\":\"2023-01-01\",\"buyer_order_no\":\"BO123\",\"buyer_order_date\":\"2022-12-15\",\"supplier_name\":\"Supplier Inc.\",\"supplier_address\":\"123 Supplier St.\",\"supplier_pan\":\"ABCDE1234F\",\"supplier_gst\":\"29ABCDE1234F1Z5\",\"supplier_mail\":\"supplier@example.com\",\"supplier_contact_person\":\"John Doe\",\"supplier_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee Ltd.\",\"consignee_address\":\"456 Consignee Rd.\",\"consignee_pan\":\"FGHIJ5678K\",\"consignee_iec\":\"0306060070\",\"consignee_gst\":\"24FGHIJ5678K1Z2\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Smith\",\"consignee_contact_no\":\"0987654321\",\"igst\":\"18\",\"sgst\":\"9\",\"cgst\":\"9\",\"total_fob_value\":\"10000.00\",\"amount_in_words\":\"Ten Thousand Only\",\"bank_name\":\"Bank of Export\",\"bank_address\":\"789 Bank St.\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"BKID0001234\",\"bank_ad_code\":\"AD1234567890\",\"bank_swift_code\":\"BKIDINBBXXX\",\"payment_terms\":\"Net 30 days\",\"payment_delivery_time\":\"2024-05-11 14:15:03\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Urgent delivery required.\",\"products\":[{\"description\":\"Product A\",\"hsn_code\":\"1001\",\"no_of_box\":10,\"quantity\":100,\"unit\":5,\"rate_in_usd\":100,\"amount\":10000}]}"
+                        },
+                        "description": "This endpoint updates the details of a specific PI Report by its ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export updated successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified PI Report Domestic resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pi-reports-domestic-get",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pi-reports-domestic-get"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"pi_no\":\"PI654\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": \"success\",\n    \"piReportsExport\": {\n        \"id\": 1xv5-545g7-5tgr,\n        \"pi_no\": \"PI001\",\n        \"date\": \"2023-01-01\",\n        \"buyer_order_no\": \"BO123\",\n        \"buyer_order_date\": \"2022-12-15\",\n        \"supplier_name\": \"Supplier Inc.\",\n        \"supplier_address\": \"123 Supplier St.\",\n        \"supplier_pan\": \"ABCDE1234F\",\n        \"supplier_gst\": \"29ABCDE1234F1Z5\",\n        \"exporter_gst\": \"27ABCDE1234F1Z1\",\n        \"supplier_mail\": \"supplier@example.com\",\n        \"supplier_contact_person\": \"John Doe\",\n        \"supplier_contact_no\": \"1234567890\",\n        \"consignee_name\": \"Consignee Ltd.\",\n        \"consignee_address\": \"456 Consignee Rd.\",\n        \"consignee_pan\": \"FGHIJ5678K\",\n        \"consignee_iec\": \"0306060070\",\n        \"consignee_gst\": \"24FGHIJ5678K1Z2\",\n        \"consignee_mail\": \"consignee@example.com\",\n        \"consignee_contact_person\": \"Jane Smith\",\n        \"consignee_contact_no\": \"0987654321\",\n        \"igst\": 18,\n        \"sgst\": 9,\n        \"cgst\": 9,\n        \"total_fob_value\": 10000.00,\n        \"amount_in_words\": \"Ten Thousand Only\",\n        \"bank_name\": \"Bank of Export\",\n        \"bank_address\": \"789 Bank St.\",\n        \"bank_account_no\": \"123456789012\",\n        \"bank_ifsc_code\": \"BKID0001234\",\n        \"bank_ad_code\": \"AD1234567890\",\n        \"bank_swift_code\": \"BKIDINBBXXX\",\n        \"payment_terms\": \"Net 30 days\",\n        \"payment_delivery_time\": \"2024-08-25 14:16:56\",\n        \"payment_delivery_terms\": \"FOB\",\n        \"notes\": \"Urgent delivery required.\",\n        \"piReportProducts\": [\n            {\n                \"id\": 1,\n                \"pi_report_domestic_id\": 1,\n                \"description\": \"Product A\",\n                \"hsn_code\": \"1001\",\n                \"no_of_box\": 10,\n                \"quantity\": 100,\n                \"unit\": 5,  \/\/ Number of units\n                \"rate\": 100.00,\n                \"amount\": 10000.00\n            }\n        ]\n    }\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "PI Reports Export",
             "description": "",
             "item": [
                 {
@@ -1202,7 +1373,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"est\"]}"
+                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"aut\"]}"
                         },
                         "description": "This endpoint creates a new PI Report with the specified details and associated products.",
                         "auth": {
@@ -1248,7 +1419,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"rerum\"]}"
+                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"sed\"]}"
                         },
                         "description": "This endpoint updates the details of a specific PI Report by its ID.",
                         "auth": {
@@ -1349,6 +1520,49 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Remove the specified PI Report.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pi-reports-domestic\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pi-reports-domestic\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15fjl5-4f45t-5g456y-g5t",
+                                    "description": "The ID of the PI Report."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint deletes a specific PI Report by its ID.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Domestic deleted successfully\"\n}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1413,7 +1627,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"po_no\":\"eveniet\",\"po_date\":\"officia\",\"quotation_no\":\"ipsum\",\"quotation_date\":\"consequatur\",\"buyer_name\":\"dolores\",\"buyer_address\":\"alias\",\"buyer_pan\":\"id\",\"buyer_iec\":\"dolores\",\"buyer_gst\":\"neque\",\"buyer_mail\":\"voluptatem\",\"buyer_contact_person\":\"quae\",\"buyer_contact_no\":\"eligendi\",\"supplier_name\":\"in\",\"supplier_address\":\"aperiam\",\"supplier_pan\":\"in\",\"supplier_iec\":\"dolorem\",\"supplier_gst\":\"dolor\",\"supplier_mail\":\"earum\",\"supplier_contact_person\":\"veniam\",\"supplier_contact_no\":\"modi\",\"igst\":\"dolorum\",\"sgst\":\"et\",\"cgst\":\"ducimus\",\"total_value\":\"facere\",\"amount_in_words\":\"assumenda\",\"notes_1\":\"labore\",\"notes_2\":\"hic\",\"notes_3\":\"est\",\"notes_4\":\"voluptatum\",\"products\":[\"culpa\"]}"
+                            "raw": "{\"po_no\":\"qui\",\"po_date\":\"eveniet\",\"quotation_no\":\"eaque\",\"quotation_date\":\"dolor\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"perspiciatis\",\"notes_4\":\"distinctio\",\"products\":[\"eligendi\"]}"
                         },
                         "description": "This endpoint allows for the creation of a new PO Report along with its associated product details.",
                         "auth": {
@@ -1447,7 +1661,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "soluta",
+                                    "value": "ut",
                                     "description": "The ID of the PO Report."
                                 }
                             ]
@@ -1465,7 +1679,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"po_no\":\"architecto\",\"po_date\":\"aliquid\",\"quotation_no\":\"corporis\",\"quotation_date\":\"aperiam\",\"buyer_name\":\"sed\",\"buyer_address\":\"modi\",\"buyer_pan\":\"rerum\",\"buyer_iec\":\"esse\",\"buyer_gst\":\"itaque\",\"buyer_mail\":\"culpa\",\"buyer_contact_person\":\"voluptas\",\"buyer_contact_no\":\"aliquid\",\"supplier_name\":\"quo\",\"supplier_address\":\"iusto\",\"supplier_pan\":\"doloremque\",\"supplier_iec\":\"corrupti\",\"supplier_gst\":\"ratione\",\"supplier_mail\":\"sed\",\"supplier_contact_person\":\"occaecati\",\"supplier_contact_no\":\"adipisci\",\"igst\":\"id\",\"sgst\":\"vel\",\"cgst\":\"in\",\"total_value\":\"eos\",\"amount_in_words\":\"nam\",\"notes_1\":\"ea\",\"notes_2\":\"ab\",\"notes_3\":\"consequatur\",\"notes_4\":\"distinctio\",\"products\":[\"fugit\"]}"
+                            "raw": "{\"po_no\":\"omnis\",\"po_date\":\"itaque\",\"quotation_no\":\"qui\",\"quotation_date\":\"consectetur\",\"buyer_name\":\"neque\",\"buyer_address\":\"quisquam\",\"buyer_pan\":\"nihil\",\"buyer_iec\":\"culpa\",\"buyer_gst\":\"natus\",\"buyer_mail\":\"excepturi\",\"buyer_contact_person\":\"eligendi\",\"buyer_contact_no\":\"odio\",\"supplier_name\":\"facilis\",\"supplier_address\":\"fugit\",\"supplier_pan\":\"iste\",\"supplier_iec\":\"rerum\",\"supplier_gst\":\"et\",\"supplier_mail\":\"quidem\",\"supplier_contact_person\":\"velit\",\"supplier_contact_no\":\"aspernatur\",\"igst\":\"dolores\",\"sgst\":\"ad\",\"cgst\":\"numquam\",\"total_value\":\"dolor\",\"amount_in_words\":\"laudantium\",\"notes_1\":\"molestias\",\"notes_2\":\"optio\",\"notes_3\":\"omnis\",\"notes_4\":\"fuga\",\"products\":[\"cum\"]}"
                         },
                         "description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details.",
                         "auth": {
@@ -1499,7 +1713,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "hic",
+                                    "value": "labore",
                                     "description": "The ID of the PO Report."
                                 }
                             ]
@@ -1539,12 +1753,12 @@
                             "query": [
                                 {
                                     "key": "po_no",
-                                    "value": "delectus",
+                                    "value": "repellat",
                                     "description": "The PO number of the PO Report.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=delectus"
+                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=repellat"
                         },
                         "method": "POST",
                         "header": [

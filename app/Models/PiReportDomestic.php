@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Ramsey\Uuid\Uuid;
 
-class PiReportExport extends Model
+class PiReportDomestic extends Model
 {
     use SoftDeletes;
 
@@ -19,7 +19,7 @@ class PiReportExport extends Model
 
     public $guarded = [];
 
-    protected $table = 'pi_report_exports';
+    protected $table = 'pi_report_domestics';
 
     protected static function boot()
     {
@@ -31,6 +31,6 @@ class PiReportExport extends Model
     }
 
     public function piReportProducts() {
-        return $this->hasMany(PiReportExportProduct::class,'pi_report_export_id','id');
+        return $this->hasMany(PiReportDomesticPrduct::class,'pi_report_domestic_id','id');
     }
 }

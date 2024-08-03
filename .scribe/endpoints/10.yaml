@@ -1,0 +1,1029 @@
+name: 'PI Reports Domestic'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/pi-reports-domestic
+    metadata:
+      groupName: 'PI Reports Domestic'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the get all PI Report Domestic resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "success",
+              "piReportsExport": [
+               {
+                  "id": 1xv5-545g7-5tgr,
+                  "pi_no": "PI001",
+                  "date": "2023-01-01",
+                  "buyer_order_no": "BO123",
+                  "buyer_order_date": "2022-12-15",
+                  "supplier_name": "Supplier Inc.",
+                  "supplier_address": "123 Supplier St.",
+                  "supplier_pan": "ABCDE1234F",
+                  "supplier_gst": "29ABCDE1234F1Z5",
+                  "exporter_gst": "27ABCDE1234F1Z1",
+                  "supplier_mail": "supplier@example.com",
+                  "supplier_contact_person": "John Doe",
+                  "supplier_contact_no": "1234567890",
+                  "consignee_name": "Consignee Ltd.",
+                  "consignee_address": "456 Consignee Rd.",
+                  "consignee_pan": "FGHIJ5678K",
+                  "consignee_iec": "0306060070",
+                  "consignee_gst": "24FGHIJ5678K1Z2",
+                  "consignee_mail": "consignee@example.com",
+                  "consignee_contact_person": "Jane Smith",
+                  "consignee_contact_no": "0987654321",
+                  "igst": 18,
+                  "sgst": 9,
+                  "cgst": 9,
+                  "total_fob_value": 10000.00,
+                  "amount_in_words": "Ten Thousand Only",
+                  "bank_name": "Bank of Export",
+                  "bank_address": "789 Bank St.",
+                  "bank_account_no": "123456789012",
+                  "bank_ifsc_code": "BKID0001234",
+                  "bank_ad_code": "AD1234567890",
+                  "bank_swift_code": "BKIDINBBXXX",
+                  "payment_terms": "Net 30 days",
+                  "payment_delivery_time": "2024-08-25 14:16:56",
+                  "payment_delivery_terms": "FOB",
+                  "notes": "Urgent delivery required.",
+                  "piReportProducts": [
+                      {
+                          "id": 1,
+                          "pi_report_domestic_id": 1,
+                          "description": "Product A",
+                          "hsn_code": "1001",
+                          "no_of_box": 10,
+                          "quantity": 100,
+                          "unit": 5,  // Number of units
+                          "rate": 100.00,
+                          "amount": 10000.00
+                      }
+                  ]
+              },
+               ...
+              ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/pi-reports-domestic
+    metadata:
+      groupName: 'PI Reports Domestic'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store the specified PI Report.'
+      description: 'This endpoint stores the details of a specific PI Report.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the PI Report.'
+        required: true
+        example: 15fjl5-4f45t-5g456y-g5t
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15fjl5-4f45t-5g456y-g5t
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      pi_no:
+        name: pi_no
+        description: 'The PI number.'
+        required: true
+        example: PI001
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      date:
+        name: date
+        description: 'The date of the PI report in YYYY-MM-DD format.'
+        required: true
+        example: '2023-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_no:
+        name: buyer_order_no
+        description: 'The buyer order number.'
+        required: true
+        example: BO123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_date:
+        name: buyer_order_date
+        description: 'The date of the buyer order in YYYY-MM-DD format.'
+        required: true
+        example: '2022-12-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_name:
+        name: supplier_name
+        description: 'The name of the supplier.'
+        required: true
+        example: 'Supplier Inc.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_address:
+        name: supplier_address
+        description: 'The address of the supplier.'
+        required: true
+        example: '123 Supplier St.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_pan:
+        name: supplier_pan
+        description: 'The PAN number of the supplier.'
+        required: true
+        example: ABCDE1234F
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_gst:
+        name: supplier_gst
+        description: 'The GST number of the supplier.'
+        required: true
+        example: 29ABCDE1234F1Z5
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_mail:
+        name: supplier_mail
+        description: 'The email of the supplier.'
+        required: true
+        example: supplier@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_contact_person:
+        name: supplier_contact_person
+        description: 'The contact person of the supplier.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_contact_no:
+        name: supplier_contact_no
+        description: 'The contact number of the supplier.'
+        required: true
+        example: '1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_name:
+        name: consignee_name
+        description: 'The name of the consignee.'
+        required: true
+        example: 'Consignee Ltd.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_address:
+        name: consignee_address
+        description: 'The address of the consignee.'
+        required: true
+        example: '456 Consignee Rd.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_pan:
+        name: consignee_pan
+        description: 'The PAN number of the consignee.'
+        required: true
+        example: FGHIJ5678K
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_iec:
+        name: consignee_iec
+        description: 'The IEC code of the consignee.'
+        required: true
+        example: '0306060070'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_gst:
+        name: consignee_gst
+        description: 'The GST number of the consignee.'
+        required: true
+        example: 24FGHIJ5678K1Z2
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_mail:
+        name: consignee_mail
+        description: 'The email of the consignee.'
+        required: true
+        example: consignee@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_person:
+        name: consignee_contact_person
+        description: 'The contact person of the consignee.'
+        required: true
+        example: 'Jane Smith'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_no:
+        name: consignee_contact_no
+        description: 'The contact number of the consignee.'
+        required: true
+        example: '0987654321'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      igst:
+        name: igst
+        description: 'The IGST percentage.'
+        required: true
+        example: '18'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sgst:
+        name: sgst
+        description: 'The SGST percentage.'
+        required: true
+        example: '9'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      cgst:
+        name: cgst
+        description: 'The CGST percentage.'
+        required: true
+        example: '9'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_fob_value:
+        name: total_fob_value
+        description: 'The total FOB value of the report.'
+        required: true
+        example: '10000.00'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      amount_in_words:
+        name: amount_in_words
+        description: 'The total amount in words.'
+        required: true
+        example: 'Ten Thousand Only'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_name:
+        name: bank_name
+        description: 'The name of the bank.'
+        required: true
+        example: 'Bank of Export'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_address:
+        name: bank_address
+        description: 'The address of the bank.'
+        required: true
+        example: '789 Bank St.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_account_no:
+        name: bank_account_no
+        description: 'The bank account number.'
+        required: true
+        example: '123456789012'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ifsc_code:
+        name: bank_ifsc_code
+        description: 'The bank IFSC code.'
+        required: true
+        example: BKID0001234
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ad_code:
+        name: bank_ad_code
+        description: 'The bank AD code.'
+        required: true
+        example: AD1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_swift_code:
+        name: bank_swift_code
+        description: 'The bank SWIFT code.'
+        required: true
+        example: BKIDINBBXXX
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_terms:
+        name: payment_terms
+        description: 'The payment terms.'
+        required: true
+        example: 'Net 30 days'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_time:
+        name: payment_delivery_time
+        description: 'The delivery time.'
+        required: true
+        example: '2024-05-11 14:15:03'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_terms:
+        name: payment_delivery_terms
+        description: 'The delivery terms.'
+        required: true
+        example: FOB
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      notes:
+        name: notes
+        description: 'optional Any additional notes.'
+        required: false
+        example: 'Urgent delivery required.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      products:
+        name: products
+        description: 'List of products included in the report.'
+        required: true
+        example:
+          -
+            description: 'Product A'
+            hsn_code: '1001'
+            no_of_box: 10
+            quantity: 100
+            unit: 5
+            rate_in_usd: 100.0
+            amount: 10000.0
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      pi_no: PI001
+      date: '2023-01-01'
+      buyer_order_no: BO123
+      buyer_order_date: '2022-12-15'
+      supplier_name: 'Supplier Inc.'
+      supplier_address: '123 Supplier St.'
+      supplier_pan: ABCDE1234F
+      supplier_gst: 29ABCDE1234F1Z5
+      supplier_mail: supplier@example.com
+      supplier_contact_person: 'John Doe'
+      supplier_contact_no: '1234567890'
+      consignee_name: 'Consignee Ltd.'
+      consignee_address: '456 Consignee Rd.'
+      consignee_pan: FGHIJ5678K
+      consignee_iec: '0306060070'
+      consignee_gst: 24FGHIJ5678K1Z2
+      consignee_mail: consignee@example.com
+      consignee_contact_person: 'Jane Smith'
+      consignee_contact_no: '0987654321'
+      igst: '18'
+      sgst: '9'
+      cgst: '9'
+      total_fob_value: '10000.00'
+      amount_in_words: 'Ten Thousand Only'
+      bank_name: 'Bank of Export'
+      bank_address: '789 Bank St.'
+      bank_account_no: '123456789012'
+      bank_ifsc_code: BKID0001234
+      bank_ad_code: AD1234567890
+      bank_swift_code: BKIDINBBXXX
+      payment_terms: 'Net 30 days'
+      payment_delivery_time: '2024-05-11 14:15:03'
+      payment_delivery_terms: FOB
+      notes: 'Urgent delivery required.'
+      products:
+        -
+          description: 'Product A'
+          hsn_code: '1001'
+          no_of_box: 10
+          quantity: 100
+          unit: 5
+          rate_in_usd: 100.0
+          amount: 10000.0
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "PI Report Export added successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/pi-reports-domestic/{id}'
+    metadata:
+      groupName: 'PI Reports Domestic'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified PI Report.'
+      description: 'This endpoint updates the details of a specific PI Report by its ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the PI Report.'
+        required: true
+        example: 15fjl5-4f45t-5g456y-g5t
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15fjl5-4f45t-5g456y-g5t
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      pi_no:
+        name: pi_no
+        description: 'The PI number.'
+        required: true
+        example: PI001
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      date:
+        name: date
+        description: 'The date of the PI report in YYYY-MM-DD format.'
+        required: true
+        example: '2023-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_no:
+        name: buyer_order_no
+        description: 'The buyer order number.'
+        required: true
+        example: BO123
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_date:
+        name: buyer_order_date
+        description: 'The date of the buyer order in YYYY-MM-DD format.'
+        required: true
+        example: '2022-12-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_name:
+        name: supplier_name
+        description: 'The name of the supplier.'
+        required: true
+        example: 'Supplier Inc.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_address:
+        name: supplier_address
+        description: 'The address of the supplier.'
+        required: true
+        example: '123 Supplier St.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_pan:
+        name: supplier_pan
+        description: 'The PAN number of the supplier.'
+        required: true
+        example: ABCDE1234F
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_gst:
+        name: supplier_gst
+        description: 'The GST number of the supplier.'
+        required: true
+        example: 29ABCDE1234F1Z5
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_mail:
+        name: supplier_mail
+        description: 'The email of the supplier.'
+        required: true
+        example: supplier@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_contact_person:
+        name: supplier_contact_person
+        description: 'The contact person of the supplier.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      supplier_contact_no:
+        name: supplier_contact_no
+        description: 'The contact number of the supplier.'
+        required: true
+        example: '1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_name:
+        name: consignee_name
+        description: 'The name of the consignee.'
+        required: true
+        example: 'Consignee Ltd.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_address:
+        name: consignee_address
+        description: 'The address of the consignee.'
+        required: true
+        example: '456 Consignee Rd.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_pan:
+        name: consignee_pan
+        description: 'The PAN number of the consignee.'
+        required: true
+        example: FGHIJ5678K
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_iec:
+        name: consignee_iec
+        description: 'The IEC code of the consignee.'
+        required: true
+        example: '0306060070'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_gst:
+        name: consignee_gst
+        description: 'The GST number of the consignee.'
+        required: true
+        example: 24FGHIJ5678K1Z2
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_mail:
+        name: consignee_mail
+        description: 'The email of the consignee.'
+        required: true
+        example: consignee@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_person:
+        name: consignee_contact_person
+        description: 'The contact person of the consignee.'
+        required: true
+        example: 'Jane Smith'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_no:
+        name: consignee_contact_no
+        description: 'The contact number of the consignee.'
+        required: true
+        example: '0987654321'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      igst:
+        name: igst
+        description: 'The IGST percentage.'
+        required: true
+        example: '18'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sgst:
+        name: sgst
+        description: 'The SGST percentage.'
+        required: true
+        example: '9'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      cgst:
+        name: cgst
+        description: 'The CGST percentage.'
+        required: true
+        example: '9'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_fob_value:
+        name: total_fob_value
+        description: 'The total FOB value of the report.'
+        required: true
+        example: '10000.00'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      amount_in_words:
+        name: amount_in_words
+        description: 'The total amount in words.'
+        required: true
+        example: 'Ten Thousand Only'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_name:
+        name: bank_name
+        description: 'The name of the bank.'
+        required: true
+        example: 'Bank of Export'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_address:
+        name: bank_address
+        description: 'The address of the bank.'
+        required: true
+        example: '789 Bank St.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_account_no:
+        name: bank_account_no
+        description: 'The bank account number.'
+        required: true
+        example: '123456789012'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ifsc_code:
+        name: bank_ifsc_code
+        description: 'The bank IFSC code.'
+        required: true
+        example: BKID0001234
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ad_code:
+        name: bank_ad_code
+        description: 'The bank AD code.'
+        required: true
+        example: AD1234567890
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_swift_code:
+        name: bank_swift_code
+        description: 'The bank SWIFT code.'
+        required: true
+        example: BKIDINBBXXX
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_terms:
+        name: payment_terms
+        description: 'The payment terms.'
+        required: true
+        example: 'Net 30 days'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_time:
+        name: payment_delivery_time
+        description: 'The delivery time.'
+        required: true
+        example: '2024-05-11 14:15:03'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_terms:
+        name: payment_delivery_terms
+        description: 'The delivery terms.'
+        required: true
+        example: FOB
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      notes:
+        name: notes
+        description: 'optional Any additional notes.'
+        required: false
+        example: 'Urgent delivery required.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      products:
+        name: products
+        description: 'List of products included in the report.'
+        required: true
+        example:
+          -
+            description: 'Product A'
+            hsn_code: '1001'
+            no_of_box: 10
+            quantity: 100
+            unit: 5
+            rate_in_usd: 100.0
+            amount: 10000.0
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      pi_no: PI001
+      date: '2023-01-01'
+      buyer_order_no: BO123
+      buyer_order_date: '2022-12-15'
+      supplier_name: 'Supplier Inc.'
+      supplier_address: '123 Supplier St.'
+      supplier_pan: ABCDE1234F
+      supplier_gst: 29ABCDE1234F1Z5
+      supplier_mail: supplier@example.com
+      supplier_contact_person: 'John Doe'
+      supplier_contact_no: '1234567890'
+      consignee_name: 'Consignee Ltd.'
+      consignee_address: '456 Consignee Rd.'
+      consignee_pan: FGHIJ5678K
+      consignee_iec: '0306060070'
+      consignee_gst: 24FGHIJ5678K1Z2
+      consignee_mail: consignee@example.com
+      consignee_contact_person: 'Jane Smith'
+      consignee_contact_no: '0987654321'
+      igst: '18'
+      sgst: '9'
+      cgst: '9'
+      total_fob_value: '10000.00'
+      amount_in_words: 'Ten Thousand Only'
+      bank_name: 'Bank of Export'
+      bank_address: '789 Bank St.'
+      bank_account_no: '123456789012'
+      bank_ifsc_code: BKID0001234
+      bank_ad_code: AD1234567890
+      bank_swift_code: BKIDINBBXXX
+      payment_terms: 'Net 30 days'
+      payment_delivery_time: '2024-05-11 14:15:03'
+      payment_delivery_terms: FOB
+      notes: 'Urgent delivery required.'
+      products:
+        -
+          description: 'Product A'
+          hsn_code: '1001'
+          no_of_box: 10
+          quantity: 100
+          unit: 5
+          rate_in_usd: 100.0
+          amount: 10000.0
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "PI Report Export updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/pi-reports-domestic-get
+    metadata:
+      groupName: 'PI Reports Domestic'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified PI Report Domestic resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      pi_no:
+        name: pi_no
+        description: 'to get value.'
+        required: false
+        example: PI654
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      pi_no: PI654
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+              "status": "success",
+              "piReportsExport": {
+                  "id": 1xv5-545g7-5tgr,
+                  "pi_no": "PI001",
+                  "date": "2023-01-01",
+                  "buyer_order_no": "BO123",
+                  "buyer_order_date": "2022-12-15",
+                  "supplier_name": "Supplier Inc.",
+                  "supplier_address": "123 Supplier St.",
+                  "supplier_pan": "ABCDE1234F",
+                  "supplier_gst": "29ABCDE1234F1Z5",
+                  "exporter_gst": "27ABCDE1234F1Z1",
+                  "supplier_mail": "supplier@example.com",
+                  "supplier_contact_person": "John Doe",
+                  "supplier_contact_no": "1234567890",
+                  "consignee_name": "Consignee Ltd.",
+                  "consignee_address": "456 Consignee Rd.",
+                  "consignee_pan": "FGHIJ5678K",
+                  "consignee_iec": "0306060070",
+                  "consignee_gst": "24FGHIJ5678K1Z2",
+                  "consignee_mail": "consignee@example.com",
+                  "consignee_contact_person": "Jane Smith",
+                  "consignee_contact_no": "0987654321",
+                  "igst": 18,
+                  "sgst": 9,
+                  "cgst": 9,
+                  "total_fob_value": 10000.00,
+                  "amount_in_words": "Ten Thousand Only",
+                  "bank_name": "Bank of Export",
+                  "bank_address": "789 Bank St.",
+                  "bank_account_no": "123456789012",
+                  "bank_ifsc_code": "BKID0001234",
+                  "bank_ad_code": "AD1234567890",
+                  "bank_swift_code": "BKIDINBBXXX",
+                  "payment_terms": "Net 30 days",
+                  "payment_delivery_time": "2024-08-25 14:16:56",
+                  "payment_delivery_terms": "FOB",
+                  "notes": "Urgent delivery required.",
+                  "piReportProducts": [
+                      {
+                          "id": 1,
+                          "pi_report_domestic_id": 1,
+                          "description": "Product A",
+                          "hsn_code": "1001",
+                          "no_of_box": 10,
+                          "quantity": 100,
+                          "unit": 5,  // Number of units
+                          "rate": 100.00,
+                          "amount": 10000.00
+                      }
+                  ]
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

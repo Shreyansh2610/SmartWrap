@@ -14,7 +14,7 @@ class PiReportExportController extends Controller
      * This endpoint retrieves a list of PI Reports created by the authenticated user,
      * along with their associated product details.
      *
-     * @group PI Reports
+     * @group PI Reports Export
      *
      * @response 200 {
      *  "status": "success",
@@ -149,7 +149,7 @@ class PiReportExportController extends Controller
      *
      * This endpoint creates a new PI Report with the specified details and associated products.
      *
-     * @group PI Reports
+     * @group PI Reports Export
      *
      * @bodyParam pi_no string required The PI number. Example: PI12345
      * @bodyParam date date required The date of the PI. Example: 2023-06-25
@@ -278,7 +278,7 @@ class PiReportExportController extends Controller
      *
      * This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.
      *
-     * @group PI Reports
+     * @group PI Reports Export
      *
      * @urlParam id string required The ID of the PI Report. Example: 15fjl5-4f45t-5g456y-g5t
      *
@@ -405,7 +405,7 @@ class PiReportExportController extends Controller
      *
      * This endpoint updates the details of a specific PI Report by its ID.
      *
-     * @group PI Reports
+     * @group PI Reports Export
      *
      * @urlParam id string required The ID of the PI Report. Example: 15fjl5-4f45t-5g456y-g5t
      *
@@ -536,7 +536,7 @@ class PiReportExportController extends Controller
      *
      * This endpoint deletes a specific PI Report by its ID.
      *
-     * @group PI Reports
+     * @group PI Reports Export
      *
      * @urlParam id string required The ID of the PI Report. Example: 15fjl5-4f45t-5g456y-g5t
      *
@@ -547,7 +547,8 @@ class PiReportExportController extends Controller
      */
     public function destroy(string $id)
     {
-        $piReportExport = PiReportExport::where('id', $id)->delete();
+        PiReportExport::where('id', $id)->delete();
+        PiReportExportProduct::where('pi_report_export_id', $id)->delete();
 
         return response()->json(['status' => 'success', 'message' => 'PI Report Export deleted successfully'], 200);
     }
