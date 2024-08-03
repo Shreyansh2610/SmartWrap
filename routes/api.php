@@ -4,7 +4,9 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\CompanyRawMaterialsController;
 use App\Http\Controllers\FinishGoodsController;
+use App\Http\Controllers\PiReportExportController;
 use App\Http\Controllers\PoReportController;
+use App\Http\Controllers\PiReportController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SizeController;
 use App\Models\CompanyRawMaterial;
@@ -65,6 +67,9 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::apiResource('po-reports',PoReportController::class)->except(['show']);
     Route::post('/po-reports-get',[PoReportController::class,'show']);
+
+    Route::apiResource('pi-reports-export',PiReportExportController::class)->except(['show']);
+    Route::post('/pi-reports-export-get',[PiReportExportController::class,'show']);
 
     Route::get('/company-raw-material-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('company-raw-material.calculation');
     Route::get('/finish-goods-calculation',[CompanyRawMaterialsController::class,'calculation'])->name('finish-goods.calculation');

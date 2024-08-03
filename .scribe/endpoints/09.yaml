@@ -1,0 +1,1356 @@
+name: 'PI Reports'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/pi-reports-export
+    metadata:
+      groupName: 'PI Reports'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the PI Reports.'
+      description: |-
+        This endpoint retrieves a list of PI Reports created by the authenticated user,
+        along with their associated product details.
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "piReportsExport": [
+               {
+                   "id": "15fjl5-4f45t-5g456y-g5t",
+                   "pi_no": "PI12345",
+                   "date": "2023-06-25",
+                   "buyer_order_no": "BO12345",
+                   "buyer_order_date": "2023-06-20",
+                   "exporter_name": "Exporter A",
+                   "exporter_address": "123 Street, City, Country",
+                   "exporter_pan": "ABCDE1234F",
+                   "exporter_iec": "IEC1234567",
+                   "exporter_gst": "GST123456",
+                   "exporter_mail": "exporter@example.com",
+                   "exporter_contact_person": "John Doe",
+                   "exporter_contact_no": "1234567890",
+                   "consignee_name": "Consignee A",
+                   "consignee_address": "456 Avenue, City, Country",
+                   "consignee_country": "Country B",
+                   "consignee_mail": "consignee@example.com",
+                   "consignee_contact_person": "Jane Doe",
+                   "consignee_contact_no": "0987654321",
+                   "port_of_loading": "Port A",
+                   "port_of_discharge": "Port B",
+                   "final_destination_port": "Port C",
+                   "country_of_origin_of_goods": "Country A",
+                   "country_of_final_destination": "Country B",
+                   "total_fob_value": 1000,
+                   "freight_charges": 50,
+                   "total_cfr_value": 1050,
+                   "insurance_charges": 20,
+                   "total_cif_value": 1070,
+                   "amount_in_words": "One Thousand Seventy",
+                   "bank_name": "Bank A",
+                   "bank_address": "789 Boulevard, City, Country",
+                   "bank_account_no": "123456789012",
+                   "bank_ifsc_code": "IFSC12345",
+                   "bank_ad_code": "AD12345",
+                   "bank_swift_code": "SWIFT12345",
+                   "payment_terms": "30 days",
+                   "payment_delivery_time": "15 days",
+                   "payment_delivery_terms": "FOB",
+                   "notes": "Special instructions",
+                   "piReportProducts": [
+                       {
+                           "id": "12345",
+                           "pi_report_export_id": "15fjl5-4f45t-5g456y-g5t",
+                           "size": "Medium",
+                           "type": "Type A",
+                           "packaging_description": "Box",
+                           "rolls_pallet": 10,
+                           "no_of_pallets": 5,
+                           "total_rolls": 50,
+                           "container": "Container A",
+                           "quanity": 100,
+                           "unit": "pcs",
+                           "rate_in_usd": 10,
+                           "amount_in_usd": 1000
+                       }
+                   ]
+               }
+           ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/pi-reports-export
+    metadata:
+      groupName: 'PI Reports'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created PI Report.'
+      description: 'This endpoint creates a new PI Report with the specified details and associated products.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      pi_no:
+        name: pi_no
+        description: 'The PI number.'
+        required: true
+        example: PI12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      date:
+        name: date
+        description: 'The date of the PI.'
+        required: true
+        example: '2023-06-25'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_no:
+        name: buyer_order_no
+        description: "The buyer's order number."
+        required: true
+        example: BO12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_date:
+        name: buyer_order_date
+        description: "The buyer's order date."
+        required: true
+        example: '2023-06-20'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_name:
+        name: exporter_name
+        description: 'The name of the exporter.'
+        required: true
+        example: 'Exporter A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_address:
+        name: exporter_address
+        description: 'The address of the exporter.'
+        required: true
+        example: '123 Street, City, Country'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_pan:
+        name: exporter_pan
+        description: 'The PAN of the exporter.'
+        required: true
+        example: ABCDE1234F
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_iec:
+        name: exporter_iec
+        description: 'The IEC of the exporter.'
+        required: true
+        example: IEC1234567
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_gst:
+        name: exporter_gst
+        description: 'The GST of the exporter.'
+        required: true
+        example: GST123456
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_mail:
+        name: exporter_mail
+        description: 'The email of the exporter.'
+        required: true
+        example: exporter@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_contact_person:
+        name: exporter_contact_person
+        description: 'The contact person of the exporter.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_contact_no:
+        name: exporter_contact_no
+        description: 'The contact number of the exporter.'
+        required: true
+        example: '1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_name:
+        name: consignee_name
+        description: 'The name of the consignee.'
+        required: true
+        example: 'Consignee A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_address:
+        name: consignee_address
+        description: 'The address of the consignee.'
+        required: true
+        example: '456 Avenue, City, Country'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_country:
+        name: consignee_country
+        description: 'The country of the consignee.'
+        required: true
+        example: 'Country B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_mail:
+        name: consignee_mail
+        description: 'The email of the consignee.'
+        required: true
+        example: consignee@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_person:
+        name: consignee_contact_person
+        description: 'The contact person of the consignee.'
+        required: true
+        example: 'Jane Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_no:
+        name: consignee_contact_no
+        description: 'The contact number of the consignee.'
+        required: true
+        example: '0987654321'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      port_of_loading:
+        name: port_of_loading
+        description: 'The port of loading.'
+        required: true
+        example: 'Port A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      port_of_discharge:
+        name: port_of_discharge
+        description: 'The port of discharge.'
+        required: true
+        example: 'Port B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      final_destination_port:
+        name: final_destination_port
+        description: 'The final destination port.'
+        required: true
+        example: 'Port C'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      country_of_origin_of_goods:
+        name: country_of_origin_of_goods
+        description: 'The country of origin of the goods.'
+        required: true
+        example: 'Country A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      country_of_final_destination:
+        name: country_of_final_destination
+        description: 'The country of final destination.'
+        required: true
+        example: 'Country B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_fob_value:
+        name: total_fob_value
+        description: 'The total FOB value.'
+        required: true
+        example: 1000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      freight_charges:
+        name: freight_charges
+        description: 'The freight charges.'
+        required: true
+        example: 50.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_cfr_value:
+        name: total_cfr_value
+        description: 'The total CFR value.'
+        required: true
+        example: 1050.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      insurance_charges:
+        name: insurance_charges
+        description: 'The insurance charges.'
+        required: true
+        example: 20.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_cif_value:
+        name: total_cif_value
+        description: 'The total CIF value.'
+        required: true
+        example: 1070.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      amount_in_words:
+        name: amount_in_words
+        description: 'The amount in words.'
+        required: true
+        example: 'One Thousand Seventy'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_name:
+        name: bank_name
+        description: 'The name of the bank.'
+        required: true
+        example: 'Bank A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_address:
+        name: bank_address
+        description: 'The address of the bank.'
+        required: true
+        example: '789 Boulevard, City, Country'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_account_no:
+        name: bank_account_no
+        description: 'The account number of the bank.'
+        required: true
+        example: '123456789012'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ifsc_code:
+        name: bank_ifsc_code
+        description: 'The IFSC code of the bank.'
+        required: true
+        example: IFSC12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ad_code:
+        name: bank_ad_code
+        description: 'The AD code of the bank.'
+        required: true
+        example: AD12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_swift_code:
+        name: bank_swift_code
+        description: 'The SWIFT code of the bank.'
+        required: true
+        example: SWIFT12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_terms:
+        name: payment_terms
+        description: 'The payment terms.'
+        required: true
+        example: '30 days'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_time:
+        name: payment_delivery_time
+        description: 'The payment delivery time.'
+        required: true
+        example: '15 days'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_terms:
+        name: payment_delivery_terms
+        description: 'The payment delivery terms.'
+        required: true
+        example: FOB
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      notes:
+        name: notes
+        description: 'optional Any additional notes.'
+        required: false
+        example: 'Special instructions'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      products:
+        name: products
+        description: 'The list of products associated with the PI Report.'
+        required: true
+        example:
+          - tempora
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'products.*.size':
+        name: 'products.*.size'
+        description: 'The size of the product.'
+        required: true
+        example: Medium
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.type':
+        name: 'products.*.type'
+        description: 'The type of the product.'
+        required: true
+        example: 'Type A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.packaging_description':
+        name: 'products.*.packaging_description'
+        description: 'The packaging description.'
+        required: true
+        example: Box
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.rolls_pallet':
+        name: 'products.*.rolls_pallet'
+        description: 'The number of rolls per pallet.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.no_of_pallets':
+        name: 'products.*.no_of_pallets'
+        description: 'The number of pallets.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.total_rolls':
+        name: 'products.*.total_rolls'
+        description: 'The total number of rolls.'
+        required: true
+        example: 50
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.container':
+        name: 'products.*.container'
+        description: 'The container.'
+        required: true
+        example: 'Container A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.quanity':
+        name: 'products.*.quanity'
+        description: 'The quantity.'
+        required: true
+        example: 100
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.unit':
+        name: 'products.*.unit'
+        description: 'The unit of measurement.'
+        required: true
+        example: pcs
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.rate_in_usd':
+        name: 'products.*.rate_in_usd'
+        description: 'The rate in USD.'
+        required: true
+        example: 10.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.amount_in_usd':
+        name: 'products.*.amount_in_usd'
+        description: 'The amount in USD.'
+        required: true
+        example: 1000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      pi_no: PI12345
+      date: '2023-06-25'
+      buyer_order_no: BO12345
+      buyer_order_date: '2023-06-20'
+      exporter_name: 'Exporter A'
+      exporter_address: '123 Street, City, Country'
+      exporter_pan: ABCDE1234F
+      exporter_iec: IEC1234567
+      exporter_gst: GST123456
+      exporter_mail: exporter@example.com
+      exporter_contact_person: 'John Doe'
+      exporter_contact_no: '1234567890'
+      consignee_name: 'Consignee A'
+      consignee_address: '456 Avenue, City, Country'
+      consignee_country: 'Country B'
+      consignee_mail: consignee@example.com
+      consignee_contact_person: 'Jane Doe'
+      consignee_contact_no: '0987654321'
+      port_of_loading: 'Port A'
+      port_of_discharge: 'Port B'
+      final_destination_port: 'Port C'
+      country_of_origin_of_goods: 'Country A'
+      country_of_final_destination: 'Country B'
+      total_fob_value: 1000.0
+      freight_charges: 50.0
+      total_cfr_value: 1050.0
+      insurance_charges: 20.0
+      total_cif_value: 1070.0
+      amount_in_words: 'One Thousand Seventy'
+      bank_name: 'Bank A'
+      bank_address: '789 Boulevard, City, Country'
+      bank_account_no: '123456789012'
+      bank_ifsc_code: IFSC12345
+      bank_ad_code: AD12345
+      bank_swift_code: SWIFT12345
+      payment_terms: '30 days'
+      payment_delivery_time: '15 days'
+      payment_delivery_terms: FOB
+      notes: 'Special instructions'
+      products:
+        - tempora
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "PI Report Export added successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/pi-reports-export/{id}'
+    metadata:
+      groupName: 'PI Reports'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified PI Report.'
+      description: 'This endpoint updates the details of a specific PI Report by its ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the PI Report.'
+        required: true
+        example: 15fjl5-4f45t-5g456y-g5t
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15fjl5-4f45t-5g456y-g5t
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      pi_no:
+        name: pi_no
+        description: 'The PI number.'
+        required: true
+        example: PI12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      date:
+        name: date
+        description: 'The date of the PI.'
+        required: true
+        example: '2023-06-25'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_no:
+        name: buyer_order_no
+        description: "The buyer's order number."
+        required: true
+        example: BO12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      buyer_order_date:
+        name: buyer_order_date
+        description: "The buyer's order date."
+        required: true
+        example: '2023-06-20'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_name:
+        name: exporter_name
+        description: 'The name of the exporter.'
+        required: true
+        example: 'Exporter A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_address:
+        name: exporter_address
+        description: 'The address of the exporter.'
+        required: true
+        example: '123 Street, City, Country'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_pan:
+        name: exporter_pan
+        description: 'The PAN of the exporter.'
+        required: true
+        example: ABCDE1234F
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_iec:
+        name: exporter_iec
+        description: 'The IEC of the exporter.'
+        required: true
+        example: IEC1234567
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_gst:
+        name: exporter_gst
+        description: 'The GST of the exporter.'
+        required: true
+        example: GST123456
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_mail:
+        name: exporter_mail
+        description: 'The email of the exporter.'
+        required: true
+        example: exporter@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_contact_person:
+        name: exporter_contact_person
+        description: 'The contact person of the exporter.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      exporter_contact_no:
+        name: exporter_contact_no
+        description: 'The contact number of the exporter.'
+        required: true
+        example: '1234567890'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_name:
+        name: consignee_name
+        description: 'The name of the consignee.'
+        required: true
+        example: 'Consignee A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_address:
+        name: consignee_address
+        description: 'The address of the consignee.'
+        required: true
+        example: '456 Avenue, City, Country'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_country:
+        name: consignee_country
+        description: 'The country of the consignee.'
+        required: true
+        example: 'Country B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_mail:
+        name: consignee_mail
+        description: 'The email of the consignee.'
+        required: true
+        example: consignee@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_person:
+        name: consignee_contact_person
+        description: 'The contact person of the consignee.'
+        required: true
+        example: 'Jane Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      consignee_contact_no:
+        name: consignee_contact_no
+        description: 'The contact number of the consignee.'
+        required: true
+        example: '0987654321'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      port_of_loading:
+        name: port_of_loading
+        description: 'The port of loading.'
+        required: true
+        example: 'Port A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      port_of_discharge:
+        name: port_of_discharge
+        description: 'The port of discharge.'
+        required: true
+        example: 'Port B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      final_destination_port:
+        name: final_destination_port
+        description: 'The final destination port.'
+        required: true
+        example: 'Port C'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      country_of_origin_of_goods:
+        name: country_of_origin_of_goods
+        description: 'The country of origin of the goods.'
+        required: true
+        example: 'Country A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      country_of_final_destination:
+        name: country_of_final_destination
+        description: 'The country of final destination.'
+        required: true
+        example: 'Country B'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_fob_value:
+        name: total_fob_value
+        description: 'The total FOB value.'
+        required: true
+        example: 1000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      freight_charges:
+        name: freight_charges
+        description: 'The freight charges.'
+        required: true
+        example: 50.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_cfr_value:
+        name: total_cfr_value
+        description: 'The total CFR value.'
+        required: true
+        example: 1050.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      insurance_charges:
+        name: insurance_charges
+        description: 'The insurance charges.'
+        required: true
+        example: 20.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      total_cif_value:
+        name: total_cif_value
+        description: 'The total CIF value.'
+        required: true
+        example: 1070.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      amount_in_words:
+        name: amount_in_words
+        description: 'The amount in words.'
+        required: true
+        example: 'One Thousand Seventy'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_name:
+        name: bank_name
+        description: 'The name of the bank.'
+        required: true
+        example: 'Bank A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_address:
+        name: bank_address
+        description: 'The address of the bank.'
+        required: true
+        example: '789 Boulevard, City, Country'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_account_no:
+        name: bank_account_no
+        description: 'The account number of the bank.'
+        required: true
+        example: '123456789012'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ifsc_code:
+        name: bank_ifsc_code
+        description: 'The IFSC code of the bank.'
+        required: true
+        example: IFSC12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_ad_code:
+        name: bank_ad_code
+        description: 'The AD code of the bank.'
+        required: true
+        example: AD12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      bank_swift_code:
+        name: bank_swift_code
+        description: 'The SWIFT code of the bank.'
+        required: true
+        example: SWIFT12345
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_terms:
+        name: payment_terms
+        description: 'The payment terms.'
+        required: true
+        example: '30 days'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_time:
+        name: payment_delivery_time
+        description: 'The payment delivery time.'
+        required: true
+        example: '15 days'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      payment_delivery_terms:
+        name: payment_delivery_terms
+        description: 'The payment delivery terms.'
+        required: true
+        example: FOB
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      notes:
+        name: notes
+        description: 'optional Any additional notes.'
+        required: false
+        example: 'Special instructions'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      products:
+        name: products
+        description: 'The list of products associated with the PI Report.'
+        required: true
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'products.*.size':
+        name: 'products.*.size'
+        description: 'The size of the product.'
+        required: true
+        example: Medium
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.type':
+        name: 'products.*.type'
+        description: 'The type of the product.'
+        required: true
+        example: 'Type A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.packaging_description':
+        name: 'products.*.packaging_description'
+        description: 'The packaging description.'
+        required: true
+        example: Box
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.rolls_pallet':
+        name: 'products.*.rolls_pallet'
+        description: 'The number of rolls per pallet.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.no_of_pallets':
+        name: 'products.*.no_of_pallets'
+        description: 'The number of pallets.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.total_rolls':
+        name: 'products.*.total_rolls'
+        description: 'The total number of rolls.'
+        required: true
+        example: 50
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.container':
+        name: 'products.*.container'
+        description: 'The container.'
+        required: true
+        example: 'Container A'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.quanity':
+        name: 'products.*.quanity'
+        description: 'The quantity.'
+        required: true
+        example: 100
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.unit':
+        name: 'products.*.unit'
+        description: 'The unit of measurement.'
+        required: true
+        example: pcs
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.rate_in_usd':
+        name: 'products.*.rate_in_usd'
+        description: 'The rate in USD.'
+        required: true
+        example: 10.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'products.*.amount_in_usd':
+        name: 'products.*.amount_in_usd'
+        description: 'The amount in USD.'
+        required: true
+        example: 1000.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      pi_no: PI12345
+      date: '2023-06-25'
+      buyer_order_no: BO12345
+      buyer_order_date: '2023-06-20'
+      exporter_name: 'Exporter A'
+      exporter_address: '123 Street, City, Country'
+      exporter_pan: ABCDE1234F
+      exporter_iec: IEC1234567
+      exporter_gst: GST123456
+      exporter_mail: exporter@example.com
+      exporter_contact_person: 'John Doe'
+      exporter_contact_no: '1234567890'
+      consignee_name: 'Consignee A'
+      consignee_address: '456 Avenue, City, Country'
+      consignee_country: 'Country B'
+      consignee_mail: consignee@example.com
+      consignee_contact_person: 'Jane Doe'
+      consignee_contact_no: '0987654321'
+      port_of_loading: 'Port A'
+      port_of_discharge: 'Port B'
+      final_destination_port: 'Port C'
+      country_of_origin_of_goods: 'Country A'
+      country_of_final_destination: 'Country B'
+      total_fob_value: 1000.0
+      freight_charges: 50.0
+      total_cfr_value: 1050.0
+      insurance_charges: 20.0
+      total_cif_value: 1070.0
+      amount_in_words: 'One Thousand Seventy'
+      bank_name: 'Bank A'
+      bank_address: '789 Boulevard, City, Country'
+      bank_account_no: '123456789012'
+      bank_ifsc_code: IFSC12345
+      bank_ad_code: AD12345
+      bank_swift_code: SWIFT12345
+      payment_terms: '30 days'
+      payment_delivery_time: '15 days'
+      payment_delivery_terms: FOB
+      notes: 'Special instructions'
+      products:
+        - consequatur
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "PI Report Export updated successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/pi-reports-export/{id}'
+    metadata:
+      groupName: 'PI Reports'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified PI Report.'
+      description: 'This endpoint deletes a specific PI Report by its ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the PI Report.'
+        required: true
+        example: 15fjl5-4f45t-5g456y-g5t
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15fjl5-4f45t-5g456y-g5t
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "message": "PI Report Export deleted successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/pi-reports-export-get
+    metadata:
+      groupName: 'PI Reports'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified PI Report.'
+      description: 'This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the PI Report.'
+        required: true
+        example: 15fjl5-4f45t-5g456y-g5t
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 15fjl5-4f45t-5g456y-g5t
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "status": "success",
+           "piReportsExport": {
+               "id": "15fjl5-4f45t-5g456y-g5t",
+               "pi_no": "PI12345",
+               "date": "2023-06-25",
+               "buyer_order_no": "BO12345",
+               "buyer_order_date": "2023-06-20",
+               "exporter_name": "Exporter A",
+               "exporter_address": "123 Street, City, Country",
+               "exporter_pan": "ABCDE1234F",
+               "exporter_iec": "IEC1234567",
+               "exporter_gst": "GST123456",
+               "exporter_mail": "exporter@example.com",
+               "exporter_contact_person": "John Doe",
+               "exporter_contact_no": "1234567890",
+               "consignee_name": "Consignee A",
+               "consignee_address": "456 Avenue, City, Country",
+               "consignee_country": "Country B",
+               "consignee_mail": "consignee@example.com",
+               "consignee_contact_person": "Jane Doe",
+               "consignee_contact_no": "0987654321",
+               "port_of_loading": "Port A",
+               "port_of_discharge": "Port B",
+               "final_destination_port": "Port C",
+               "country_of_origin_of_goods": "Country A",
+               "country_of_final_destination": "Country B",
+               "total_fob_value": 1000,
+               "freight_charges": 50,
+               "total_cfr_value": 1050,
+               "insurance_charges": 20,
+               "total_cif_value": 1070,
+               "amount_in_words": "One Thousand Seventy",
+               "bank_name": "Bank A",
+               "bank_address": "789 Boulevard, City, Country",
+               "bank_account_no": "123456789012",
+               "bank_ifsc_code": "IFSC12345",
+               "bank_ad_code": "AD12345",
+               "bank_swift_code": "SWIFT12345",
+               "payment_terms": "30 days",
+               "payment_delivery_time": "15 days",
+               "payment_delivery_terms": "FOB",
+               "notes": "Special instructions",
+               "piReportProducts": [
+                   {
+                       "id": "12345",
+                       "pi_report_export_id": "15fjl5-4f45t-5g456y-g5t",
+                       "size": "Medium",
+                       "type": "Type A",
+                       "packaging_description": "Box",
+                       "rolls_pallet": 10,
+                       "no_of_pallets": 5,
+                       "total_rolls": 50,
+                       "container": "Container A",
+                       "quanity": 100,
+                       "unit": "pcs",
+                       "rate_in_usd": 10.00,
+                       "amount_in_usd": 1000.00
+                   }
+               ]
+           }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

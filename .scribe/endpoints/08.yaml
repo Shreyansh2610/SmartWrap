@@ -106,7 +106,7 @@ endpoints:
         name: po_no
         description: 'The PO number.'
         required: true
-        example: optio
+        example: unde
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -115,7 +115,7 @@ endpoints:
         name: po_date
         description: 'The date of the PO.'
         required: true
-        example: laboriosam
+        example: velit
         type: date
         enumValues: []
         exampleWasSpecified: false
@@ -124,7 +124,7 @@ endpoints:
         name: quotation_no
         description: 'The quotation number.'
         required: true
-        example: sapiente
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: quotation_date
         description: 'The date of the quotation.'
         required: true
-        example: fugit
+        example: consequatur
         type: date
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: buyer_name
         description: 'The name of the buyer.'
         required: true
-        example: minima
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -151,7 +151,7 @@ endpoints:
         name: buyer_address
         description: 'The address of the buyer.'
         required: true
-        example: sit
+        example: aspernatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -160,7 +160,7 @@ endpoints:
         name: buyer_pan
         description: 'The PAN of the buyer.'
         required: true
-        example: quia
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -169,7 +169,7 @@ endpoints:
         name: buyer_iec
         description: 'The IEC of the buyer.'
         required: true
-        example: neque
+        example: adipisci
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -178,7 +178,7 @@ endpoints:
         name: buyer_gst
         description: 'The GST number of the buyer.'
         required: true
-        example: eos
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -187,7 +187,7 @@ endpoints:
         name: buyer_mail
         description: 'The email of the buyer.'
         required: true
-        example: beatae
+        example: excepturi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -196,7 +196,7 @@ endpoints:
         name: buyer_contact_person
         description: 'The contact person of the buyer.'
         required: true
-        example: minus
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -205,7 +205,7 @@ endpoints:
         name: buyer_contact_no
         description: 'The contact number of the buyer.'
         required: true
-        example: impedit
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -214,7 +214,7 @@ endpoints:
         name: supplier_name
         description: 'The name of the supplier.'
         required: true
-        example: id
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -223,7 +223,7 @@ endpoints:
         name: supplier_address
         description: 'The address of the supplier.'
         required: true
-        example: consequatur
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -232,7 +232,7 @@ endpoints:
         name: supplier_pan
         description: 'The PAN of the supplier.'
         required: true
-        example: laboriosam
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -241,7 +241,7 @@ endpoints:
         name: supplier_iec
         description: 'The IEC of the supplier.'
         required: true
-        example: qui
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -250,7 +250,7 @@ endpoints:
         name: supplier_gst
         description: 'The GST number of the supplier.'
         required: true
-        example: sed
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -259,7 +259,7 @@ endpoints:
         name: supplier_mail
         description: 'The email of the supplier.'
         required: true
-        example: qui
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -268,7 +268,7 @@ endpoints:
         name: supplier_contact_person
         description: 'The contact person of the supplier.'
         required: true
-        example: quisquam
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -277,7 +277,7 @@ endpoints:
         name: supplier_contact_no
         description: 'The contact number of the supplier.'
         required: true
-        example: debitis
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -286,7 +286,7 @@ endpoints:
         name: igst
         description: 'The IGST amount.'
         required: true
-        example: distinctio
+        example: omnis
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -295,7 +295,7 @@ endpoints:
         name: sgst
         description: 'The SGST amount.'
         required: true
-        example: sed
+        example: delectus
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -304,7 +304,7 @@ endpoints:
         name: cgst
         description: 'The CGST amount.'
         required: true
-        example: eum
+        example: laboriosam
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -313,7 +313,7 @@ endpoints:
         name: total_value
         description: 'The total value of the PO.'
         required: true
-        example: ut
+        example: est
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -322,7 +322,7 @@ endpoints:
         name: amount_in_words
         description: 'The total value in words.'
         required: true
-        example: at
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -331,7 +331,7 @@ endpoints:
         name: notes_1
         description: 'optional Additional notes 1.'
         required: false
-        example: maiores
+        example: assumenda
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -340,7 +340,7 @@ endpoints:
         name: notes_2
         description: 'optional Additional notes 2.'
         required: false
-        example: quidem
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -349,7 +349,7 @@ endpoints:
         name: notes_3
         description: 'optional Additional notes 3.'
         required: false
-        example: assumenda
+        example: amet
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -358,7 +358,7 @@ endpoints:
         name: notes_4
         description: 'optional Additional notes 4.'
         required: false
-        example: pariatur
+        example: reiciendis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -377,7 +377,7 @@ endpoints:
         name: 'products.*.product_description'
         description: 'The description of the product.'
         required: true
-        example: eligendi
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -386,7 +386,7 @@ endpoints:
         name: 'products.*.hsn_code'
         description: 'The HSN code of the product.'
         required: true
-        example: sed
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -395,7 +395,7 @@ endpoints:
         name: 'products.*.quantity'
         description: 'The quantity of the product.'
         required: true
-        example: facilis
+        example: totam
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -404,7 +404,7 @@ endpoints:
         name: 'products.*.unit'
         description: 'The unit of the product.'
         required: true
-        example: quis
+        example: perspiciatis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -413,7 +413,7 @@ endpoints:
         name: 'products.*.rate'
         description: 'The rate of the product.'
         required: true
-        example: ut
+        example: tempora
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -422,41 +422,41 @@ endpoints:
         name: 'products.*.amount'
         description: 'The amount of the product.'
         required: true
-        example: rerum
+        example: culpa
         type: numeric
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      po_no: optio
-      po_date: laboriosam
-      quotation_no: sapiente
-      quotation_date: fugit
-      buyer_name: minima
-      buyer_address: sit
-      buyer_pan: quia
-      buyer_iec: neque
-      buyer_gst: eos
-      buyer_mail: beatae
-      buyer_contact_person: minus
-      buyer_contact_no: impedit
-      supplier_name: id
-      supplier_address: consequatur
-      supplier_pan: laboriosam
-      supplier_iec: qui
-      supplier_gst: sed
-      supplier_mail: qui
-      supplier_contact_person: quisquam
-      supplier_contact_no: debitis
-      igst: distinctio
-      sgst: sed
-      cgst: eum
-      total_value: ut
-      amount_in_words: at
-      notes_1: maiores
-      notes_2: quidem
-      notes_3: assumenda
-      notes_4: pariatur
+      po_no: unde
+      po_date: velit
+      quotation_no: et
+      quotation_date: consequatur
+      buyer_name: ipsa
+      buyer_address: aspernatur
+      buyer_pan: vel
+      buyer_iec: adipisci
+      buyer_gst: tempora
+      buyer_mail: excepturi
+      buyer_contact_person: eos
+      buyer_contact_no: quia
+      supplier_name: et
+      supplier_address: accusantium
+      supplier_pan: quasi
+      supplier_iec: eum
+      supplier_gst: est
+      supplier_mail: optio
+      supplier_contact_person: cum
+      supplier_contact_no: eum
+      igst: omnis
+      sgst: delectus
+      cgst: laboriosam
+      total_value: est
+      amount_in_words: rerum
+      notes_1: assumenda
+      notes_2: omnis
+      notes_3: amet
+      notes_4: reiciendis
       products:
         - ut
     fileParameters: []
@@ -515,13 +515,13 @@ endpoints:
         name: id
         description: 'The ID of the PO Report.'
         required: true
-        example: voluptatem
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: voluptatem
+      id: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -529,7 +529,7 @@ endpoints:
         name: po_no
         description: 'The PO number.'
         required: true
-        example: doloremque
+        example: ipsa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -538,7 +538,7 @@ endpoints:
         name: po_date
         description: 'The date of the PO.'
         required: true
-        example: consequuntur
+        example: laudantium
         type: date
         enumValues: []
         exampleWasSpecified: false
@@ -547,7 +547,7 @@ endpoints:
         name: quotation_no
         description: 'The quotation number.'
         required: true
-        example: quae
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -556,7 +556,7 @@ endpoints:
         name: quotation_date
         description: 'The date of the quotation.'
         required: true
-        example: ipsam
+        example: et
         type: date
         enumValues: []
         exampleWasSpecified: false
@@ -565,7 +565,7 @@ endpoints:
         name: buyer_name
         description: 'The name of the buyer.'
         required: true
-        example: quis
+        example: repellat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -574,7 +574,7 @@ endpoints:
         name: buyer_address
         description: 'The address of the buyer.'
         required: true
-        example: modi
+        example: nihil
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -583,7 +583,7 @@ endpoints:
         name: buyer_pan
         description: 'The PAN of the buyer.'
         required: true
-        example: laborum
+        example: doloremque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -592,7 +592,7 @@ endpoints:
         name: buyer_iec
         description: 'The IEC of the buyer.'
         required: true
-        example: animi
+        example: harum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -601,7 +601,7 @@ endpoints:
         name: buyer_gst
         description: 'The GST number of the buyer.'
         required: true
-        example: assumenda
+        example: fugiat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -610,7 +610,7 @@ endpoints:
         name: buyer_mail
         description: 'The email of the buyer.'
         required: true
-        example: quia
+        example: quidem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -619,7 +619,7 @@ endpoints:
         name: buyer_contact_person
         description: 'The contact person of the buyer.'
         required: true
-        example: eos
+        example: veritatis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -628,7 +628,7 @@ endpoints:
         name: buyer_contact_no
         description: 'The contact number of the buyer.'
         required: true
-        example: animi
+        example: voluptates
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -637,7 +637,7 @@ endpoints:
         name: supplier_name
         description: 'The name of the supplier.'
         required: true
-        example: doloribus
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -646,7 +646,7 @@ endpoints:
         name: supplier_address
         description: 'The address of the supplier.'
         required: true
-        example: ea
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -655,7 +655,7 @@ endpoints:
         name: supplier_pan
         description: 'The PAN of the supplier.'
         required: true
-        example: possimus
+        example: natus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -664,7 +664,7 @@ endpoints:
         name: supplier_iec
         description: 'The IEC of the supplier.'
         required: true
-        example: aperiam
+        example: soluta
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -673,7 +673,7 @@ endpoints:
         name: supplier_gst
         description: 'The GST number of the supplier.'
         required: true
-        example: ducimus
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -682,7 +682,7 @@ endpoints:
         name: supplier_mail
         description: 'The email of the supplier.'
         required: true
-        example: voluptas
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -691,7 +691,7 @@ endpoints:
         name: supplier_contact_person
         description: 'The contact person of the supplier.'
         required: true
-        example: unde
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -700,7 +700,7 @@ endpoints:
         name: supplier_contact_no
         description: 'The contact number of the supplier.'
         required: true
-        example: qui
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -709,7 +709,7 @@ endpoints:
         name: igst
         description: 'The IGST amount.'
         required: true
-        example: rerum
+        example: autem
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -718,7 +718,7 @@ endpoints:
         name: sgst
         description: 'The SGST amount.'
         required: true
-        example: voluptatem
+        example: consequatur
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -727,7 +727,7 @@ endpoints:
         name: cgst
         description: 'The CGST amount.'
         required: true
-        example: aut
+        example: quia
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -736,7 +736,7 @@ endpoints:
         name: total_value
         description: 'The total value of the PO.'
         required: true
-        example: fugit
+        example: ab
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -745,7 +745,7 @@ endpoints:
         name: amount_in_words
         description: 'The total value in words.'
         required: true
-        example: eligendi
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -754,7 +754,7 @@ endpoints:
         name: notes_1
         description: 'optional Additional notes 1.'
         required: false
-        example: iusto
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -763,7 +763,7 @@ endpoints:
         name: notes_2
         description: 'optional Additional notes 2.'
         required: false
-        example: provident
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -772,7 +772,7 @@ endpoints:
         name: notes_3
         description: 'optional Additional notes 3.'
         required: false
-        example: distinctio
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -781,7 +781,7 @@ endpoints:
         name: notes_4
         description: 'optional Additional notes 4.'
         required: false
-        example: accusantium
+        example: temporibus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -791,7 +791,7 @@ endpoints:
         description: 'The array of product details.'
         required: true
         example:
-          - excepturi
+          - voluptatem
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -800,7 +800,7 @@ endpoints:
         name: 'products.*.product_description'
         description: 'The description of the product.'
         required: true
-        example: dolorem
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -809,7 +809,7 @@ endpoints:
         name: 'products.*.hsn_code'
         description: 'The HSN code of the product.'
         required: true
-        example: perferendis
+        example: ratione
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -818,7 +818,7 @@ endpoints:
         name: 'products.*.quantity'
         description: 'The quantity of the product.'
         required: true
-        example: minima
+        example: omnis
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -827,7 +827,7 @@ endpoints:
         name: 'products.*.unit'
         description: 'The unit of the product.'
         required: true
-        example: odio
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -836,7 +836,7 @@ endpoints:
         name: 'products.*.rate'
         description: 'The rate of the product.'
         required: true
-        example: dolores
+        example: ad
         type: numeric
         enumValues: []
         exampleWasSpecified: false
@@ -845,43 +845,43 @@ endpoints:
         name: 'products.*.amount'
         description: 'The amount of the product.'
         required: true
-        example: voluptatem
+        example: consequatur
         type: numeric
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      po_no: doloremque
-      po_date: consequuntur
-      quotation_no: quae
-      quotation_date: ipsam
-      buyer_name: quis
-      buyer_address: modi
-      buyer_pan: laborum
-      buyer_iec: animi
-      buyer_gst: assumenda
-      buyer_mail: quia
-      buyer_contact_person: eos
-      buyer_contact_no: animi
-      supplier_name: doloribus
-      supplier_address: ea
-      supplier_pan: possimus
-      supplier_iec: aperiam
-      supplier_gst: ducimus
-      supplier_mail: voluptas
-      supplier_contact_person: unde
-      supplier_contact_no: qui
-      igst: rerum
-      sgst: voluptatem
-      cgst: aut
-      total_value: fugit
-      amount_in_words: eligendi
-      notes_1: iusto
-      notes_2: provident
-      notes_3: distinctio
-      notes_4: accusantium
+      po_no: ipsa
+      po_date: laudantium
+      quotation_no: aliquam
+      quotation_date: et
+      buyer_name: repellat
+      buyer_address: nihil
+      buyer_pan: doloremque
+      buyer_iec: harum
+      buyer_gst: fugiat
+      buyer_mail: quidem
+      buyer_contact_person: veritatis
+      buyer_contact_no: voluptates
+      supplier_name: est
+      supplier_address: sed
+      supplier_pan: natus
+      supplier_iec: soluta
+      supplier_gst: et
+      supplier_mail: et
+      supplier_contact_person: velit
+      supplier_contact_no: beatae
+      igst: autem
+      sgst: consequatur
+      cgst: quia
+      total_value: ab
+      amount_in_words: ut
+      notes_1: in
+      notes_2: et
+      notes_3: tempora
+      notes_4: temporibus
       products:
-        - excepturi
+        - voluptatem
     fileParameters: []
     responses:
       -
@@ -937,13 +937,13 @@ endpoints:
         name: id
         description: 'The ID of the PO Report.'
         required: true
-        example: voluptate
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: voluptate
+      id: eos
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -991,13 +991,13 @@ endpoints:
         name: po_no
         description: 'The PO number of the PO Report.'
         required: true
-        example: qui
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      po_no: qui
+      po_no: quod
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []

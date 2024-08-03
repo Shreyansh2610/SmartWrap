@@ -159,6 +159,28 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-pi-reports" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="pi-reports">
+                    <a href="#pi-reports">PI Reports</a>
+                </li>
+                                    <ul id="tocify-subheader-pi-reports" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="pi-reports-GETapi-pi-reports-export">
+                                <a href="#pi-reports-GETapi-pi-reports-export">Display a listing of the PI Reports.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pi-reports-POSTapi-pi-reports-export">
+                                <a href="#pi-reports-POSTapi-pi-reports-export">Store a newly created PI Report.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pi-reports-PUTapi-pi-reports-export--id-">
+                                <a href="#pi-reports-PUTapi-pi-reports-export--id-">Update the specified PI Report.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pi-reports-DELETEapi-pi-reports-export--id-">
+                                <a href="#pi-reports-DELETEapi-pi-reports-export--id-">Remove the specified PI Report.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pi-reports-POSTapi-pi-reports-export-get">
+                                <a href="#pi-reports-POSTapi-pi-reports-export-get">Display the specified PI Report.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-po-reports" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="po-reports">
                     <a href="#po-reports">PO Reports</a>
@@ -228,7 +250,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 2, 2024</li>
+        <li>Last updated: August 3, 2024</li>
     </ul>
 </div>
 
@@ -1184,8 +1206,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "export_under_detail_1=Export Detail 1"\
     --form "export_under_detail_2=Export Detail 2"\
     --form "export_remarks=Export Remarks Example"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\phpD5C6.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\phpD673.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\php84FD.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\php84FE.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1829,7 +1851,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpD5C6.tmp</code></p>
+<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php84FD.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1840,7 +1862,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpD673.tmp</code></p>
+<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\php84FE.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -4679,6 +4701,2087 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                <h1 id="pi-reports">PI Reports</h1>
+
+    
+
+                                <h2 id="pi-reports-GETapi-pi-reports-export">Display a listing of the PI Reports.</h2>
+
+<p>
+</p>
+
+<p>This endpoint retrieves a list of PI Reports created by the authenticated user,
+along with their associated product details.</p>
+
+<span id="example-requests-GETapi-pi-reports-export">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://api.smartwrapfilms.com/api/pi-reports-export" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/pi-reports-export"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-pi-reports-export">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;piReportsExport&quot;: [
+        {
+            &quot;id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+            &quot;pi_no&quot;: &quot;PI12345&quot;,
+            &quot;date&quot;: &quot;2023-06-25&quot;,
+            &quot;buyer_order_no&quot;: &quot;BO12345&quot;,
+            &quot;buyer_order_date&quot;: &quot;2023-06-20&quot;,
+            &quot;exporter_name&quot;: &quot;Exporter A&quot;,
+            &quot;exporter_address&quot;: &quot;123 Street, City, Country&quot;,
+            &quot;exporter_pan&quot;: &quot;ABCDE1234F&quot;,
+            &quot;exporter_iec&quot;: &quot;IEC1234567&quot;,
+            &quot;exporter_gst&quot;: &quot;GST123456&quot;,
+            &quot;exporter_mail&quot;: &quot;exporter@example.com&quot;,
+            &quot;exporter_contact_person&quot;: &quot;John Doe&quot;,
+            &quot;exporter_contact_no&quot;: &quot;1234567890&quot;,
+            &quot;consignee_name&quot;: &quot;Consignee A&quot;,
+            &quot;consignee_address&quot;: &quot;456 Avenue, City, Country&quot;,
+            &quot;consignee_country&quot;: &quot;Country B&quot;,
+            &quot;consignee_mail&quot;: &quot;consignee@example.com&quot;,
+            &quot;consignee_contact_person&quot;: &quot;Jane Doe&quot;,
+            &quot;consignee_contact_no&quot;: &quot;0987654321&quot;,
+            &quot;port_of_loading&quot;: &quot;Port A&quot;,
+            &quot;port_of_discharge&quot;: &quot;Port B&quot;,
+            &quot;final_destination_port&quot;: &quot;Port C&quot;,
+            &quot;country_of_origin_of_goods&quot;: &quot;Country A&quot;,
+            &quot;country_of_final_destination&quot;: &quot;Country B&quot;,
+            &quot;total_fob_value&quot;: 1000,
+            &quot;freight_charges&quot;: 50,
+            &quot;total_cfr_value&quot;: 1050,
+            &quot;insurance_charges&quot;: 20,
+            &quot;total_cif_value&quot;: 1070,
+            &quot;amount_in_words&quot;: &quot;One Thousand Seventy&quot;,
+            &quot;bank_name&quot;: &quot;Bank A&quot;,
+            &quot;bank_address&quot;: &quot;789 Boulevard, City, Country&quot;,
+            &quot;bank_account_no&quot;: &quot;123456789012&quot;,
+            &quot;bank_ifsc_code&quot;: &quot;IFSC12345&quot;,
+            &quot;bank_ad_code&quot;: &quot;AD12345&quot;,
+            &quot;bank_swift_code&quot;: &quot;SWIFT12345&quot;,
+            &quot;payment_terms&quot;: &quot;30 days&quot;,
+            &quot;payment_delivery_time&quot;: &quot;15 days&quot;,
+            &quot;payment_delivery_terms&quot;: &quot;FOB&quot;,
+            &quot;notes&quot;: &quot;Special instructions&quot;,
+            &quot;piReportProducts&quot;: [
+                {
+                    &quot;id&quot;: &quot;12345&quot;,
+                    &quot;pi_report_export_id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+                    &quot;size&quot;: &quot;Medium&quot;,
+                    &quot;type&quot;: &quot;Type A&quot;,
+                    &quot;packaging_description&quot;: &quot;Box&quot;,
+                    &quot;rolls_pallet&quot;: 10,
+                    &quot;no_of_pallets&quot;: 5,
+                    &quot;total_rolls&quot;: 50,
+                    &quot;container&quot;: &quot;Container A&quot;,
+                    &quot;quanity&quot;: 100,
+                    &quot;unit&quot;: &quot;pcs&quot;,
+                    &quot;rate_in_usd&quot;: 10,
+                    &quot;amount_in_usd&quot;: 1000
+                }
+            ]
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-pi-reports-export" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-pi-reports-export"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-pi-reports-export"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-pi-reports-export" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-pi-reports-export">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-pi-reports-export" data-method="GET"
+      data-path="api/pi-reports-export"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-pi-reports-export', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-pi-reports-export"
+                    onclick="tryItOut('GETapi-pi-reports-export');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-pi-reports-export"
+                    onclick="cancelTryOut('GETapi-pi-reports-export');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-pi-reports-export"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/pi-reports-export</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-pi-reports-export"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-pi-reports-export"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="pi-reports-POSTapi-pi-reports-export">Store a newly created PI Report.</h2>
+
+<p>
+</p>
+
+<p>This endpoint creates a new PI Report with the specified details and associated products.</p>
+
+<span id="example-requests-POSTapi-pi-reports-export">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://api.smartwrapfilms.com/api/pi-reports-export" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"pi_no\": \"PI12345\",
+    \"date\": \"2023-06-25\",
+    \"buyer_order_no\": \"BO12345\",
+    \"buyer_order_date\": \"2023-06-20\",
+    \"exporter_name\": \"Exporter A\",
+    \"exporter_address\": \"123 Street, City, Country\",
+    \"exporter_pan\": \"ABCDE1234F\",
+    \"exporter_iec\": \"IEC1234567\",
+    \"exporter_gst\": \"GST123456\",
+    \"exporter_mail\": \"exporter@example.com\",
+    \"exporter_contact_person\": \"John Doe\",
+    \"exporter_contact_no\": \"1234567890\",
+    \"consignee_name\": \"Consignee A\",
+    \"consignee_address\": \"456 Avenue, City, Country\",
+    \"consignee_country\": \"Country B\",
+    \"consignee_mail\": \"consignee@example.com\",
+    \"consignee_contact_person\": \"Jane Doe\",
+    \"consignee_contact_no\": \"0987654321\",
+    \"port_of_loading\": \"Port A\",
+    \"port_of_discharge\": \"Port B\",
+    \"final_destination_port\": \"Port C\",
+    \"country_of_origin_of_goods\": \"Country A\",
+    \"country_of_final_destination\": \"Country B\",
+    \"total_fob_value\": 1000,
+    \"freight_charges\": 50,
+    \"total_cfr_value\": 1050,
+    \"insurance_charges\": 20,
+    \"total_cif_value\": 1070,
+    \"amount_in_words\": \"One Thousand Seventy\",
+    \"bank_name\": \"Bank A\",
+    \"bank_address\": \"789 Boulevard, City, Country\",
+    \"bank_account_no\": \"123456789012\",
+    \"bank_ifsc_code\": \"IFSC12345\",
+    \"bank_ad_code\": \"AD12345\",
+    \"bank_swift_code\": \"SWIFT12345\",
+    \"payment_terms\": \"30 days\",
+    \"payment_delivery_time\": \"15 days\",
+    \"payment_delivery_terms\": \"FOB\",
+    \"notes\": \"Special instructions\",
+    \"products\": [
+        \"tempora\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/pi-reports-export"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "pi_no": "PI12345",
+    "date": "2023-06-25",
+    "buyer_order_no": "BO12345",
+    "buyer_order_date": "2023-06-20",
+    "exporter_name": "Exporter A",
+    "exporter_address": "123 Street, City, Country",
+    "exporter_pan": "ABCDE1234F",
+    "exporter_iec": "IEC1234567",
+    "exporter_gst": "GST123456",
+    "exporter_mail": "exporter@example.com",
+    "exporter_contact_person": "John Doe",
+    "exporter_contact_no": "1234567890",
+    "consignee_name": "Consignee A",
+    "consignee_address": "456 Avenue, City, Country",
+    "consignee_country": "Country B",
+    "consignee_mail": "consignee@example.com",
+    "consignee_contact_person": "Jane Doe",
+    "consignee_contact_no": "0987654321",
+    "port_of_loading": "Port A",
+    "port_of_discharge": "Port B",
+    "final_destination_port": "Port C",
+    "country_of_origin_of_goods": "Country A",
+    "country_of_final_destination": "Country B",
+    "total_fob_value": 1000,
+    "freight_charges": 50,
+    "total_cfr_value": 1050,
+    "insurance_charges": 20,
+    "total_cif_value": 1070,
+    "amount_in_words": "One Thousand Seventy",
+    "bank_name": "Bank A",
+    "bank_address": "789 Boulevard, City, Country",
+    "bank_account_no": "123456789012",
+    "bank_ifsc_code": "IFSC12345",
+    "bank_ad_code": "AD12345",
+    "bank_swift_code": "SWIFT12345",
+    "payment_terms": "30 days",
+    "payment_delivery_time": "15 days",
+    "payment_delivery_terms": "FOB",
+    "notes": "Special instructions",
+    "products": [
+        "tempora"
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-pi-reports-export">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;PI Report Export added successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-pi-reports-export" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-pi-reports-export"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-pi-reports-export"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-pi-reports-export" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-pi-reports-export">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-pi-reports-export" data-method="POST"
+      data-path="api/pi-reports-export"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-pi-reports-export', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-pi-reports-export"
+                    onclick="tryItOut('POSTapi-pi-reports-export');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-pi-reports-export"
+                    onclick="cancelTryOut('POSTapi-pi-reports-export');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-pi-reports-export"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/pi-reports-export</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-pi-reports-export"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-pi-reports-export"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pi_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pi_no"                data-endpoint="POSTapi-pi-reports-export"
+               value="PI12345"
+               data-component="body">
+    <br>
+<p>The PI number. Example: <code>PI12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="POSTapi-pi-reports-export"
+               value="2023-06-25"
+               data-component="body">
+    <br>
+<p>The date of the PI. Example: <code>2023-06-25</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_order_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_order_no"                data-endpoint="POSTapi-pi-reports-export"
+               value="BO12345"
+               data-component="body">
+    <br>
+<p>The buyer's order number. Example: <code>BO12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_order_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_order_date"                data-endpoint="POSTapi-pi-reports-export"
+               value="2023-06-20"
+               data-component="body">
+    <br>
+<p>The buyer's order date. Example: <code>2023-06-20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_name"                data-endpoint="POSTapi-pi-reports-export"
+               value="Exporter A"
+               data-component="body">
+    <br>
+<p>The name of the exporter. Example: <code>Exporter A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_address"                data-endpoint="POSTapi-pi-reports-export"
+               value="123 Street, City, Country"
+               data-component="body">
+    <br>
+<p>The address of the exporter. Example: <code>123 Street, City, Country</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_pan</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_pan"                data-endpoint="POSTapi-pi-reports-export"
+               value="ABCDE1234F"
+               data-component="body">
+    <br>
+<p>The PAN of the exporter. Example: <code>ABCDE1234F</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_iec</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_iec"                data-endpoint="POSTapi-pi-reports-export"
+               value="IEC1234567"
+               data-component="body">
+    <br>
+<p>The IEC of the exporter. Example: <code>IEC1234567</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_gst</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_gst"                data-endpoint="POSTapi-pi-reports-export"
+               value="GST123456"
+               data-component="body">
+    <br>
+<p>The GST of the exporter. Example: <code>GST123456</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_mail</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_mail"                data-endpoint="POSTapi-pi-reports-export"
+               value="exporter@example.com"
+               data-component="body">
+    <br>
+<p>The email of the exporter. Example: <code>exporter@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_contact_person</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_contact_person"                data-endpoint="POSTapi-pi-reports-export"
+               value="John Doe"
+               data-component="body">
+    <br>
+<p>The contact person of the exporter. Example: <code>John Doe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_contact_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_contact_no"                data-endpoint="POSTapi-pi-reports-export"
+               value="1234567890"
+               data-component="body">
+    <br>
+<p>The contact number of the exporter. Example: <code>1234567890</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_name"                data-endpoint="POSTapi-pi-reports-export"
+               value="Consignee A"
+               data-component="body">
+    <br>
+<p>The name of the consignee. Example: <code>Consignee A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_address"                data-endpoint="POSTapi-pi-reports-export"
+               value="456 Avenue, City, Country"
+               data-component="body">
+    <br>
+<p>The address of the consignee. Example: <code>456 Avenue, City, Country</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_country</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_country"                data-endpoint="POSTapi-pi-reports-export"
+               value="Country B"
+               data-component="body">
+    <br>
+<p>The country of the consignee. Example: <code>Country B</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_mail</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_mail"                data-endpoint="POSTapi-pi-reports-export"
+               value="consignee@example.com"
+               data-component="body">
+    <br>
+<p>The email of the consignee. Example: <code>consignee@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_contact_person</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_contact_person"                data-endpoint="POSTapi-pi-reports-export"
+               value="Jane Doe"
+               data-component="body">
+    <br>
+<p>The contact person of the consignee. Example: <code>Jane Doe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_contact_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_contact_no"                data-endpoint="POSTapi-pi-reports-export"
+               value="0987654321"
+               data-component="body">
+    <br>
+<p>The contact number of the consignee. Example: <code>0987654321</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>port_of_loading</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="port_of_loading"                data-endpoint="POSTapi-pi-reports-export"
+               value="Port A"
+               data-component="body">
+    <br>
+<p>The port of loading. Example: <code>Port A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>port_of_discharge</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="port_of_discharge"                data-endpoint="POSTapi-pi-reports-export"
+               value="Port B"
+               data-component="body">
+    <br>
+<p>The port of discharge. Example: <code>Port B</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>final_destination_port</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="final_destination_port"                data-endpoint="POSTapi-pi-reports-export"
+               value="Port C"
+               data-component="body">
+    <br>
+<p>The final destination port. Example: <code>Port C</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country_of_origin_of_goods</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="country_of_origin_of_goods"                data-endpoint="POSTapi-pi-reports-export"
+               value="Country A"
+               data-component="body">
+    <br>
+<p>The country of origin of the goods. Example: <code>Country A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country_of_final_destination</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="country_of_final_destination"                data-endpoint="POSTapi-pi-reports-export"
+               value="Country B"
+               data-component="body">
+    <br>
+<p>The country of final destination. Example: <code>Country B</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_fob_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_fob_value"                data-endpoint="POSTapi-pi-reports-export"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The total FOB value. Example: <code>1000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>freight_charges</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="freight_charges"                data-endpoint="POSTapi-pi-reports-export"
+               value="50"
+               data-component="body">
+    <br>
+<p>The freight charges. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_cfr_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_cfr_value"                data-endpoint="POSTapi-pi-reports-export"
+               value="1050"
+               data-component="body">
+    <br>
+<p>The total CFR value. Example: <code>1050</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>insurance_charges</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="insurance_charges"                data-endpoint="POSTapi-pi-reports-export"
+               value="20"
+               data-component="body">
+    <br>
+<p>The insurance charges. Example: <code>20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_cif_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_cif_value"                data-endpoint="POSTapi-pi-reports-export"
+               value="1070"
+               data-component="body">
+    <br>
+<p>The total CIF value. Example: <code>1070</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="amount_in_words"                data-endpoint="POSTapi-pi-reports-export"
+               value="One Thousand Seventy"
+               data-component="body">
+    <br>
+<p>The amount in words. Example: <code>One Thousand Seventy</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_name"                data-endpoint="POSTapi-pi-reports-export"
+               value="Bank A"
+               data-component="body">
+    <br>
+<p>The name of the bank. Example: <code>Bank A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_address"                data-endpoint="POSTapi-pi-reports-export"
+               value="789 Boulevard, City, Country"
+               data-component="body">
+    <br>
+<p>The address of the bank. Example: <code>789 Boulevard, City, Country</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_account_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_account_no"                data-endpoint="POSTapi-pi-reports-export"
+               value="123456789012"
+               data-component="body">
+    <br>
+<p>The account number of the bank. Example: <code>123456789012</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_ifsc_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_ifsc_code"                data-endpoint="POSTapi-pi-reports-export"
+               value="IFSC12345"
+               data-component="body">
+    <br>
+<p>The IFSC code of the bank. Example: <code>IFSC12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_ad_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_ad_code"                data-endpoint="POSTapi-pi-reports-export"
+               value="AD12345"
+               data-component="body">
+    <br>
+<p>The AD code of the bank. Example: <code>AD12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_swift_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_swift_code"                data-endpoint="POSTapi-pi-reports-export"
+               value="SWIFT12345"
+               data-component="body">
+    <br>
+<p>The SWIFT code of the bank. Example: <code>SWIFT12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_terms</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_terms"                data-endpoint="POSTapi-pi-reports-export"
+               value="30 days"
+               data-component="body">
+    <br>
+<p>The payment terms. Example: <code>30 days</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_delivery_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_delivery_time"                data-endpoint="POSTapi-pi-reports-export"
+               value="15 days"
+               data-component="body">
+    <br>
+<p>The payment delivery time. Example: <code>15 days</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_delivery_terms</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_delivery_terms"                data-endpoint="POSTapi-pi-reports-export"
+               value="FOB"
+               data-component="body">
+    <br>
+<p>The payment delivery terms. Example: <code>FOB</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-pi-reports-export"
+               value="Special instructions"
+               data-component="body">
+    <br>
+<p>optional Any additional notes. Example: <code>Special instructions</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>products</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>The list of products associated with the PI Report.</p>
+            </summary>
+                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>*</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.size"                data-endpoint="POSTapi-pi-reports-export"
+               value="Medium"
+               data-component="body">
+    <br>
+<p>The size of the product. Example: <code>Medium</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.type"                data-endpoint="POSTapi-pi-reports-export"
+               value="Type A"
+               data-component="body">
+    <br>
+<p>The type of the product. Example: <code>Type A</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>packaging_description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.packaging_description"                data-endpoint="POSTapi-pi-reports-export"
+               value="Box"
+               data-component="body">
+    <br>
+<p>The packaging description. Example: <code>Box</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>rolls_pallet</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.rolls_pallet"                data-endpoint="POSTapi-pi-reports-export"
+               value="10"
+               data-component="body">
+    <br>
+<p>The number of rolls per pallet. Example: <code>10</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>no_of_pallets</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.no_of_pallets"                data-endpoint="POSTapi-pi-reports-export"
+               value="5"
+               data-component="body">
+    <br>
+<p>The number of pallets. Example: <code>5</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>total_rolls</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.total_rolls"                data-endpoint="POSTapi-pi-reports-export"
+               value="50"
+               data-component="body">
+    <br>
+<p>The total number of rolls. Example: <code>50</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>container</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.container"                data-endpoint="POSTapi-pi-reports-export"
+               value="Container A"
+               data-component="body">
+    <br>
+<p>The container. Example: <code>Container A</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>quanity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.quanity"                data-endpoint="POSTapi-pi-reports-export"
+               value="100"
+               data-component="body">
+    <br>
+<p>The quantity. Example: <code>100</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.unit"                data-endpoint="POSTapi-pi-reports-export"
+               value="pcs"
+               data-component="body">
+    <br>
+<p>The unit of measurement. Example: <code>pcs</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate_in_usd</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.rate_in_usd"                data-endpoint="POSTapi-pi-reports-export"
+               value="10"
+               data-component="body">
+    <br>
+<p>The rate in USD. Example: <code>10</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>amount_in_usd</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.amount_in_usd"                data-endpoint="POSTapi-pi-reports-export"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The amount in USD. Example: <code>1000</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+        </form>
+
+                    <h2 id="pi-reports-PUTapi-pi-reports-export--id-">Update the specified PI Report.</h2>
+
+<p>
+</p>
+
+<p>This endpoint updates the details of a specific PI Report by its ID.</p>
+
+<span id="example-requests-PUTapi-pi-reports-export--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://api.smartwrapfilms.com/api/pi-reports-export/15fjl5-4f45t-5g456y-g5t" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"pi_no\": \"PI12345\",
+    \"date\": \"2023-06-25\",
+    \"buyer_order_no\": \"BO12345\",
+    \"buyer_order_date\": \"2023-06-20\",
+    \"exporter_name\": \"Exporter A\",
+    \"exporter_address\": \"123 Street, City, Country\",
+    \"exporter_pan\": \"ABCDE1234F\",
+    \"exporter_iec\": \"IEC1234567\",
+    \"exporter_gst\": \"GST123456\",
+    \"exporter_mail\": \"exporter@example.com\",
+    \"exporter_contact_person\": \"John Doe\",
+    \"exporter_contact_no\": \"1234567890\",
+    \"consignee_name\": \"Consignee A\",
+    \"consignee_address\": \"456 Avenue, City, Country\",
+    \"consignee_country\": \"Country B\",
+    \"consignee_mail\": \"consignee@example.com\",
+    \"consignee_contact_person\": \"Jane Doe\",
+    \"consignee_contact_no\": \"0987654321\",
+    \"port_of_loading\": \"Port A\",
+    \"port_of_discharge\": \"Port B\",
+    \"final_destination_port\": \"Port C\",
+    \"country_of_origin_of_goods\": \"Country A\",
+    \"country_of_final_destination\": \"Country B\",
+    \"total_fob_value\": 1000,
+    \"freight_charges\": 50,
+    \"total_cfr_value\": 1050,
+    \"insurance_charges\": 20,
+    \"total_cif_value\": 1070,
+    \"amount_in_words\": \"One Thousand Seventy\",
+    \"bank_name\": \"Bank A\",
+    \"bank_address\": \"789 Boulevard, City, Country\",
+    \"bank_account_no\": \"123456789012\",
+    \"bank_ifsc_code\": \"IFSC12345\",
+    \"bank_ad_code\": \"AD12345\",
+    \"bank_swift_code\": \"SWIFT12345\",
+    \"payment_terms\": \"30 days\",
+    \"payment_delivery_time\": \"15 days\",
+    \"payment_delivery_terms\": \"FOB\",
+    \"notes\": \"Special instructions\",
+    \"products\": [
+        \"consequatur\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/pi-reports-export/15fjl5-4f45t-5g456y-g5t"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "pi_no": "PI12345",
+    "date": "2023-06-25",
+    "buyer_order_no": "BO12345",
+    "buyer_order_date": "2023-06-20",
+    "exporter_name": "Exporter A",
+    "exporter_address": "123 Street, City, Country",
+    "exporter_pan": "ABCDE1234F",
+    "exporter_iec": "IEC1234567",
+    "exporter_gst": "GST123456",
+    "exporter_mail": "exporter@example.com",
+    "exporter_contact_person": "John Doe",
+    "exporter_contact_no": "1234567890",
+    "consignee_name": "Consignee A",
+    "consignee_address": "456 Avenue, City, Country",
+    "consignee_country": "Country B",
+    "consignee_mail": "consignee@example.com",
+    "consignee_contact_person": "Jane Doe",
+    "consignee_contact_no": "0987654321",
+    "port_of_loading": "Port A",
+    "port_of_discharge": "Port B",
+    "final_destination_port": "Port C",
+    "country_of_origin_of_goods": "Country A",
+    "country_of_final_destination": "Country B",
+    "total_fob_value": 1000,
+    "freight_charges": 50,
+    "total_cfr_value": 1050,
+    "insurance_charges": 20,
+    "total_cif_value": 1070,
+    "amount_in_words": "One Thousand Seventy",
+    "bank_name": "Bank A",
+    "bank_address": "789 Boulevard, City, Country",
+    "bank_account_no": "123456789012",
+    "bank_ifsc_code": "IFSC12345",
+    "bank_ad_code": "AD12345",
+    "bank_swift_code": "SWIFT12345",
+    "payment_terms": "30 days",
+    "payment_delivery_time": "15 days",
+    "payment_delivery_terms": "FOB",
+    "notes": "Special instructions",
+    "products": [
+        "consequatur"
+    ]
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-pi-reports-export--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;PI Report Export updated successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-pi-reports-export--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-pi-reports-export--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-pi-reports-export--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-pi-reports-export--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-pi-reports-export--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-pi-reports-export--id-" data-method="PUT"
+      data-path="api/pi-reports-export/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-pi-reports-export--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-pi-reports-export--id-"
+                    onclick="tryItOut('PUTapi-pi-reports-export--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-pi-reports-export--id-"
+                    onclick="cancelTryOut('PUTapi-pi-reports-export--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-pi-reports-export--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/pi-reports-export/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/pi-reports-export/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="15fjl5-4f45t-5g456y-g5t"
+               data-component="url">
+    <br>
+<p>The ID of the PI Report. Example: <code>15fjl5-4f45t-5g456y-g5t</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pi_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pi_no"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="PI12345"
+               data-component="body">
+    <br>
+<p>The PI number. Example: <code>PI12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="2023-06-25"
+               data-component="body">
+    <br>
+<p>The date of the PI. Example: <code>2023-06-25</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_order_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_order_no"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="BO12345"
+               data-component="body">
+    <br>
+<p>The buyer's order number. Example: <code>BO12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>buyer_order_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="buyer_order_date"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="2023-06-20"
+               data-component="body">
+    <br>
+<p>The buyer's order date. Example: <code>2023-06-20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_name"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Exporter A"
+               data-component="body">
+    <br>
+<p>The name of the exporter. Example: <code>Exporter A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_address"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="123 Street, City, Country"
+               data-component="body">
+    <br>
+<p>The address of the exporter. Example: <code>123 Street, City, Country</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_pan</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_pan"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="ABCDE1234F"
+               data-component="body">
+    <br>
+<p>The PAN of the exporter. Example: <code>ABCDE1234F</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_iec</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_iec"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="IEC1234567"
+               data-component="body">
+    <br>
+<p>The IEC of the exporter. Example: <code>IEC1234567</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_gst</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_gst"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="GST123456"
+               data-component="body">
+    <br>
+<p>The GST of the exporter. Example: <code>GST123456</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_mail</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_mail"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="exporter@example.com"
+               data-component="body">
+    <br>
+<p>The email of the exporter. Example: <code>exporter@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_contact_person</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_contact_person"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="John Doe"
+               data-component="body">
+    <br>
+<p>The contact person of the exporter. Example: <code>John Doe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>exporter_contact_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="exporter_contact_no"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="1234567890"
+               data-component="body">
+    <br>
+<p>The contact number of the exporter. Example: <code>1234567890</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_name"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Consignee A"
+               data-component="body">
+    <br>
+<p>The name of the consignee. Example: <code>Consignee A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_address"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="456 Avenue, City, Country"
+               data-component="body">
+    <br>
+<p>The address of the consignee. Example: <code>456 Avenue, City, Country</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_country</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_country"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Country B"
+               data-component="body">
+    <br>
+<p>The country of the consignee. Example: <code>Country B</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_mail</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_mail"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="consignee@example.com"
+               data-component="body">
+    <br>
+<p>The email of the consignee. Example: <code>consignee@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_contact_person</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_contact_person"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Jane Doe"
+               data-component="body">
+    <br>
+<p>The contact person of the consignee. Example: <code>Jane Doe</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>consignee_contact_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="consignee_contact_no"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="0987654321"
+               data-component="body">
+    <br>
+<p>The contact number of the consignee. Example: <code>0987654321</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>port_of_loading</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="port_of_loading"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Port A"
+               data-component="body">
+    <br>
+<p>The port of loading. Example: <code>Port A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>port_of_discharge</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="port_of_discharge"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Port B"
+               data-component="body">
+    <br>
+<p>The port of discharge. Example: <code>Port B</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>final_destination_port</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="final_destination_port"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Port C"
+               data-component="body">
+    <br>
+<p>The final destination port. Example: <code>Port C</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country_of_origin_of_goods</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="country_of_origin_of_goods"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Country A"
+               data-component="body">
+    <br>
+<p>The country of origin of the goods. Example: <code>Country A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country_of_final_destination</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="country_of_final_destination"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Country B"
+               data-component="body">
+    <br>
+<p>The country of final destination. Example: <code>Country B</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_fob_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_fob_value"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The total FOB value. Example: <code>1000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>freight_charges</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="freight_charges"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="50"
+               data-component="body">
+    <br>
+<p>The freight charges. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_cfr_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_cfr_value"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="1050"
+               data-component="body">
+    <br>
+<p>The total CFR value. Example: <code>1050</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>insurance_charges</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="insurance_charges"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="20"
+               data-component="body">
+    <br>
+<p>The insurance charges. Example: <code>20</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_cif_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_cif_value"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="1070"
+               data-component="body">
+    <br>
+<p>The total CIF value. Example: <code>1070</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="amount_in_words"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="One Thousand Seventy"
+               data-component="body">
+    <br>
+<p>The amount in words. Example: <code>One Thousand Seventy</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_name"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Bank A"
+               data-component="body">
+    <br>
+<p>The name of the bank. Example: <code>Bank A</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_address"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="789 Boulevard, City, Country"
+               data-component="body">
+    <br>
+<p>The address of the bank. Example: <code>789 Boulevard, City, Country</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_account_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_account_no"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="123456789012"
+               data-component="body">
+    <br>
+<p>The account number of the bank. Example: <code>123456789012</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_ifsc_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_ifsc_code"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="IFSC12345"
+               data-component="body">
+    <br>
+<p>The IFSC code of the bank. Example: <code>IFSC12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_ad_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_ad_code"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="AD12345"
+               data-component="body">
+    <br>
+<p>The AD code of the bank. Example: <code>AD12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bank_swift_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="bank_swift_code"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="SWIFT12345"
+               data-component="body">
+    <br>
+<p>The SWIFT code of the bank. Example: <code>SWIFT12345</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_terms</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_terms"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="30 days"
+               data-component="body">
+    <br>
+<p>The payment terms. Example: <code>30 days</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_delivery_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_delivery_time"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="15 days"
+               data-component="body">
+    <br>
+<p>The payment delivery time. Example: <code>15 days</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>payment_delivery_terms</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_delivery_terms"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="FOB"
+               data-component="body">
+    <br>
+<p>The payment delivery terms. Example: <code>FOB</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Special instructions"
+               data-component="body">
+    <br>
+<p>optional Any additional notes. Example: <code>Special instructions</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>products</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>The list of products associated with the PI Report.</p>
+            </summary>
+                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>*</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>size</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.size"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Medium"
+               data-component="body">
+    <br>
+<p>The size of the product. Example: <code>Medium</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.type"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Type A"
+               data-component="body">
+    <br>
+<p>The type of the product. Example: <code>Type A</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>packaging_description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.packaging_description"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Box"
+               data-component="body">
+    <br>
+<p>The packaging description. Example: <code>Box</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>rolls_pallet</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.rolls_pallet"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="10"
+               data-component="body">
+    <br>
+<p>The number of rolls per pallet. Example: <code>10</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>no_of_pallets</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.no_of_pallets"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="5"
+               data-component="body">
+    <br>
+<p>The number of pallets. Example: <code>5</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>total_rolls</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.total_rolls"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="50"
+               data-component="body">
+    <br>
+<p>The total number of rolls. Example: <code>50</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>container</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.container"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="Container A"
+               data-component="body">
+    <br>
+<p>The container. Example: <code>Container A</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>quanity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.quanity"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="100"
+               data-component="body">
+    <br>
+<p>The quantity. Example: <code>100</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="products.*.unit"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="pcs"
+               data-component="body">
+    <br>
+<p>The unit of measurement. Example: <code>pcs</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate_in_usd</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.rate_in_usd"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="10"
+               data-component="body">
+    <br>
+<p>The rate in USD. Example: <code>10</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>amount_in_usd</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="products.*.amount_in_usd"                data-endpoint="PUTapi-pi-reports-export--id-"
+               value="1000"
+               data-component="body">
+    <br>
+<p>The amount in USD. Example: <code>1000</code></p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+        </form>
+
+                    <h2 id="pi-reports-DELETEapi-pi-reports-export--id-">Remove the specified PI Report.</h2>
+
+<p>
+</p>
+
+<p>This endpoint deletes a specific PI Report by its ID.</p>
+
+<span id="example-requests-DELETEapi-pi-reports-export--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://api.smartwrapfilms.com/api/pi-reports-export/15fjl5-4f45t-5g456y-g5t" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/pi-reports-export/15fjl5-4f45t-5g456y-g5t"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-pi-reports-export--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;PI Report Export deleted successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-pi-reports-export--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-pi-reports-export--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-pi-reports-export--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-pi-reports-export--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-pi-reports-export--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-pi-reports-export--id-" data-method="DELETE"
+      data-path="api/pi-reports-export/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-pi-reports-export--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-pi-reports-export--id-"
+                    onclick="tryItOut('DELETEapi-pi-reports-export--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-pi-reports-export--id-"
+                    onclick="cancelTryOut('DELETEapi-pi-reports-export--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-pi-reports-export--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/pi-reports-export/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-pi-reports-export--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-pi-reports-export--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-pi-reports-export--id-"
+               value="15fjl5-4f45t-5g456y-g5t"
+               data-component="url">
+    <br>
+<p>The ID of the PI Report. Example: <code>15fjl5-4f45t-5g456y-g5t</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="pi-reports-POSTapi-pi-reports-export-get">Display the specified PI Report.</h2>
+
+<p>
+</p>
+
+<p>This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.</p>
+
+<span id="example-requests-POSTapi-pi-reports-export-get">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://api.smartwrapfilms.com/api/pi-reports-export-get" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://api.smartwrapfilms.com/api/pi-reports-export-get"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-pi-reports-export-get">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;piReportsExport&quot;: {
+        &quot;id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+        &quot;pi_no&quot;: &quot;PI12345&quot;,
+        &quot;date&quot;: &quot;2023-06-25&quot;,
+        &quot;buyer_order_no&quot;: &quot;BO12345&quot;,
+        &quot;buyer_order_date&quot;: &quot;2023-06-20&quot;,
+        &quot;exporter_name&quot;: &quot;Exporter A&quot;,
+        &quot;exporter_address&quot;: &quot;123 Street, City, Country&quot;,
+        &quot;exporter_pan&quot;: &quot;ABCDE1234F&quot;,
+        &quot;exporter_iec&quot;: &quot;IEC1234567&quot;,
+        &quot;exporter_gst&quot;: &quot;GST123456&quot;,
+        &quot;exporter_mail&quot;: &quot;exporter@example.com&quot;,
+        &quot;exporter_contact_person&quot;: &quot;John Doe&quot;,
+        &quot;exporter_contact_no&quot;: &quot;1234567890&quot;,
+        &quot;consignee_name&quot;: &quot;Consignee A&quot;,
+        &quot;consignee_address&quot;: &quot;456 Avenue, City, Country&quot;,
+        &quot;consignee_country&quot;: &quot;Country B&quot;,
+        &quot;consignee_mail&quot;: &quot;consignee@example.com&quot;,
+        &quot;consignee_contact_person&quot;: &quot;Jane Doe&quot;,
+        &quot;consignee_contact_no&quot;: &quot;0987654321&quot;,
+        &quot;port_of_loading&quot;: &quot;Port A&quot;,
+        &quot;port_of_discharge&quot;: &quot;Port B&quot;,
+        &quot;final_destination_port&quot;: &quot;Port C&quot;,
+        &quot;country_of_origin_of_goods&quot;: &quot;Country A&quot;,
+        &quot;country_of_final_destination&quot;: &quot;Country B&quot;,
+        &quot;total_fob_value&quot;: 1000,
+        &quot;freight_charges&quot;: 50,
+        &quot;total_cfr_value&quot;: 1050,
+        &quot;insurance_charges&quot;: 20,
+        &quot;total_cif_value&quot;: 1070,
+        &quot;amount_in_words&quot;: &quot;One Thousand Seventy&quot;,
+        &quot;bank_name&quot;: &quot;Bank A&quot;,
+        &quot;bank_address&quot;: &quot;789 Boulevard, City, Country&quot;,
+        &quot;bank_account_no&quot;: &quot;123456789012&quot;,
+        &quot;bank_ifsc_code&quot;: &quot;IFSC12345&quot;,
+        &quot;bank_ad_code&quot;: &quot;AD12345&quot;,
+        &quot;bank_swift_code&quot;: &quot;SWIFT12345&quot;,
+        &quot;payment_terms&quot;: &quot;30 days&quot;,
+        &quot;payment_delivery_time&quot;: &quot;15 days&quot;,
+        &quot;payment_delivery_terms&quot;: &quot;FOB&quot;,
+        &quot;notes&quot;: &quot;Special instructions&quot;,
+        &quot;piReportProducts&quot;: [
+            {
+                &quot;id&quot;: &quot;12345&quot;,
+                &quot;pi_report_export_id&quot;: &quot;15fjl5-4f45t-5g456y-g5t&quot;,
+                &quot;size&quot;: &quot;Medium&quot;,
+                &quot;type&quot;: &quot;Type A&quot;,
+                &quot;packaging_description&quot;: &quot;Box&quot;,
+                &quot;rolls_pallet&quot;: 10,
+                &quot;no_of_pallets&quot;: 5,
+                &quot;total_rolls&quot;: 50,
+                &quot;container&quot;: &quot;Container A&quot;,
+                &quot;quanity&quot;: 100,
+                &quot;unit&quot;: &quot;pcs&quot;,
+                &quot;rate_in_usd&quot;: 10,
+                &quot;amount_in_usd&quot;: 1000
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-pi-reports-export-get" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-pi-reports-export-get"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-pi-reports-export-get"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-pi-reports-export-get" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-pi-reports-export-get">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-pi-reports-export-get" data-method="POST"
+      data-path="api/pi-reports-export-get"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-pi-reports-export-get', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-pi-reports-export-get"
+                    onclick="tryItOut('POSTapi-pi-reports-export-get');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-pi-reports-export-get"
+                    onclick="cancelTryOut('POSTapi-pi-reports-export-get');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-pi-reports-export-get"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/pi-reports-export-get</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-pi-reports-export-get"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-pi-reports-export-get"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="POSTapi-pi-reports-export-get"
+               value="15fjl5-4f45t-5g456y-g5t"
+               data-component="url">
+    <br>
+<p>The ID of the PI Report. Example: <code>15fjl5-4f45t-5g456y-g5t</code></p>
+            </div>
+                    </form>
+
                 <h1 id="po-reports">PO Reports</h1>
 
     
@@ -4857,35 +6960,35 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"po_no\": \"optio\",
-    \"po_date\": \"laboriosam\",
-    \"quotation_no\": \"sapiente\",
-    \"quotation_date\": \"fugit\",
-    \"buyer_name\": \"minima\",
-    \"buyer_address\": \"sit\",
-    \"buyer_pan\": \"quia\",
-    \"buyer_iec\": \"neque\",
-    \"buyer_gst\": \"eos\",
-    \"buyer_mail\": \"beatae\",
-    \"buyer_contact_person\": \"minus\",
-    \"buyer_contact_no\": \"impedit\",
-    \"supplier_name\": \"id\",
-    \"supplier_address\": \"consequatur\",
-    \"supplier_pan\": \"laboriosam\",
-    \"supplier_iec\": \"qui\",
-    \"supplier_gst\": \"sed\",
-    \"supplier_mail\": \"qui\",
-    \"supplier_contact_person\": \"quisquam\",
-    \"supplier_contact_no\": \"debitis\",
-    \"igst\": \"distinctio\",
-    \"sgst\": \"sed\",
-    \"cgst\": \"eum\",
-    \"total_value\": \"ut\",
-    \"amount_in_words\": \"at\",
-    \"notes_1\": \"maiores\",
-    \"notes_2\": \"quidem\",
-    \"notes_3\": \"assumenda\",
-    \"notes_4\": \"pariatur\",
+    \"po_no\": \"unde\",
+    \"po_date\": \"velit\",
+    \"quotation_no\": \"et\",
+    \"quotation_date\": \"consequatur\",
+    \"buyer_name\": \"ipsa\",
+    \"buyer_address\": \"aspernatur\",
+    \"buyer_pan\": \"vel\",
+    \"buyer_iec\": \"adipisci\",
+    \"buyer_gst\": \"tempora\",
+    \"buyer_mail\": \"excepturi\",
+    \"buyer_contact_person\": \"eos\",
+    \"buyer_contact_no\": \"quia\",
+    \"supplier_name\": \"et\",
+    \"supplier_address\": \"accusantium\",
+    \"supplier_pan\": \"quasi\",
+    \"supplier_iec\": \"eum\",
+    \"supplier_gst\": \"est\",
+    \"supplier_mail\": \"optio\",
+    \"supplier_contact_person\": \"cum\",
+    \"supplier_contact_no\": \"eum\",
+    \"igst\": \"omnis\",
+    \"sgst\": \"delectus\",
+    \"cgst\": \"laboriosam\",
+    \"total_value\": \"est\",
+    \"amount_in_words\": \"rerum\",
+    \"notes_1\": \"assumenda\",
+    \"notes_2\": \"omnis\",
+    \"notes_3\": \"amet\",
+    \"notes_4\": \"reiciendis\",
     \"products\": [
         \"ut\"
     ]
@@ -4904,35 +7007,35 @@ const headers = {
 };
 
 let body = {
-    "po_no": "optio",
-    "po_date": "laboriosam",
-    "quotation_no": "sapiente",
-    "quotation_date": "fugit",
-    "buyer_name": "minima",
-    "buyer_address": "sit",
-    "buyer_pan": "quia",
-    "buyer_iec": "neque",
-    "buyer_gst": "eos",
-    "buyer_mail": "beatae",
-    "buyer_contact_person": "minus",
-    "buyer_contact_no": "impedit",
-    "supplier_name": "id",
-    "supplier_address": "consequatur",
-    "supplier_pan": "laboriosam",
-    "supplier_iec": "qui",
-    "supplier_gst": "sed",
-    "supplier_mail": "qui",
-    "supplier_contact_person": "quisquam",
-    "supplier_contact_no": "debitis",
-    "igst": "distinctio",
-    "sgst": "sed",
-    "cgst": "eum",
-    "total_value": "ut",
-    "amount_in_words": "at",
-    "notes_1": "maiores",
-    "notes_2": "quidem",
-    "notes_3": "assumenda",
-    "notes_4": "pariatur",
+    "po_no": "unde",
+    "po_date": "velit",
+    "quotation_no": "et",
+    "quotation_date": "consequatur",
+    "buyer_name": "ipsa",
+    "buyer_address": "aspernatur",
+    "buyer_pan": "vel",
+    "buyer_iec": "adipisci",
+    "buyer_gst": "tempora",
+    "buyer_mail": "excepturi",
+    "buyer_contact_person": "eos",
+    "buyer_contact_no": "quia",
+    "supplier_name": "et",
+    "supplier_address": "accusantium",
+    "supplier_pan": "quasi",
+    "supplier_iec": "eum",
+    "supplier_gst": "est",
+    "supplier_mail": "optio",
+    "supplier_contact_person": "cum",
+    "supplier_contact_no": "eum",
+    "igst": "omnis",
+    "sgst": "delectus",
+    "cgst": "laboriosam",
+    "total_value": "est",
+    "amount_in_words": "rerum",
+    "notes_1": "assumenda",
+    "notes_2": "omnis",
+    "notes_3": "amet",
+    "notes_4": "reiciendis",
     "products": [
         "ut"
     ]
@@ -5048,10 +7151,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_no"                data-endpoint="POSTapi-po-reports"
-               value="optio"
+               value="unde"
                data-component="body">
     <br>
-<p>The PO number. Example: <code>optio</code></p>
+<p>The PO number. Example: <code>unde</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>po_date</code></b>&nbsp;&nbsp;
@@ -5059,10 +7162,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_date"                data-endpoint="POSTapi-po-reports"
-               value="laboriosam"
+               value="velit"
                data-component="body">
     <br>
-<p>The date of the PO. Example: <code>laboriosam</code></p>
+<p>The date of the PO. Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_no</code></b>&nbsp;&nbsp;
@@ -5070,10 +7173,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_no"                data-endpoint="POSTapi-po-reports"
-               value="sapiente"
+               value="et"
                data-component="body">
     <br>
-<p>The quotation number. Example: <code>sapiente</code></p>
+<p>The quotation number. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_date</code></b>&nbsp;&nbsp;
@@ -5081,10 +7184,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_date"                data-endpoint="POSTapi-po-reports"
-               value="fugit"
+               value="consequatur"
                data-component="body">
     <br>
-<p>The date of the quotation. Example: <code>fugit</code></p>
+<p>The date of the quotation. Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_name</code></b>&nbsp;&nbsp;
@@ -5092,10 +7195,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_name"                data-endpoint="POSTapi-po-reports"
-               value="minima"
+               value="ipsa"
                data-component="body">
     <br>
-<p>The name of the buyer. Example: <code>minima</code></p>
+<p>The name of the buyer. Example: <code>ipsa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_address</code></b>&nbsp;&nbsp;
@@ -5103,10 +7206,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_address"                data-endpoint="POSTapi-po-reports"
-               value="sit"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>The address of the buyer. Example: <code>sit</code></p>
+<p>The address of the buyer. Example: <code>aspernatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_pan</code></b>&nbsp;&nbsp;
@@ -5114,10 +7217,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_pan"                data-endpoint="POSTapi-po-reports"
-               value="quia"
+               value="vel"
                data-component="body">
     <br>
-<p>The PAN of the buyer. Example: <code>quia</code></p>
+<p>The PAN of the buyer. Example: <code>vel</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_iec</code></b>&nbsp;&nbsp;
@@ -5125,10 +7228,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_iec"                data-endpoint="POSTapi-po-reports"
-               value="neque"
+               value="adipisci"
                data-component="body">
     <br>
-<p>The IEC of the buyer. Example: <code>neque</code></p>
+<p>The IEC of the buyer. Example: <code>adipisci</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_gst</code></b>&nbsp;&nbsp;
@@ -5136,10 +7239,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_gst"                data-endpoint="POSTapi-po-reports"
-               value="eos"
+               value="tempora"
                data-component="body">
     <br>
-<p>The GST number of the buyer. Example: <code>eos</code></p>
+<p>The GST number of the buyer. Example: <code>tempora</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_mail</code></b>&nbsp;&nbsp;
@@ -5147,10 +7250,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_mail"                data-endpoint="POSTapi-po-reports"
-               value="beatae"
+               value="excepturi"
                data-component="body">
     <br>
-<p>The email of the buyer. Example: <code>beatae</code></p>
+<p>The email of the buyer. Example: <code>excepturi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_person</code></b>&nbsp;&nbsp;
@@ -5158,10 +7261,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_person"                data-endpoint="POSTapi-po-reports"
-               value="minus"
+               value="eos"
                data-component="body">
     <br>
-<p>The contact person of the buyer. Example: <code>minus</code></p>
+<p>The contact person of the buyer. Example: <code>eos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_no</code></b>&nbsp;&nbsp;
@@ -5169,10 +7272,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_no"                data-endpoint="POSTapi-po-reports"
-               value="impedit"
+               value="quia"
                data-component="body">
     <br>
-<p>The contact number of the buyer. Example: <code>impedit</code></p>
+<p>The contact number of the buyer. Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_name</code></b>&nbsp;&nbsp;
@@ -5180,10 +7283,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_name"                data-endpoint="POSTapi-po-reports"
-               value="id"
+               value="et"
                data-component="body">
     <br>
-<p>The name of the supplier. Example: <code>id</code></p>
+<p>The name of the supplier. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_address</code></b>&nbsp;&nbsp;
@@ -5191,10 +7294,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_address"                data-endpoint="POSTapi-po-reports"
-               value="consequatur"
+               value="accusantium"
                data-component="body">
     <br>
-<p>The address of the supplier. Example: <code>consequatur</code></p>
+<p>The address of the supplier. Example: <code>accusantium</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_pan</code></b>&nbsp;&nbsp;
@@ -5202,10 +7305,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_pan"                data-endpoint="POSTapi-po-reports"
-               value="laboriosam"
+               value="quasi"
                data-component="body">
     <br>
-<p>The PAN of the supplier. Example: <code>laboriosam</code></p>
+<p>The PAN of the supplier. Example: <code>quasi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_iec</code></b>&nbsp;&nbsp;
@@ -5213,10 +7316,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_iec"                data-endpoint="POSTapi-po-reports"
-               value="qui"
+               value="eum"
                data-component="body">
     <br>
-<p>The IEC of the supplier. Example: <code>qui</code></p>
+<p>The IEC of the supplier. Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_gst</code></b>&nbsp;&nbsp;
@@ -5224,10 +7327,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_gst"                data-endpoint="POSTapi-po-reports"
-               value="sed"
+               value="est"
                data-component="body">
     <br>
-<p>The GST number of the supplier. Example: <code>sed</code></p>
+<p>The GST number of the supplier. Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_mail</code></b>&nbsp;&nbsp;
@@ -5235,10 +7338,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_mail"                data-endpoint="POSTapi-po-reports"
-               value="qui"
+               value="optio"
                data-component="body">
     <br>
-<p>The email of the supplier. Example: <code>qui</code></p>
+<p>The email of the supplier. Example: <code>optio</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_person</code></b>&nbsp;&nbsp;
@@ -5246,10 +7349,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_person"                data-endpoint="POSTapi-po-reports"
-               value="quisquam"
+               value="cum"
                data-component="body">
     <br>
-<p>The contact person of the supplier. Example: <code>quisquam</code></p>
+<p>The contact person of the supplier. Example: <code>cum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_no</code></b>&nbsp;&nbsp;
@@ -5257,10 +7360,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_no"                data-endpoint="POSTapi-po-reports"
-               value="debitis"
+               value="eum"
                data-component="body">
     <br>
-<p>The contact number of the supplier. Example: <code>debitis</code></p>
+<p>The contact number of the supplier. Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>igst</code></b>&nbsp;&nbsp;
@@ -5268,10 +7371,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="igst"                data-endpoint="POSTapi-po-reports"
-               value="distinctio"
+               value="omnis"
                data-component="body">
     <br>
-<p>The IGST amount. Example: <code>distinctio</code></p>
+<p>The IGST amount. Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sgst</code></b>&nbsp;&nbsp;
@@ -5279,10 +7382,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="sgst"                data-endpoint="POSTapi-po-reports"
-               value="sed"
+               value="delectus"
                data-component="body">
     <br>
-<p>The SGST amount. Example: <code>sed</code></p>
+<p>The SGST amount. Example: <code>delectus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cgst</code></b>&nbsp;&nbsp;
@@ -5290,10 +7393,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cgst"                data-endpoint="POSTapi-po-reports"
-               value="eum"
+               value="laboriosam"
                data-component="body">
     <br>
-<p>The CGST amount. Example: <code>eum</code></p>
+<p>The CGST amount. Example: <code>laboriosam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_value</code></b>&nbsp;&nbsp;
@@ -5301,10 +7404,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="total_value"                data-endpoint="POSTapi-po-reports"
-               value="ut"
+               value="est"
                data-component="body">
     <br>
-<p>The total value of the PO. Example: <code>ut</code></p>
+<p>The total value of the PO. Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
@@ -5312,10 +7415,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="amount_in_words"                data-endpoint="POSTapi-po-reports"
-               value="at"
+               value="rerum"
                data-component="body">
     <br>
-<p>The total value in words. Example: <code>at</code></p>
+<p>The total value in words. Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_1</code></b>&nbsp;&nbsp;
@@ -5323,10 +7426,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_1"                data-endpoint="POSTapi-po-reports"
-               value="maiores"
+               value="assumenda"
                data-component="body">
     <br>
-<p>optional Additional notes 1. Example: <code>maiores</code></p>
+<p>optional Additional notes 1. Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_2</code></b>&nbsp;&nbsp;
@@ -5334,10 +7437,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_2"                data-endpoint="POSTapi-po-reports"
-               value="quidem"
+               value="omnis"
                data-component="body">
     <br>
-<p>optional Additional notes 2. Example: <code>quidem</code></p>
+<p>optional Additional notes 2. Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_3</code></b>&nbsp;&nbsp;
@@ -5345,10 +7448,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_3"                data-endpoint="POSTapi-po-reports"
-               value="assumenda"
+               value="amet"
                data-component="body">
     <br>
-<p>optional Additional notes 3. Example: <code>assumenda</code></p>
+<p>optional Additional notes 3. Example: <code>amet</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_4</code></b>&nbsp;&nbsp;
@@ -5356,10 +7459,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_4"                data-endpoint="POSTapi-po-reports"
-               value="pariatur"
+               value="reiciendis"
                data-component="body">
     <br>
-<p>optional Additional notes 4. Example: <code>pariatur</code></p>
+<p>optional Additional notes 4. Example: <code>reiciendis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -5385,10 +7488,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.product_description"                data-endpoint="POSTapi-po-reports"
-               value="eligendi"
+               value="dolor"
                data-component="body">
     <br>
-<p>The description of the product. Example: <code>eligendi</code></p>
+<p>The description of the product. Example: <code>dolor</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
@@ -5396,10 +7499,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.hsn_code"                data-endpoint="POSTapi-po-reports"
-               value="sed"
+               value="sit"
                data-component="body">
     <br>
-<p>The HSN code of the product. Example: <code>sed</code></p>
+<p>The HSN code of the product. Example: <code>sit</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
@@ -5407,10 +7510,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.quantity"                data-endpoint="POSTapi-po-reports"
-               value="facilis"
+               value="totam"
                data-component="body">
     <br>
-<p>The quantity of the product. Example: <code>facilis</code></p>
+<p>The quantity of the product. Example: <code>totam</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
@@ -5418,10 +7521,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.unit"                data-endpoint="POSTapi-po-reports"
-               value="quis"
+               value="perspiciatis"
                data-component="body">
     <br>
-<p>The unit of the product. Example: <code>quis</code></p>
+<p>The unit of the product. Example: <code>perspiciatis</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
@@ -5429,10 +7532,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.rate"                data-endpoint="POSTapi-po-reports"
-               value="ut"
+               value="tempora"
                data-component="body">
     <br>
-<p>The rate of the product. Example: <code>ut</code></p>
+<p>The rate of the product. Example: <code>tempora</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
@@ -5440,10 +7543,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.amount"                data-endpoint="POSTapi-po-reports"
-               value="rerum"
+               value="culpa"
                data-component="body">
     <br>
-<p>The amount of the product. Example: <code>rerum</code></p>
+<p>The amount of the product. Example: <code>culpa</code></p>
                     </div>
                                     </details>
         </div>
@@ -5465,41 +7568,41 @@ including associated product details.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://api.smartwrapfilms.com/api/po-reports/voluptatem" \
+    "https://api.smartwrapfilms.com/api/po-reports/ea" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"po_no\": \"doloremque\",
-    \"po_date\": \"consequuntur\",
-    \"quotation_no\": \"quae\",
-    \"quotation_date\": \"ipsam\",
-    \"buyer_name\": \"quis\",
-    \"buyer_address\": \"modi\",
-    \"buyer_pan\": \"laborum\",
-    \"buyer_iec\": \"animi\",
-    \"buyer_gst\": \"assumenda\",
-    \"buyer_mail\": \"quia\",
-    \"buyer_contact_person\": \"eos\",
-    \"buyer_contact_no\": \"animi\",
-    \"supplier_name\": \"doloribus\",
-    \"supplier_address\": \"ea\",
-    \"supplier_pan\": \"possimus\",
-    \"supplier_iec\": \"aperiam\",
-    \"supplier_gst\": \"ducimus\",
-    \"supplier_mail\": \"voluptas\",
-    \"supplier_contact_person\": \"unde\",
-    \"supplier_contact_no\": \"qui\",
-    \"igst\": \"rerum\",
-    \"sgst\": \"voluptatem\",
-    \"cgst\": \"aut\",
-    \"total_value\": \"fugit\",
-    \"amount_in_words\": \"eligendi\",
-    \"notes_1\": \"iusto\",
-    \"notes_2\": \"provident\",
-    \"notes_3\": \"distinctio\",
-    \"notes_4\": \"accusantium\",
+    \"po_no\": \"ipsa\",
+    \"po_date\": \"laudantium\",
+    \"quotation_no\": \"aliquam\",
+    \"quotation_date\": \"et\",
+    \"buyer_name\": \"repellat\",
+    \"buyer_address\": \"nihil\",
+    \"buyer_pan\": \"doloremque\",
+    \"buyer_iec\": \"harum\",
+    \"buyer_gst\": \"fugiat\",
+    \"buyer_mail\": \"quidem\",
+    \"buyer_contact_person\": \"veritatis\",
+    \"buyer_contact_no\": \"voluptates\",
+    \"supplier_name\": \"est\",
+    \"supplier_address\": \"sed\",
+    \"supplier_pan\": \"natus\",
+    \"supplier_iec\": \"soluta\",
+    \"supplier_gst\": \"et\",
+    \"supplier_mail\": \"et\",
+    \"supplier_contact_person\": \"velit\",
+    \"supplier_contact_no\": \"beatae\",
+    \"igst\": \"autem\",
+    \"sgst\": \"consequatur\",
+    \"cgst\": \"quia\",
+    \"total_value\": \"ab\",
+    \"amount_in_words\": \"ut\",
+    \"notes_1\": \"in\",
+    \"notes_2\": \"et\",
+    \"notes_3\": \"tempora\",
+    \"notes_4\": \"temporibus\",
     \"products\": [
-        \"excepturi\"
+        \"voluptatem\"
     ]
 }"
 </code></pre></div>
@@ -5507,7 +7610,7 @@ including associated product details.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api.smartwrapfilms.com/api/po-reports/voluptatem"
+    "https://api.smartwrapfilms.com/api/po-reports/ea"
 );
 
 const headers = {
@@ -5516,37 +7619,37 @@ const headers = {
 };
 
 let body = {
-    "po_no": "doloremque",
-    "po_date": "consequuntur",
-    "quotation_no": "quae",
-    "quotation_date": "ipsam",
-    "buyer_name": "quis",
-    "buyer_address": "modi",
-    "buyer_pan": "laborum",
-    "buyer_iec": "animi",
-    "buyer_gst": "assumenda",
-    "buyer_mail": "quia",
-    "buyer_contact_person": "eos",
-    "buyer_contact_no": "animi",
-    "supplier_name": "doloribus",
-    "supplier_address": "ea",
-    "supplier_pan": "possimus",
-    "supplier_iec": "aperiam",
-    "supplier_gst": "ducimus",
-    "supplier_mail": "voluptas",
-    "supplier_contact_person": "unde",
-    "supplier_contact_no": "qui",
-    "igst": "rerum",
-    "sgst": "voluptatem",
-    "cgst": "aut",
-    "total_value": "fugit",
-    "amount_in_words": "eligendi",
-    "notes_1": "iusto",
-    "notes_2": "provident",
-    "notes_3": "distinctio",
-    "notes_4": "accusantium",
+    "po_no": "ipsa",
+    "po_date": "laudantium",
+    "quotation_no": "aliquam",
+    "quotation_date": "et",
+    "buyer_name": "repellat",
+    "buyer_address": "nihil",
+    "buyer_pan": "doloremque",
+    "buyer_iec": "harum",
+    "buyer_gst": "fugiat",
+    "buyer_mail": "quidem",
+    "buyer_contact_person": "veritatis",
+    "buyer_contact_no": "voluptates",
+    "supplier_name": "est",
+    "supplier_address": "sed",
+    "supplier_pan": "natus",
+    "supplier_iec": "soluta",
+    "supplier_gst": "et",
+    "supplier_mail": "et",
+    "supplier_contact_person": "velit",
+    "supplier_contact_no": "beatae",
+    "igst": "autem",
+    "sgst": "consequatur",
+    "cgst": "quia",
+    "total_value": "ab",
+    "amount_in_words": "ut",
+    "notes_1": "in",
+    "notes_2": "et",
+    "notes_3": "tempora",
+    "notes_4": "temporibus",
     "products": [
-        "excepturi"
+        "voluptatem"
     ]
 };
 
@@ -5664,10 +7767,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptatem"
+               value="ea"
                data-component="url">
     <br>
-<p>The ID of the PO Report. Example: <code>voluptatem</code></p>
+<p>The ID of the PO Report. Example: <code>ea</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -5676,10 +7779,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="doloremque"
+               value="ipsa"
                data-component="body">
     <br>
-<p>The PO number. Example: <code>doloremque</code></p>
+<p>The PO number. Example: <code>ipsa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>po_date</code></b>&nbsp;&nbsp;
@@ -5687,10 +7790,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_date"                data-endpoint="PUTapi-po-reports--id-"
-               value="consequuntur"
+               value="laudantium"
                data-component="body">
     <br>
-<p>The date of the PO. Example: <code>consequuntur</code></p>
+<p>The date of the PO. Example: <code>laudantium</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_no</code></b>&nbsp;&nbsp;
@@ -5698,10 +7801,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="quae"
+               value="aliquam"
                data-component="body">
     <br>
-<p>The quotation number. Example: <code>quae</code></p>
+<p>The quotation number. Example: <code>aliquam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_date</code></b>&nbsp;&nbsp;
@@ -5709,10 +7812,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_date"                data-endpoint="PUTapi-po-reports--id-"
-               value="ipsam"
+               value="et"
                data-component="body">
     <br>
-<p>The date of the quotation. Example: <code>ipsam</code></p>
+<p>The date of the quotation. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_name</code></b>&nbsp;&nbsp;
@@ -5720,10 +7823,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_name"                data-endpoint="PUTapi-po-reports--id-"
-               value="quis"
+               value="repellat"
                data-component="body">
     <br>
-<p>The name of the buyer. Example: <code>quis</code></p>
+<p>The name of the buyer. Example: <code>repellat</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_address</code></b>&nbsp;&nbsp;
@@ -5731,10 +7834,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_address"                data-endpoint="PUTapi-po-reports--id-"
-               value="modi"
+               value="nihil"
                data-component="body">
     <br>
-<p>The address of the buyer. Example: <code>modi</code></p>
+<p>The address of the buyer. Example: <code>nihil</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_pan</code></b>&nbsp;&nbsp;
@@ -5742,10 +7845,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_pan"                data-endpoint="PUTapi-po-reports--id-"
-               value="laborum"
+               value="doloremque"
                data-component="body">
     <br>
-<p>The PAN of the buyer. Example: <code>laborum</code></p>
+<p>The PAN of the buyer. Example: <code>doloremque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_iec</code></b>&nbsp;&nbsp;
@@ -5753,10 +7856,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_iec"                data-endpoint="PUTapi-po-reports--id-"
-               value="animi"
+               value="harum"
                data-component="body">
     <br>
-<p>The IEC of the buyer. Example: <code>animi</code></p>
+<p>The IEC of the buyer. Example: <code>harum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_gst</code></b>&nbsp;&nbsp;
@@ -5764,10 +7867,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_gst"                data-endpoint="PUTapi-po-reports--id-"
-               value="assumenda"
+               value="fugiat"
                data-component="body">
     <br>
-<p>The GST number of the buyer. Example: <code>assumenda</code></p>
+<p>The GST number of the buyer. Example: <code>fugiat</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_mail</code></b>&nbsp;&nbsp;
@@ -5775,10 +7878,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_mail"                data-endpoint="PUTapi-po-reports--id-"
-               value="quia"
+               value="quidem"
                data-component="body">
     <br>
-<p>The email of the buyer. Example: <code>quia</code></p>
+<p>The email of the buyer. Example: <code>quidem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_person</code></b>&nbsp;&nbsp;
@@ -5786,10 +7889,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_person"                data-endpoint="PUTapi-po-reports--id-"
-               value="eos"
+               value="veritatis"
                data-component="body">
     <br>
-<p>The contact person of the buyer. Example: <code>eos</code></p>
+<p>The contact person of the buyer. Example: <code>veritatis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_no</code></b>&nbsp;&nbsp;
@@ -5797,10 +7900,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="animi"
+               value="voluptates"
                data-component="body">
     <br>
-<p>The contact number of the buyer. Example: <code>animi</code></p>
+<p>The contact number of the buyer. Example: <code>voluptates</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_name</code></b>&nbsp;&nbsp;
@@ -5808,10 +7911,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_name"                data-endpoint="PUTapi-po-reports--id-"
-               value="doloribus"
+               value="est"
                data-component="body">
     <br>
-<p>The name of the supplier. Example: <code>doloribus</code></p>
+<p>The name of the supplier. Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_address</code></b>&nbsp;&nbsp;
@@ -5819,10 +7922,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_address"                data-endpoint="PUTapi-po-reports--id-"
-               value="ea"
+               value="sed"
                data-component="body">
     <br>
-<p>The address of the supplier. Example: <code>ea</code></p>
+<p>The address of the supplier. Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_pan</code></b>&nbsp;&nbsp;
@@ -5830,10 +7933,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_pan"                data-endpoint="PUTapi-po-reports--id-"
-               value="possimus"
+               value="natus"
                data-component="body">
     <br>
-<p>The PAN of the supplier. Example: <code>possimus</code></p>
+<p>The PAN of the supplier. Example: <code>natus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_iec</code></b>&nbsp;&nbsp;
@@ -5841,10 +7944,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_iec"                data-endpoint="PUTapi-po-reports--id-"
-               value="aperiam"
+               value="soluta"
                data-component="body">
     <br>
-<p>The IEC of the supplier. Example: <code>aperiam</code></p>
+<p>The IEC of the supplier. Example: <code>soluta</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_gst</code></b>&nbsp;&nbsp;
@@ -5852,10 +7955,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_gst"                data-endpoint="PUTapi-po-reports--id-"
-               value="ducimus"
+               value="et"
                data-component="body">
     <br>
-<p>The GST number of the supplier. Example: <code>ducimus</code></p>
+<p>The GST number of the supplier. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_mail</code></b>&nbsp;&nbsp;
@@ -5863,10 +7966,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_mail"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptas"
+               value="et"
                data-component="body">
     <br>
-<p>The email of the supplier. Example: <code>voluptas</code></p>
+<p>The email of the supplier. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_person</code></b>&nbsp;&nbsp;
@@ -5874,10 +7977,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_person"                data-endpoint="PUTapi-po-reports--id-"
-               value="unde"
+               value="velit"
                data-component="body">
     <br>
-<p>The contact person of the supplier. Example: <code>unde</code></p>
+<p>The contact person of the supplier. Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_no</code></b>&nbsp;&nbsp;
@@ -5885,10 +7988,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="qui"
+               value="beatae"
                data-component="body">
     <br>
-<p>The contact number of the supplier. Example: <code>qui</code></p>
+<p>The contact number of the supplier. Example: <code>beatae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>igst</code></b>&nbsp;&nbsp;
@@ -5896,10 +7999,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="igst"                data-endpoint="PUTapi-po-reports--id-"
-               value="rerum"
+               value="autem"
                data-component="body">
     <br>
-<p>The IGST amount. Example: <code>rerum</code></p>
+<p>The IGST amount. Example: <code>autem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sgst</code></b>&nbsp;&nbsp;
@@ -5907,10 +8010,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="sgst"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptatem"
+               value="consequatur"
                data-component="body">
     <br>
-<p>The SGST amount. Example: <code>voluptatem</code></p>
+<p>The SGST amount. Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cgst</code></b>&nbsp;&nbsp;
@@ -5918,10 +8021,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cgst"                data-endpoint="PUTapi-po-reports--id-"
-               value="aut"
+               value="quia"
                data-component="body">
     <br>
-<p>The CGST amount. Example: <code>aut</code></p>
+<p>The CGST amount. Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_value</code></b>&nbsp;&nbsp;
@@ -5929,10 +8032,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="total_value"                data-endpoint="PUTapi-po-reports--id-"
-               value="fugit"
+               value="ab"
                data-component="body">
     <br>
-<p>The total value of the PO. Example: <code>fugit</code></p>
+<p>The total value of the PO. Example: <code>ab</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
@@ -5940,10 +8043,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="amount_in_words"                data-endpoint="PUTapi-po-reports--id-"
-               value="eligendi"
+               value="ut"
                data-component="body">
     <br>
-<p>The total value in words. Example: <code>eligendi</code></p>
+<p>The total value in words. Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_1</code></b>&nbsp;&nbsp;
@@ -5951,10 +8054,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_1"                data-endpoint="PUTapi-po-reports--id-"
-               value="iusto"
+               value="in"
                data-component="body">
     <br>
-<p>optional Additional notes 1. Example: <code>iusto</code></p>
+<p>optional Additional notes 1. Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_2</code></b>&nbsp;&nbsp;
@@ -5962,10 +8065,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_2"                data-endpoint="PUTapi-po-reports--id-"
-               value="provident"
+               value="et"
                data-component="body">
     <br>
-<p>optional Additional notes 2. Example: <code>provident</code></p>
+<p>optional Additional notes 2. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_3</code></b>&nbsp;&nbsp;
@@ -5973,10 +8076,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_3"                data-endpoint="PUTapi-po-reports--id-"
-               value="distinctio"
+               value="tempora"
                data-component="body">
     <br>
-<p>optional Additional notes 3. Example: <code>distinctio</code></p>
+<p>optional Additional notes 3. Example: <code>tempora</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_4</code></b>&nbsp;&nbsp;
@@ -5984,10 +8087,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_4"                data-endpoint="PUTapi-po-reports--id-"
-               value="accusantium"
+               value="temporibus"
                data-component="body">
     <br>
-<p>optional Additional notes 4. Example: <code>accusantium</code></p>
+<p>optional Additional notes 4. Example: <code>temporibus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -6013,10 +8116,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.product_description"                data-endpoint="PUTapi-po-reports--id-"
-               value="dolorem"
+               value="perferendis"
                data-component="body">
     <br>
-<p>The description of the product. Example: <code>dolorem</code></p>
+<p>The description of the product. Example: <code>perferendis</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
@@ -6024,10 +8127,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.hsn_code"                data-endpoint="PUTapi-po-reports--id-"
-               value="perferendis"
+               value="ratione"
                data-component="body">
     <br>
-<p>The HSN code of the product. Example: <code>perferendis</code></p>
+<p>The HSN code of the product. Example: <code>ratione</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
@@ -6035,10 +8138,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.quantity"                data-endpoint="PUTapi-po-reports--id-"
-               value="minima"
+               value="omnis"
                data-component="body">
     <br>
-<p>The quantity of the product. Example: <code>minima</code></p>
+<p>The quantity of the product. Example: <code>omnis</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
@@ -6046,10 +8149,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.unit"                data-endpoint="PUTapi-po-reports--id-"
-               value="odio"
+               value="qui"
                data-component="body">
     <br>
-<p>The unit of the product. Example: <code>odio</code></p>
+<p>The unit of the product. Example: <code>qui</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
@@ -6057,10 +8160,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.rate"                data-endpoint="PUTapi-po-reports--id-"
-               value="dolores"
+               value="ad"
                data-component="body">
     <br>
-<p>The rate of the product. Example: <code>dolores</code></p>
+<p>The rate of the product. Example: <code>ad</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
@@ -6068,10 +8171,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.amount"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptatem"
+               value="consequatur"
                data-component="body">
     <br>
-<p>The amount of the product. Example: <code>voluptatem</code></p>
+<p>The amount of the product. Example: <code>consequatur</code></p>
                     </div>
                                     </details>
         </div>
@@ -6093,14 +8196,14 @@ including associated product details.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://api.smartwrapfilms.com/api/po-reports/voluptate" \
+    "https://api.smartwrapfilms.com/api/po-reports/eos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api.smartwrapfilms.com/api/po-reports/voluptate"
+    "https://api.smartwrapfilms.com/api/po-reports/eos"
 );
 
 const headers = {
@@ -6203,10 +8306,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-po-reports--id-"
-               value="voluptate"
+               value="eos"
                data-component="url">
     <br>
-<p>The ID of the PO Report. Example: <code>voluptate</code></p>
+<p>The ID of the PO Report. Example: <code>eos</code></p>
             </div>
                     </form>
 
@@ -6224,7 +8327,7 @@ including associated product details.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://api.smartwrapfilms.com/api/po-reports-get?po_no=qui" \
+    "https://api.smartwrapfilms.com/api/po-reports-get?po_no=quod" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -6235,7 +8338,7 @@ including associated product details.</p>
 );
 
 const params = {
-    "po_no": "qui",
+    "po_no": "quod",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -6376,10 +8479,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_no"                data-endpoint="POSTapi-po-reports-get"
-               value="qui"
+               value="quod"
                data-component="query">
     <br>
-<p>The PO number of the PO Report. Example: <code>qui</code></p>
+<p>The PO number of the PO Report. Example: <code>quod</code></p>
             </div>
                 </form>
 

@@ -2018,6 +2018,1100 @@ paths:
         required: true
         schema:
           type: integer
+  /api/pi-reports-export:
+    get:
+      summary: 'Display a listing of the PI Reports.'
+      operationId: displayAListingOfThePIReports
+      description: "This endpoint retrieves a list of PI Reports created by the authenticated user,\nalong with their associated product details."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  piReportsExport:
+                    -
+                      id: 15fjl5-4f45t-5g456y-g5t
+                      pi_no: PI12345
+                      date: '2023-06-25'
+                      buyer_order_no: BO12345
+                      buyer_order_date: '2023-06-20'
+                      exporter_name: 'Exporter A'
+                      exporter_address: '123 Street, City, Country'
+                      exporter_pan: ABCDE1234F
+                      exporter_iec: IEC1234567
+                      exporter_gst: GST123456
+                      exporter_mail: exporter@example.com
+                      exporter_contact_person: 'John Doe'
+                      exporter_contact_no: '1234567890'
+                      consignee_name: 'Consignee A'
+                      consignee_address: '456 Avenue, City, Country'
+                      consignee_country: 'Country B'
+                      consignee_mail: consignee@example.com
+                      consignee_contact_person: 'Jane Doe'
+                      consignee_contact_no: '0987654321'
+                      port_of_loading: 'Port A'
+                      port_of_discharge: 'Port B'
+                      final_destination_port: 'Port C'
+                      country_of_origin_of_goods: 'Country A'
+                      country_of_final_destination: 'Country B'
+                      total_fob_value: 1000
+                      freight_charges: 50
+                      total_cfr_value: 1050
+                      insurance_charges: 20
+                      total_cif_value: 1070
+                      amount_in_words: 'One Thousand Seventy'
+                      bank_name: 'Bank A'
+                      bank_address: '789 Boulevard, City, Country'
+                      bank_account_no: '123456789012'
+                      bank_ifsc_code: IFSC12345
+                      bank_ad_code: AD12345
+                      bank_swift_code: SWIFT12345
+                      payment_terms: '30 days'
+                      payment_delivery_time: '15 days'
+                      payment_delivery_terms: FOB
+                      notes: 'Special instructions'
+                      piReportProducts:
+                        -
+                          id: '12345'
+                          pi_report_export_id: 15fjl5-4f45t-5g456y-g5t
+                          size: Medium
+                          type: 'Type A'
+                          packaging_description: Box
+                          rolls_pallet: 10
+                          no_of_pallets: 5
+                          total_rolls: 50
+                          container: 'Container A'
+                          quanity: 100
+                          unit: pcs
+                          rate_in_usd: 10
+                          amount_in_usd: 1000
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  piReportsExport:
+                    type: array
+                    example:
+                      -
+                        id: 15fjl5-4f45t-5g456y-g5t
+                        pi_no: PI12345
+                        date: '2023-06-25'
+                        buyer_order_no: BO12345
+                        buyer_order_date: '2023-06-20'
+                        exporter_name: 'Exporter A'
+                        exporter_address: '123 Street, City, Country'
+                        exporter_pan: ABCDE1234F
+                        exporter_iec: IEC1234567
+                        exporter_gst: GST123456
+                        exporter_mail: exporter@example.com
+                        exporter_contact_person: 'John Doe'
+                        exporter_contact_no: '1234567890'
+                        consignee_name: 'Consignee A'
+                        consignee_address: '456 Avenue, City, Country'
+                        consignee_country: 'Country B'
+                        consignee_mail: consignee@example.com
+                        consignee_contact_person: 'Jane Doe'
+                        consignee_contact_no: '0987654321'
+                        port_of_loading: 'Port A'
+                        port_of_discharge: 'Port B'
+                        final_destination_port: 'Port C'
+                        country_of_origin_of_goods: 'Country A'
+                        country_of_final_destination: 'Country B'
+                        total_fob_value: 1000
+                        freight_charges: 50
+                        total_cfr_value: 1050
+                        insurance_charges: 20
+                        total_cif_value: 1070
+                        amount_in_words: 'One Thousand Seventy'
+                        bank_name: 'Bank A'
+                        bank_address: '789 Boulevard, City, Country'
+                        bank_account_no: '123456789012'
+                        bank_ifsc_code: IFSC12345
+                        bank_ad_code: AD12345
+                        bank_swift_code: SWIFT12345
+                        payment_terms: '30 days'
+                        payment_delivery_time: '15 days'
+                        payment_delivery_terms: FOB
+                        notes: 'Special instructions'
+                        piReportProducts:
+                          -
+                            id: '12345'
+                            pi_report_export_id: 15fjl5-4f45t-5g456y-g5t
+                            size: Medium
+                            type: 'Type A'
+                            packaging_description: Box
+                            rolls_pallet: 10
+                            no_of_pallets: 5
+                            total_rolls: 50
+                            container: 'Container A'
+                            quanity: 100
+                            unit: pcs
+                            rate_in_usd: 10
+                            amount_in_usd: 1000
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 15fjl5-4f45t-5g456y-g5t
+                        pi_no:
+                          type: string
+                          example: PI12345
+                        date:
+                          type: string
+                          example: '2023-06-25'
+                        buyer_order_no:
+                          type: string
+                          example: BO12345
+                        buyer_order_date:
+                          type: string
+                          example: '2023-06-20'
+                        exporter_name:
+                          type: string
+                          example: 'Exporter A'
+                        exporter_address:
+                          type: string
+                          example: '123 Street, City, Country'
+                        exporter_pan:
+                          type: string
+                          example: ABCDE1234F
+                        exporter_iec:
+                          type: string
+                          example: IEC1234567
+                        exporter_gst:
+                          type: string
+                          example: GST123456
+                        exporter_mail:
+                          type: string
+                          example: exporter@example.com
+                        exporter_contact_person:
+                          type: string
+                          example: 'John Doe'
+                        exporter_contact_no:
+                          type: string
+                          example: '1234567890'
+                        consignee_name:
+                          type: string
+                          example: 'Consignee A'
+                        consignee_address:
+                          type: string
+                          example: '456 Avenue, City, Country'
+                        consignee_country:
+                          type: string
+                          example: 'Country B'
+                        consignee_mail:
+                          type: string
+                          example: consignee@example.com
+                        consignee_contact_person:
+                          type: string
+                          example: 'Jane Doe'
+                        consignee_contact_no:
+                          type: string
+                          example: '0987654321'
+                        port_of_loading:
+                          type: string
+                          example: 'Port A'
+                        port_of_discharge:
+                          type: string
+                          example: 'Port B'
+                        final_destination_port:
+                          type: string
+                          example: 'Port C'
+                        country_of_origin_of_goods:
+                          type: string
+                          example: 'Country A'
+                        country_of_final_destination:
+                          type: string
+                          example: 'Country B'
+                        total_fob_value:
+                          type: integer
+                          example: 1000
+                        freight_charges:
+                          type: integer
+                          example: 50
+                        total_cfr_value:
+                          type: integer
+                          example: 1050
+                        insurance_charges:
+                          type: integer
+                          example: 20
+                        total_cif_value:
+                          type: integer
+                          example: 1070
+                        amount_in_words:
+                          type: string
+                          example: 'One Thousand Seventy'
+                        bank_name:
+                          type: string
+                          example: 'Bank A'
+                        bank_address:
+                          type: string
+                          example: '789 Boulevard, City, Country'
+                        bank_account_no:
+                          type: string
+                          example: '123456789012'
+                        bank_ifsc_code:
+                          type: string
+                          example: IFSC12345
+                        bank_ad_code:
+                          type: string
+                          example: AD12345
+                        bank_swift_code:
+                          type: string
+                          example: SWIFT12345
+                        payment_terms:
+                          type: string
+                          example: '30 days'
+                        payment_delivery_time:
+                          type: string
+                          example: '15 days'
+                        payment_delivery_terms:
+                          type: string
+                          example: FOB
+                        notes:
+                          type: string
+                          example: 'Special instructions'
+                        piReportProducts:
+                          type: array
+                          example:
+                            -
+                              id: '12345'
+                              pi_report_export_id: 15fjl5-4f45t-5g456y-g5t
+                              size: Medium
+                              type: 'Type A'
+                              packaging_description: Box
+                              rolls_pallet: 10
+                              no_of_pallets: 5
+                              total_rolls: 50
+                              container: 'Container A'
+                              quanity: 100
+                              unit: pcs
+                              rate_in_usd: 10
+                              amount_in_usd: 1000
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: '12345'
+                              pi_report_export_id:
+                                type: string
+                                example: 15fjl5-4f45t-5g456y-g5t
+                              size:
+                                type: string
+                                example: Medium
+                              type:
+                                type: string
+                                example: 'Type A'
+                              packaging_description:
+                                type: string
+                                example: Box
+                              rolls_pallet:
+                                type: integer
+                                example: 10
+                              no_of_pallets:
+                                type: integer
+                                example: 5
+                              total_rolls:
+                                type: integer
+                                example: 50
+                              container:
+                                type: string
+                                example: 'Container A'
+                              quanity:
+                                type: integer
+                                example: 100
+                              unit:
+                                type: string
+                                example: pcs
+                              rate_in_usd:
+                                type: integer
+                                example: 10
+                              amount_in_usd:
+                                type: integer
+                                example: 1000
+      tags:
+        - 'PI Reports'
+      security: []
+    post:
+      summary: 'Store a newly created PI Report.'
+      operationId: storeANewlyCreatedPIReport
+      description: 'This endpoint creates a new PI Report with the specified details and associated products.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'PI Report Export added successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'PI Report Export added successfully'
+      tags:
+        - 'PI Reports'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pi_no:
+                  type: string
+                  description: 'The PI number.'
+                  example: PI12345
+                date:
+                  type: date
+                  description: 'The date of the PI.'
+                  example: '2023-06-25'
+                buyer_order_no:
+                  type: string
+                  description: "The buyer's order number."
+                  example: BO12345
+                buyer_order_date:
+                  type: date
+                  description: "The buyer's order date."
+                  example: '2023-06-20'
+                exporter_name:
+                  type: string
+                  description: 'The name of the exporter.'
+                  example: 'Exporter A'
+                exporter_address:
+                  type: string
+                  description: 'The address of the exporter.'
+                  example: '123 Street, City, Country'
+                exporter_pan:
+                  type: string
+                  description: 'The PAN of the exporter.'
+                  example: ABCDE1234F
+                exporter_iec:
+                  type: string
+                  description: 'The IEC of the exporter.'
+                  example: IEC1234567
+                exporter_gst:
+                  type: string
+                  description: 'The GST of the exporter.'
+                  example: GST123456
+                exporter_mail:
+                  type: string
+                  description: 'The email of the exporter.'
+                  example: exporter@example.com
+                exporter_contact_person:
+                  type: string
+                  description: 'The contact person of the exporter.'
+                  example: 'John Doe'
+                exporter_contact_no:
+                  type: string
+                  description: 'The contact number of the exporter.'
+                  example: '1234567890'
+                consignee_name:
+                  type: string
+                  description: 'The name of the consignee.'
+                  example: 'Consignee A'
+                consignee_address:
+                  type: string
+                  description: 'The address of the consignee.'
+                  example: '456 Avenue, City, Country'
+                consignee_country:
+                  type: string
+                  description: 'The country of the consignee.'
+                  example: 'Country B'
+                consignee_mail:
+                  type: string
+                  description: 'The email of the consignee.'
+                  example: consignee@example.com
+                consignee_contact_person:
+                  type: string
+                  description: 'The contact person of the consignee.'
+                  example: 'Jane Doe'
+                consignee_contact_no:
+                  type: string
+                  description: 'The contact number of the consignee.'
+                  example: '0987654321'
+                port_of_loading:
+                  type: string
+                  description: 'The port of loading.'
+                  example: 'Port A'
+                port_of_discharge:
+                  type: string
+                  description: 'The port of discharge.'
+                  example: 'Port B'
+                final_destination_port:
+                  type: string
+                  description: 'The final destination port.'
+                  example: 'Port C'
+                country_of_origin_of_goods:
+                  type: string
+                  description: 'The country of origin of the goods.'
+                  example: 'Country A'
+                country_of_final_destination:
+                  type: string
+                  description: 'The country of final destination.'
+                  example: 'Country B'
+                total_fob_value:
+                  type: number
+                  description: 'The total FOB value.'
+                  example: 1000.0
+                freight_charges:
+                  type: number
+                  description: 'The freight charges.'
+                  example: 50.0
+                total_cfr_value:
+                  type: number
+                  description: 'The total CFR value.'
+                  example: 1050.0
+                insurance_charges:
+                  type: number
+                  description: 'The insurance charges.'
+                  example: 20.0
+                total_cif_value:
+                  type: number
+                  description: 'The total CIF value.'
+                  example: 1070.0
+                amount_in_words:
+                  type: string
+                  description: 'The amount in words.'
+                  example: 'One Thousand Seventy'
+                bank_name:
+                  type: string
+                  description: 'The name of the bank.'
+                  example: 'Bank A'
+                bank_address:
+                  type: string
+                  description: 'The address of the bank.'
+                  example: '789 Boulevard, City, Country'
+                bank_account_no:
+                  type: string
+                  description: 'The account number of the bank.'
+                  example: '123456789012'
+                bank_ifsc_code:
+                  type: string
+                  description: 'The IFSC code of the bank.'
+                  example: IFSC12345
+                bank_ad_code:
+                  type: string
+                  description: 'The AD code of the bank.'
+                  example: AD12345
+                bank_swift_code:
+                  type: string
+                  description: 'The SWIFT code of the bank.'
+                  example: SWIFT12345
+                payment_terms:
+                  type: string
+                  description: 'The payment terms.'
+                  example: '30 days'
+                payment_delivery_time:
+                  type: string
+                  description: 'The payment delivery time.'
+                  example: '15 days'
+                payment_delivery_terms:
+                  type: string
+                  description: 'The payment delivery terms.'
+                  example: FOB
+                notes:
+                  type: string
+                  description: 'optional Any additional notes.'
+                  example: 'Special instructions'
+                products:
+                  type: array
+                  description: 'The list of products associated with the PI Report.'
+                  example:
+                    - tempora
+                  items:
+                    type: string
+              required:
+                - pi_no
+                - date
+                - buyer_order_no
+                - buyer_order_date
+                - exporter_name
+                - exporter_address
+                - exporter_pan
+                - exporter_iec
+                - exporter_gst
+                - exporter_mail
+                - exporter_contact_person
+                - exporter_contact_no
+                - consignee_name
+                - consignee_address
+                - consignee_country
+                - consignee_mail
+                - consignee_contact_person
+                - consignee_contact_no
+                - port_of_loading
+                - port_of_discharge
+                - final_destination_port
+                - country_of_origin_of_goods
+                - country_of_final_destination
+                - total_fob_value
+                - freight_charges
+                - total_cfr_value
+                - insurance_charges
+                - total_cif_value
+                - amount_in_words
+                - bank_name
+                - bank_address
+                - bank_account_no
+                - bank_ifsc_code
+                - bank_ad_code
+                - bank_swift_code
+                - payment_terms
+                - payment_delivery_time
+                - payment_delivery_terms
+                - products
+      security: []
+  '/api/pi-reports-export/{id}':
+    put:
+      summary: 'Update the specified PI Report.'
+      operationId: updateTheSpecifiedPIReport
+      description: 'This endpoint updates the details of a specific PI Report by its ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'PI Report Export updated successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'PI Report Export updated successfully'
+      tags:
+        - 'PI Reports'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pi_no:
+                  type: string
+                  description: 'The PI number.'
+                  example: PI12345
+                date:
+                  type: date
+                  description: 'The date of the PI.'
+                  example: '2023-06-25'
+                buyer_order_no:
+                  type: string
+                  description: "The buyer's order number."
+                  example: BO12345
+                buyer_order_date:
+                  type: date
+                  description: "The buyer's order date."
+                  example: '2023-06-20'
+                exporter_name:
+                  type: string
+                  description: 'The name of the exporter.'
+                  example: 'Exporter A'
+                exporter_address:
+                  type: string
+                  description: 'The address of the exporter.'
+                  example: '123 Street, City, Country'
+                exporter_pan:
+                  type: string
+                  description: 'The PAN of the exporter.'
+                  example: ABCDE1234F
+                exporter_iec:
+                  type: string
+                  description: 'The IEC of the exporter.'
+                  example: IEC1234567
+                exporter_gst:
+                  type: string
+                  description: 'The GST of the exporter.'
+                  example: GST123456
+                exporter_mail:
+                  type: string
+                  description: 'The email of the exporter.'
+                  example: exporter@example.com
+                exporter_contact_person:
+                  type: string
+                  description: 'The contact person of the exporter.'
+                  example: 'John Doe'
+                exporter_contact_no:
+                  type: string
+                  description: 'The contact number of the exporter.'
+                  example: '1234567890'
+                consignee_name:
+                  type: string
+                  description: 'The name of the consignee.'
+                  example: 'Consignee A'
+                consignee_address:
+                  type: string
+                  description: 'The address of the consignee.'
+                  example: '456 Avenue, City, Country'
+                consignee_country:
+                  type: string
+                  description: 'The country of the consignee.'
+                  example: 'Country B'
+                consignee_mail:
+                  type: string
+                  description: 'The email of the consignee.'
+                  example: consignee@example.com
+                consignee_contact_person:
+                  type: string
+                  description: 'The contact person of the consignee.'
+                  example: 'Jane Doe'
+                consignee_contact_no:
+                  type: string
+                  description: 'The contact number of the consignee.'
+                  example: '0987654321'
+                port_of_loading:
+                  type: string
+                  description: 'The port of loading.'
+                  example: 'Port A'
+                port_of_discharge:
+                  type: string
+                  description: 'The port of discharge.'
+                  example: 'Port B'
+                final_destination_port:
+                  type: string
+                  description: 'The final destination port.'
+                  example: 'Port C'
+                country_of_origin_of_goods:
+                  type: string
+                  description: 'The country of origin of the goods.'
+                  example: 'Country A'
+                country_of_final_destination:
+                  type: string
+                  description: 'The country of final destination.'
+                  example: 'Country B'
+                total_fob_value:
+                  type: number
+                  description: 'The total FOB value.'
+                  example: 1000.0
+                freight_charges:
+                  type: number
+                  description: 'The freight charges.'
+                  example: 50.0
+                total_cfr_value:
+                  type: number
+                  description: 'The total CFR value.'
+                  example: 1050.0
+                insurance_charges:
+                  type: number
+                  description: 'The insurance charges.'
+                  example: 20.0
+                total_cif_value:
+                  type: number
+                  description: 'The total CIF value.'
+                  example: 1070.0
+                amount_in_words:
+                  type: string
+                  description: 'The amount in words.'
+                  example: 'One Thousand Seventy'
+                bank_name:
+                  type: string
+                  description: 'The name of the bank.'
+                  example: 'Bank A'
+                bank_address:
+                  type: string
+                  description: 'The address of the bank.'
+                  example: '789 Boulevard, City, Country'
+                bank_account_no:
+                  type: string
+                  description: 'The account number of the bank.'
+                  example: '123456789012'
+                bank_ifsc_code:
+                  type: string
+                  description: 'The IFSC code of the bank.'
+                  example: IFSC12345
+                bank_ad_code:
+                  type: string
+                  description: 'The AD code of the bank.'
+                  example: AD12345
+                bank_swift_code:
+                  type: string
+                  description: 'The SWIFT code of the bank.'
+                  example: SWIFT12345
+                payment_terms:
+                  type: string
+                  description: 'The payment terms.'
+                  example: '30 days'
+                payment_delivery_time:
+                  type: string
+                  description: 'The payment delivery time.'
+                  example: '15 days'
+                payment_delivery_terms:
+                  type: string
+                  description: 'The payment delivery terms.'
+                  example: FOB
+                notes:
+                  type: string
+                  description: 'optional Any additional notes.'
+                  example: 'Special instructions'
+                products:
+                  type: array
+                  description: 'The list of products associated with the PI Report.'
+                  example:
+                    - consequatur
+                  items:
+                    type: string
+              required:
+                - pi_no
+                - date
+                - buyer_order_no
+                - buyer_order_date
+                - exporter_name
+                - exporter_address
+                - exporter_pan
+                - exporter_iec
+                - exporter_gst
+                - exporter_mail
+                - exporter_contact_person
+                - exporter_contact_no
+                - consignee_name
+                - consignee_address
+                - consignee_country
+                - consignee_mail
+                - consignee_contact_person
+                - consignee_contact_no
+                - port_of_loading
+                - port_of_discharge
+                - final_destination_port
+                - country_of_origin_of_goods
+                - country_of_final_destination
+                - total_fob_value
+                - freight_charges
+                - total_cfr_value
+                - insurance_charges
+                - total_cif_value
+                - amount_in_words
+                - bank_name
+                - bank_address
+                - bank_account_no
+                - bank_ifsc_code
+                - bank_ad_code
+                - bank_swift_code
+                - payment_terms
+                - payment_delivery_time
+                - payment_delivery_terms
+                - products
+      security: []
+    delete:
+      summary: 'Remove the specified PI Report.'
+      operationId: removeTheSpecifiedPIReport
+      description: 'This endpoint deletes a specific PI Report by its ID.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: 'PI Report Export deleted successfully'
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: 'PI Report Export deleted successfully'
+      tags:
+        - 'PI Reports'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the PI Report.'
+        example: 15fjl5-4f45t-5g456y-g5t
+        required: true
+        schema:
+          type: string
+  /api/pi-reports-export-get:
+    post:
+      summary: 'Display the specified PI Report.'
+      operationId: displayTheSpecifiedPIReport
+      description: 'This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  piReportsExport:
+                    id: 15fjl5-4f45t-5g456y-g5t
+                    pi_no: PI12345
+                    date: '2023-06-25'
+                    buyer_order_no: BO12345
+                    buyer_order_date: '2023-06-20'
+                    exporter_name: 'Exporter A'
+                    exporter_address: '123 Street, City, Country'
+                    exporter_pan: ABCDE1234F
+                    exporter_iec: IEC1234567
+                    exporter_gst: GST123456
+                    exporter_mail: exporter@example.com
+                    exporter_contact_person: 'John Doe'
+                    exporter_contact_no: '1234567890'
+                    consignee_name: 'Consignee A'
+                    consignee_address: '456 Avenue, City, Country'
+                    consignee_country: 'Country B'
+                    consignee_mail: consignee@example.com
+                    consignee_contact_person: 'Jane Doe'
+                    consignee_contact_no: '0987654321'
+                    port_of_loading: 'Port A'
+                    port_of_discharge: 'Port B'
+                    final_destination_port: 'Port C'
+                    country_of_origin_of_goods: 'Country A'
+                    country_of_final_destination: 'Country B'
+                    total_fob_value: 1000
+                    freight_charges: 50
+                    total_cfr_value: 1050
+                    insurance_charges: 20
+                    total_cif_value: 1070
+                    amount_in_words: 'One Thousand Seventy'
+                    bank_name: 'Bank A'
+                    bank_address: '789 Boulevard, City, Country'
+                    bank_account_no: '123456789012'
+                    bank_ifsc_code: IFSC12345
+                    bank_ad_code: AD12345
+                    bank_swift_code: SWIFT12345
+                    payment_terms: '30 days'
+                    payment_delivery_time: '15 days'
+                    payment_delivery_terms: FOB
+                    notes: 'Special instructions'
+                    piReportProducts:
+                      -
+                        id: '12345'
+                        pi_report_export_id: 15fjl5-4f45t-5g456y-g5t
+                        size: Medium
+                        type: 'Type A'
+                        packaging_description: Box
+                        rolls_pallet: 10
+                        no_of_pallets: 5
+                        total_rolls: 50
+                        container: 'Container A'
+                        quanity: 100
+                        unit: pcs
+                        rate_in_usd: 10.0
+                        amount_in_usd: 1000.0
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  piReportsExport:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 15fjl5-4f45t-5g456y-g5t
+                      pi_no:
+                        type: string
+                        example: PI12345
+                      date:
+                        type: string
+                        example: '2023-06-25'
+                      buyer_order_no:
+                        type: string
+                        example: BO12345
+                      buyer_order_date:
+                        type: string
+                        example: '2023-06-20'
+                      exporter_name:
+                        type: string
+                        example: 'Exporter A'
+                      exporter_address:
+                        type: string
+                        example: '123 Street, City, Country'
+                      exporter_pan:
+                        type: string
+                        example: ABCDE1234F
+                      exporter_iec:
+                        type: string
+                        example: IEC1234567
+                      exporter_gst:
+                        type: string
+                        example: GST123456
+                      exporter_mail:
+                        type: string
+                        example: exporter@example.com
+                      exporter_contact_person:
+                        type: string
+                        example: 'John Doe'
+                      exporter_contact_no:
+                        type: string
+                        example: '1234567890'
+                      consignee_name:
+                        type: string
+                        example: 'Consignee A'
+                      consignee_address:
+                        type: string
+                        example: '456 Avenue, City, Country'
+                      consignee_country:
+                        type: string
+                        example: 'Country B'
+                      consignee_mail:
+                        type: string
+                        example: consignee@example.com
+                      consignee_contact_person:
+                        type: string
+                        example: 'Jane Doe'
+                      consignee_contact_no:
+                        type: string
+                        example: '0987654321'
+                      port_of_loading:
+                        type: string
+                        example: 'Port A'
+                      port_of_discharge:
+                        type: string
+                        example: 'Port B'
+                      final_destination_port:
+                        type: string
+                        example: 'Port C'
+                      country_of_origin_of_goods:
+                        type: string
+                        example: 'Country A'
+                      country_of_final_destination:
+                        type: string
+                        example: 'Country B'
+                      total_fob_value:
+                        type: integer
+                        example: 1000
+                      freight_charges:
+                        type: integer
+                        example: 50
+                      total_cfr_value:
+                        type: integer
+                        example: 1050
+                      insurance_charges:
+                        type: integer
+                        example: 20
+                      total_cif_value:
+                        type: integer
+                        example: 1070
+                      amount_in_words:
+                        type: string
+                        example: 'One Thousand Seventy'
+                      bank_name:
+                        type: string
+                        example: 'Bank A'
+                      bank_address:
+                        type: string
+                        example: '789 Boulevard, City, Country'
+                      bank_account_no:
+                        type: string
+                        example: '123456789012'
+                      bank_ifsc_code:
+                        type: string
+                        example: IFSC12345
+                      bank_ad_code:
+                        type: string
+                        example: AD12345
+                      bank_swift_code:
+                        type: string
+                        example: SWIFT12345
+                      payment_terms:
+                        type: string
+                        example: '30 days'
+                      payment_delivery_time:
+                        type: string
+                        example: '15 days'
+                      payment_delivery_terms:
+                        type: string
+                        example: FOB
+                      notes:
+                        type: string
+                        example: 'Special instructions'
+                      piReportProducts:
+                        type: array
+                        example:
+                          -
+                            id: '12345'
+                            pi_report_export_id: 15fjl5-4f45t-5g456y-g5t
+                            size: Medium
+                            type: 'Type A'
+                            packaging_description: Box
+                            rolls_pallet: 10
+                            no_of_pallets: 5
+                            total_rolls: 50
+                            container: 'Container A'
+                            quanity: 100
+                            unit: pcs
+                            rate_in_usd: 10
+                            amount_in_usd: 1000
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: '12345'
+                            pi_report_export_id:
+                              type: string
+                              example: 15fjl5-4f45t-5g456y-g5t
+                            size:
+                              type: string
+                              example: Medium
+                            type:
+                              type: string
+                              example: 'Type A'
+                            packaging_description:
+                              type: string
+                              example: Box
+                            rolls_pallet:
+                              type: integer
+                              example: 10
+                            no_of_pallets:
+                              type: integer
+                              example: 5
+                            total_rolls:
+                              type: integer
+                              example: 50
+                            container:
+                              type: string
+                              example: 'Container A'
+                            quanity:
+                              type: integer
+                              example: 100
+                            unit:
+                              type: string
+                              example: pcs
+                            rate_in_usd:
+                              type: number
+                              example: 10.0
+                            amount_in_usd:
+                              type: number
+                              example: 1000.0
+      tags:
+        - 'PI Reports'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the PI Report.'
+        example: 15fjl5-4f45t-5g456y-g5t
+        required: true
+        schema:
+          type: string
   /api/po-reports:
     get:
       summary: 'Display a listing of the PO Reports.'
@@ -2264,119 +3358,119 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: optio
+                  example: unde
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: laboriosam
+                  example: velit
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: sapiente
+                  example: et
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: fugit
+                  example: consequatur
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: minima
+                  example: ipsa
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: sit
+                  example: aspernatur
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: quia
+                  example: vel
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: neque
+                  example: adipisci
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: eos
+                  example: tempora
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: beatae
+                  example: excepturi
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: minus
+                  example: eos
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: impedit
+                  example: quia
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: id
+                  example: et
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: consequatur
+                  example: accusantium
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: laboriosam
+                  example: quasi
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: qui
+                  example: eum
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: sed
+                  example: est
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: qui
+                  example: optio
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: quisquam
+                  example: cum
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: debitis
+                  example: eum
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: distinctio
+                  example: omnis
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: sed
+                  example: delectus
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: eum
+                  example: laboriosam
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: ut
+                  example: est
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: at
+                  example: rerum
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: maiores
+                  example: assumenda
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: quidem
+                  example: omnis
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: assumenda
+                  example: amet
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: pariatur
+                  example: reiciendis
                 products:
                   type: array
                   description: 'The array of product details.'
@@ -2454,124 +3548,124 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: doloremque
+                  example: ipsa
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: consequuntur
+                  example: laudantium
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: quae
+                  example: aliquam
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: ipsam
+                  example: et
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: quis
+                  example: repellat
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: modi
+                  example: nihil
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: laborum
+                  example: doloremque
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: animi
+                  example: harum
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: assumenda
+                  example: fugiat
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: quia
+                  example: quidem
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: eos
+                  example: veritatis
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: animi
+                  example: voluptates
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: doloribus
+                  example: est
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: ea
+                  example: sed
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: possimus
+                  example: natus
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: aperiam
+                  example: soluta
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: ducimus
+                  example: et
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: voluptas
+                  example: et
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: unde
+                  example: velit
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: qui
+                  example: beatae
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: rerum
+                  example: autem
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: voluptatem
+                  example: consequatur
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: aut
+                  example: quia
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: fugit
+                  example: ab
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: eligendi
+                  example: ut
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: iusto
+                  example: in
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: provident
+                  example: et
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: distinctio
+                  example: tempora
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: accusantium
+                  example: temporibus
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - excepturi
+                    - voluptatem
                   items:
                     type: string
               required:
@@ -2632,7 +3726,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the PO Report.'
-        example: voluptatem
+        example: ea
         required: true
         schema:
           type: string
@@ -2646,12 +3740,12 @@ paths:
           in: query
           name: po_no
           description: 'The PO number of the PO Report.'
-          example: qui
+          example: quod
           required: true
           schema:
             type: string
             description: 'The PO number of the PO Report.'
-            example: qui
+            example: quod
       responses:
         200:
           description: ''
@@ -3370,6 +4464,9 @@ tags:
     description: ''
   -
     name: 'Finish Goods'
+    description: ''
+  -
+    name: 'PI Reports'
     description: ''
   -
     name: 'PO Reports'
