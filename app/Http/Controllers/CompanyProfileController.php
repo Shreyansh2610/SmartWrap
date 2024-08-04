@@ -101,7 +101,7 @@ class CompanyProfileController extends Controller
      */
     public function show()
     {
-        $companyProfile = CompanyProfile::first();
+        $companyProfile = CompanyProfile::where('created_by', auth()->user()->id)->first();
         // dd($companyProfile);
         return response()->json(['type' => 'success', 'comapny_profile' => $companyProfile], 200);
     }
@@ -188,7 +188,7 @@ class CompanyProfileController extends Controller
     public function update(Request $request)
     {
 
-        $companyProfile = CompanyProfile::first();
+        $companyProfile = CompanyProfile::where('created_by', auth()->user()->id)->first();
         if (isset($request->company_logo)) {
             $fileName = Str::random(6);
             $file = $request->file('company_logo');

@@ -56,11 +56,12 @@ class FinishGoodsController extends Controller
      */
     public function index()
     {
-        $finishGoods = FinishGoods::with([
+        $finishGoods = FinishGoods::where(['created_by'=>auth()->user()->id])->first()->with([
             'product:id,product_name',
             'size:id,size_in_cm,size_in_mm,micron'
         ])
-            ->select('id', 'product_id', 'size_id', 'sqm_per_roll', 'roll_quantity', 'total_sqm', 'pallet', 'pallet_name', 'details', 'boxes','order_purchase_date','good_details','company','description_of_goods','qty_in_storage_start','qty_issued','qty_in_storage_end','qty_returned','wastage','actual_qty_consumed')->get()->toArray();
+            ->select('id', 'product_id', 'size_id', 'sqm_per_roll', 'roll_quantity', 'total_sqm', 'pallet', 'pallet_name', 'details', 'boxes','order_purchase_date','good_details','company','description_of_goods','qty_in_storage_start','qty_issued','qty_in_storage_end','qty_returned','wastage','actual_qty_consumed')
+            ->get()->toArray();
 
         return response()->json([
             'status' => 'success',
@@ -420,6 +421,7 @@ class FinishGoodsController extends Controller
             'product:id,product_name',
             'size:id,size_in_cm,size_in_mm,micron'
         ])->where('created_at', 'LIKE', '%' . Carbon::parse($request->date_filter)->toDateString() . '%')
+            ->where(['created_by'=>auth()->user()->id])
             ->select('id', 'product_id', 'size_id', 'sqm_per_roll', 'roll_quantity', 'total_sqm', 'pallet', 'pallet_name', 'details', 'boxes')
             ->get()->each(function ($finishGood) use (&$micronCount, &$sqmPerRollCount, &$rollQuantityCount, &$totalSqmCount, &$boxesCount) {
                 $micronCount = $micronCount + $finishGood->size->micron;

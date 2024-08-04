@@ -32,7 +32,7 @@ class BankController extends Controller
      */
     public function index()
     {
-        $banks = Bank::all()->select('id', 'bank_name', 'bank_address', 'account_name', 'account_no', 'ifsc_code', 'swift_code', 'bank_ad_code_no', 'iban_no')->toArray();
+        $banks = Bank::where('created_by', auth()->user()->id)->get()->select('id', 'bank_name', 'bank_address', 'account_name', 'account_no', 'ifsc_code', 'swift_code', 'bank_ad_code_no', 'iban_no')->toArray();
         return response()->json([
             'status' => 'success',
             'banks' => $banks,

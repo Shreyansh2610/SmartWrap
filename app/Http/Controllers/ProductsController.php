@@ -32,7 +32,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::select('id', 'hsn_code', 'product_name', 'sales', 'purchase', 'water_absorption', 'field')->get()->toArray();
+        $products = Product::where(['created_by'=>auth()->user()->id])->select('id', 'hsn_code', 'product_name', 'sales', 'purchase', 'water_absorption', 'field')->get()->toArray();
         return response()->json([
             'status' => 'success',
             'products' => $products,
@@ -106,7 +106,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Product::findOrFail($id)->update([
+        Product::where(['id'->$id,'created_by'=>auth()->user()->id])->update([
             'hsn_code' => $request->hsn_code,
             'product_name' => $request->product_name,
             'sales' => $request->sales,
@@ -136,7 +136,7 @@ class ProductsController extends Controller
      */
     public function destroy(string $id)
     {
-        Product::findOrFail($id)->delete();
+        Product::where(['id'->$id,'created_by'=>auth()->user()->id])->delete();
         return response()->json([
             'status' => 'success',
             'message' => 'Product details are deleted'

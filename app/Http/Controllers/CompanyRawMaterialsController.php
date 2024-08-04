@@ -45,7 +45,7 @@ class CompanyRawMaterialsController extends Controller
      */
     public function index()
     {
-        $companyRawMaterials = CompanyRawMaterial::select(
+        $companyRawMaterials = CompanyRawMaterial::where('created_by', auth()->user()->id)->select(
             'id',
             'company_name',
             'total_pallet',
@@ -250,7 +250,7 @@ class CompanyRawMaterialsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $companyRawMaterial = CompanyRawMaterial::find($id);
+        $companyRawMaterial = CompanyRawMaterial::where(['id'->$id,'created_by'=>auth()->user()->id])->first();
 
         if (!$companyRawMaterial) {
             return response()->json(['message' => 'Raw Material not found'], 404);
@@ -348,7 +348,7 @@ class CompanyRawMaterialsController extends Controller
      */
     public function destroy($id)
     {
-        $companyRawMaterial = CompanyRawMaterial::find($id);
+        $companyRawMaterial = CompanyRawMaterial::where(['id'->$id,'created_by'=>auth()->user()->id])->first();
 
         if (!$companyRawMaterial) {
             return response()->json(['message' => 'Raw Material not found'], 404);
@@ -404,7 +404,7 @@ class CompanyRawMaterialsController extends Controller
         $totalBagPerPalletCount = 0;
         $totalWeightPerBagCount = 0;
         $totalWeightCount = 0;
-        $companyRawMaterials = CompanyRawMaterial::select('id', 'company_name', 'total_pallet', 'bag_per_pallet', 'total_bag', 'weight_per_bag', 'total_weight')
+        $companyRawMaterials = CompanyRawMaterial::where(['created_by'=>auth()->user()->id])->first()->select('id', 'company_name', 'total_pallet', 'bag_per_pallet', 'total_bag', 'weight_per_bag', 'total_weight')
         ->where('created_at', 'LIKE', '%' . Carbon::parse($request->date_filter)->toDateString() . '%')
         ->get()
             ->each(function ($companyRawMaterial) use (&$totalBagPerPalletCount,&$totalPalletCount, &$totalBagCount, &$totalWeightPerBagCount, &$totalWeightCount) {

@@ -26,6 +26,7 @@ class Bank extends Model
     {
         parent::boot();
         static::creating(function (Model $model) {
+            $model->setAttribute('created_by', auth()->user()->id);
             $model->setAttribute($model->getKeyName(), Uuid::uuid4());
         });
     }

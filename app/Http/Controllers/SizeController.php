@@ -35,7 +35,7 @@ class SizeController extends Controller
      */
     public function index()
     {
-        $sizes = Size::select('id', 'size_in_cm', 'size_in_mm', 'product_name', 'hsn_code', 'thickness', 'micron', 'grade', 'width')->get()->toArray();
+        $sizes = Size::where(['created_by'=>auth()->user()->id])->select('id', 'size_in_cm', 'size_in_mm', 'product_name', 'hsn_code', 'thickness', 'micron', 'grade', 'width')->get()->toArray();
         return response()->json([
             'status' => 'success',
             'sizes' => $sizes,
@@ -215,7 +215,7 @@ class SizeController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        Size::findOrFail($id)->update([
+        Size::where(['id'->$id,'created_by'=>auth()->user()->id])->update([
             'size_in_cm' => $request->size_in_cm,
             'size_in_mm' => $request->size_in_mm,
             'product_name' => $request->product_name,
@@ -253,7 +253,7 @@ class SizeController extends Controller
     public function destroy(string $id)
     {
         if (Size::where('id', $id)->exists()) {
-            Size::findOrFail($id)->delete();
+            Size::where(['id'->$id,'created_by'=>auth()->user()->id])->delete();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Size is deleted'
