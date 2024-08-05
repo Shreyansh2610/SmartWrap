@@ -219,14 +219,14 @@ class PiReportDomesticController extends Controller
         PiReportDomesticPrduct::where('pi_report_domestic_id', $piReportDomestic->id)->delete();
         foreach ($request->products as $key => $product) {
             PiReportDomesticPrduct::firstOrCreate([
-                'pi_report_domestic_id' => $piReportDomestic->id,
-                'description' => $request->description,
-                'hsn_code' => $request->hsn_code,
-                'no_of_box' => $request->no_of_box,
-                'quantity' => $request->quantity,
-                'unit' => $request->unit,
-                'rate' => $request->rate_in_usd,
-                'amount' => $request->amount,
+                'pi_report_domestic_id' => $piReportDomestic['id'],
+                'description' => $product['description'],
+                'hsn_code' => $product['hsn_code'],
+                'no_of_box' => $product['no_of_box'],
+                'quantity' => $product['quantity'],
+                'unit' => $product['unit'],
+                'rate' => $product['rate_in_usd'],
+                'amount' => $product['amount'],
             ]);
         }
 
@@ -443,14 +443,14 @@ class PiReportDomesticController extends Controller
         PiReportDomesticPrduct::where('pi_report_domestic_id', $piReportDomestic->id)->delete();
         foreach ($request->products as $key => $product) {
             PiReportDomesticPrduct::firstOrCreate([
-                'pi_report_domestic_id' => $piReportDomestic->id,
-                'description' => $request->description,
-                'hsn_code' => $request->hsn_code,
-                'no_of_box' => $request->no_of_box,
-                'quantity' => $request->quantity,
-                'unit' => $request->unit,
-                'rate' => $request->rate_in_usd,
-                'amount' => $request->amount,
+                'pi_report_domestic_id' => $piReportDomestic['id'],
+                'description' => $product['description'],
+                'hsn_code' => $product['hsn_code'],
+                'no_of_box' => $product['no_of_box'],
+                'quantity' => $product['quantity'],
+                'unit' => $product['unit'],
+                'rate' => $product['rate_in_usd'],
+                'amount' => $product['amount'],
             ]);
         }
 
