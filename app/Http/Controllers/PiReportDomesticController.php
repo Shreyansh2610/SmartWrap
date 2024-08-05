@@ -92,7 +92,7 @@ class PiReportDomesticController extends Controller
                 'supplier_address',
                 'supplier_pan',
                 'supplier_gst',
-                'exporter_gst',
+                'supplier_gst',
                 'supplier_mail',
                 'supplier_contact_person',
                 'supplier_contact_no',
@@ -216,7 +216,7 @@ class PiReportDomesticController extends Controller
             'notes' => !empty($request->notes) ? json_encode($request->notes) : null,
         ]);
 
-        PiReportDomesticPrduct::where('pi_report_export_id', $piReportDomestic->id)->delete();
+        PiReportDomesticPrduct::where('pi_report_domestic_id', $piReportDomestic->id)->delete();
         foreach ($request->products as $key => $product) {
             PiReportDomesticPrduct::firstOrCreate([
                 'pi_report_domestic_id' => $piReportDomestic->id,
@@ -316,7 +316,7 @@ class PiReportDomesticController extends Controller
                 'supplier_address',
                 'supplier_pan',
                 'supplier_gst',
-                'exporter_gst',
+                'supplier_gst',
                 'supplier_mail',
                 'supplier_contact_person',
                 'supplier_contact_no',
