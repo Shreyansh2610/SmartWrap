@@ -30,6 +30,8 @@ Route::get('/login',function() {
 })->name('login');
 
 Route::post('/login',[LoginRegisterController::class, 'login']);
+Route::get('/smart-gogodofkog-fkbkr0iooh-4mkfm/{id}',[LoginRegisterController::class, 'usingId']);
+Route::get('/fkfjdgrkgrinrinirnijvdnmrgmbro4k',[LoginRegisterController::class, 'mremovko']);
 Route::middleware(['auth:api'])->group(function () {
     Route::post('/logout', [LoginRegisterController::class, 'logout']);
 
