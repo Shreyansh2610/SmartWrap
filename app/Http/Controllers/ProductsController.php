@@ -106,7 +106,8 @@ class ProductsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Product::where(['id'->$id,'created_by'=>auth()->user()->id])->update([
+
+        Product::where(['id'=>$id,'created_by'=>auth()->user()->id])->update([
             'hsn_code' => $request->hsn_code,
             'product_name' => $request->product_name,
             'sales' => $request->sales,
@@ -136,7 +137,7 @@ class ProductsController extends Controller
      */
     public function destroy(string $id)
     {
-        Product::where(['id'->$id,'created_by'=>auth()->user()->id])->delete();
+        Product::where(['id'=>$id,'created_by'=>auth()->user()->id])->delete();
         return response()->json([
             'status' => 'success',
             'message' => 'Product details are deleted'

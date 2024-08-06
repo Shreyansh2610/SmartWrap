@@ -250,7 +250,7 @@ class CompanyRawMaterialsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $companyRawMaterial = CompanyRawMaterial::where(['id'->$id,'created_by'=>auth()->user()->id])->first();
+        $companyRawMaterial = CompanyRawMaterial::where(['id'=>$id,'created_by'=>auth()->user()->id])->first();
 
         if (!$companyRawMaterial) {
             return response()->json(['message' => 'Raw Material not found'], 404);
@@ -348,7 +348,7 @@ class CompanyRawMaterialsController extends Controller
      */
     public function destroy($id)
     {
-        $companyRawMaterial = CompanyRawMaterial::where(['id'->$id,'created_by'=>auth()->user()->id])->first();
+        $companyRawMaterial = CompanyRawMaterial::where(['id'=>$id,'created_by'=>auth()->user()->id])->first();
 
         if (!$companyRawMaterial) {
             return response()->json(['message' => 'Raw Material not found'], 404);
