@@ -298,8 +298,9 @@ class PiReportDomesticController extends Controller
      *     }
      * }
      */
-    public function show(Request $request, $id)
+    public function show(Request $request)
     {
+        dd($request->all());
         $piReports = PiReportDomestic::where('created_by', auth()->user()->id)->where('pi_no', $request->pi_no)
             ->with([
                 'piReportProducts' => function ($q) {

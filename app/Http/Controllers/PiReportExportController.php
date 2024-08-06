@@ -280,7 +280,7 @@ class PiReportExportController extends Controller
      *
      * @group PI Reports Export
      *
-     * @urlParam id string required The ID of the PI Report. Example: 15fjl5-4f45t-5g456y-g5t
+     * @urlParam pi_no string required The ID of the PI Report. Example: PI12334
      *
      * @response 200 {
      *  "status": "success",
@@ -345,9 +345,9 @@ class PiReportExportController extends Controller
      *  }
      * }
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        $piReports = PiReportExport::where('created_by', auth()->user()->id)->where('pi_no', $id)
+        $piReports = PiReportExport::where('created_by', auth()->user()->id)->where('pi_no', $request->pi_no)
             ->with([
                 'piReportProducts' => function ($q) {
                     $q->select(['id', 'pi_report_export_id', 'size', 'type', 'packaging_description', 'rolls_pallet', 'no_of_pallets', 'total_rolls', 'container', 'quanity', 'unit', 'rate_in_usd', 'amount_in_usd']);
