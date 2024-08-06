@@ -300,7 +300,6 @@ class PiReportDomesticController extends Controller
      */
     public function show(Request $request)
     {
-        dd($request->all());
         $piReports = PiReportDomestic::where('created_by', auth()->user()->id)->where('pi_no', $request->pi_no)
             ->with([
                 'piReportProducts' => function ($q) {
@@ -402,9 +401,9 @@ class PiReportDomesticController extends Controller
      *  "message": "PI Report Export updated successfully"
      * }
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        $piReportDomestic = PiReportDomestic::firstOrCreate([
+        $piReportDomestic = PiReportDomestic::where('id',$id)->update([
             'pi_no' => $request->pi_no,
             'date' => $request->date,
             'buyer_order_no' => $request->buyer_order_no,
@@ -441,10 +440,10 @@ class PiReportDomesticController extends Controller
             'notes' => !empty($request->notes) ? json_encode($request->notes) : null,
         ]);
 
-        PiReportDomesticPrduct::where('pi_report_domestic_id', $piReportDomestic->id)->delete();
+        PiReportDomesticPrduct::where('pi_report_domestic_id', $id)->delete();
         foreach ($request->products as $key => $product) {
             PiReportDomesticPrduct::firstOrCreate([
-                'pi_report_domestic_id' => $piReportDomestic['id'],
+                'pi_report_domestic_id' => $id,
                 'description' => $product['description'],
                 'hsn_code' => $product['hsn_code'],
                 'no_of_box' => $product['no_of_box'],
@@ -472,7 +471,7 @@ class PiReportDomesticController extends Controller
      *  "message": "PI Report Domestic deleted successfully"
      * }
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, $id)
     {
         PiReportDomestic::where('id', $id)->delete();
         PiReportDomesticPrduct::where('pi_report_domestic_id', $id)->delete();
