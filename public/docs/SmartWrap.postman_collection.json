@@ -1,0 +1,4159 @@
+{
+	"info": {
+		"_postman_id": "95e8166c-13af-42e3-b910-ec68d2455cbe",
+		"name": "SmartWrap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37128773"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Log in a user.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"smartwrap.admin@gmail.com\",\"password\":\"smartwrap@admin2610\"}"
+						},
+						"url": "{{baseUrl}}/api/login",
+						"description": "This endpoint allows a user to log in by providing their email and password.\nIf the credentials are correct, it returns an access token and user information."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\":\"smartwrap.admin@gmail.com\",\"password\":\"smartwrap@admin2610\"}"
+								},
+								"url": "{{baseUrl}}/api/login",
+								"description": "This endpoint allows a user to log in by providing their email and password.\nIf the credentials are correct, it returns an access token and user information."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"message\": \"User is logged in successfully.\",\n  \"data\": {\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...\",\n    \"user\": {\n      \"id\": 1,\n      \"name\": \"John Doe\",\n      \"email\": \"user@example.com\",\n      ...\n    }\n  }\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\":\"smartwrap.admin@gmail.com\",\"password\":\"smartwrap@admin2610\"}"
+								},
+								"url": "{{baseUrl}}/api/login",
+								"description": "This endpoint allows a user to log in by providing their email and password.\nIf the credentials are correct, it returns an access token and user information."
+							},
+							"code": 401,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"status\": \"failed\",\n  \"message\": \"Invalid credentials\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\":\"smartwrap.admin@gmail.com\",\"password\":\"smartwrap@admin2610\"}"
+								},
+								"url": "{{baseUrl}}/api/login",
+								"description": "This endpoint allows a user to log in by providing their email and password.\nIf the credentials are correct, it returns an access token and user information."
+							},
+							"code": 403,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"status\": \"failed\",\n  \"message\": \"Validation Error!\",\n  \"data\": {\n    \"email\": [\n      \"The email field is required.\"\n    ],\n    \"password\": [\n      \"The password field is required.\"\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Log out the authenticated user.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/logout",
+						"description": "This endpoint logs out the authenticated user by revoking all their tokens."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/logout",
+								"description": "This endpoint logs out the authenticated user by revoking all their tokens."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"message\": \"User is logged out successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bank Management",
+			"item": [
+				{
+					"name": "Get a list of all banks.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/banks"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/banks"
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"banks\": [\n     {\n         \"id\": 1,\n         \"bank_name\": \"Bank of America\",\n         \"bank_address\": \"123 Main St, New York, NY\",\n         \"account_name\": \"John Doe\",\n         \"account_no\": \"1234567890\",\n         \"ifsc_code\": \"BOFAUS3N\",\n         \"swift_code\": \"BOFAUS3NXXX\",\n         \"bank_ad_code_no\": \"AD12345678\",\n         \"iban_no\": \"GB82WEST12345698765432\"\n     },\n     ...\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Store a newly created bank in the database.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"bank_name\":\"Bank of America\",\"bank_address\":\"123 Main St, New York, NY\",\"account_name\":\"John Doe\",\"account_no\":\"1234567890\",\"ifsc_code\":\"BOFAUS3N\",\"swift_code\":\"BOFAUS3NXXX\",\"bank_ad_code_no\":\"AD12345678\",\"iban_no\":\"GB82WEST12345698765432\"}"
+						},
+						"url": "{{baseUrl}}/api/banks"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"bank_name\":\"Bank of America\",\"bank_address\":\"123 Main St, New York, NY\",\"account_name\":\"John Doe\",\"account_no\":\"1234567890\",\"ifsc_code\":\"BOFAUS3N\",\"swift_code\":\"BOFAUS3NXXX\",\"bank_ad_code_no\":\"AD12345678\",\"iban_no\":\"GB82WEST12345698765432\"}"
+								},
+								"url": "{{baseUrl}}/api/banks"
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Bank details is stored\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"bank_name\":\"Bank of America\",\"bank_address\":\"123 Main St, New York, NY\",\"account_name\":\"John Doe\",\"account_no\":\"1234567890\",\"ifsc_code\":\"BOFAUS3N\",\"swift_code\":\"BOFAUS3NXXX\",\"bank_ad_code_no\":\"AD12345678\",\"iban_no\":\"GB82WEST12345698765432\"}"
+								},
+								"url": "{{baseUrl}}/api/banks"
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Company Profile",
+			"item": [
+				{
+					"name": "Get company profile details.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/company-profile-get",
+						"description": "variable is like small case and replace space with underscore. Use \"/upload/file_name\" path for company logo and signature."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/company-profile-get",
+								"description": "variable is like small case and replace space with underscore. Use \"/upload/file_name\" path for company logo and signature."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"comapny_profile\":[\n     {\n         \"id\": 1dkjvskj-dnjdj-xnxskj,\n         \"company_name\": \"Sample Company Ltd.\",\n         \"contact_person_name\":\"Ashish Patel\",\n         \"otp_mobile_phone\":\"08796543210\",\n         \"mobile\":\"08796543210\",\n         \"email\":\"abc@gmail.com\",\n         \"phone_no\":\"7896513\",\n         \"fax_no\":\"08796543210\",\n         \"website\":\"http://www.samplecompany.com\",\n         \"company_register\":\"Register123\",\n         \"address\":\"Rajkot, Gujarat, India - 360004.\",\n         \"portal_address\":\"http://portal.samplecompany.com\",\n         \"company_type\":\"Private Limited\",\n         \"gst_no\":\"GSTIN123456789\",\n         \"lut_no\":\"LUT12345\",\n         \"cin\":\"CIN123456789\",\n         \"gst_circular_no\":\"CIRC123456789\",\n         \"state_code\":\"SC\",\n         \"lei_no\":\"LEI1234567890\",\n         \"field_3\":\"Value3\",\n         \"pan_no\":\"PAN123456789\",\n         \"lut_expiry\":\"2025-12-31\",\n         \"rcmc_no\": \"RCMC123456\",\n         \"date_of_filling_rex_number\": \"2024-06-25\",\n         \"field_1\": \"Value1\",\n         \"field_4\": \"Value4\",\n         \"iec_no\": \"IEC123456789\",\n         \"bin_no\": \"BIN123456\",\n         \"rcmc_expiry\": \"2026-12-31\",\n         \"circular_no\": \"CIRC789456123\",\n         \"aeo_no\": \"AEO123456\",\n         \"field_2\": \"Value2\",\n         \"field_5\": \"Value5\",\n         \"pre_carriage_by\": \"Road\",\n         \"state_of_origin\": \"Sample State\",\n         \"delivery_period\": \"30 days\",\n         \"terms_of_delivery\": \"FOB\",\n         \"place_of_receipt\": \"Sample Port\",\n         \"part_of_loading\": \"Loading Dock A\",\n         \"partial_shipement\": \"No\",\n         \"district_of_origin\": \"Sample District\",\n         \"trans_shipement\": \"No\",\n         \"variety_of_quality\": \"Premium\",\n         \"company_logo\": \"sample_logo.png\",\n         \"signature_upload\": \"signature.png\",\n         \"range\": \"Range 1\",\n         \"division\": \"Division A\",\n         \"commissionerate\": \"Commissionerate 1\",\n         \"location_code\": \"LOC123\",\n         \"annexure_remark\": \"N/A\",\n         \"shipper_name\": \"Sample Shipper\",\n         \"method_used_for_vgm\": \"Weighbridge\",\n         \"weighbridge_slip_no\": \"WS123456\",\n         \"bank_id\":\"fbdj54-fvd-g45bbf-5tgr4\",\n     },\n]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update company profile details.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1dkjvskj-dnjdj-xnxskj",
+									"description": "The unique identifier for the company profile.",
+									"type": "text"
+								},
+								{
+									"key": "company_name",
+									"value": "Sample Company Ltd.",
+									"description": "The name of the company.",
+									"type": "text"
+								},
+								{
+									"key": "contact_person_name",
+									"value": "Ashish Patel",
+									"description": "The name of the contact person.",
+									"type": "text"
+								},
+								{
+									"key": "otp_mobile_phone",
+									"value": "08796543210",
+									"description": "The OTP mobile phone number.",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "08796543210",
+									"description": "The mobile phone number.",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "abc@gmail.com",
+									"description": "The email address.",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "7896513",
+									"description": "The phone number.",
+									"type": "text"
+								},
+								{
+									"key": "fax_no",
+									"value": "08796543210",
+									"description": "The fax number.",
+									"type": "text"
+								},
+								{
+									"key": "website",
+									"value": "http://www.samplecompany.com",
+									"description": "The company website URL.",
+									"type": "text"
+								},
+								{
+									"key": "company_register",
+									"value": "Register123",
+									"description": "The company registration number.",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rajkot, Gujarat, India - 360004.",
+									"description": "The company address.",
+									"type": "text"
+								},
+								{
+									"key": "portal_address",
+									"value": "http://portal.samplecompany.com",
+									"description": "The company portal address.",
+									"type": "text"
+								},
+								{
+									"key": "company_type",
+									"value": "Private Limited",
+									"description": "The type of the company.",
+									"type": "text"
+								},
+								{
+									"key": "gst_no",
+									"value": "GSTIN123456789",
+									"description": "The GST number.",
+									"type": "text"
+								},
+								{
+									"key": "lut_no",
+									"value": "LUT12345",
+									"description": "The LUT number.",
+									"type": "text"
+								},
+								{
+									"key": "cin",
+									"value": "CIN123456789",
+									"description": "The CIN number.",
+									"type": "text"
+								},
+								{
+									"key": "gst_circular_no",
+									"value": "CIRC123456789",
+									"description": "The GST circular number.",
+									"type": "text"
+								},
+								{
+									"key": "state_code",
+									"value": "SC",
+									"description": "The state code.",
+									"type": "text"
+								},
+								{
+									"key": "lei_no",
+									"value": "LEI1234567890",
+									"description": "The LEI number.",
+									"type": "text"
+								},
+								{
+									"key": "field_3",
+									"value": "Value3",
+									"description": "Additional field 3.",
+									"type": "text"
+								},
+								{
+									"key": "pan_no",
+									"value": "PAN123456789",
+									"description": "The PAN number.",
+									"type": "text"
+								},
+								{
+									"key": "lut_expiry",
+									"value": "2025-12-31",
+									"description": "The LUT expiry date.",
+									"type": "text"
+								},
+								{
+									"key": "rcmc_no",
+									"value": "RCMC123456",
+									"description": "The RCMC number.",
+									"type": "text"
+								},
+								{
+									"key": "date_of_filling_rex_number",
+									"value": "2024-06-25",
+									"description": "The date of filling REX number.",
+									"type": "text"
+								},
+								{
+									"key": "field_1",
+									"value": "Value1",
+									"description": "Additional field 1.",
+									"type": "text"
+								},
+								{
+									"key": "field_4",
+									"value": "Value4",
+									"description": "Additional field 4.",
+									"type": "text"
+								},
+								{
+									"key": "iec_no",
+									"value": "IEC123456789",
+									"description": "The IEC number.",
+									"type": "text"
+								},
+								{
+									"key": "bin_no",
+									"value": "BIN123456",
+									"description": "The BIN number.",
+									"type": "text"
+								},
+								{
+									"key": "rcmc_expiry",
+									"value": "2026-12-31",
+									"description": "The RCMC expiry date.",
+									"type": "text"
+								},
+								{
+									"key": "circular_no",
+									"value": "CIRC789456123",
+									"description": "The circular number.",
+									"type": "text"
+								},
+								{
+									"key": "aeo_no",
+									"value": "AEO123456",
+									"description": "The AEO number.",
+									"type": "text"
+								},
+								{
+									"key": "field_2",
+									"value": "Value2",
+									"description": "Additional field 2.",
+									"type": "text"
+								},
+								{
+									"key": "field_5",
+									"value": "Value5",
+									"description": "Additional field 5.",
+									"type": "text"
+								},
+								{
+									"key": "pre_carriage_by",
+									"value": "Road",
+									"description": "The mode of pre-carriage.",
+									"type": "text"
+								},
+								{
+									"key": "state_of_origin",
+									"value": "Sample State",
+									"description": "The state of origin.",
+									"type": "text"
+								},
+								{
+									"key": "delivery_period",
+									"value": "30 days",
+									"description": "The delivery period.",
+									"type": "text"
+								},
+								{
+									"key": "terms_of_delivery",
+									"value": "FOB",
+									"description": "The terms of delivery.",
+									"type": "text"
+								},
+								{
+									"key": "place_of_receipt",
+									"value": "Sample Port",
+									"description": "The place of receipt.",
+									"type": "text"
+								},
+								{
+									"key": "part_of_loading",
+									"value": "Loading Dock A",
+									"description": "The part of loading.",
+									"type": "text"
+								},
+								{
+									"key": "partial_shipement",
+									"value": "No",
+									"description": "Indicates if partial shipment is allowed.",
+									"type": "text"
+								},
+								{
+									"key": "district_of_origin",
+									"value": "Sample District",
+									"description": "The district of origin.",
+									"type": "text"
+								},
+								{
+									"key": "trans_shipement",
+									"value": "No",
+									"description": "Indicates if trans-shipment is allowed.",
+									"type": "text"
+								},
+								{
+									"key": "variety_of_quality",
+									"value": "Premium",
+									"description": "The variety of quality.",
+									"type": "text"
+								},
+								{
+									"key": "range",
+									"value": "Range 1",
+									"description": "The range.",
+									"type": "text"
+								},
+								{
+									"key": "division",
+									"value": "Division A",
+									"description": "The division.",
+									"type": "text"
+								},
+								{
+									"key": "commissionerate",
+									"value": "Commissionerate 1",
+									"description": "The commissionerate.",
+									"type": "text"
+								},
+								{
+									"key": "location_code",
+									"value": "LOC123",
+									"description": "The location code.",
+									"type": "text"
+								},
+								{
+									"key": "annexure_remark",
+									"value": "N/A",
+									"description": "The annexure remark.",
+									"type": "text"
+								},
+								{
+									"key": "shipper_name",
+									"value": "Sample Shipper",
+									"description": "The name of the shipper.",
+									"type": "text"
+								},
+								{
+									"key": "method_used_for_vgm",
+									"value": "Weighbridge",
+									"description": "The method used for VGM.",
+									"type": "text"
+								},
+								{
+									"key": "weighbridge_slip_no",
+									"value": "WS123456",
+									"description": "The weighbridge slip number.",
+									"type": "text"
+								},
+								{
+									"key": "bank_id",
+									"value": "fbdj54-fvd-g45bbf-5tgr4",
+									"description": "The bank identifier.",
+									"type": "text"
+								},
+								{
+									"key": "export_under_detail_1",
+									"value": "Export Detail 1",
+									"description": "Export Detail 1.",
+									"type": "text"
+								},
+								{
+									"key": "export_under_detail_2",
+									"value": "Export Detail 2",
+									"description": "Export Detail 2.",
+									"type": "text"
+								},
+								{
+									"key": "export_remarks",
+									"value": "Export Remarks Example",
+									"description": "Export Remarks.",
+									"type": "text"
+								},
+								{
+									"key": "company_logo",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "signature_upload",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{baseUrl}}/api/company-profile",
+						"description": "This endpoint allows you to update the company profile details. The variables are in snake_case and should be provided in the request body. company_logo and signature_upload both send direct file only, don't refer example for both."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1dkjvskj-dnjdj-xnxskj",
+											"description": "The unique identifier for the company profile.",
+											"type": "text"
+										},
+										{
+											"key": "company_name",
+											"value": "Sample Company Ltd.",
+											"description": "The name of the company.",
+											"type": "text"
+										},
+										{
+											"key": "contact_person_name",
+											"value": "Ashish Patel",
+											"description": "The name of the contact person.",
+											"type": "text"
+										},
+										{
+											"key": "otp_mobile_phone",
+											"value": "08796543210",
+											"description": "The OTP mobile phone number.",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "08796543210",
+											"description": "The mobile phone number.",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "abc@gmail.com",
+											"description": "The email address.",
+											"type": "text"
+										},
+										{
+											"key": "phone_no",
+											"value": "7896513",
+											"description": "The phone number.",
+											"type": "text"
+										},
+										{
+											"key": "fax_no",
+											"value": "08796543210",
+											"description": "The fax number.",
+											"type": "text"
+										},
+										{
+											"key": "website",
+											"value": "http://www.samplecompany.com",
+											"description": "The company website URL.",
+											"type": "text"
+										},
+										{
+											"key": "company_register",
+											"value": "Register123",
+											"description": "The company registration number.",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Rajkot, Gujarat, India - 360004.",
+											"description": "The company address.",
+											"type": "text"
+										},
+										{
+											"key": "portal_address",
+											"value": "http://portal.samplecompany.com",
+											"description": "The company portal address.",
+											"type": "text"
+										},
+										{
+											"key": "company_type",
+											"value": "Private Limited",
+											"description": "The type of the company.",
+											"type": "text"
+										},
+										{
+											"key": "gst_no",
+											"value": "GSTIN123456789",
+											"description": "The GST number.",
+											"type": "text"
+										},
+										{
+											"key": "lut_no",
+											"value": "LUT12345",
+											"description": "The LUT number.",
+											"type": "text"
+										},
+										{
+											"key": "cin",
+											"value": "CIN123456789",
+											"description": "The CIN number.",
+											"type": "text"
+										},
+										{
+											"key": "gst_circular_no",
+											"value": "CIRC123456789",
+											"description": "The GST circular number.",
+											"type": "text"
+										},
+										{
+											"key": "state_code",
+											"value": "SC",
+											"description": "The state code.",
+											"type": "text"
+										},
+										{
+											"key": "lei_no",
+											"value": "LEI1234567890",
+											"description": "The LEI number.",
+											"type": "text"
+										},
+										{
+											"key": "field_3",
+											"value": "Value3",
+											"description": "Additional field 3.",
+											"type": "text"
+										},
+										{
+											"key": "pan_no",
+											"value": "PAN123456789",
+											"description": "The PAN number.",
+											"type": "text"
+										},
+										{
+											"key": "lut_expiry",
+											"value": "2025-12-31",
+											"description": "The LUT expiry date.",
+											"type": "text"
+										},
+										{
+											"key": "rcmc_no",
+											"value": "RCMC123456",
+											"description": "The RCMC number.",
+											"type": "text"
+										},
+										{
+											"key": "date_of_filling_rex_number",
+											"value": "2024-06-25",
+											"description": "The date of filling REX number.",
+											"type": "text"
+										},
+										{
+											"key": "field_1",
+											"value": "Value1",
+											"description": "Additional field 1.",
+											"type": "text"
+										},
+										{
+											"key": "field_4",
+											"value": "Value4",
+											"description": "Additional field 4.",
+											"type": "text"
+										},
+										{
+											"key": "iec_no",
+											"value": "IEC123456789",
+											"description": "The IEC number.",
+											"type": "text"
+										},
+										{
+											"key": "bin_no",
+											"value": "BIN123456",
+											"description": "The BIN number.",
+											"type": "text"
+										},
+										{
+											"key": "rcmc_expiry",
+											"value": "2026-12-31",
+											"description": "The RCMC expiry date.",
+											"type": "text"
+										},
+										{
+											"key": "circular_no",
+											"value": "CIRC789456123",
+											"description": "The circular number.",
+											"type": "text"
+										},
+										{
+											"key": "aeo_no",
+											"value": "AEO123456",
+											"description": "The AEO number.",
+											"type": "text"
+										},
+										{
+											"key": "field_2",
+											"value": "Value2",
+											"description": "Additional field 2.",
+											"type": "text"
+										},
+										{
+											"key": "field_5",
+											"value": "Value5",
+											"description": "Additional field 5.",
+											"type": "text"
+										},
+										{
+											"key": "pre_carriage_by",
+											"value": "Road",
+											"description": "The mode of pre-carriage.",
+											"type": "text"
+										},
+										{
+											"key": "state_of_origin",
+											"value": "Sample State",
+											"description": "The state of origin.",
+											"type": "text"
+										},
+										{
+											"key": "delivery_period",
+											"value": "30 days",
+											"description": "The delivery period.",
+											"type": "text"
+										},
+										{
+											"key": "terms_of_delivery",
+											"value": "FOB",
+											"description": "The terms of delivery.",
+											"type": "text"
+										},
+										{
+											"key": "place_of_receipt",
+											"value": "Sample Port",
+											"description": "The place of receipt.",
+											"type": "text"
+										},
+										{
+											"key": "part_of_loading",
+											"value": "Loading Dock A",
+											"description": "The part of loading.",
+											"type": "text"
+										},
+										{
+											"key": "partial_shipement",
+											"value": "No",
+											"description": "Indicates if partial shipment is allowed.",
+											"type": "text"
+										},
+										{
+											"key": "district_of_origin",
+											"value": "Sample District",
+											"description": "The district of origin.",
+											"type": "text"
+										},
+										{
+											"key": "trans_shipement",
+											"value": "No",
+											"description": "Indicates if trans-shipment is allowed.",
+											"type": "text"
+										},
+										{
+											"key": "variety_of_quality",
+											"value": "Premium",
+											"description": "The variety of quality.",
+											"type": "text"
+										},
+										{
+											"key": "range",
+											"value": "Range 1",
+											"description": "The range.",
+											"type": "text"
+										},
+										{
+											"key": "division",
+											"value": "Division A",
+											"description": "The division.",
+											"type": "text"
+										},
+										{
+											"key": "commissionerate",
+											"value": "Commissionerate 1",
+											"description": "The commissionerate.",
+											"type": "text"
+										},
+										{
+											"key": "location_code",
+											"value": "LOC123",
+											"description": "The location code.",
+											"type": "text"
+										},
+										{
+											"key": "annexure_remark",
+											"value": "N/A",
+											"description": "The annexure remark.",
+											"type": "text"
+										},
+										{
+											"key": "shipper_name",
+											"value": "Sample Shipper",
+											"description": "The name of the shipper.",
+											"type": "text"
+										},
+										{
+											"key": "method_used_for_vgm",
+											"value": "Weighbridge",
+											"description": "The method used for VGM.",
+											"type": "text"
+										},
+										{
+											"key": "weighbridge_slip_no",
+											"value": "WS123456",
+											"description": "The weighbridge slip number.",
+											"type": "text"
+										},
+										{
+											"key": "bank_id",
+											"value": "fbdj54-fvd-g45bbf-5tgr4",
+											"description": "The bank identifier.",
+											"type": "text"
+										},
+										{
+											"key": "export_under_detail_1",
+											"value": "Export Detail 1",
+											"description": "Export Detail 1.",
+											"type": "text"
+										},
+										{
+											"key": "export_under_detail_2",
+											"value": "Export Detail 2",
+											"description": "Export Detail 2.",
+											"type": "text"
+										},
+										{
+											"key": "export_remarks",
+											"value": "Export Remarks Example",
+											"description": "Export Remarks.",
+											"type": "text"
+										},
+										{
+											"key": "company_logo",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "signature_upload",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{baseUrl}}/api/company-profile",
+								"description": "This endpoint allows you to update the company profile details. The variables are in snake_case and should be provided in the request body. company_logo and signature_upload both send direct file only, don't refer example for both."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n     \"status\":\"success\",\n     \"message\":\"Company Profile updated successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Company Raw Materials",
+			"item": [
+				{
+					"name": "Raw Materials list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/company-raw-material",
+						"description": "Display a listing of the company raw materials.\nThis endpoint returns a list of all company raw materials."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/company-raw-material",
+								"description": "Display a listing of the company raw materials.\nThis endpoint returns a list of all company raw materials."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": \"1dfd-4tfv-4gdgr\",\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 20,\n         \"total_bag\": 200,\n         \"weight_per_bag\": 50,\n         \"total_weight\": 10000,\n         \"supplier_name\": \"Supplier A\",\n         \"purchase_order_no\": \"PO12345\",\n         \"sales_order_no\": \"SO12345\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty\": 100,\n         \"weight_per_pcs\": 10,\n         \"payment_terms\": \"Net 30\",\n         \"invoice_date\": \"2023-06-25\",\n         \"status\": \"Received\",\n         \"received_date\": \"2023-06-26\"\n     },\n     ...\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Raw Material",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+						},
+						"url": "{{baseUrl}}/api/company-raw-material",
+						"description": "Store a newly created company raw material in storage.\nThis endpoint allows you to create a new company raw material."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+								},
+								"url": "{{baseUrl}}/api/company-raw-material",
+								"description": "Store a newly created company raw material in storage.\nThis endpoint allows you to create a new company raw material."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Materials are stored\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+								},
+								"url": "{{baseUrl}}/api/company-raw-material",
+								"description": "Store a newly created company raw material in storage.\nThis endpoint allows you to create a new company raw material."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"],\n     \"supplier_name\": [\"Supplier Name is required\"],\n     \"purchase_order_no\": [\"Purchase Order No is required\"],\n     \"sales_order_no\": [\"Sales Order No is required\"],\n     \"description_of_goods\": [\"Description Of Goods is required\"],\n     \"qty\": [\"Quantity is required\"],\n     \"weight_per_pcs\": [\"Weight Per Piece is required\"],\n     \"payment_terms\": [\"Payment Terms are required\"],\n     \"invoice_date\": [\"Invoice Date is required\"],\n     \"status\": [\"Status is required\"],\n     \"received_date\": [\"Received Date is required\"]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Raw Material",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/company-raw-material/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"company-raw-material",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "The ID of the company raw material to update."
+								}
+							]
+						},
+						"description": "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/company-raw-material/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"company-raw-material",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the company raw material to update."
+										}
+									]
+								},
+								"description": "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Material updated successfully\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/company-raw-material/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"company-raw-material",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the company raw material to update."
+										}
+									]
+								},
+								"description": "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information."
+							},
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"message\": \"Raw Material not found\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"company_name\":\"Company A\",\"total_pallet\":\"10\",\"bag_per_pallet\":\"20\",\"total_bag\":\"200\",\"weight_per_bag\":\"50\",\"total_weight\":\"10000\",\"supplier_name\":\"Supplier A\",\"purchase_order_no\":\"PO12345\",\"sales_order_no\":\"SO12345\",\"description_of_goods\":\"Description of goods\",\"qty\":\"100\",\"weight_per_pcs\":\"10\",\"payment_terms\":\"Net 30\",\"invoice_date\":\"2023-06-25\",\"status\":\"Received\",\"received_date\":\"2023-06-26\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/company-raw-material/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"company-raw-material",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the company raw material to update."
+										}
+									]
+								},
+								"description": "Update the specified company raw material in storage.\nThis endpoint allows you to update an existing company raw material by providing its ID and the updated information."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"errors\": {\n     \"company_name\": [\"Company Name is required\"],\n     \"total_pallet\": [\"Total Pallet is required\", \"Total Pallet must be numeric\"],\n     \"bag_per_pallet\": [\"Bag Per Pallet is required\", \"Bag Per Pallet must be numeric\"],\n     \"total_bag\": [\"Total Bag is required\", \"Total Bag must be numeric\"],\n     \"weight_per_bag\": [\"Weight Per Bag is required\", \"Weight Per Bag must be numeric\"],\n     \"total_weight\": [\"Total Weight is required\", \"Total Weight must be numeric\"],\n     \"supplier_name\": [\"Supplier Name is required\"],\n     \"purchase_order_no\": [\"Purchase Order No is required\"],\n     \"sales_order_no\": [\"Sales Order No is required\"],\n     \"description_of_goods\": [\"Description Of Goods is required\"],\n     \"qty\": [\"Quantity is required\"],\n     \"weight_per_pcs\": [\"Weight Per Piece is required\"],\n     \"payment_terms\": [\"Payment Terms are required\"],\n     \"invoice_date\": [\"Invoice Date is required\"],\n     \"status\": [\"Status is required\"],\n     \"received_date\": [\"Received Date is required\"]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Raw Material",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/company-raw-material/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"company-raw-material",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "The ID of the company raw material to delete."
+								}
+							]
+						},
+						"description": "Remove the specified company raw material from storage.\nThis endpoint allows you to delete a company raw material by providing its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/company-raw-material/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"company-raw-material",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the company raw material to delete."
+										}
+									]
+								},
+								"description": "Remove the specified company raw material from storage.\nThis endpoint allows you to delete a company raw material by providing its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Company Raw Material deleted successfully\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/company-raw-material/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"company-raw-material",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the company raw material to delete."
+										}
+									]
+								},
+								"description": "Remove the specified company raw material from storage.\nThis endpoint allows you to delete a company raw material by providing its ID."
+							},
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"message\": \"Raw Material not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/company-raw-material-calculation",
+						"description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/company-raw-material-calculation",
+								"description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 50,\n         \"total_bag\": 500,\n         \"weight_per_bag\": 20,\n         \"total_weight\": 10000\n     }\n ],\n \"totalPalletCount\": 10,\n \"totalBagCount\": 500,\n \"totalBagPerPalletCount\": 50,\n \"totalWeightPerBagCount\": 20,\n \"totalWeightCount\": 10000\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/company-raw-material-calculation",
+								"description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"message\": \"Invalid date format\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Calculate the totals for pallets, bags, bags per pallet, weight per bag, and total weight.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/finish-goods-calculation",
+						"description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/finish-goods-calculation",
+								"description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"company_raw_materials\": [\n     {\n         \"id\": 1,\n         \"company_name\": \"Company A\",\n         \"total_pallet\": 10,\n         \"bag_per_pallet\": 50,\n         \"total_bag\": 500,\n         \"weight_per_bag\": 20,\n         \"total_weight\": 10000\n     }\n ],\n \"totalPalletCount\": 10,\n \"totalBagCount\": 500,\n \"totalBagPerPalletCount\": 50,\n \"totalWeightPerBagCount\": 20,\n \"totalWeightCount\": 10000\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/finish-goods-calculation",
+								"description": "This endpoint calculates the sum of various properties of company raw materials filtered by a specific date.\nThe properties include total pallet count, total bag count, total bags per pallet count, total weight per bag count, and total weight count."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"message\": \"Invalid date format\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Endpoints",
+			"item": [
+				{
+					"name": "GET api/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/login"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/login"
+							},
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "59"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\"type\":\"Unauthenticated\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Finish Goods",
+			"item": [
+				{
+					"name": "Display a listing of the finish goods.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/finish-goods",
+						"description": "This endpoint returns a list of all finish goods with their associated product and size details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/finish-goods",
+								"description": "This endpoint returns a list of all finish goods with their associated product and size details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"product_id\": \"1g5l67-54yb6-8u567-65g\",\n         \"size_id\": \"1g5l67-54yb6-8u567-65g5\",\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"order_purchase_date\": \"2023-06-25\",\n         \"good_details\": \"Details about the goods\",\n         \"company\": \"Company A\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty_in_storage_start\": 50,\n         \"qty_issued\": 10,\n         \"qty_in_storage_end\": 40,\n         \"qty_returned\": 5,\n         \"wastage\": 2,\n         \"actual_qty_consumed\": 8,\n         \"product\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g\",\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g5\",\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Store a newly created finish good in storage.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+						},
+						"url": "{{baseUrl}}/api/finish-goods",
+						"description": "This endpoint allows you to create a new finish good."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+								},
+								"url": "{{baseUrl}}/api/finish-goods",
+								"description": "This endpoint allows you to create a new finish good."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is saved\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+								},
+								"url": "{{baseUrl}}/api/finish-goods",
+								"description": "This endpoint allows you to create a new finish good."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update the specified finish good in storage.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/finish-goods/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"finish-goods",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "15",
+									"description": "The ID of the finish good."
+								}
+							]
+						},
+						"description": "This endpoint allows you to update an existing finish good."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/finish-goods/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"finish-goods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15",
+											"description": "The ID of the finish good."
+										}
+									]
+								},
+								"description": "This endpoint allows you to update an existing finish good."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is updated\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/finish-goods/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"finish-goods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15",
+											"description": "The ID of the finish good."
+										}
+									]
+								},
+								"description": "This endpoint allows you to update an existing finish good."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove the specified finish good from storage.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/finish-goods/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"finish-goods",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "15",
+									"description": "The ID of the finish good."
+								}
+							]
+						},
+						"description": "This endpoint allows you to delete a finish good by its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/finish-goods/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"finish-goods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15",
+											"description": "The ID of the finish good."
+										}
+									]
+								},
+								"description": "This endpoint allows you to delete a finish good by its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Finish Goods is deleted\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/finish-goods/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"finish-goods",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15",
+											"description": "The ID of the finish good."
+										}
+									]
+								},
+								"description": "This endpoint allows you to delete a finish good by its ID."
+							},
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"message\": \"Finish Goods not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PI Reports Domestic",
+			"item": [
+				{
+					"name": "Display the get all PI Report Domestic resource.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/pi-reports-domestic"
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/pi-reports-domestic"
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"piReportsExport\": [\n     {\n        \"id\": 1xv5-545g7-5tgr,\n        \"pi_no\": \"PI001\",\n        \"date\": \"2023-01-01\",\n        \"buyer_order_no\": \"BO123\",\n        \"buyer_order_date\": \"2022-12-15\",\n        \"supplier_name\": \"Supplier Inc.\",\n        \"supplier_address\": \"123 Supplier St.\",\n        \"supplier_pan\": \"ABCDE1234F\",\n        \"supplier_gst\": \"29ABCDE1234F1Z5\",\n        \"exporter_gst\": \"27ABCDE1234F1Z1\",\n        \"supplier_mail\": \"supplier@example.com\",\n        \"supplier_contact_person\": \"John Doe\",\n        \"supplier_contact_no\": \"1234567890\",\n        \"consignee_name\": \"Consignee Ltd.\",\n        \"consignee_address\": \"456 Consignee Rd.\",\n        \"consignee_pan\": \"FGHIJ5678K\",\n        \"consignee_iec\": \"0306060070\",\n        \"consignee_gst\": \"24FGHIJ5678K1Z2\",\n        \"consignee_mail\": \"consignee@example.com\",\n        \"consignee_contact_person\": \"Jane Smith\",\n        \"consignee_contact_no\": \"0987654321\",\n        \"igst\": 18,\n        \"sgst\": 9,\n        \"cgst\": 9,\n        \"total_fob_value\": 10000.00,\n        \"amount_in_words\": \"Ten Thousand Only\",\n        \"bank_name\": \"Bank of Export\",\n        \"bank_address\": \"789 Bank St.\",\n        \"bank_account_no\": \"123456789012\",\n        \"bank_ifsc_code\": \"BKID0001234\",\n        \"bank_ad_code\": \"AD1234567890\",\n        \"bank_swift_code\": \"BKIDINBBXXX\",\n        \"payment_terms\": \"Net 30 days\",\n        \"payment_delivery_time\": \"2024-08-25 14:16:56\",\n        \"payment_delivery_terms\": \"FOB\",\n        \"notes\": \"Urgent delivery required.\",\n        \"piReportProducts\": [\n            {\n                \"id\": 1,\n                \"pi_report_domestic_id\": 1,\n                \"description\": \"Product A\",\n                \"hsn_code\": \"1001\",\n                \"no_of_box\": 10,\n                \"quantity\": 100,\n                \"unit\": 5,  // Number of units\n                \"rate\": 100.00,\n                \"amount\": 10000.00\n            }\n        ]\n    },\n     ...\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Store the specified PI Report.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pi_no\":\"PI00dgdfbf\",\"date\":\"2023-01-01\",\"buyer_order_no\":\"BO123\",\"buyer_order_date\":\"2022-12-15\",\"supplier_name\":\"Supplier Inc.\",\"supplier_address\":\"123 Supplier St.\",\"supplier_pan\":\"ABCDE1234F\",\"supplier_gst\":\"29ABCDE1234F1Z5\",\"supplier_mail\":\"supplier@example.com\",\"supplier_contact_person\":\"John Doe\",\"supplier_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee Ltd.\",\"consignee_address\":\"456 Consignee Rd.\",\"consignee_pan\":\"FGHIJ5678K\",\"consignee_iec\":\"0306060070\",\"consignee_gst\":\"24FGHIJ5678K1Z2\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Smith\",\"consignee_contact_no\":\"0987654321\",\"igst\":\"18\",\"sgst\":\"9\",\"cgst\":\"9\",\"total_fob_value\":\"10000.00\",\"amount_in_words\":\"Ten Thousand Only\",\"bank_name\":\"Bank of Export\",\"bank_address\":\"789 Bank St.\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"BKID0001234\",\"bank_ad_code\":\"AD1234567890\",\"bank_swift_code\":\"BKIDINBBXXX\",\"payment_terms\":\"Net 30 days\",\"payment_delivery_time\":\"2024-05-11 14:15:03\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Urgent delivery required.\",\"products\":[{\"description\":\"Product A\",\"hsn_code\":\"1001\",\"no_of_box\":10,\"quantity\":100,\"unit\":5,\"rate_in_usd\":100,\"amount\":10000}]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-domestic",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-domestic"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "15fjl5-4f45t-5g456y-g5t",
+									"description": "The ID of the PI Report."
+								}
+							]
+						},
+						"description": "This endpoint stores the details of a specific PI Report."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"pi_no\":\"PI00dgdfbf\",\"date\":\"2023-01-01\",\"buyer_order_no\":\"BO123\",\"buyer_order_date\":\"2022-12-15\",\"supplier_name\":\"Supplier Inc.\",\"supplier_address\":\"123 Supplier St.\",\"supplier_pan\":\"ABCDE1234F\",\"supplier_gst\":\"29ABCDE1234F1Z5\",\"supplier_mail\":\"supplier@example.com\",\"supplier_contact_person\":\"John Doe\",\"supplier_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee Ltd.\",\"consignee_address\":\"456 Consignee Rd.\",\"consignee_pan\":\"FGHIJ5678K\",\"consignee_iec\":\"0306060070\",\"consignee_gst\":\"24FGHIJ5678K1Z2\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Smith\",\"consignee_contact_no\":\"0987654321\",\"igst\":\"18\",\"sgst\":\"9\",\"cgst\":\"9\",\"total_fob_value\":\"10000.00\",\"amount_in_words\":\"Ten Thousand Only\",\"bank_name\":\"Bank of Export\",\"bank_address\":\"789 Bank St.\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"BKID0001234\",\"bank_ad_code\":\"AD1234567890\",\"bank_swift_code\":\"BKIDINBBXXX\",\"payment_terms\":\"Net 30 days\",\"payment_delivery_time\":\"2024-05-11 14:15:03\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Urgent delivery required.\",\"products\":[{\"description\":\"Product A\",\"hsn_code\":\"1001\",\"no_of_box\":10,\"quantity\":100,\"unit\":5,\"rate_in_usd\":100,\"amount\":10000}]}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-domestic",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-domestic"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15fjl5-4f45t-5g456y-g5t",
+											"description": "The ID of the PI Report."
+										}
+									]
+								},
+								"description": "This endpoint stores the details of a specific PI Report."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update the specified PI Report.",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pi_no\":\"PI00SVB1\",\"date\":\"2023-01-01\",\"buyer_order_no\":\"BO123\",\"buyer_order_date\":\"2022-12-15\",\"supplier_name\":\"Supplier Inc.\",\"supplier_address\":\"123 Supplier St.\",\"supplier_pan\":\"ABCDE1234F\",\"supplier_gst\":\"29ABCDE1234F1Z5\",\"supplier_mail\":\"supplier@example.com\",\"supplier_contact_person\":\"John Doe\",\"supplier_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee Ltd.\",\"consignee_address\":\"456 Consignee Rd.\",\"consignee_pan\":\"FGHIJ5678K\",\"consignee_iec\":\"0306060070\",\"consignee_gst\":\"24FGHIJ5678K1Z2\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Smith\",\"consignee_contact_no\":\"0987654321\",\"igst\":\"18\",\"sgst\":\"9\",\"cgst\":\"9\",\"total_fob_value\":\"10000.00\",\"amount_in_words\":\"Ten Thousand Only\",\"bank_name\":\"Bank of Export\",\"bank_address\":\"789 Bank St.\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"BKID0001234\",\"bank_ad_code\":\"AD1234567890\",\"bank_swift_code\":\"BKIDINBBXXX\",\"payment_terms\":\"Net 30 days\",\"payment_delivery_time\":\"2024-05-11 14:15:03\",\"payment_delivery_terms\":\"FOB22312432\",\"notes\":\"Urgent delivery required.\",\"products\":[{\"description\":\"Product ABCBVGFSDFGS\",\"hsn_code\":\"1001\",\"no_of_box\":10,\"quantity\":100,\"unit\":5,\"rate_in_usd\":100,\"amount\":10000}]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-domestic/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-domestic",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "23689d18-e5cd-4d11-967c-7b1cd65e82c6",
+									"description": "The ID of the PI Report."
+								}
+							]
+						},
+						"description": "This endpoint updates the details of a specific PI Report by its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"pi_no\":\"PI00SVB1\",\"date\":\"2023-01-01\",\"buyer_order_no\":\"BO123\",\"buyer_order_date\":\"2022-12-15\",\"supplier_name\":\"Supplier Inc.\",\"supplier_address\":\"123 Supplier St.\",\"supplier_pan\":\"ABCDE1234F\",\"supplier_gst\":\"29ABCDE1234F1Z5\",\"supplier_mail\":\"supplier@example.com\",\"supplier_contact_person\":\"John Doe\",\"supplier_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee Ltd.\",\"consignee_address\":\"456 Consignee Rd.\",\"consignee_pan\":\"FGHIJ5678K\",\"consignee_iec\":\"0306060070\",\"consignee_gst\":\"24FGHIJ5678K1Z2\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Smith\",\"consignee_contact_no\":\"0987654321\",\"igst\":\"18\",\"sgst\":\"9\",\"cgst\":\"9\",\"total_fob_value\":\"10000.00\",\"amount_in_words\":\"Ten Thousand Only\",\"bank_name\":\"Bank of Export\",\"bank_address\":\"789 Bank St.\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"BKID0001234\",\"bank_ad_code\":\"AD1234567890\",\"bank_swift_code\":\"BKIDINBBXXX\",\"payment_terms\":\"Net 30 days\",\"payment_delivery_time\":\"2024-05-11 14:15:03\",\"payment_delivery_terms\":\"FOB22312432\",\"notes\":\"Urgent delivery required.\",\"products\":[{\"description\":\"Product ABCBVGFSDFGS\",\"hsn_code\":\"1001\",\"no_of_box\":10,\"quantity\":100,\"unit\":5,\"rate_in_usd\":100,\"amount\":10000}]}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-domestic/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-domestic",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "23689d18-e5cd-4d11-967c-7b1cd65e82c6",
+											"description": "The ID of the PI Report."
+										}
+									]
+								},
+								"description": "This endpoint updates the details of a specific PI Report by its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Display the specified PI Report Domestic resource.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pi_no\":\"PI00SVB1\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-domestic-get?pi_no=SMRTWP/2024-2025-1-55dsfda",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-domestic-get"
+							],
+							"query": [
+								{
+									"key": "pi_no",
+									"value": "SMRTWP/2024-2025-1-55dsfda"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"pi_no\":\"PI00SVB1\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-domestic-get?pi_no=SMRTWP/2024-2025-1-55dsfda",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-domestic-get"
+									],
+									"query": [
+										{
+											"key": "pi_no",
+											"value": "SMRTWP/2024-2025-1-55dsfda"
+										}
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"piReportsExport\": {\n        \"id\": 1xv5-545g7-5tgr,\n        \"pi_no\": \"PI001\",\n        \"date\": \"2023-01-01\",\n        \"buyer_order_no\": \"BO123\",\n        \"buyer_order_date\": \"2022-12-15\",\n        \"supplier_name\": \"Supplier Inc.\",\n        \"supplier_address\": \"123 Supplier St.\",\n        \"supplier_pan\": \"ABCDE1234F\",\n        \"supplier_gst\": \"29ABCDE1234F1Z5\",\n        \"exporter_gst\": \"27ABCDE1234F1Z1\",\n        \"supplier_mail\": \"supplier@example.com\",\n        \"supplier_contact_person\": \"John Doe\",\n        \"supplier_contact_no\": \"1234567890\",\n        \"consignee_name\": \"Consignee Ltd.\",\n        \"consignee_address\": \"456 Consignee Rd.\",\n        \"consignee_pan\": \"FGHIJ5678K\",\n        \"consignee_iec\": \"0306060070\",\n        \"consignee_gst\": \"24FGHIJ5678K1Z2\",\n        \"consignee_mail\": \"consignee@example.com\",\n        \"consignee_contact_person\": \"Jane Smith\",\n        \"consignee_contact_no\": \"0987654321\",\n        \"igst\": 18,\n        \"sgst\": 9,\n        \"cgst\": 9,\n        \"total_fob_value\": 10000.00,\n        \"amount_in_words\": \"Ten Thousand Only\",\n        \"bank_name\": \"Bank of Export\",\n        \"bank_address\": \"789 Bank St.\",\n        \"bank_account_no\": \"123456789012\",\n        \"bank_ifsc_code\": \"BKID0001234\",\n        \"bank_ad_code\": \"AD1234567890\",\n        \"bank_swift_code\": \"BKIDINBBXXX\",\n        \"payment_terms\": \"Net 30 days\",\n        \"payment_delivery_time\": \"2024-08-25 14:16:56\",\n        \"payment_delivery_terms\": \"FOB\",\n        \"notes\": \"Urgent delivery required.\",\n        \"piReportProducts\": [\n            {\n                \"id\": 1,\n                \"pi_report_domestic_id\": 1,\n                \"description\": \"Product A\",\n                \"hsn_code\": \"1001\",\n                \"no_of_box\": 10,\n                \"quantity\": 100,\n                \"unit\": 5,  // Number of units\n                \"rate\": 100.00,\n                \"amount\": 10000.00\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove the specified PI Report.",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-domestic/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-domestic",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "23689d18-e5cd-4d11-967c-7b1cd65e82c6",
+									"description": "The ID of the PI Report."
+								}
+							]
+						},
+						"description": "This endpoint deletes a specific PI Report by its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-domestic/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-domestic",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "23689d18-e5cd-4d11-967c-7b1cd65e82c6",
+											"description": "The ID of the PI Report."
+										}
+									]
+								},
+								"description": "This endpoint deletes a specific PI Report by its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Domestic deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PI Reports Export",
+			"item": [
+				{
+					"name": "Display a listing of the PI Reports.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/pi-reports-export",
+						"description": "This endpoint retrieves a list of PI Reports created by the authenticated user,\nalong with their associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/pi-reports-export",
+								"description": "This endpoint retrieves a list of PI Reports created by the authenticated user,\nalong with their associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"piReportsExport\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"pi_no\": \"PI12345\",\n         \"date\": \"2023-06-25\",\n         \"buyer_order_no\": \"BO12345\",\n         \"buyer_order_date\": \"2023-06-20\",\n         \"exporter_name\": \"Exporter A\",\n         \"exporter_address\": \"123 Street, City, Country\",\n         \"exporter_pan\": \"ABCDE1234F\",\n         \"exporter_iec\": \"IEC1234567\",\n         \"exporter_gst\": \"GST123456\",\n         \"exporter_mail\": \"exporter@example.com\",\n         \"exporter_contact_person\": \"John Doe\",\n         \"exporter_contact_no\": \"1234567890\",\n         \"consignee_name\": \"Consignee A\",\n         \"consignee_address\": \"456 Avenue, City, Country\",\n         \"consignee_country\": \"Country B\",\n         \"consignee_mail\": \"consignee@example.com\",\n         \"consignee_contact_person\": \"Jane Doe\",\n         \"consignee_contact_no\": \"0987654321\",\n         \"port_of_loading\": \"Port A\",\n         \"port_of_discharge\": \"Port B\",\n         \"final_destination_port\": \"Port C\",\n         \"country_of_origin_of_goods\": \"Country A\",\n         \"country_of_final_destination\": \"Country B\",\n         \"total_fob_value\": 1000,\n         \"freight_charges\": 50,\n         \"total_cfr_value\": 1050,\n         \"insurance_charges\": 20,\n         \"total_cif_value\": 1070,\n         \"amount_in_words\": \"One Thousand Seventy\",\n         \"bank_name\": \"Bank A\",\n         \"bank_address\": \"789 Boulevard, City, Country\",\n         \"bank_account_no\": \"123456789012\",\n         \"bank_ifsc_code\": \"IFSC12345\",\n         \"bank_ad_code\": \"AD12345\",\n         \"bank_swift_code\": \"SWIFT12345\",\n         \"payment_terms\": \"30 days\",\n         \"payment_delivery_time\": \"2024-05-13 17:05:06\",\n         \"payment_delivery_terms\": \"FOB\",\n         \"notes\": \"Special instructions\",\n         \"piReportProducts\": [\n             {\n                 \"id\": \"12345\",\n                 \"pi_report_export_id\": \"15fjl5-4f45t-5g456y-g5t\",\n                 \"size\": \"Medium\",\n                 \"type\": \"Type A\",\n                 \"packaging_description\": \"Box\",\n                 \"rolls_pallet\": 10,\n                 \"no_of_pallets\": 5,\n                 \"total_rolls\": 50,\n                 \"container\": \"Container A\",\n                 \"quanity\": 100,\n                 \"unit\": \"pcs\",\n                 \"rate_in_usd\": 10,\n                 \"amount_in_usd\": 1000\n             }\n         ]\n     }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Store a newly created PI Report.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[{\"size\":10,\"type\":\"Type 1\",\"packaging_description\":\"TEST DESC 1\",\"rolls_pallet\":50,\"no_of_pallets\":10,\"total_rolls\":50,\"container\":80,\"quanity\":50,\"unit\":33,\"rate_in_usd\":55,\"amount_in_usd\":66}]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-export",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-export"
+							],
+							"query": [
+								{
+									"key": "pi",
+									"value": "PI561231",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint creates a new PI Report with the specified details and associated products."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[{\"size\":10,\"type\":\"Type 1\",\"packaging_description\":\"TEST DESC 1\",\"rolls_pallet\":50,\"no_of_pallets\":10,\"total_rolls\":50,\"container\":80,\"quanity\":50,\"unit\":33,\"rate_in_usd\":55,\"amount_in_usd\":66}]}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-export",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-export"
+									],
+									"query": [
+										{
+											"key": "pi",
+											"value": "PI561231",
+											"disabled": true
+										}
+									]
+								},
+								"description": "This endpoint creates a new PI Report with the specified details and associated products."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export added successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update the specified PI Report.",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter GHDFDEDGEA\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[{\"size\":10,\"type\":\"Type 132422\",\"packaging_description\":\"TEST DESC 1\",\"rolls_pallet\":50,\"no_of_pallets\":10,\"total_rolls\":50,\"container\":80,\"quanity\":50,\"unit\":33,\"rate_in_usd\":55,\"amount_in_usd\":66}]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-export/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-export",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "fcd2c314-312c-4d08-853c-70e512d6b910",
+									"description": "The ID of the PI Report."
+								}
+							]
+						},
+						"description": "This endpoint updates the details of a specific PI Report by its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter GHDFDEDGEA\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[{\"size\":10,\"type\":\"Type 132422\",\"packaging_description\":\"TEST DESC 1\",\"rolls_pallet\":50,\"no_of_pallets\":10,\"total_rolls\":50,\"container\":80,\"quanity\":50,\"unit\":33,\"rate_in_usd\":55,\"amount_in_usd\":66}]}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-export/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-export",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "fcd2c314-312c-4d08-853c-70e512d6b910",
+											"description": "The ID of the PI Report."
+										}
+									]
+								},
+								"description": "This endpoint updates the details of a specific PI Report by its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove the specified PI Report.",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-export/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-export",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "15fjl5-4f45t-5g456y-g5t",
+									"description": "The ID of the PI Report."
+								}
+							]
+						},
+						"description": "This endpoint deletes a specific PI Report by its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-export/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-export",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15fjl5-4f45t-5g456y-g5t",
+											"description": "The ID of the PI Report."
+										}
+									]
+								},
+								"description": "This endpoint deletes a specific PI Report by its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PI Report Export deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Display the specified PI Report.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/pi-reports-export-get?pi_no=PI12345",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"pi-reports-export-get"
+							],
+							"query": [
+								{
+									"key": "pi_no",
+									"value": "PI12345"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "15fjl5-4f45t-5g456y-g5t",
+									"description": "The ID of the PI Report."
+								}
+							]
+						},
+						"description": "This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/pi-reports-export-get?pi_no=PI12345",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"pi-reports-export-get"
+									],
+									"query": [
+										{
+											"key": "pi_no",
+											"value": "PI12345"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "15fjl5-4f45t-5g456y-g5t",
+											"description": "The ID of the PI Report."
+										}
+									]
+								},
+								"description": "This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"piReportsExport\": {\n     \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n     \"pi_no\": \"PI12345\",\n     \"date\": \"2023-06-25\",\n     \"buyer_order_no\": \"BO12345\",\n     \"buyer_order_date\": \"2023-06-20\",\n     \"exporter_name\": \"Exporter A\",\n     \"exporter_address\": \"123 Street, City, Country\",\n     \"exporter_pan\": \"ABCDE1234F\",\n     \"exporter_iec\": \"IEC1234567\",\n     \"exporter_gst\": \"GST123456\",\n     \"exporter_mail\": \"exporter@example.com\",\n     \"exporter_contact_person\": \"John Doe\",\n     \"exporter_contact_no\": \"1234567890\",\n     \"consignee_name\": \"Consignee A\",\n     \"consignee_address\": \"456 Avenue, City, Country\",\n     \"consignee_country\": \"Country B\",\n     \"consignee_mail\": \"consignee@example.com\",\n     \"consignee_contact_person\": \"Jane Doe\",\n     \"consignee_contact_no\": \"0987654321\",\n     \"port_of_loading\": \"Port A\",\n     \"port_of_discharge\": \"Port B\",\n     \"final_destination_port\": \"Port C\",\n     \"country_of_origin_of_goods\": \"Country A\",\n     \"country_of_final_destination\": \"Country B\",\n     \"total_fob_value\": 1000,\n     \"freight_charges\": 50,\n     \"total_cfr_value\": 1050,\n     \"insurance_charges\": 20,\n     \"total_cif_value\": 1070,\n     \"amount_in_words\": \"One Thousand Seventy\",\n     \"bank_name\": \"Bank A\",\n     \"bank_address\": \"789 Boulevard, City, Country\",\n     \"bank_account_no\": \"123456789012\",\n     \"bank_ifsc_code\": \"IFSC12345\",\n     \"bank_ad_code\": \"AD12345\",\n     \"bank_swift_code\": \"SWIFT12345\",\n     \"payment_terms\": \"30 days\",\n     \"payment_delivery_time\": \"2024-05-13 17:05:06\",\n     \"payment_delivery_terms\": \"FOB\",\n     \"notes\": \"Special instructions\",\n     \"piReportProducts\": [\n         {\n             \"id\": \"12345\",\n             \"pi_report_export_id\": \"15fjl5-4f45t-5g456y-g5t\",\n             \"size\": \"Medium\",\n             \"type\": \"Type A\",\n             \"packaging_description\": \"Box\",\n             \"rolls_pallet\": 10,\n             \"no_of_pallets\": 5,\n             \"total_rolls\": 50,\n             \"container\": \"Container A\",\n             \"quanity\": 100,\n             \"unit\": \"pcs\",\n             \"rate_in_usd\": 10.00,\n             \"amount_in_usd\": 1000.00\n         }\n     ]\n }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PO Reports",
+			"item": [
+				{
+					"name": "Display a listing of the PO Reports.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/po-reports",
+						"description": "This endpoint returns a list of all PO Reports created by the authenticated user,\nincluding associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/po-reports",
+								"description": "This endpoint returns a list of all PO Reports created by the authenticated user,\nincluding associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"poReports\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"po_no\": \"PO12345\",\n         \"po_date\": \"2023-06-25\",\n         \"quotation_no\": \"Q12345\",\n         \"quotation_date\": \"2023-06-20\",\n         \"buyer_name\": \"Buyer A\",\n         \"buyer_address\": \"123 Street, City, Country\",\n         \"buyer_pan\": \"ABCDE1234F\",\n         \"buyer_iec\": \"IEC1234567\",\n         \"buyer_gst\": \"GST123456\",\n         \"buyer_mail\": \"buyer@example.com\",\n         \"buyer_contact_person\": \"John Doe\",\n         \"buyer_contact_no\": \"1234567890\",\n         \"created_by\": 1,\n         \"igst\": 18,\n         \"sgst\": 9,\n         \"cgst\": 9,\n         \"total_value\": 1000,\n         \"amount_in_words\": \"One Thousand\",\n         \"notes_1\": \"Note 1\",\n         \"notes_2\": \"Note 2\",\n         \"notes_3\": \"Note 3\",\n         \"notes_4\": \"Note 4\",\n         \"poReportProducts\": [\n             {\n                 \"id\": \"12345jl5-4f45t-5g45\",\n                 \"po_report_id\": \"15fjl5-4f45t-5g456y-g5t\",\n                 \"product_description\": \"Product A\",\n                 \"hsn_code\": \"1234\",\n                 \"quantity\": 10,\n                 \"unit\": \"pcs\",\n                 \"rate\": 100,\n                 \"amount\": 1000\n             }\n         ]\n     }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Store a newly created PO Report in storage.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"po_no\":\"PO1233234\",\"po_date\":\"2024-05-11\",\"quotation_no\":\"eaque\",\"quotation_date\":\"2024-05-31\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"perspiciatis\",\"notes_4\":\"distinctio\",\"products\":[{\"product_description\":\"dfggddg44\",\"hsn_code\":\"dgf324234\",\"quantity\":50,\"unit\":70,\"rate\":90,\"amount\":65}]}"
+						},
+						"url": "{{baseUrl}}/api/po-reports",
+						"description": "This endpoint allows for the creation of a new PO Report along with its associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"po_no\":\"PO1233234\",\"po_date\":\"2024-05-11\",\"quotation_no\":\"eaque\",\"quotation_date\":\"2024-05-31\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"perspiciatis\",\"notes_4\":\"distinctio\",\"products\":[{\"product_description\":\"dfggddg44\",\"hsn_code\":\"dgf324234\",\"quantity\":50,\"unit\":70,\"rate\":90,\"amount\":65}]}"
+								},
+								"url": "{{baseUrl}}/api/po-reports",
+								"description": "This endpoint allows for the creation of a new PO Report along with its associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PO Report added successfully.\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"po_no\":\"PO1233234\",\"po_date\":\"2024-05-11\",\"quotation_no\":\"eaque\",\"quotation_date\":\"2024-05-31\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"perspiciatis\",\"notes_4\":\"distinctio\",\"products\":[{\"product_description\":\"dfggddg44\",\"hsn_code\":\"dgf324234\",\"quantity\":50,\"unit\":70,\"rate\":90,\"amount\":65}]}"
+								},
+								"url": "{{baseUrl}}/api/po-reports",
+								"description": "This endpoint allows for the creation of a new PO Report along with its associated product details."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"errors\": {\n     \"po_no\": [\"The PO number is required.\"],\n     \"po_date\": [\"The PO date is required.\"],\n     ...\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update the specified PO Report in storage.",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"po_no\":\"PO9233234\",\"po_date\":\"2024-05-11\",\"quotation_no\":\"eaque\",\"quotation_date\":\"2024-05-15\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"note 3\",\"notes_4\":\"distinctio\",\"products\":[{\"product_description\":\"dfggddg44 test 1\",\"hsn_code\":\"dgf324234\",\"quantity\":50,\"unit\":70,\"rate\":90,\"amount\":65}]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/po-reports/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"po-reports",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "929c4896-1c64-4fac-b960-56395f52af6c",
+									"description": "The ID of the PO Report."
+								}
+							]
+						},
+						"description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"po_no\":\"PO9233234\",\"po_date\":\"2024-05-11\",\"quotation_no\":\"eaque\",\"quotation_date\":\"2024-05-15\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"note 3\",\"notes_4\":\"distinctio\",\"products\":[{\"product_description\":\"dfggddg44 test 1\",\"hsn_code\":\"dgf324234\",\"quantity\":50,\"unit\":70,\"rate\":90,\"amount\":65}]}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/po-reports/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"po-reports",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "929c4896-1c64-4fac-b960-56395f52af6c",
+											"description": "The ID of the PO Report."
+										}
+									]
+								},
+								"description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PO Report updated successfully.\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"po_no\":\"PO9233234\",\"po_date\":\"2024-05-11\",\"quotation_no\":\"eaque\",\"quotation_date\":\"2024-05-15\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"note 3\",\"notes_4\":\"distinctio\",\"products\":[{\"product_description\":\"dfggddg44 test 1\",\"hsn_code\":\"dgf324234\",\"quantity\":50,\"unit\":70,\"rate\":90,\"amount\":65}]}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/po-reports/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"po-reports",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "929c4896-1c64-4fac-b960-56395f52af6c",
+											"description": "The ID of the PO Report."
+										}
+									]
+								},
+								"description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"errors\": {\n     \"po_no\": [\"The PO number is required.\"],\n     \"po_date\": [\"The PO date is required.\"],\n     ...\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove the specified PO Report from storage.",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/po-reports/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"po-reports",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "929c4896-1c64-4fac-b960-56395f52af6c",
+									"description": "The ID of the PO Report."
+								}
+							]
+						},
+						"description": "This endpoint deletes a specific PO Report by its ID,\nincluding associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/po-reports/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"po-reports",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "929c4896-1c64-4fac-b960-56395f52af6c",
+											"description": "The ID of the PO Report."
+										}
+									]
+								},
+								"description": "This endpoint deletes a specific PO Report by its ID,\nincluding associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"PO Report deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Display the specified PO Report.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/po-reports-get?po_no=PO9233234",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"po-reports-get"
+							],
+							"query": [
+								{
+									"key": "po_no",
+									"value": "PO9233234",
+									"description": "The PO number of the PO Report."
+								}
+							]
+						},
+						"description": "This endpoint returns the details of a specific PO Report by its PO number,\nincluding associated product details."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/po-reports-get?po_no=PO9233234",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"po-reports-get"
+									],
+									"query": [
+										{
+											"key": "po_no",
+											"value": "PO9233234",
+											"description": "The PO number of the PO Report."
+										}
+									]
+								},
+								"description": "This endpoint returns the details of a specific PO Report by its PO number,\nincluding associated product details."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"poReports\": {\n     \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n     \"po_no\": \"PO12345\",\n     \"po_date\": \"2023-06-25\",\n     \"quotation_no\": \"Q12345\",\n     \"quotation_date\": \"2023-06-20\",\n     \"buyer_name\": \"Buyer A\",\n     \"buyer_address\": \"123 Street, City, Country\",\n     \"buyer_pan\": \"ABCDE1234F\",\n     \"buyer_iec\": \"IEC1234567\",\n     \"buyer_gst\": \"GST123456\",\n     \"buyer_mail\": \"buyer@example.com\",\n     \"buyer_contact_person\": \"John Doe\",\n     \"buyer_contact_no\": \"1234567890\",\n     \"created_by\": 1,\n     \"igst\": 18,\n     \"sgst\": 9,\n     \"cgst\": 9,\n     \"total_value\": 1000,\n     \"amount_in_words\": \"One Thousand\",\n     \"notes_1\": \"Note 1\",\n     \"notes_2\": \"Note 2\",\n     \"notes_3\": \"Note 3\",\n     \"notes_4\": \"Note 4\",\n     \"poReportProducts\": [\n         {\n             \"id\": \"12345\",\n             \"po_report_id\": \"15fjl5-4f45t-5g456y-g5t\",\n             \"product_description\": \"Product A\",\n             \"hsn_code\": \"1234\",\n             \"quantity\": 10,\n             \"unit\": \"pcs\",\n             \"rate\": 100,\n             \"amount\": 1000\n         }\n     ]\n }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/products",
+						"description": "Get a list of all products available in system."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/products",
+								"description": "Get a list of all products available in system."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"products\": [\n     {\n         \"id\": 1dfn4k5-43tn4gkn-434,\n         \"hsn_code\": \"1234\",\n         \"product_name\": \"Product A\",\n         \"sales\": 100,\n         \"purchase\": 90,\n         \"water_absorption\": \"5%\",\n         \"field\": \"Field A\"\n     },\n     ...\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"5\",\"field\":\"Field A\"}"
+						},
+						"url": "{{baseUrl}}/api/products",
+						"description": "It store a newly created product in the system."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"5\",\"field\":\"Field A\"}"
+								},
+								"url": "{{baseUrl}}/api/products",
+								"description": "It store a newly created product in the system."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Product details are stored\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"5\",\"field\":\"Field A\"}"
+								},
+								"url": "{{baseUrl}}/api/products",
+								"description": "It store a newly created product in the system."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"10\",\"field\":\"Field A\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "The ID of the product to update."
+								}
+							]
+						},
+						"description": "It update the specified product in the system."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"10\",\"field\":\"Field A\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the product to update."
+										}
+									]
+								},
+								"description": "It update the specified product in the system."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Product details are updated\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"hsn_code\":\"1234\",\"product_name\":\"Product A\",\"sales\":100,\"purchase\":90,\"water_absorption\":\"10\",\"field\":\"Field A\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the product to update."
+										}
+									]
+								},
+								"description": "It update the specified product in the system."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"error\",\n \"message\": \"Validation error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1453mk-545tmkm4-3tvekvek",
+									"description": "The ID of the product to delete."
+								}
+							]
+						},
+						"description": "It remove the specified product from the system."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1453mk-545tmkm4-3tvekvek",
+											"description": "The ID of the product to delete."
+										}
+									]
+								},
+								"description": "It remove the specified product from the system."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Product details are deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sizes",
+			"item": [
+				{
+					"name": "Sizes list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/api/sizes",
+						"description": "Get a list of all sizes available in system."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/api/sizes",
+								"description": "Get a list of all sizes available in system."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"sizes\": [\n     {\n         \"id\": 1dfn4k5-43tn4gkn-434,\n         \"size_in_cm\": \"50\",\n         \"size_in_mm\": \"550\",\n         \"product_name\": \"Product A\",\n         \"hsn_code\": \"9035\",\n         \"thickness\": \"15mm\",\n         \"micron\": \"500\",\n         \"grade\": null,\n         \"width\": null,\n     },\n     ...\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Size",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+						},
+						"url": "{{baseUrl}}/api/sizes",
+						"description": "Store a newly created size in the database.\nThis endpoint allows you to store size details. The variables should be provided in the request body."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+								},
+								"url": "{{baseUrl}}/api/sizes",
+								"description": "Store a newly created size in the database.\nThis endpoint allows you to store size details. The variables should be provided in the request body."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Size details are stored\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+								},
+								"url": "{{baseUrl}}/api/sizes",
+								"description": "Store a newly created size in the database.\nThis endpoint allows you to store size details. The variables should be provided in the request body."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"errors\": {\n     \"size_in_cm\": [\n         \"Size in centimeters is required\",\n         \"Size in centimeters must be numeric\"\n     ],\n     \"size_in_mm\": [\n         \"Size in millimeters is required\",\n         \"Size in millimeters must be numeric\"\n     ],\n     \"product_name\": [\n         \"Product Name is required\"\n     ],\n     \"hsn_code\": [\n         \"HSN code is required\"\n     ],\n     \"thickness\": [\n         \"Thickness is required\"\n     ],\n     \"micron\": [\n         \"Micron is required\",\n         \"Micron must be numeric\"\n     ]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Size",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/sizes/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"sizes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "The ID of the size to update."
+								}
+							]
+						},
+						"description": "Update the specified size in the database.\nThis endpoint allows you to update size details by providing the size ID and the updated information."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/sizes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"sizes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the size to update."
+										}
+									]
+								},
+								"description": "Update the specified size in the database.\nThis endpoint allows you to update size details by providing the size ID and the updated information."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Size details are updated\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"size_in_cm\":\"100\",\"size_in_mm\":\"1000\",\"product_name\":\"Product A\",\"hsn_code\":\"1234\",\"thickness\":\"5\",\"micron\":\"50\",\"grade\":\"Grade A\",\"width\":\"200\"}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/sizes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"sizes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "The ID of the size to update."
+										}
+									]
+								},
+								"description": "Update the specified size in the database.\nThis endpoint allows you to update size details by providing the size ID and the updated information."
+							},
+							"code": 422,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"errors\": {\n     \"size_in_cm\": [\n         \"Size in centimeters is required\",\n         \"Size in centimeters must be numeric\"\n     ],\n     \"size_in_mm\": [\n         \"Size in millimeters is required\",\n         \"Size in millimeters must be numeric\"\n     ],\n     \"product_name\": [\n         \"Product Name is required\"\n     ],\n     \"hsn_code\": [\n         \"HSN code is required\"\n     ],\n     \"thickness\": [\n         \"Thickness is required\"\n     ],\n     \"micron\": [\n         \"Micron is required\",\n         \"Micron must be numeric\"\n     ]\n }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Size",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/sizes/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"sizes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1fkj58-4nci34-fk48i",
+									"description": "The ID of the size to delete."
+								}
+							]
+						},
+						"description": "Remove the specified size from the database.\nThis endpoint allows you to delete a size by providing its ID."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/sizes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"sizes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1fkj58-4nci34-fk48i",
+											"description": "The ID of the size to delete."
+										}
+									]
+								},
+								"description": "Remove the specified size from the database.\nThis endpoint allows you to delete a size by providing its ID."
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n \"status\": \"success\",\n \"message\": \"Size is deleted\"\n}"
+						},
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/sizes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"sizes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1fkj58-4nci34-fk48i",
+											"description": "The ID of the size to delete."
+										}
+									]
+								},
+								"description": "Remove the specified size from the database.\nThis endpoint allows you to delete a size by providing its ID."
+							},
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n 'status': 'error',\n \"message\": \"No records found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5Yzk5Yzk5ZS0yMjQ2LTQ0MDMtOTIzZC1mYWVmNGFiZTdiNTUiLCJqdGkiOiIzNzY4OGM5MjVlZDAyNjVlOTg0ZTQ2ZDgyNzdlZTMyODdiOTJlZDQ5NDUxMDE0MDBmYWZjMDkwMmEyNDU5NzI0MDNkZDc2ZTEyMjllNWM0YiIsImlhdCI6MTcyMjk1NTkzNi43ODY5NzIwNDU4OTg0Mzc1LCJuYmYiOjE3MjI5NTU5MzYuNzg2OTc0OTA2OTIxMzg2NzE4NzUsImV4cCI6MTczODg1MzUzNi43NzEyNzU5OTcxNjE4NjUyMzQzNzUsInN1YiI6IjFlMTk0YTEyLTBlZDktNDcwZC1iMDFlLTAyNzU4NDAxODFhOCIsInNjb3BlcyI6W119.t2NVrUcf2lHWeByZ9WMfXwmDDSPoEeShyNgWY_bzwcbn3AuqbRDCYSYOOn1vPLbaJcpQt6RjnGoKLde7gvZi8oX-9yD7717h9KkZr-CXQ8Tj1V3YvU4_8HHNWu8tllc2-k5ozs3IDetBIXJ0fqa_3J86LX9ocChJE67dVF6Nm_dK7FS8pr-vBmXBgWO7UJh5JxA_TB0HiFvb4hgTMiykmnu_W0yTElQ3i2Z2TaRosTDsmXUUk2i58xbdLtqybMPtJ0a74J-knuBLP6dA7GvWpXlKEqP8PhnZ9Y2_iBeJukJNo_3HSl-oteEcQQMyx6QHreVd6LXxLxuWOAOgmOdf5TW-HyWV03q1EvRq-8-Zw-DA_QqWTZc1MAkl-tLmm4xXi-f7nIgvvLr6JWd3dJUla48JLTPw85d4exmXzearEpeEX8LJ9Q25a1b9fOkHqUE-9Cp-533qAovxuiP4SGxNBEylSxUbSAfpKZ4WS8n0vmadbpp_r_6PxMuo_9HchmBaOqNmens1FUVzUOKTTHCXgAVjuRuxknMuSg1GOf7LT20Hvo0RV_a6v1NIOZZpBBeBGthcPNXnrv9AuStBBx7nU1qWljPkHRDldSzsDYwHcgOwwYu0Wc4yAM5MwTpgQ2nfabOBpt0cmVR5qQO-LUTxCaA-KR9xpoyxEV1aJLTA0Dc"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.smartwrapfilms.com",
+			"type": "string"
+		}
+	]
+}
