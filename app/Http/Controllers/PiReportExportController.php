@@ -256,17 +256,17 @@ class PiReportExportController extends Controller
         foreach ($request->products as $key => $product) {
             PiReportExportProduct::firstOrCreate([
                 'pi_report_export_id' => $piReportExport->id,
-                'size' => $request->size,
-                'type' => $request->type,
-                'packaging_description' => $request->packaging_description,
-                'rolls_pallet' => $request->rolls_pallet,
-                'no_of_pallets' => $request->no_of_pallets,
-                'total_rolls' => $request->total_rolls,
-                'container' => $request->container,
-                'quanity' => $request->quanity,
-                'unit' => $request->unit,
-                'rate_in_usd' => $request->rate_in_usd,
-                'amount_in_usd' => $request->amount_in_usd,
+                'size' => $product['size'],
+                'type' => $product['type'],
+                'packaging_description' => $product['packaging_description'],
+                'rolls_pallet' => $product['rolls_pallet'],
+                'no_of_pallets' => $product['no_of_pallets'],
+                'total_rolls' => $product['total_rolls'],
+                'container' => $product['container'],
+                'quanity' => $product['quanity'],
+                'unit' => $product['unit'],
+                'rate_in_usd' => $product['rate_in_usd'],
+                'amount_in_usd' => $product['amount_in_usd'],
             ]);
         }
 
@@ -353,48 +353,7 @@ class PiReportExportController extends Controller
                     $q->select(['id', 'pi_report_export_id', 'size', 'type', 'packaging_description', 'rolls_pallet', 'no_of_pallets', 'total_rolls', 'container', 'quanity', 'unit', 'rate_in_usd', 'amount_in_usd']);
                 }
             ])
-            ->select([
-                'id',
-                'pi_no',
-                'date',
-                'buyer_order_no',
-                'buyer_order_date',
-                'exporter_name',
-                'exporter_address',
-                'exporter_pan',
-                'exporter_iec',
-                'exporter_gst',
-                'exporter_mail',
-                'exporter_contact_person',
-                'exporter_contact_no',
-                'consignee_name',
-                'consignee_address',
-                'consignee_country',
-                'consignee_mail',
-                'consignee_contact_person',
-                'consignee_contact_no',
-                'port_of_loading',
-                'port_of_discharge',
-                'final_destination_port',
-                'country_of_origin_of_goods',
-                'country_of_final_destination',
-                'total_fob_value',
-                'freight_charges',
-                'total_cfr_value',
-                'insurance_charges',
-                'total_cif_value',
-                'amount_in_words',
-                'bank_name',
-                'bank_address',
-                'bank_account_no',
-                'bank_ifsc_code',
-                'bank_ad_code',
-                'bank_swift_code',
-                'payment_terms',
-                'payment_delivery_time',
-                'payment_delivery_terms',
-                'notes',
-            ])
+
             ->first();
 
         return response()->json(['status' => 'success', 'piReportsExport' => $piReports], 200);
@@ -514,17 +473,17 @@ class PiReportExportController extends Controller
         foreach ($request->products as $key => $product) {
             PiReportExportProduct::firstOrCreate([
                 'pi_report_export_id' => $id,
-                'size' => $request->size,
-                'type' => $request->type,
-                'packaging_description' => $request->packaging_description,
-                'rolls_pallet' => $request->rolls_pallet,
-                'no_of_pallets' => $request->no_of_pallets,
-                'total_rolls' => $request->total_rolls,
-                'container' => $request->container,
-                'quanity' => $request->quanity,
-                'unit' => $request->unit,
-                'rate_in_usd' => $request->rate_in_usd,
-                'amount_in_usd' => $request->amount_in_usd,
+                'size' => $product['size'],
+                'type' => $product['type'],
+                'packaging_description' => $product['packaging_description'],
+                'rolls_pallet' => $product['rolls_pallet'],
+                'no_of_pallets' => $product['no_of_pallets'],
+                'total_rolls' => $product['total_rolls'],
+                'container' => $product['container'],
+                'quanity' => $product['quanity'],
+                'unit' => $product['unit'],
+                'rate_in_usd' => $product['rate_in_usd'],
+                'amount_in_usd' => $product['amount_in_usd'],
             ]);
         }
 
