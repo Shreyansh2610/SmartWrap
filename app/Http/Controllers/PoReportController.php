@@ -444,7 +444,7 @@ class PoReportController extends Controller
      *  }
      * }
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         // $validator = Validator::make(
         //     $request->all(),
@@ -482,7 +482,7 @@ class PoReportController extends Controller
         //     return response()->json(['errors' => $validator->errors()], 422);
         // }
 
-        $poReport = PoReport::find($id)->update([
+        $poReport = PoReport::where('id',$id)->update([
             'po_no' => $request->po_no,
             'po_date' => $request->po_date,
             'quotation_no' => $request->quotation_no,
@@ -514,10 +514,10 @@ class PoReportController extends Controller
             'notes_4' => $request->notes_4,
         ]);
 
-        PoReportProduct::where(['po_report_id' => $poReport->id])->delete();
+        PoReportProduct::where(['po_report_id' => $id])->delete();
         foreach ($request->products as $key => $product) {
             PoReportProduct::firstOrCreate([
-                'po_report_id' => $poReport->id,
+                'po_report_id' => $id,
                 'product_description' => $product['product_description'],
                 'hsn_code' => $product['hsn_code'],
                 'quantity' => $product['quantity'],
