@@ -12,7 +12,9 @@ class PiReportExportController extends Controller
      * Display a listing of the PI Reports.
      *
      * This endpoint retrieves a list of PI Reports created by the authenticated user,
-     * along with their associated product details.
+     * including detailed information such as the exporter's and consignee's details,
+     * product information, and financial data. Each PI Report also contains associated
+     * product information, such as packaging details, quantity, and pricing in USD.
      *
      * @group PI Reports Export
      *
@@ -67,12 +69,12 @@ class PiReportExportController extends Controller
      *                  "size": "Medium",
      *                  "type": "Type A",
      *                  "packaging_description": "Box",
-     *                  "rolls_pallet": 10,
+     *                  "roll_per_pallet": 10,
      *                  "no_of_pallets": 5,
      *                  "total_rolls": 50,
-     *                  "container": "Container A",
+     *                  "weight_per_roll": "weight_per_roll A",
      *                  "quanity": 100,
-     *                  "unit": "pcs",
+     *                  "core_weight": "pcs",
      *                  "rate_in_usd": 10,
      *                  "amount_in_usd": 1000
      *              }
@@ -86,7 +88,7 @@ class PiReportExportController extends Controller
         $piReports = PiReportExport::where('created_by', auth()->user()->id)
             ->with([
                 'piReportProducts' => function ($q) {
-                    $q->select(['id', 'pi_report_export_id', 'size', 'type', 'packaging_description', 'rolls_pallet', 'no_of_pallets', 'total_rolls','container','quanity','unit','rate_in_usd','amount_in_usd']);
+                    $q->select(['id', 'pi_report_export_id', 'size', 'type', 'packaging_description', 'roll_per_pallet', 'no_of_pallets', 'total_rolls', 'weight_per_roll', 'quanity', 'core_weight', 'rate_in_usd', 'amount_in_usd']);
                 }
             ])
             ->select([
@@ -148,6 +150,8 @@ class PiReportExportController extends Controller
      * Store a newly created PI Report.
      *
      * This endpoint creates a new PI Report with the specified details and associated products.
+     * It accepts various details related to the exporter, consignee, and product information.
+     * After creation, the associated product details are stored in the `PiReportExportProduct` model.
      *
      * @group PI Reports Export
      *
@@ -194,12 +198,12 @@ class PiReportExportController extends Controller
      * @bodyParam products.*.size string required The size of the product. Example: Medium
      * @bodyParam products.*.type string required The type of the product. Example: Type A
      * @bodyParam products.*.packaging_description string required The packaging description. Example: Box
-     * @bodyParam products.*.rolls_pallet integer required The number of rolls per pallet. Example: 10
+     * @bodyParam products.*.roll_per_pallet integer required The number of rolls per pallet. Example: 10
      * @bodyParam products.*.no_of_pallets integer required The number of pallets. Example: 5
      * @bodyParam products.*.total_rolls integer required The total number of rolls. Example: 50
-     * @bodyParam products.*.container string required The container. Example: Container A
+     * @bodyParam products.*.weight_per_roll string required The weight_per_roll. Example: weight_per_roll A
      * @bodyParam products.*.quanity integer required The quantity. Example: 100
-     * @bodyParam products.*.unit string required The unit of measurement. Example: pcs
+     * @bodyParam products.*.core_weight string required The core_weight of measurement. Example: pcs
      * @bodyParam products.*.rate_in_usd float required The rate in USD. Example: 10.00
      * @bodyParam products.*.amount_in_usd float required The amount in USD. Example: 1000.00
      *
@@ -259,12 +263,12 @@ class PiReportExportController extends Controller
                 'size' => $product['size'],
                 'type' => $product['type'],
                 'packaging_description' => $product['packaging_description'],
-                'rolls_pallet' => $product['rolls_pallet'],
+                'roll_per_pallet' => $product['roll_per_pallet'],
                 'no_of_pallets' => $product['no_of_pallets'],
                 'total_rolls' => $product['total_rolls'],
-                'container' => $product['container'],
+                'weight_per_roll' => $product['weight_per_roll'],
                 'quanity' => $product['quanity'],
-                'unit' => $product['unit'],
+                'core_weight' => $product['core_weight'],
                 'rate_in_usd' => $product['rate_in_usd'],
                 'amount_in_usd' => $product['amount_in_usd'],
             ]);
@@ -276,11 +280,12 @@ class PiReportExportController extends Controller
     /**
      * Display the specified PI Report.
      *
-     * This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.
+     * This endpoint retrieves the details of a specific PI Report by its PI number (`pi_no`), including the associated product details.
+     * It fetches the report created by the authenticated user.
      *
      * @group PI Reports Export
      *
-     * @urlParam pi_no string required The ID of the PI Report. Example: PI12334
+     * @urlParam pi_no string required The PI number of the report. Example: PI12345
      *
      * @response 200 {
      *  "status": "success",
@@ -332,12 +337,12 @@ class PiReportExportController extends Controller
      *              "size": "Medium",
      *              "type": "Type A",
      *              "packaging_description": "Box",
-     *              "rolls_pallet": 10,
+     *              "roll_per_pallet": 10,
      *              "no_of_pallets": 5,
      *              "total_rolls": 50,
-     *              "container": "Container A",
+     *              "weight_per_roll": "weight_per_roll A",
      *              "quanity": 100,
-     *              "unit": "pcs",
+     *              "core_weight": "pcs",
      *              "rate_in_usd": 10.00,
      *              "amount_in_usd": 1000.00
      *          }
@@ -350,7 +355,7 @@ class PiReportExportController extends Controller
         $piReports = PiReportExport::where('created_by', auth()->user()->id)->where('pi_no', $request->pi_no)
             ->with([
                 'piReportProducts' => function ($q) {
-                    $q->select(['id', 'pi_report_export_id', 'size', 'type', 'packaging_description', 'rolls_pallet', 'no_of_pallets', 'total_rolls', 'container', 'quanity', 'unit', 'rate_in_usd', 'amount_in_usd']);
+                    $q->select(['id', 'pi_report_export_id', 'size', 'type', 'packaging_description', 'roll_per_pallet', 'no_of_pallets', 'total_rolls', 'weight_per_roll', 'quanity', 'core_weight', 'rate_in_usd', 'amount_in_usd']);
                 }
             ])
 
@@ -362,7 +367,7 @@ class PiReportExportController extends Controller
     /**
      * Update the specified PI Report.
      *
-     * This endpoint updates the details of a specific PI Report by its ID.
+     * This endpoint updates the details of a specific PI Report by its ID, along with its associated products.
      *
      * @group PI Reports Export
      *
@@ -411,12 +416,12 @@ class PiReportExportController extends Controller
      * @bodyParam products.*.size string required The size of the product. Example: Medium
      * @bodyParam products.*.type string required The type of the product. Example: Type A
      * @bodyParam products.*.packaging_description string required The packaging description. Example: Box
-     * @bodyParam products.*.rolls_pallet integer required The number of rolls per pallet. Example: 10
+     * @bodyParam products.*.roll_per_pallet integer required The number of rolls per pallet. Example: 10
      * @bodyParam products.*.no_of_pallets integer required The number of pallets. Example: 5
      * @bodyParam products.*.total_rolls integer required The total number of rolls. Example: 50
-     * @bodyParam products.*.container string required The container. Example: Container A
+     * @bodyParam products.*.weight_per_roll string required The weight per roll. Example: weight_per_roll A
      * @bodyParam products.*.quanity integer required The quantity. Example: 100
-     * @bodyParam products.*.unit string required The unit of measurement. Example: pcs
+     * @bodyParam products.*.core_weight string required The core weight unit. Example: pcs
      * @bodyParam products.*.rate_in_usd float required The rate in USD. Example: 10.00
      * @bodyParam products.*.amount_in_usd float required The amount in USD. Example: 1000.00
      *
@@ -476,12 +481,12 @@ class PiReportExportController extends Controller
                 'size' => $product['size'],
                 'type' => $product['type'],
                 'packaging_description' => $product['packaging_description'],
-                'rolls_pallet' => $product['rolls_pallet'],
+                'roll_per_pallet' => $product['roll_per_pallet'],
                 'no_of_pallets' => $product['no_of_pallets'],
                 'total_rolls' => $product['total_rolls'],
-                'container' => $product['container'],
+                'weight_per_roll' => $product['weight_per_roll'],
                 'quanity' => $product['quanity'],
-                'unit' => $product['unit'],
+                'core_weight' => $product['core_weight'],
                 'rate_in_usd' => $product['rate_in_usd'],
                 'amount_in_usd' => $product['amount_in_usd'],
             ]);
