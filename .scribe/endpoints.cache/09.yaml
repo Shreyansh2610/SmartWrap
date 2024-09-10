@@ -15,7 +15,9 @@ endpoints:
       title: 'Display a listing of the PI Reports.'
       description: |-
         This endpoint retrieves a list of PI Reports created by the authenticated user,
-        along with their associated product details.
+        including detailed information such as the exporter's and consignee's details,
+        product information, and financial data. Each PI Report also contains associated
+        product information, such as packaging details, quantity, and pricing in USD.
       authenticated: false
       custom: []
     headers:
@@ -83,12 +85,12 @@ endpoints:
                            "size": "Medium",
                            "type": "Type A",
                            "packaging_description": "Box",
-                           "rolls_pallet": 10,
+                           "roll_per_pallet": 10,
                            "no_of_pallets": 5,
                            "total_rolls": 50,
-                           "container": "Container A",
+                           "weight_per_roll": "weight_per_roll A",
                            "quanity": 100,
-                           "unit": "pcs",
+                           "core_weight": "pcs",
                            "rate_in_usd": 10,
                            "amount_in_usd": 1000
                        }
@@ -115,7 +117,10 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Store a newly created PI Report.'
-      description: 'This endpoint creates a new PI Report with the specified details and associated products.'
+      description: |-
+        This endpoint creates a new PI Report with the specified details and associated products.
+        It accepts various details related to the exporter, consignee, and product information.
+        After creation, the associated product details are stored in the `PiReportExportProduct` model.
       authenticated: false
       custom: []
     headers:
@@ -482,7 +487,7 @@ endpoints:
         description: 'The list of products associated with the PI Report.'
         required: true
         example:
-          - aut
+          - ab
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -514,8 +519,8 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      'products.*.rolls_pallet':
-        name: 'products.*.rolls_pallet'
+      'products.*.roll_per_pallet':
+        name: 'products.*.roll_per_pallet'
         description: 'The number of rolls per pallet.'
         required: true
         example: 10
@@ -541,11 +546,11 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      'products.*.container':
-        name: 'products.*.container'
-        description: 'The container.'
+      'products.*.weight_per_roll':
+        name: 'products.*.weight_per_roll'
+        description: 'The weight_per_roll.'
         required: true
-        example: 'Container A'
+        example: 'weight_per_roll A'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -559,9 +564,9 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      'products.*.unit':
-        name: 'products.*.unit'
-        description: 'The unit of measurement.'
+      'products.*.core_weight':
+        name: 'products.*.core_weight'
+        description: 'The core_weight of measurement.'
         required: true
         example: pcs
         type: string
@@ -627,7 +632,7 @@ endpoints:
       payment_delivery_terms: FOB
       notes: 'Special instructions'
       products:
-        - aut
+        - ab
     fileParameters: []
     responses:
       -
@@ -657,7 +662,7 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Update the specified PI Report.'
-      description: 'This endpoint updates the details of a specific PI Report by its ID.'
+      description: 'This endpoint updates the details of a specific PI Report by its ID, along with its associated products.'
       authenticated: false
       custom: []
     headers:
@@ -1034,7 +1039,7 @@ endpoints:
         description: 'The list of products associated with the PI Report.'
         required: true
         example:
-          - sed
+          - omnis
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -1066,8 +1071,8 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      'products.*.rolls_pallet':
-        name: 'products.*.rolls_pallet'
+      'products.*.roll_per_pallet':
+        name: 'products.*.roll_per_pallet'
         description: 'The number of rolls per pallet.'
         required: true
         example: 10
@@ -1093,11 +1098,11 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      'products.*.container':
-        name: 'products.*.container'
-        description: 'The container.'
+      'products.*.weight_per_roll':
+        name: 'products.*.weight_per_roll'
+        description: 'The weight per roll.'
         required: true
-        example: 'Container A'
+        example: 'weight_per_roll A'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -1111,9 +1116,9 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      'products.*.unit':
-        name: 'products.*.unit'
-        description: 'The unit of measurement.'
+      'products.*.core_weight':
+        name: 'products.*.core_weight'
+        description: 'The core weight unit.'
         required: true
         example: pcs
         type: string
@@ -1179,7 +1184,7 @@ endpoints:
       payment_delivery_terms: FOB
       notes: 'Special instructions'
       products:
-        - sed
+        - omnis
     fileParameters: []
     responses:
       -
@@ -1258,24 +1263,26 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Display the specified PI Report.'
-      description: 'This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.'
+      description: |-
+        This endpoint retrieves the details of a specific PI Report by its PI number (`pi_no`), including the associated product details.
+        It fetches the report created by the authenticated user.
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the PI Report.'
+      pi_no:
+        name: pi_no
+        description: 'The PI number of the report.'
         required: true
-        example: 15fjl5-4f45t-5g456y-g5t
+        example: PI12345
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      id: 15fjl5-4f45t-5g456y-g5t
+      pi_no: PI12345
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1335,12 +1342,12 @@ endpoints:
                        "size": "Medium",
                        "type": "Type A",
                        "packaging_description": "Box",
-                       "rolls_pallet": 10,
+                       "roll_per_pallet": 10,
                        "no_of_pallets": 5,
                        "total_rolls": 50,
-                       "container": "Container A",
+                       "weight_per_roll": "weight_per_roll A",
                        "quanity": 100,
-                       "unit": "pcs",
+                       "core_weight": "pcs",
                        "rate_in_usd": 10.00,
                        "amount_in_usd": 1000.00
                    }

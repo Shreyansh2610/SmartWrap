@@ -1360,11 +1360,104 @@ paths:
               required:
                 - date_filter
       security: []
+  '/api/smart-gogodofkog-fkbkr0iooh-4mkfm/{id}':
+    get:
+      summary: ''
+      operationId: getApiSmartGogodofkogFkbkr0iooh4mkfmId
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the smart gogodofkog fkbkr0iooh 4mkfm.'
+        example: necessitatibus
+        required: true
+        schema:
+          type: string
+  /api/fkfjdgrkgrinrinirnijvdnmrgmbro4k:
+    get:
+      summary: ''
+      operationId: getApiFkfjdgrkgrinrinirnijvdnmrgmbro4k
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  users:
+                    -
+                      id: 1e194a12-0ed9-470d-b01e-0275840181a8
+                      name: 'SmartWrap Admin'
+                      email: smartwrap.admin@gmail.com
+                      email_verified_at: null
+                      created_at: '2024-07-24T17:30:36.000000Z'
+                      updated_at: '2024-07-24T17:30:36.000000Z'
+                      deleted_at: null
+                properties:
+                  users:
+                    type: array
+                    example:
+                      -
+                        id: 1e194a12-0ed9-470d-b01e-0275840181a8
+                        name: 'SmartWrap Admin'
+                        email: smartwrap.admin@gmail.com
+                        email_verified_at: null
+                        created_at: '2024-07-24T17:30:36.000000Z'
+                        updated_at: '2024-07-24T17:30:36.000000Z'
+                        deleted_at: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 1e194a12-0ed9-470d-b01e-0275840181a8
+                        name:
+                          type: string
+                          example: 'SmartWrap Admin'
+                        email:
+                          type: string
+                          example: smartwrap.admin@gmail.com
+                        email_verified_at:
+                          type: string
+                          example: null
+                        created_at:
+                          type: string
+                          example: '2024-07-24T17:30:36.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-07-24T17:30:36.000000Z'
+                        deleted_at:
+                          type: string
+                          example: null
+      tags:
+        - Endpoints
+      security: []
   /api/finish-goods:
     get:
       summary: 'Display a listing of the finish goods.'
       operationId: displayAListingOfTheFinishGoods
-      description: 'This endpoint returns a list of all finish goods with their associated product and size details.'
+      description: 'This endpoint returns a list of all finish goods with their associated product and size details for the authenticated user.'
       parameters: []
       responses:
         200:
@@ -1380,14 +1473,14 @@ paths:
                       id: 15fjl5-4f45t-5g456y-g5t
                       product_id: 1g5l67-54yb6-8u567-65g
                       size_id: 1g5l67-54yb6-8u567-65g5
-                      sqm_per_roll: 100
+                      kg_per_roll: 100
                       roll_quantity: 10
-                      total_sqm: 1000
-                      pallet: 'Pallet 1'
-                      pallet_name: 'Pallet A'
+                      total_kg: 1000
+                      number_of_pallet: 'Pallet 1'
+                      pallet_number: 'Pallet A'
                       details: 'Details of finish goods'
                       boxes: 5
-                      order_purchase_date: '2023-06-25'
+                      production_date: '2023-06-25'
                       good_details: 'Details about the goods'
                       company: 'Company A'
                       description_of_goods: 'Description of goods'
@@ -1416,14 +1509,14 @@ paths:
                         id: 15fjl5-4f45t-5g456y-g5t
                         product_id: 1g5l67-54yb6-8u567-65g
                         size_id: 1g5l67-54yb6-8u567-65g5
-                        sqm_per_roll: 100
+                        kg_per_roll: 100
                         roll_quantity: 10
-                        total_sqm: 1000
-                        pallet: 'Pallet 1'
-                        pallet_name: 'Pallet A'
+                        total_kg: 1000
+                        number_of_pallet: 'Pallet 1'
+                        pallet_number: 'Pallet A'
                         details: 'Details of finish goods'
                         boxes: 5
-                        order_purchase_date: '2023-06-25'
+                        production_date: '2023-06-25'
                         good_details: 'Details about the goods'
                         company: 'Company A'
                         description_of_goods: 'Description of goods'
@@ -1453,19 +1546,19 @@ paths:
                         size_id:
                           type: string
                           example: 1g5l67-54yb6-8u567-65g5
-                        sqm_per_roll:
+                        kg_per_roll:
                           type: integer
                           example: 100
                         roll_quantity:
                           type: integer
                           example: 10
-                        total_sqm:
+                        total_kg:
                           type: integer
                           example: 1000
-                        pallet:
+                        number_of_pallet:
                           type: string
                           example: 'Pallet 1'
-                        pallet_name:
+                        pallet_number:
                           type: string
                           example: 'Pallet A'
                         details:
@@ -1474,7 +1567,7 @@ paths:
                         boxes:
                           type: integer
                           example: 5
-                        order_purchase_date:
+                        production_date:
                           type: string
                           example: '2023-06-25'
                         good_details:
@@ -1565,18 +1658,18 @@ paths:
                       - 'Product is required'
                     size_id:
                       - 'Size is required'
-                    sqm_per_roll:
-                      - 'Sqm Per Roll is required'
-                      - 'Sqm Per Roll must be numeric'
+                    kg_per_roll:
+                      - 'Kg Per Roll is required'
+                      - 'Kg Per Roll must be numeric'
                     roll_quantity:
                       - 'Roll Quantity is required'
                       - 'Roll Quantity must be numeric'
-                    total_sqm:
-                      - 'Total Sqm is required'
-                      - 'Total Sqm must be numeric'
-                    pallet:
+                    total_kg:
+                      - 'Total Kg is required'
+                      - 'Total Kg must be numeric'
+                    number_of_pallet:
                       - 'Pallet is required'
-                    pallet_name:
+                    pallet_number:
                       - 'Pallet Name is required'
                     details:
                       - 'Details is required'
@@ -1599,11 +1692,11 @@ paths:
                           - 'Size is required'
                         items:
                           type: string
-                      sqm_per_roll:
+                      kg_per_roll:
                         type: array
                         example:
-                          - 'Sqm Per Roll is required'
-                          - 'Sqm Per Roll must be numeric'
+                          - 'Kg Per Roll is required'
+                          - 'Kg Per Roll must be numeric'
                         items:
                           type: string
                       roll_quantity:
@@ -1613,20 +1706,20 @@ paths:
                           - 'Roll Quantity must be numeric'
                         items:
                           type: string
-                      total_sqm:
+                      total_kg:
                         type: array
                         example:
-                          - 'Total Sqm is required'
-                          - 'Total Sqm must be numeric'
+                          - 'Total Kg is required'
+                          - 'Total Kg must be numeric'
                         items:
                           type: string
-                      pallet:
+                      number_of_pallet:
                         type: array
                         example:
                           - 'Pallet is required'
                         items:
                           type: string
-                      pallet_name:
+                      pallet_number:
                         type: array
                         example:
                           - 'Pallet Name is required'
@@ -1662,23 +1755,23 @@ paths:
                   type: integer
                   description: 'The ID of the size.'
                   example: 1
-                sqm_per_roll:
+                kg_per_roll:
                   type: numeric
-                  description: 'The square meters per roll.'
+                  description: 'The kilograms per roll.'
                   example: '100'
                 roll_quantity:
                   type: numeric
                   description: 'The quantity of rolls.'
                   example: '10'
-                total_sqm:
+                total_kg:
                   type: numeric
-                  description: 'The total square meters.'
+                  description: 'The total kilograms.'
                   example: '1000'
-                pallet:
+                number_of_pallet:
                   type: string
-                  description: 'The pallet information.'
+                  description: 'The number of pallets.'
                   example: 'Pallet 1'
-                pallet_name:
+                pallet_number:
                   type: string
                   description: 'The name of the pallet.'
                   example: 'Pallet A'
@@ -1690,9 +1783,9 @@ paths:
                   type: numeric
                   description: 'The number of boxes.'
                   example: '5'
-                order_purchase_date:
+                production_date:
                   type: date
-                  description: 'The order purchase date.'
+                  description: 'The production date.'
                   example: '2023-06-15'
                 good_details:
                   type: string
@@ -1733,14 +1826,14 @@ paths:
               required:
                 - product_id
                 - size_id
-                - sqm_per_roll
+                - kg_per_roll
                 - roll_quantity
-                - total_sqm
-                - pallet
-                - pallet_name
+                - total_kg
+                - number_of_pallet
+                - pallet_number
                 - details
                 - boxes
-                - order_purchase_date
+                - production_date
                 - good_details
                 - company
                 - description_of_goods
@@ -1786,18 +1879,18 @@ paths:
                       - 'Product is required'
                     size_id:
                       - 'Size is required'
-                    sqm_per_roll:
+                    kg_per_roll:
                       - 'Sqm Per Roll is required'
                       - 'Sqm Per Roll must be numeric'
                     roll_quantity:
                       - 'Roll Quantity is required'
                       - 'Roll Quantity must be numeric'
-                    total_sqm:
+                    total_kg:
                       - 'Total Sqm is required'
                       - 'Total Sqm must be numeric'
-                    pallet:
+                    number_of_pallet:
                       - 'Pallet is required'
-                    pallet_name:
+                    pallet_number:
                       - 'Pallet Name is required'
                     details:
                       - 'Details is required'
@@ -1820,7 +1913,7 @@ paths:
                           - 'Size is required'
                         items:
                           type: string
-                      sqm_per_roll:
+                      kg_per_roll:
                         type: array
                         example:
                           - 'Sqm Per Roll is required'
@@ -1834,20 +1927,20 @@ paths:
                           - 'Roll Quantity must be numeric'
                         items:
                           type: string
-                      total_sqm:
+                      total_kg:
                         type: array
                         example:
                           - 'Total Sqm is required'
                           - 'Total Sqm must be numeric'
                         items:
                           type: string
-                      pallet:
+                      number_of_pallet:
                         type: array
                         example:
                           - 'Pallet is required'
                         items:
                           type: string
-                      pallet_name:
+                      pallet_number:
                         type: array
                         example:
                           - 'Pallet Name is required'
@@ -1883,7 +1976,7 @@ paths:
                   type: integer
                   description: 'The ID of the size.'
                   example: 1
-                sqm_per_roll:
+                kg_per_roll:
                   type: numeric
                   description: 'The square meters per roll.'
                   example: '100'
@@ -1891,15 +1984,15 @@ paths:
                   type: numeric
                   description: 'The quantity of rolls.'
                   example: '10'
-                total_sqm:
+                total_kg:
                   type: numeric
                   description: 'The total square meters.'
                   example: '1000'
-                pallet:
+                number_of_pallet:
                   type: string
-                  description: 'The pallet information.'
+                  description: 'The number_of_pallet information.'
                   example: 'Pallet 1'
-                pallet_name:
+                pallet_number:
                   type: string
                   description: 'The name of the pallet.'
                   example: 'Pallet A'
@@ -1911,7 +2004,7 @@ paths:
                   type: numeric
                   description: 'The number of boxes.'
                   example: '5'
-                order_purchase_date:
+                production_date:
                   type: date
                   description: 'The order purchase date.'
                   example: '2023-06-15'
@@ -1954,14 +2047,14 @@ paths:
               required:
                 - product_id
                 - size_id
-                - sqm_per_roll
+                - kg_per_roll
                 - roll_quantity
-                - total_sqm
-                - pallet
-                - pallet_name
+                - total_kg
+                - number_of_pallet
+                - pallet_number
                 - details
                 - boxes
-                - order_purchase_date
+                - production_date
                 - good_details
                 - company
                 - description_of_goods
@@ -2536,7 +2629,7 @@ paths:
     get:
       summary: 'Display a listing of the PI Reports.'
       operationId: displayAListingOfThePIReports
-      description: "This endpoint retrieves a list of PI Reports created by the authenticated user,\nalong with their associated product details."
+      description: "This endpoint retrieves a list of PI Reports created by the authenticated user,\nincluding detailed information such as the exporter's and consignee's details,\nproduct information, and financial data. Each PI Report also contains associated\nproduct information, such as packaging details, quantity, and pricing in USD."
       parameters: []
       responses:
         200:
@@ -2596,12 +2689,12 @@ paths:
                           size: Medium
                           type: 'Type A'
                           packaging_description: Box
-                          rolls_pallet: 10
+                          roll_per_pallet: 10
                           no_of_pallets: 5
                           total_rolls: 50
-                          container: 'Container A'
+                          weight_per_roll: 'weight_per_roll A'
                           quanity: 100
-                          unit: pcs
+                          core_weight: pcs
                           rate_in_usd: 10
                           amount_in_usd: 1000
                 properties:
@@ -2659,12 +2752,12 @@ paths:
                             size: Medium
                             type: 'Type A'
                             packaging_description: Box
-                            rolls_pallet: 10
+                            roll_per_pallet: 10
                             no_of_pallets: 5
                             total_rolls: 50
-                            container: 'Container A'
+                            weight_per_roll: 'weight_per_roll A'
                             quanity: 100
-                            unit: pcs
+                            core_weight: pcs
                             rate_in_usd: 10
                             amount_in_usd: 1000
                     items:
@@ -2799,12 +2892,12 @@ paths:
                               size: Medium
                               type: 'Type A'
                               packaging_description: Box
-                              rolls_pallet: 10
+                              roll_per_pallet: 10
                               no_of_pallets: 5
                               total_rolls: 50
-                              container: 'Container A'
+                              weight_per_roll: 'weight_per_roll A'
                               quanity: 100
-                              unit: pcs
+                              core_weight: pcs
                               rate_in_usd: 10
                               amount_in_usd: 1000
                           items:
@@ -2825,7 +2918,7 @@ paths:
                               packaging_description:
                                 type: string
                                 example: Box
-                              rolls_pallet:
+                              roll_per_pallet:
                                 type: integer
                                 example: 10
                               no_of_pallets:
@@ -2834,13 +2927,13 @@ paths:
                               total_rolls:
                                 type: integer
                                 example: 50
-                              container:
+                              weight_per_roll:
                                 type: string
-                                example: 'Container A'
+                                example: 'weight_per_roll A'
                               quanity:
                                 type: integer
                                 example: 100
-                              unit:
+                              core_weight:
                                 type: string
                                 example: pcs
                               rate_in_usd:
@@ -2855,7 +2948,7 @@ paths:
     post:
       summary: 'Store a newly created PI Report.'
       operationId: storeANewlyCreatedPIReport
-      description: 'This endpoint creates a new PI Report with the specified details and associated products.'
+      description: "This endpoint creates a new PI Report with the specified details and associated products.\nIt accepts various details related to the exporter, consignee, and product information.\nAfter creation, the associated product details are stored in the `PiReportExportProduct` model."
       parameters: []
       responses:
         200:
@@ -3043,7 +3136,7 @@ paths:
                   type: array
                   description: 'The list of products associated with the PI Report.'
                   example:
-                    - aut
+                    - ab
                   items:
                     type: string
               required:
@@ -3091,7 +3184,7 @@ paths:
     put:
       summary: 'Update the specified PI Report.'
       operationId: updateTheSpecifiedPIReport
-      description: 'This endpoint updates the details of a specific PI Report by its ID.'
+      description: 'This endpoint updates the details of a specific PI Report by its ID, along with its associated products.'
       parameters: []
       responses:
         200:
@@ -3279,7 +3372,7 @@ paths:
                   type: array
                   description: 'The list of products associated with the PI Report.'
                   example:
-                    - sed
+                    - omnis
                   items:
                     type: string
               required:
@@ -3361,7 +3454,7 @@ paths:
     post:
       summary: 'Display the specified PI Report.'
       operationId: displayTheSpecifiedPIReport
-      description: 'This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.'
+      description: "This endpoint retrieves the details of a specific PI Report by its PI number (`pi_no`), including the associated product details.\nIt fetches the report created by the authenticated user."
       parameters: []
       responses:
         200:
@@ -3420,12 +3513,12 @@ paths:
                         size: Medium
                         type: 'Type A'
                         packaging_description: Box
-                        rolls_pallet: 10
+                        roll_per_pallet: 10
                         no_of_pallets: 5
                         total_rolls: 50
-                        container: 'Container A'
+                        weight_per_roll: 'weight_per_roll A'
                         quanity: 100
-                        unit: pcs
+                        core_weight: pcs
                         rate_in_usd: 10.0
                         amount_in_usd: 1000.0
                 properties:
@@ -3564,12 +3657,12 @@ paths:
                             size: Medium
                             type: 'Type A'
                             packaging_description: Box
-                            rolls_pallet: 10
+                            roll_per_pallet: 10
                             no_of_pallets: 5
                             total_rolls: 50
-                            container: 'Container A'
+                            weight_per_roll: 'weight_per_roll A'
                             quanity: 100
-                            unit: pcs
+                            core_weight: pcs
                             rate_in_usd: 10
                             amount_in_usd: 1000
                         items:
@@ -3590,7 +3683,7 @@ paths:
                             packaging_description:
                               type: string
                               example: Box
-                            rolls_pallet:
+                            roll_per_pallet:
                               type: integer
                               example: 10
                             no_of_pallets:
@@ -3599,13 +3692,13 @@ paths:
                             total_rolls:
                               type: integer
                               example: 50
-                            container:
+                            weight_per_roll:
                               type: string
-                              example: 'Container A'
+                              example: 'weight_per_roll A'
                             quanity:
                               type: integer
                               example: 100
-                            unit:
+                            core_weight:
                               type: string
                               example: pcs
                             rate_in_usd:
@@ -3620,9 +3713,9 @@ paths:
     parameters:
       -
         in: path
-        name: id
-        description: 'The ID of the PI Report.'
-        example: 15fjl5-4f45t-5g456y-g5t
+        name: pi_no
+        description: 'The PI number of the report.'
+        example: PI12345
         required: true
         schema:
           type: string
@@ -3872,124 +3965,124 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: qui
+                  example: et
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: eveniet
+                  example: possimus
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: eaque
+                  example: autem
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: dolor
+                  example: aut
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: et
+                  example: magni
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: atque
+                  example: soluta
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: debitis
+                  example: qui
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: voluptas
+                  example: quos
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: qui
+                  example: animi
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: maxime
+                  example: aspernatur
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: corrupti
+                  example: qui
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: eaque
+                  example: qui
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: cupiditate
+                  example: repellendus
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: qui
+                  example: ipsa
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: rerum
+                  example: hic
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: magni
+                  example: optio
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: est
+                  example: ut
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: et
+                  example: aperiam
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: sit
+                  example: quas
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: nihil
+                  example: temporibus
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: hic
+                  example: laboriosam
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: est
+                  example: et
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: saepe
+                  example: itaque
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: veniam
+                  example: ipsa
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: voluptatem
+                  example: consequatur
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: in
+                  example: cum
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: doloribus
+                  example: quasi
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: perspiciatis
+                  example: laboriosam
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: distinctio
+                  example: esse
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - eligendi
+                    - voluptatum
                   items:
                     type: string
               required:
@@ -4062,124 +4155,124 @@ paths:
                 po_no:
                   type: string
                   description: 'The PO number.'
-                  example: omnis
+                  example: aliquam
                 po_date:
                   type: date
                   description: 'The date of the PO.'
-                  example: itaque
+                  example: ut
                 quotation_no:
                   type: string
                   description: 'The quotation number.'
-                  example: qui
+                  example: voluptatem
                 quotation_date:
                   type: date
                   description: 'The date of the quotation.'
-                  example: consectetur
+                  example: sed
                 buyer_name:
                   type: string
                   description: 'The name of the buyer.'
-                  example: neque
+                  example: porro
                 buyer_address:
                   type: string
                   description: 'The address of the buyer.'
-                  example: quisquam
+                  example: quis
                 buyer_pan:
                   type: string
                   description: 'The PAN of the buyer.'
-                  example: nihil
+                  example: consequatur
                 buyer_iec:
                   type: string
                   description: 'The IEC of the buyer.'
-                  example: culpa
+                  example: eius
                 buyer_gst:
                   type: string
                   description: 'The GST number of the buyer.'
-                  example: natus
+                  example: ipsam
                 buyer_mail:
                   type: string
                   description: 'The email of the buyer.'
-                  example: excepturi
+                  example: est
                 buyer_contact_person:
                   type: string
                   description: 'The contact person of the buyer.'
-                  example: eligendi
+                  example: dolorem
                 buyer_contact_no:
                   type: string
                   description: 'The contact number of the buyer.'
-                  example: odio
+                  example: corrupti
                 supplier_name:
                   type: string
                   description: 'The name of the supplier.'
-                  example: facilis
+                  example: soluta
                 supplier_address:
                   type: string
                   description: 'The address of the supplier.'
-                  example: fugit
+                  example: deserunt
                 supplier_pan:
                   type: string
                   description: 'The PAN of the supplier.'
-                  example: iste
+                  example: possimus
                 supplier_iec:
                   type: string
                   description: 'The IEC of the supplier.'
-                  example: rerum
+                  example: sed
                 supplier_gst:
                   type: string
                   description: 'The GST number of the supplier.'
-                  example: et
+                  example: sed
                 supplier_mail:
                   type: string
                   description: 'The email of the supplier.'
-                  example: quidem
+                  example: ut
                 supplier_contact_person:
                   type: string
                   description: 'The contact person of the supplier.'
-                  example: velit
+                  example: animi
                 supplier_contact_no:
                   type: string
                   description: 'The contact number of the supplier.'
-                  example: aspernatur
+                  example: consectetur
                 igst:
                   type: numeric
                   description: 'The IGST amount.'
-                  example: dolores
+                  example: mollitia
                 sgst:
                   type: numeric
                   description: 'The SGST amount.'
-                  example: ad
+                  example: quae
                 cgst:
                   type: numeric
                   description: 'The CGST amount.'
-                  example: numquam
+                  example: exercitationem
                 total_value:
                   type: numeric
                   description: 'The total value of the PO.'
-                  example: dolor
+                  example: quisquam
                 amount_in_words:
                   type: string
                   description: 'The total value in words.'
-                  example: laudantium
+                  example: ipsum
                 notes_1:
                   type: string
                   description: 'optional Additional notes 1.'
-                  example: molestias
+                  example: excepturi
                 notes_2:
                   type: string
                   description: 'optional Additional notes 2.'
-                  example: optio
+                  example: fuga
                 notes_3:
                   type: string
                   description: 'optional Additional notes 3.'
-                  example: omnis
+                  example: voluptatibus
                 notes_4:
                   type: string
                   description: 'optional Additional notes 4.'
-                  example: fuga
+                  example: nihil
                 products:
                   type: array
                   description: 'The array of product details.'
                   example:
-                    - cum
+                    - ex
                   items:
                     type: string
               required:
@@ -4240,7 +4333,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the PO Report.'
-        example: ut
+        example: omnis
         required: true
         schema:
           type: string
@@ -4254,12 +4347,12 @@ paths:
           in: query
           name: po_no
           description: 'The PO number of the PO Report.'
-          example: repellat
+          example: dignissimos
           required: true
           schema:
             type: string
             description: 'The PO number of the PO Report.'
-            example: repellat
+            example: dignissimos
       responses:
         200:
           description: ''

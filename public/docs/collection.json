@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "SmartWrap",
-        "_postman_id": "7705c53e-3801-4d60-96ef-f1351f173bee",
+        "_postman_id": "88e22d88-7e10-40ed-9a41-992228350d38",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -940,7 +940,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -949,6 +949,126 @@
                             ],
                             "code": 404,
                             "body": "{\"type\":\"Unauthenticated\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/smart-gogodofkog-fkbkr0iooh-4mkfm\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/smart-gogodofkog-fkbkr0iooh-4mkfm\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/smart-gogodofkog-fkbkr0iooh-4mkfm\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "necessitatibus",
+                                    "description": "The ID of the smart gogodofkog fkbkr0iooh 4mkfm."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/fkfjdgrkgrinrinirnijvdnmrgmbro4k",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fkfjdgrkgrinrinirnijvdnmrgmbro4k",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fkfjdgrkgrinrinirnijvdnmrgmbro4k"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"users\":[{\"id\":\"1e194a12-0ed9-470d-b01e-0275840181a8\",\"name\":\"SmartWrap Admin\",\"email\":\"smartwrap.admin@gmail.com\",\"email_verified_at\":null,\"created_at\":\"2024-07-24T17:30:36.000000Z\",\"updated_at\":\"2024-07-24T17:30:36.000000Z\",\"deleted_at\":null}]}",
                             "name": ""
                         }
                     ]
@@ -980,7 +1100,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This endpoint returns a list of all finish goods with their associated product and size details.",
+                        "description": "This endpoint returns a list of all finish goods with their associated product and size details for the authenticated user.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -989,7 +1109,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"product_id\": \"1g5l67-54yb6-8u567-65g\",\n         \"size_id\": \"1g5l67-54yb6-8u567-65g5\",\n         \"sqm_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_sqm\": 1000,\n         \"pallet\": \"Pallet 1\",\n         \"pallet_name\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"order_purchase_date\": \"2023-06-25\",\n         \"good_details\": \"Details about the goods\",\n         \"company\": \"Company A\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty_in_storage_start\": 50,\n         \"qty_issued\": 10,\n         \"qty_in_storage_end\": 40,\n         \"qty_returned\": 5,\n         \"wastage\": 2,\n         \"actual_qty_consumed\": 8,\n         \"product\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g\",\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g5\",\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"finishGoods\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"product_id\": \"1g5l67-54yb6-8u567-65g\",\n         \"size_id\": \"1g5l67-54yb6-8u567-65g5\",\n         \"kg_per_roll\": 100,\n         \"roll_quantity\": 10,\n         \"total_kg\": 1000,\n         \"number_of_pallet\": \"Pallet 1\",\n         \"pallet_number\": \"Pallet A\",\n         \"details\": \"Details of finish goods\",\n         \"boxes\": 5,\n         \"production_date\": \"2023-06-25\",\n         \"good_details\": \"Details about the goods\",\n         \"company\": \"Company A\",\n         \"description_of_goods\": \"Description of goods\",\n         \"qty_in_storage_start\": 50,\n         \"qty_issued\": 10,\n         \"qty_in_storage_end\": 40,\n         \"qty_returned\": 5,\n         \"wastage\": 2,\n         \"actual_qty_consumed\": 8,\n         \"product\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g\",\n             \"product_name\": \"Product A\"\n         },\n         \"size\": {\n             \"id\": \"1g5l67-54yb6-8u567-65g5\",\n             \"size_in_cm\": 100,\n             \"size_in_mm\": 1000,\n             \"micron\": 50\n         }\n     }\n ]\n}",
                             "name": ""
                         }
                     ]
@@ -1016,7 +1136,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+                            "raw": "{\"product_id\":15,\"size_id\":1,\"kg_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_kg\":\"1000\",\"number_of_pallet\":\"Pallet 1\",\"pallet_number\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"production_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
                         },
                         "description": "This endpoint allows you to create a new finish good.",
                         "auth": {
@@ -1033,7 +1153,7 @@
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
+                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"kg_per_roll\": [\"Kg Per Roll is required\", \"Kg Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_kg\": [\"Total Kg is required\", \"Total Kg must be numeric\"],\n     \"number_of_pallet\": [\"Pallet is required\"],\n     \"pallet_number\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
                             "name": ""
                         }
                     ]
@@ -1068,7 +1188,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":15,\"size_id\":1,\"sqm_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_sqm\":\"1000\",\"pallet\":\"Pallet 1\",\"pallet_name\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"order_purchase_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
+                            "raw": "{\"product_id\":15,\"size_id\":1,\"kg_per_roll\":\"100\",\"roll_quantity\":\"10\",\"total_kg\":\"1000\",\"number_of_pallet\":\"Pallet 1\",\"pallet_number\":\"Pallet A\",\"details\":\"Details of finish goods\",\"boxes\":\"5\",\"production_date\":\"2023-06-15\",\"good_details\":\"\\\"Good details\\\"\",\"company\":\"\\\"Company A\\\"\",\"description_of_goods\":\"\\\"Description of goods\\\"\",\"qty_in_storage_start\":\"100\",\"qty_issued\":\"10\",\"qty_in_storage_end\":\"90\",\"qty_returned\":\"5\",\"wastage\":\"2\",\"actual_qty_consumed\":\"8\"}"
                         },
                         "description": "This endpoint allows you to update an existing finish good.",
                         "auth": {
@@ -1085,7 +1205,7 @@
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"sqm_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_sqm\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"pallet\": [\"Pallet is required\"],\n     \"pallet_name\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
+                            "body": "{\n \"errors\": {\n     \"product_id\": [\"Product is required\"],\n     \"size_id\": [\"Size is required\"],\n     \"kg_per_roll\": [\"Sqm Per Roll is required\", \"Sqm Per Roll must be numeric\"],\n     \"roll_quantity\": [\"Roll Quantity is required\", \"Roll Quantity must be numeric\"],\n     \"total_kg\": [\"Total Sqm is required\", \"Total Sqm must be numeric\"],\n     \"number_of_pallet\": [\"Pallet is required\"],\n     \"pallet_number\": [\"Pallet Name is required\"],\n     \"details\": [\"Details is required\"],\n     \"boxes\": [\"Boxes is required\", \"Boxes must be numeric\"]\n }\n}",
                             "name": ""
                         }
                     ]
@@ -1337,7 +1457,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This endpoint retrieves a list of PI Reports created by the authenticated user,\nalong with their associated product details.",
+                        "description": "This endpoint retrieves a list of PI Reports created by the authenticated user,\nincluding detailed information such as the exporter's and consignee's details,\nproduct information, and financial data. Each PI Report also contains associated\nproduct information, such as packaging details, quantity, and pricing in USD.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1346,7 +1466,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"piReportsExport\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"pi_no\": \"PI12345\",\n         \"date\": \"2023-06-25\",\n         \"buyer_order_no\": \"BO12345\",\n         \"buyer_order_date\": \"2023-06-20\",\n         \"exporter_name\": \"Exporter A\",\n         \"exporter_address\": \"123 Street, City, Country\",\n         \"exporter_pan\": \"ABCDE1234F\",\n         \"exporter_iec\": \"IEC1234567\",\n         \"exporter_gst\": \"GST123456\",\n         \"exporter_mail\": \"exporter@example.com\",\n         \"exporter_contact_person\": \"John Doe\",\n         \"exporter_contact_no\": \"1234567890\",\n         \"consignee_name\": \"Consignee A\",\n         \"consignee_address\": \"456 Avenue, City, Country\",\n         \"consignee_country\": \"Country B\",\n         \"consignee_mail\": \"consignee@example.com\",\n         \"consignee_contact_person\": \"Jane Doe\",\n         \"consignee_contact_no\": \"0987654321\",\n         \"port_of_loading\": \"Port A\",\n         \"port_of_discharge\": \"Port B\",\n         \"final_destination_port\": \"Port C\",\n         \"country_of_origin_of_goods\": \"Country A\",\n         \"country_of_final_destination\": \"Country B\",\n         \"total_fob_value\": 1000,\n         \"freight_charges\": 50,\n         \"total_cfr_value\": 1050,\n         \"insurance_charges\": 20,\n         \"total_cif_value\": 1070,\n         \"amount_in_words\": \"One Thousand Seventy\",\n         \"bank_name\": \"Bank A\",\n         \"bank_address\": \"789 Boulevard, City, Country\",\n         \"bank_account_no\": \"123456789012\",\n         \"bank_ifsc_code\": \"IFSC12345\",\n         \"bank_ad_code\": \"AD12345\",\n         \"bank_swift_code\": \"SWIFT12345\",\n         \"payment_terms\": \"30 days\",\n         \"payment_delivery_time\": \"2024-05-13 17:05:06\",\n         \"payment_delivery_terms\": \"FOB\",\n         \"notes\": \"Special instructions\",\n         \"piReportProducts\": [\n             {\n                 \"id\": \"12345\",\n                 \"pi_report_export_id\": \"15fjl5-4f45t-5g456y-g5t\",\n                 \"size\": \"Medium\",\n                 \"type\": \"Type A\",\n                 \"packaging_description\": \"Box\",\n                 \"rolls_pallet\": 10,\n                 \"no_of_pallets\": 5,\n                 \"total_rolls\": 50,\n                 \"container\": \"Container A\",\n                 \"quanity\": 100,\n                 \"unit\": \"pcs\",\n                 \"rate_in_usd\": 10,\n                 \"amount_in_usd\": 1000\n             }\n         ]\n     }\n ]\n}",
+                            "body": "{\n \"status\": \"success\",\n \"piReportsExport\": [\n     {\n         \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n         \"pi_no\": \"PI12345\",\n         \"date\": \"2023-06-25\",\n         \"buyer_order_no\": \"BO12345\",\n         \"buyer_order_date\": \"2023-06-20\",\n         \"exporter_name\": \"Exporter A\",\n         \"exporter_address\": \"123 Street, City, Country\",\n         \"exporter_pan\": \"ABCDE1234F\",\n         \"exporter_iec\": \"IEC1234567\",\n         \"exporter_gst\": \"GST123456\",\n         \"exporter_mail\": \"exporter@example.com\",\n         \"exporter_contact_person\": \"John Doe\",\n         \"exporter_contact_no\": \"1234567890\",\n         \"consignee_name\": \"Consignee A\",\n         \"consignee_address\": \"456 Avenue, City, Country\",\n         \"consignee_country\": \"Country B\",\n         \"consignee_mail\": \"consignee@example.com\",\n         \"consignee_contact_person\": \"Jane Doe\",\n         \"consignee_contact_no\": \"0987654321\",\n         \"port_of_loading\": \"Port A\",\n         \"port_of_discharge\": \"Port B\",\n         \"final_destination_port\": \"Port C\",\n         \"country_of_origin_of_goods\": \"Country A\",\n         \"country_of_final_destination\": \"Country B\",\n         \"total_fob_value\": 1000,\n         \"freight_charges\": 50,\n         \"total_cfr_value\": 1050,\n         \"insurance_charges\": 20,\n         \"total_cif_value\": 1070,\n         \"amount_in_words\": \"One Thousand Seventy\",\n         \"bank_name\": \"Bank A\",\n         \"bank_address\": \"789 Boulevard, City, Country\",\n         \"bank_account_no\": \"123456789012\",\n         \"bank_ifsc_code\": \"IFSC12345\",\n         \"bank_ad_code\": \"AD12345\",\n         \"bank_swift_code\": \"SWIFT12345\",\n         \"payment_terms\": \"30 days\",\n         \"payment_delivery_time\": \"2024-05-13 17:05:06\",\n         \"payment_delivery_terms\": \"FOB\",\n         \"notes\": \"Special instructions\",\n         \"piReportProducts\": [\n             {\n                 \"id\": \"12345\",\n                 \"pi_report_export_id\": \"15fjl5-4f45t-5g456y-g5t\",\n                 \"size\": \"Medium\",\n                 \"type\": \"Type A\",\n                 \"packaging_description\": \"Box\",\n                 \"roll_per_pallet\": 10,\n                 \"no_of_pallets\": 5,\n                 \"total_rolls\": 50,\n                 \"weight_per_roll\": \"weight_per_roll A\",\n                 \"quanity\": 100,\n                 \"core_weight\": \"pcs\",\n                 \"rate_in_usd\": 10,\n                 \"amount_in_usd\": 1000\n             }\n         ]\n     }\n ]\n}",
                             "name": ""
                         }
                     ]
@@ -1373,9 +1493,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"aut\"]}"
+                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"ab\"]}"
                         },
-                        "description": "This endpoint creates a new PI Report with the specified details and associated products.",
+                        "description": "This endpoint creates a new PI Report with the specified details and associated products.\nIt accepts various details related to the exporter, consignee, and product information.\nAfter creation, the associated product details are stored in the `PiReportExportProduct` model.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1419,9 +1539,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"sed\"]}"
+                            "raw": "{\"pi_no\":\"PI12345\",\"date\":\"2023-06-25\",\"buyer_order_no\":\"BO12345\",\"buyer_order_date\":\"2023-06-20\",\"exporter_name\":\"Exporter A\",\"exporter_address\":\"123 Street, City, Country\",\"exporter_pan\":\"ABCDE1234F\",\"exporter_iec\":\"IEC1234567\",\"exporter_gst\":\"GST123456\",\"exporter_mail\":\"exporter@example.com\",\"exporter_contact_person\":\"John Doe\",\"exporter_contact_no\":\"1234567890\",\"consignee_name\":\"Consignee A\",\"consignee_address\":\"456 Avenue, City, Country\",\"consignee_country\":\"Country B\",\"consignee_mail\":\"consignee@example.com\",\"consignee_contact_person\":\"Jane Doe\",\"consignee_contact_no\":\"0987654321\",\"port_of_loading\":\"Port A\",\"port_of_discharge\":\"Port B\",\"final_destination_port\":\"Port C\",\"country_of_origin_of_goods\":\"Country A\",\"country_of_final_destination\":\"Country B\",\"total_fob_value\":1000,\"freight_charges\":50,\"total_cfr_value\":1050,\"insurance_charges\":20,\"total_cif_value\":1070,\"amount_in_words\":\"One Thousand Seventy\",\"bank_name\":\"Bank A\",\"bank_address\":\"789 Boulevard, City, Country\",\"bank_account_no\":\"123456789012\",\"bank_ifsc_code\":\"IFSC12345\",\"bank_ad_code\":\"AD12345\",\"bank_swift_code\":\"SWIFT12345\",\"payment_terms\":\"30 days\",\"payment_delivery_time\":\"2024-05-13 17:05:06\",\"payment_delivery_terms\":\"FOB\",\"notes\":\"Special instructions\",\"products\":[\"omnis\"]}"
                         },
-                        "description": "This endpoint updates the details of a specific PI Report by its ID.",
+                        "description": "This endpoint updates the details of a specific PI Report by its ID, along with its associated products.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1488,10 +1608,10 @@
                             "raw": "{{baseUrl}}\/api\/pi-reports-export-get",
                             "variable": [
                                 {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "15fjl5-4f45t-5g456y-g5t",
-                                    "description": "The ID of the PI Report."
+                                    "id": "pi_no",
+                                    "key": "pi_no",
+                                    "value": "PI12345",
+                                    "description": "The PI number of the report."
                                 }
                             ]
                         },
@@ -1507,7 +1627,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "This endpoint retrieves the details of a specific PI Report by its ID, including the associated product details.",
+                        "description": "This endpoint retrieves the details of a specific PI Report by its PI number (`pi_no`), including the associated product details.\nIt fetches the report created by the authenticated user.",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1516,7 +1636,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n \"status\": \"success\",\n \"piReportsExport\": {\n     \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n     \"pi_no\": \"PI12345\",\n     \"date\": \"2023-06-25\",\n     \"buyer_order_no\": \"BO12345\",\n     \"buyer_order_date\": \"2023-06-20\",\n     \"exporter_name\": \"Exporter A\",\n     \"exporter_address\": \"123 Street, City, Country\",\n     \"exporter_pan\": \"ABCDE1234F\",\n     \"exporter_iec\": \"IEC1234567\",\n     \"exporter_gst\": \"GST123456\",\n     \"exporter_mail\": \"exporter@example.com\",\n     \"exporter_contact_person\": \"John Doe\",\n     \"exporter_contact_no\": \"1234567890\",\n     \"consignee_name\": \"Consignee A\",\n     \"consignee_address\": \"456 Avenue, City, Country\",\n     \"consignee_country\": \"Country B\",\n     \"consignee_mail\": \"consignee@example.com\",\n     \"consignee_contact_person\": \"Jane Doe\",\n     \"consignee_contact_no\": \"0987654321\",\n     \"port_of_loading\": \"Port A\",\n     \"port_of_discharge\": \"Port B\",\n     \"final_destination_port\": \"Port C\",\n     \"country_of_origin_of_goods\": \"Country A\",\n     \"country_of_final_destination\": \"Country B\",\n     \"total_fob_value\": 1000,\n     \"freight_charges\": 50,\n     \"total_cfr_value\": 1050,\n     \"insurance_charges\": 20,\n     \"total_cif_value\": 1070,\n     \"amount_in_words\": \"One Thousand Seventy\",\n     \"bank_name\": \"Bank A\",\n     \"bank_address\": \"789 Boulevard, City, Country\",\n     \"bank_account_no\": \"123456789012\",\n     \"bank_ifsc_code\": \"IFSC12345\",\n     \"bank_ad_code\": \"AD12345\",\n     \"bank_swift_code\": \"SWIFT12345\",\n     \"payment_terms\": \"30 days\",\n     \"payment_delivery_time\": \"2024-05-13 17:05:06\",\n     \"payment_delivery_terms\": \"FOB\",\n     \"notes\": \"Special instructions\",\n     \"piReportProducts\": [\n         {\n             \"id\": \"12345\",\n             \"pi_report_export_id\": \"15fjl5-4f45t-5g456y-g5t\",\n             \"size\": \"Medium\",\n             \"type\": \"Type A\",\n             \"packaging_description\": \"Box\",\n             \"rolls_pallet\": 10,\n             \"no_of_pallets\": 5,\n             \"total_rolls\": 50,\n             \"container\": \"Container A\",\n             \"quanity\": 100,\n             \"unit\": \"pcs\",\n             \"rate_in_usd\": 10.00,\n             \"amount_in_usd\": 1000.00\n         }\n     ]\n }\n}",
+                            "body": "{\n \"status\": \"success\",\n \"piReportsExport\": {\n     \"id\": \"15fjl5-4f45t-5g456y-g5t\",\n     \"pi_no\": \"PI12345\",\n     \"date\": \"2023-06-25\",\n     \"buyer_order_no\": \"BO12345\",\n     \"buyer_order_date\": \"2023-06-20\",\n     \"exporter_name\": \"Exporter A\",\n     \"exporter_address\": \"123 Street, City, Country\",\n     \"exporter_pan\": \"ABCDE1234F\",\n     \"exporter_iec\": \"IEC1234567\",\n     \"exporter_gst\": \"GST123456\",\n     \"exporter_mail\": \"exporter@example.com\",\n     \"exporter_contact_person\": \"John Doe\",\n     \"exporter_contact_no\": \"1234567890\",\n     \"consignee_name\": \"Consignee A\",\n     \"consignee_address\": \"456 Avenue, City, Country\",\n     \"consignee_country\": \"Country B\",\n     \"consignee_mail\": \"consignee@example.com\",\n     \"consignee_contact_person\": \"Jane Doe\",\n     \"consignee_contact_no\": \"0987654321\",\n     \"port_of_loading\": \"Port A\",\n     \"port_of_discharge\": \"Port B\",\n     \"final_destination_port\": \"Port C\",\n     \"country_of_origin_of_goods\": \"Country A\",\n     \"country_of_final_destination\": \"Country B\",\n     \"total_fob_value\": 1000,\n     \"freight_charges\": 50,\n     \"total_cfr_value\": 1050,\n     \"insurance_charges\": 20,\n     \"total_cif_value\": 1070,\n     \"amount_in_words\": \"One Thousand Seventy\",\n     \"bank_name\": \"Bank A\",\n     \"bank_address\": \"789 Boulevard, City, Country\",\n     \"bank_account_no\": \"123456789012\",\n     \"bank_ifsc_code\": \"IFSC12345\",\n     \"bank_ad_code\": \"AD12345\",\n     \"bank_swift_code\": \"SWIFT12345\",\n     \"payment_terms\": \"30 days\",\n     \"payment_delivery_time\": \"2024-05-13 17:05:06\",\n     \"payment_delivery_terms\": \"FOB\",\n     \"notes\": \"Special instructions\",\n     \"piReportProducts\": [\n         {\n             \"id\": \"12345\",\n             \"pi_report_export_id\": \"15fjl5-4f45t-5g456y-g5t\",\n             \"size\": \"Medium\",\n             \"type\": \"Type A\",\n             \"packaging_description\": \"Box\",\n             \"roll_per_pallet\": 10,\n             \"no_of_pallets\": 5,\n             \"total_rolls\": 50,\n             \"weight_per_roll\": \"weight_per_roll A\",\n             \"quanity\": 100,\n             \"core_weight\": \"pcs\",\n             \"rate_in_usd\": 10.00,\n             \"amount_in_usd\": 1000.00\n         }\n     ]\n }\n}",
                             "name": ""
                         }
                     ]
@@ -1627,7 +1747,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"po_no\":\"qui\",\"po_date\":\"eveniet\",\"quotation_no\":\"eaque\",\"quotation_date\":\"dolor\",\"buyer_name\":\"et\",\"buyer_address\":\"atque\",\"buyer_pan\":\"debitis\",\"buyer_iec\":\"voluptas\",\"buyer_gst\":\"qui\",\"buyer_mail\":\"maxime\",\"buyer_contact_person\":\"corrupti\",\"buyer_contact_no\":\"eaque\",\"supplier_name\":\"cupiditate\",\"supplier_address\":\"qui\",\"supplier_pan\":\"rerum\",\"supplier_iec\":\"magni\",\"supplier_gst\":\"est\",\"supplier_mail\":\"et\",\"supplier_contact_person\":\"sit\",\"supplier_contact_no\":\"nihil\",\"igst\":\"hic\",\"sgst\":\"est\",\"cgst\":\"saepe\",\"total_value\":\"veniam\",\"amount_in_words\":\"voluptatem\",\"notes_1\":\"in\",\"notes_2\":\"doloribus\",\"notes_3\":\"perspiciatis\",\"notes_4\":\"distinctio\",\"products\":[\"eligendi\"]}"
+                            "raw": "{\"po_no\":\"et\",\"po_date\":\"possimus\",\"quotation_no\":\"autem\",\"quotation_date\":\"aut\",\"buyer_name\":\"magni\",\"buyer_address\":\"soluta\",\"buyer_pan\":\"qui\",\"buyer_iec\":\"quos\",\"buyer_gst\":\"animi\",\"buyer_mail\":\"aspernatur\",\"buyer_contact_person\":\"qui\",\"buyer_contact_no\":\"qui\",\"supplier_name\":\"repellendus\",\"supplier_address\":\"ipsa\",\"supplier_pan\":\"hic\",\"supplier_iec\":\"optio\",\"supplier_gst\":\"ut\",\"supplier_mail\":\"aperiam\",\"supplier_contact_person\":\"quas\",\"supplier_contact_no\":\"temporibus\",\"igst\":\"laboriosam\",\"sgst\":\"et\",\"cgst\":\"itaque\",\"total_value\":\"ipsa\",\"amount_in_words\":\"consequatur\",\"notes_1\":\"cum\",\"notes_2\":\"quasi\",\"notes_3\":\"laboriosam\",\"notes_4\":\"esse\",\"products\":[\"voluptatum\"]}"
                         },
                         "description": "This endpoint allows for the creation of a new PO Report along with its associated product details.",
                         "auth": {
@@ -1661,7 +1781,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+                                    "value": "omnis",
                                     "description": "The ID of the PO Report."
                                 }
                             ]
@@ -1679,7 +1799,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"po_no\":\"omnis\",\"po_date\":\"itaque\",\"quotation_no\":\"qui\",\"quotation_date\":\"consectetur\",\"buyer_name\":\"neque\",\"buyer_address\":\"quisquam\",\"buyer_pan\":\"nihil\",\"buyer_iec\":\"culpa\",\"buyer_gst\":\"natus\",\"buyer_mail\":\"excepturi\",\"buyer_contact_person\":\"eligendi\",\"buyer_contact_no\":\"odio\",\"supplier_name\":\"facilis\",\"supplier_address\":\"fugit\",\"supplier_pan\":\"iste\",\"supplier_iec\":\"rerum\",\"supplier_gst\":\"et\",\"supplier_mail\":\"quidem\",\"supplier_contact_person\":\"velit\",\"supplier_contact_no\":\"aspernatur\",\"igst\":\"dolores\",\"sgst\":\"ad\",\"cgst\":\"numquam\",\"total_value\":\"dolor\",\"amount_in_words\":\"laudantium\",\"notes_1\":\"molestias\",\"notes_2\":\"optio\",\"notes_3\":\"omnis\",\"notes_4\":\"fuga\",\"products\":[\"cum\"]}"
+                            "raw": "{\"po_no\":\"aliquam\",\"po_date\":\"ut\",\"quotation_no\":\"voluptatem\",\"quotation_date\":\"sed\",\"buyer_name\":\"porro\",\"buyer_address\":\"quis\",\"buyer_pan\":\"consequatur\",\"buyer_iec\":\"eius\",\"buyer_gst\":\"ipsam\",\"buyer_mail\":\"est\",\"buyer_contact_person\":\"dolorem\",\"buyer_contact_no\":\"corrupti\",\"supplier_name\":\"soluta\",\"supplier_address\":\"deserunt\",\"supplier_pan\":\"possimus\",\"supplier_iec\":\"sed\",\"supplier_gst\":\"sed\",\"supplier_mail\":\"ut\",\"supplier_contact_person\":\"animi\",\"supplier_contact_no\":\"consectetur\",\"igst\":\"mollitia\",\"sgst\":\"quae\",\"cgst\":\"exercitationem\",\"total_value\":\"quisquam\",\"amount_in_words\":\"ipsum\",\"notes_1\":\"excepturi\",\"notes_2\":\"fuga\",\"notes_3\":\"voluptatibus\",\"notes_4\":\"nihil\",\"products\":[\"ex\"]}"
                         },
                         "description": "This endpoint allows for updating a specific PO Report by its ID,\nincluding associated product details.",
                         "auth": {
@@ -1713,7 +1833,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "labore",
+                                    "value": "dolor",
                                     "description": "The ID of the PO Report."
                                 }
                             ]
@@ -1753,12 +1873,12 @@
                             "query": [
                                 {
                                     "key": "po_no",
-                                    "value": "repellat",
+                                    "value": "dignissimos",
                                     "description": "The PO number of the PO Report.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=repellat"
+                            "raw": "{{baseUrl}}\/api\/po-reports-get?po_no=dignissimos"
                         },
                         "method": "POST",
                         "header": [
