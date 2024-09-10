@@ -166,9 +166,9 @@ class CompanyRawMaterialsController extends Controller
             ]
         );
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()], 422);
+        // }
 
         CompanyRawMaterial::create([
             'company_name' => $request->company_name,
@@ -300,13 +300,13 @@ class CompanyRawMaterialsController extends Controller
             ]
         );
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()], 422);
+        // }
 
         $companyRawMaterial->update([
             'company_name' => $request->company_name,
-            'total_pallet' => $request->total_pallet,
+            'total_pallet' => $companyRawMaterial->total_pallet + $request->total_pallet,
             'bag_per_pallet' => $request->bag_per_pallet,
             'total_bag' => $request->total_bag,
             'weight_per_bag' => $request->weight_per_bag,
