@@ -32,6 +32,7 @@ class CompanyRawMaterialsController extends Controller
      *          "purchase_order_no": "PO12345",
      *          "sales_order_no": "SO12345",
      *          "description_of_goods": "Description of goods",
+     *          "grade": "140*140",
      *          "qty": 100,
      *          "weight_per_pcs": 10,
      *          "payment_terms": "Net 30",
@@ -57,6 +58,7 @@ class CompanyRawMaterialsController extends Controller
             'purchase_order_no',
             'sales_order_no',
             'description_of_goods',
+            'grade',
             'qty',
             'weight_per_pcs',
             'payment_terms',
@@ -88,6 +90,7 @@ class CompanyRawMaterialsController extends Controller
      * @bodyParam purchase_order_no string required The purchase order number. Example: PO12345
      * @bodyParam sales_order_no string required The sales order number. Example: SO12345
      * @bodyParam description_of_goods string required The description of goods. Example: Description of goods
+     * @bodyParam grade string required grade. Example: 140*140
      * @bodyParam qty numeric required The quantity of goods. Example: 100
      * @bodyParam weight_per_pcs numeric required The weight per piece. Example: 10
      * @bodyParam payment_terms string required The payment terms. Example: Net 30
@@ -111,6 +114,7 @@ class CompanyRawMaterialsController extends Controller
      *      "purchase_order_no": ["Purchase Order No is required"],
      *      "sales_order_no": ["Sales Order No is required"],
      *      "description_of_goods": ["Description Of Goods is required"],
+     *      "grade": ["Grade is required"],
      *      "qty": ["Quantity is required"],
      *      "weight_per_pcs": ["Weight Per Piece is required"],
      *      "payment_terms": ["Payment Terms are required"],
@@ -135,6 +139,7 @@ class CompanyRawMaterialsController extends Controller
                 'purchase_order_no' => 'required',
                 'sales_order_no' => 'required',
                 'description_of_goods' => 'required',
+                'grade' => 'required',
                 'qty' => 'required',
                 'weight_per_pcs' => 'required',
                 'payment_terms' => 'required',
@@ -157,6 +162,7 @@ class CompanyRawMaterialsController extends Controller
                 'purchase_order_no' => 'Purchase Order No',
                 'sales_order_no' => 'Sales Order No',
                 'description_of_goods' => 'Description Of Goods',
+                'grade' => 'Grade',
                 'qty' => 'Quantity',
                 'weight_per_pcs' => 'Weight Per Piece',
                 'payment_terms' => 'Payment Terms',
@@ -181,6 +187,7 @@ class CompanyRawMaterialsController extends Controller
             'purchase_order_no' => $request->purchase_order_no,
             'sales_order_no' => $request->sales_order_no,
             'description_of_goods' => $request->description_of_goods,
+            'grade' => $request->grade,
             'qty' => $request->qty,
             'weight_per_pcs' => $request->weight_per_pcs,
             'payment_terms' => $request->payment_terms,
@@ -213,6 +220,7 @@ class CompanyRawMaterialsController extends Controller
      * @bodyParam purchase_order_no string required The purchase order number. Example: PO12345
      * @bodyParam sales_order_no string required The sales order number. Example: SO12345
      * @bodyParam description_of_goods string required The description of goods. Example: Description of goods
+     * @bodyParam grade string required grade. Example: 140*140
      * @bodyParam qty numeric required The quantity of goods. Example: 100
      * @bodyParam weight_per_pcs numeric required The weight per piece. Example: 10
      * @bodyParam payment_terms string required The payment terms. Example: Net 30
@@ -239,6 +247,7 @@ class CompanyRawMaterialsController extends Controller
      *      "purchase_order_no": ["Purchase Order No is required"],
      *      "sales_order_no": ["Sales Order No is required"],
      *      "description_of_goods": ["Description Of Goods is required"],
+     *      "grade": ["Grade is required"],
      *      "qty": ["Quantity is required"],
      *      "weight_per_pcs": ["Weight Per Piece is required"],
      *      "payment_terms": ["Payment Terms are required"],
@@ -269,6 +278,7 @@ class CompanyRawMaterialsController extends Controller
                 'purchase_order_no' => 'required',
                 'sales_order_no' => 'required',
                 'description_of_goods' => 'required',
+                'grade' => 'required',
                 'qty' => 'required',
                 'weight_per_pcs' => 'required',
                 'payment_terms' => 'required',
@@ -291,6 +301,7 @@ class CompanyRawMaterialsController extends Controller
                 'purchase_order_no' => 'Purchase Order No',
                 'sales_order_no' => 'Sales Order No',
                 'description_of_goods' => 'Description Of Goods',
+                'grade' => 'Grade',
                 'qty' => 'Quantity',
                 'weight_per_pcs' => 'Weight Per Piece',
                 'payment_terms' => 'Payment Terms',
@@ -315,6 +326,7 @@ class CompanyRawMaterialsController extends Controller
             'purchase_order_no' => $request->purchase_order_no,
             'sales_order_no' => $request->sales_order_no,
             'description_of_goods' => $request->description_of_goods,
+            'grade' => $request->grade,
             'qty' => $request->qty,
             'weight_per_pcs' => $request->weight_per_pcs,
             'payment_terms' => $request->payment_terms,

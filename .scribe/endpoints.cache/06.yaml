@@ -47,6 +47,7 @@ endpoints:
                    "purchase_order_no": "PO12345",
                    "sales_order_no": "SO12345",
                    "description_of_goods": "Description of goods",
+                   "grade": "140*140",
                    "qty": 100,
                    "weight_per_pcs": 10,
                    "payment_terms": "Net 30",
@@ -179,6 +180,15 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
+      grade:
+        name: grade
+        description: grade.
+        required: true
+        example: '140*140'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
       qty:
         name: qty
         description: 'The quantity of goods.'
@@ -244,6 +254,7 @@ endpoints:
       purchase_order_no: PO12345
       sales_order_no: SO12345
       description_of_goods: 'Description of goods'
+      grade: '140*140'
       qty: '100'
       weight_per_pcs: '10'
       payment_terms: 'Net 30'
@@ -277,6 +288,7 @@ endpoints:
                "purchase_order_no": ["Purchase Order No is required"],
                "sales_order_no": ["Sales Order No is required"],
                "description_of_goods": ["Description Of Goods is required"],
+               "grade": ["Grade is required"],
                "qty": ["Quantity is required"],
                "weight_per_pcs": ["Weight Per Piece is required"],
                "payment_terms": ["Payment Terms are required"],
@@ -418,6 +430,15 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
+      grade:
+        name: grade
+        description: grade.
+        required: true
+        example: '140*140'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
       qty:
         name: qty
         description: 'The quantity of goods.'
@@ -483,6 +504,7 @@ endpoints:
       purchase_order_no: PO12345
       sales_order_no: SO12345
       description_of_goods: 'Description of goods'
+      grade: '140*140'
       qty: '100'
       weight_per_pcs: '10'
       payment_terms: 'Net 30'
@@ -525,6 +547,7 @@ endpoints:
                "purchase_order_no": ["Purchase Order No is required"],
                "sales_order_no": ["Sales Order No is required"],
                "description_of_goods": ["Description Of Goods is required"],
+               "grade": ["Grade is required"],
                "qty": ["Quantity is required"],
                "weight_per_pcs": ["Weight Per Piece is required"],
                "payment_terms": ["Payment Terms are required"],

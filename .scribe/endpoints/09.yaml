@@ -485,7 +485,7 @@ endpoints:
         description: 'The list of products associated with the PI Report.'
         required: true
         example:
-          - ab
+          - ut
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -630,7 +630,7 @@ endpoints:
       payment_delivery_terms: FOB
       notes: 'Special instructions'
       products:
-        - ab
+        - ut
     fileParameters: []
     responses:
       -
@@ -1037,7 +1037,7 @@ endpoints:
         description: 'The list of products associated with the PI Report.'
         required: true
         example:
-          - omnis
+          - facere
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
@@ -1182,7 +1182,7 @@ endpoints:
       payment_delivery_terms: FOB
       notes: 'Special instructions'
       products:
-        - omnis
+        - facere
     fileParameters: []
     responses:
       -

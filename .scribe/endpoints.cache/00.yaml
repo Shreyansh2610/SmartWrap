@@ -65,13 +65,13 @@ endpoints:
         name: id
         description: 'The ID of the smart gogodofkog fkbkr0iooh 4mkfm.'
         required: true
-        example: necessitatibus
+        example: ducimus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: necessitatibus
+      id: ducimus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

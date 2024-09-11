@@ -278,7 +278,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 10, 2024</li>
+        <li>Last updated: September 11, 2024</li>
     </ul>
 </div>
 
@@ -1234,8 +1234,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "export_under_detail_1=Export Detail 1"\
     --form "export_under_detail_2=Export Detail 2"\
     --form "export_remarks=Export Remarks Example"\
-    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\phpEF01.tmp" \
-    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\phpEF11.tmp" </code></pre></div>
+    --form "company_logo=@C:\Users\shrey\AppData\Local\Temp\phpD28A.tmp" \
+    --form "signature_upload=@C:\Users\shrey\AppData\Local\Temp\phpD29B.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1879,7 +1879,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpEF01.tmp</code></p>
+<p>The company logo file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpD28A.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>signature_upload</code></b>&nbsp;&nbsp;
@@ -1890,7 +1890,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpEF11.tmp</code></p>
+<p>The signature upload file. Select file only. Example: <code>C:\Users\shrey\AppData\Local\Temp\phpD29B.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>range</code></b>&nbsp;&nbsp;
@@ -2087,6 +2087,7 @@ fetch(url, {
          &quot;purchase_order_no&quot;: &quot;PO12345&quot;,
          &quot;sales_order_no&quot;: &quot;SO12345&quot;,
          &quot;description_of_goods&quot;: &quot;Description of goods&quot;,
+         &quot;grade&quot;: &quot;140*140&quot;,
          &quot;qty&quot;: 100,
          &quot;weight_per_pcs&quot;: 10,
          &quot;payment_terms&quot;: &quot;Net 30&quot;,
@@ -2198,6 +2199,7 @@ This endpoint allows you to create a new company raw material.</p>
     \"purchase_order_no\": \"PO12345\",
     \"sales_order_no\": \"SO12345\",
     \"description_of_goods\": \"Description of goods\",
+    \"grade\": \"140*140\",
     \"qty\": \"100\",
     \"weight_per_pcs\": \"10\",
     \"payment_terms\": \"Net 30\",
@@ -2229,6 +2231,7 @@ let body = {
     "purchase_order_no": "PO12345",
     "sales_order_no": "SO12345",
     "description_of_goods": "Description of goods",
+    "grade": "140*140",
     "qty": "100",
     "weight_per_pcs": "10",
     "payment_terms": "Net 30",
@@ -2297,6 +2300,9 @@ fetch(url, {
         ],
         &quot;description_of_goods&quot;: [
             &quot;Description Of Goods is required&quot;
+        ],
+        &quot;grade&quot;: [
+            &quot;Grade is required&quot;
         ],
         &quot;qty&quot;: [
             &quot;Quantity is required&quot;
@@ -2501,6 +2507,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The description of goods. Example: <code>Description of goods</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>grade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="grade"                data-endpoint="POSTapi-company-raw-material"
+               value="140*140"
+               data-component="body">
+    <br>
+<p>grade. Example: <code>140*140</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>qty</code></b>&nbsp;&nbsp;
 <small>numeric</small>&nbsp;
  &nbsp;
@@ -2596,6 +2613,7 @@ This endpoint allows you to update an existing company raw material by providing
     \"purchase_order_no\": \"PO12345\",
     \"sales_order_no\": \"SO12345\",
     \"description_of_goods\": \"Description of goods\",
+    \"grade\": \"140*140\",
     \"qty\": \"100\",
     \"weight_per_pcs\": \"10\",
     \"payment_terms\": \"Net 30\",
@@ -2627,6 +2645,7 @@ let body = {
     "purchase_order_no": "PO12345",
     "sales_order_no": "SO12345",
     "description_of_goods": "Description of goods",
+    "grade": "140*140",
     "qty": "100",
     "weight_per_pcs": "10",
     "payment_terms": "Net 30",
@@ -2704,6 +2723,9 @@ fetch(url, {
         ],
         &quot;description_of_goods&quot;: [
             &quot;Description Of Goods is required&quot;
+        ],
+        &quot;grade&quot;: [
+            &quot;Grade is required&quot;
         ],
         &quot;qty&quot;: [
             &quot;Quantity is required&quot;
@@ -2922,6 +2944,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>The description of goods. Example: <code>Description of goods</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>grade</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="grade"                data-endpoint="PUTapi-company-raw-material--id-"
+               value="140*140"
+               data-component="body">
+    <br>
+<p>grade. Example: <code>140*140</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>qty</code></b>&nbsp;&nbsp;
@@ -3604,14 +3637,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://api.smartwrapfilms.com/api/smart-gogodofkog-fkbkr0iooh-4mkfm/necessitatibus" \
+    --get "https://api.smartwrapfilms.com/api/smart-gogodofkog-fkbkr0iooh-4mkfm/ducimus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api.smartwrapfilms.com/api/smart-gogodofkog-fkbkr0iooh-4mkfm/necessitatibus"
+    "https://api.smartwrapfilms.com/api/smart-gogodofkog-fkbkr0iooh-4mkfm/ducimus"
 );
 
 const headers = {
@@ -3722,10 +3755,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-smart-gogodofkog-fkbkr0iooh-4mkfm--id-"
-               value="necessitatibus"
+               value="ducimus"
                data-component="url">
     <br>
-<p>The ID of the smart gogodofkog fkbkr0iooh 4mkfm. Example: <code>necessitatibus</code></p>
+<p>The ID of the smart gogodofkog fkbkr0iooh 4mkfm. Example: <code>ducimus</code></p>
             </div>
                     </form>
 
@@ -6845,7 +6878,7 @@ After creation, the associated product details are stored in the <code>PiReportE
     \"payment_delivery_terms\": \"FOB\",
     \"notes\": \"Special instructions\",
     \"products\": [
-        \"ab\"
+        \"ut\"
     ]
 }"
 </code></pre></div>
@@ -6902,7 +6935,7 @@ let body = {
     "payment_delivery_terms": "FOB",
     "notes": "Special instructions",
     "products": [
-        "ab"
+        "ut"
     ]
 };
 
@@ -7627,7 +7660,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"payment_delivery_terms\": \"FOB\",
     \"notes\": \"Special instructions\",
     \"products\": [
-        \"omnis\"
+        \"facere\"
     ]
 }"
 </code></pre></div>
@@ -7684,7 +7717,7 @@ let body = {
     "payment_delivery_terms": "FOB",
     "notes": "Special instructions",
     "products": [
-        "omnis"
+        "facere"
     ]
 };
 
@@ -8995,37 +9028,37 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"po_no\": \"et\",
-    \"po_date\": \"possimus\",
-    \"quotation_no\": \"autem\",
-    \"quotation_date\": \"aut\",
-    \"buyer_name\": \"magni\",
-    \"buyer_address\": \"soluta\",
-    \"buyer_pan\": \"qui\",
-    \"buyer_iec\": \"quos\",
-    \"buyer_gst\": \"animi\",
-    \"buyer_mail\": \"aspernatur\",
-    \"buyer_contact_person\": \"qui\",
-    \"buyer_contact_no\": \"qui\",
-    \"supplier_name\": \"repellendus\",
-    \"supplier_address\": \"ipsa\",
-    \"supplier_pan\": \"hic\",
-    \"supplier_iec\": \"optio\",
-    \"supplier_gst\": \"ut\",
-    \"supplier_mail\": \"aperiam\",
-    \"supplier_contact_person\": \"quas\",
-    \"supplier_contact_no\": \"temporibus\",
-    \"igst\": \"laboriosam\",
-    \"sgst\": \"et\",
-    \"cgst\": \"itaque\",
-    \"total_value\": \"ipsa\",
-    \"amount_in_words\": \"consequatur\",
-    \"notes_1\": \"cum\",
-    \"notes_2\": \"quasi\",
-    \"notes_3\": \"laboriosam\",
-    \"notes_4\": \"esse\",
+    \"po_no\": \"molestias\",
+    \"po_date\": \"ut\",
+    \"quotation_no\": \"rerum\",
+    \"quotation_date\": \"consectetur\",
+    \"buyer_name\": \"velit\",
+    \"buyer_address\": \"quasi\",
+    \"buyer_pan\": \"dolorum\",
+    \"buyer_iec\": \"corporis\",
+    \"buyer_gst\": \"non\",
+    \"buyer_mail\": \"optio\",
+    \"buyer_contact_person\": \"at\",
+    \"buyer_contact_no\": \"soluta\",
+    \"supplier_name\": \"et\",
+    \"supplier_address\": \"in\",
+    \"supplier_pan\": \"est\",
+    \"supplier_iec\": \"eos\",
+    \"supplier_gst\": \"impedit\",
+    \"supplier_mail\": \"et\",
+    \"supplier_contact_person\": \"nisi\",
+    \"supplier_contact_no\": \"sed\",
+    \"igst\": \"voluptatem\",
+    \"sgst\": \"aut\",
+    \"cgst\": \"et\",
+    \"total_value\": \"perferendis\",
+    \"amount_in_words\": \"tempora\",
+    \"notes_1\": \"consequatur\",
+    \"notes_2\": \"sit\",
+    \"notes_3\": \"sed\",
+    \"notes_4\": \"impedit\",
     \"products\": [
-        \"voluptatum\"
+        \"nobis\"
     ]
 }"
 </code></pre></div>
@@ -9042,37 +9075,37 @@ const headers = {
 };
 
 let body = {
-    "po_no": "et",
-    "po_date": "possimus",
-    "quotation_no": "autem",
-    "quotation_date": "aut",
-    "buyer_name": "magni",
-    "buyer_address": "soluta",
-    "buyer_pan": "qui",
-    "buyer_iec": "quos",
-    "buyer_gst": "animi",
-    "buyer_mail": "aspernatur",
-    "buyer_contact_person": "qui",
-    "buyer_contact_no": "qui",
-    "supplier_name": "repellendus",
-    "supplier_address": "ipsa",
-    "supplier_pan": "hic",
-    "supplier_iec": "optio",
-    "supplier_gst": "ut",
-    "supplier_mail": "aperiam",
-    "supplier_contact_person": "quas",
-    "supplier_contact_no": "temporibus",
-    "igst": "laboriosam",
-    "sgst": "et",
-    "cgst": "itaque",
-    "total_value": "ipsa",
-    "amount_in_words": "consequatur",
-    "notes_1": "cum",
-    "notes_2": "quasi",
-    "notes_3": "laboriosam",
-    "notes_4": "esse",
+    "po_no": "molestias",
+    "po_date": "ut",
+    "quotation_no": "rerum",
+    "quotation_date": "consectetur",
+    "buyer_name": "velit",
+    "buyer_address": "quasi",
+    "buyer_pan": "dolorum",
+    "buyer_iec": "corporis",
+    "buyer_gst": "non",
+    "buyer_mail": "optio",
+    "buyer_contact_person": "at",
+    "buyer_contact_no": "soluta",
+    "supplier_name": "et",
+    "supplier_address": "in",
+    "supplier_pan": "est",
+    "supplier_iec": "eos",
+    "supplier_gst": "impedit",
+    "supplier_mail": "et",
+    "supplier_contact_person": "nisi",
+    "supplier_contact_no": "sed",
+    "igst": "voluptatem",
+    "sgst": "aut",
+    "cgst": "et",
+    "total_value": "perferendis",
+    "amount_in_words": "tempora",
+    "notes_1": "consequatur",
+    "notes_2": "sit",
+    "notes_3": "sed",
+    "notes_4": "impedit",
     "products": [
-        "voluptatum"
+        "nobis"
     ]
 };
 
@@ -9186,10 +9219,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_no"                data-endpoint="POSTapi-po-reports"
-               value="et"
+               value="molestias"
                data-component="body">
     <br>
-<p>The PO number. Example: <code>et</code></p>
+<p>The PO number. Example: <code>molestias</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>po_date</code></b>&nbsp;&nbsp;
@@ -9197,10 +9230,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_date"                data-endpoint="POSTapi-po-reports"
-               value="possimus"
+               value="ut"
                data-component="body">
     <br>
-<p>The date of the PO. Example: <code>possimus</code></p>
+<p>The date of the PO. Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_no</code></b>&nbsp;&nbsp;
@@ -9208,10 +9241,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_no"                data-endpoint="POSTapi-po-reports"
-               value="autem"
+               value="rerum"
                data-component="body">
     <br>
-<p>The quotation number. Example: <code>autem</code></p>
+<p>The quotation number. Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_date</code></b>&nbsp;&nbsp;
@@ -9219,10 +9252,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_date"                data-endpoint="POSTapi-po-reports"
-               value="aut"
+               value="consectetur"
                data-component="body">
     <br>
-<p>The date of the quotation. Example: <code>aut</code></p>
+<p>The date of the quotation. Example: <code>consectetur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_name</code></b>&nbsp;&nbsp;
@@ -9230,10 +9263,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_name"                data-endpoint="POSTapi-po-reports"
-               value="magni"
+               value="velit"
                data-component="body">
     <br>
-<p>The name of the buyer. Example: <code>magni</code></p>
+<p>The name of the buyer. Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_address</code></b>&nbsp;&nbsp;
@@ -9241,10 +9274,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_address"                data-endpoint="POSTapi-po-reports"
-               value="soluta"
+               value="quasi"
                data-component="body">
     <br>
-<p>The address of the buyer. Example: <code>soluta</code></p>
+<p>The address of the buyer. Example: <code>quasi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_pan</code></b>&nbsp;&nbsp;
@@ -9252,10 +9285,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_pan"                data-endpoint="POSTapi-po-reports"
-               value="qui"
+               value="dolorum"
                data-component="body">
     <br>
-<p>The PAN of the buyer. Example: <code>qui</code></p>
+<p>The PAN of the buyer. Example: <code>dolorum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_iec</code></b>&nbsp;&nbsp;
@@ -9263,10 +9296,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_iec"                data-endpoint="POSTapi-po-reports"
-               value="quos"
+               value="corporis"
                data-component="body">
     <br>
-<p>The IEC of the buyer. Example: <code>quos</code></p>
+<p>The IEC of the buyer. Example: <code>corporis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_gst</code></b>&nbsp;&nbsp;
@@ -9274,10 +9307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_gst"                data-endpoint="POSTapi-po-reports"
-               value="animi"
+               value="non"
                data-component="body">
     <br>
-<p>The GST number of the buyer. Example: <code>animi</code></p>
+<p>The GST number of the buyer. Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_mail</code></b>&nbsp;&nbsp;
@@ -9285,10 +9318,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_mail"                data-endpoint="POSTapi-po-reports"
-               value="aspernatur"
+               value="optio"
                data-component="body">
     <br>
-<p>The email of the buyer. Example: <code>aspernatur</code></p>
+<p>The email of the buyer. Example: <code>optio</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_person</code></b>&nbsp;&nbsp;
@@ -9296,10 +9329,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_person"                data-endpoint="POSTapi-po-reports"
-               value="qui"
+               value="at"
                data-component="body">
     <br>
-<p>The contact person of the buyer. Example: <code>qui</code></p>
+<p>The contact person of the buyer. Example: <code>at</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_no</code></b>&nbsp;&nbsp;
@@ -9307,10 +9340,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_no"                data-endpoint="POSTapi-po-reports"
-               value="qui"
+               value="soluta"
                data-component="body">
     <br>
-<p>The contact number of the buyer. Example: <code>qui</code></p>
+<p>The contact number of the buyer. Example: <code>soluta</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_name</code></b>&nbsp;&nbsp;
@@ -9318,10 +9351,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_name"                data-endpoint="POSTapi-po-reports"
-               value="repellendus"
+               value="et"
                data-component="body">
     <br>
-<p>The name of the supplier. Example: <code>repellendus</code></p>
+<p>The name of the supplier. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_address</code></b>&nbsp;&nbsp;
@@ -9329,10 +9362,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_address"                data-endpoint="POSTapi-po-reports"
-               value="ipsa"
+               value="in"
                data-component="body">
     <br>
-<p>The address of the supplier. Example: <code>ipsa</code></p>
+<p>The address of the supplier. Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_pan</code></b>&nbsp;&nbsp;
@@ -9340,10 +9373,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_pan"                data-endpoint="POSTapi-po-reports"
-               value="hic"
+               value="est"
                data-component="body">
     <br>
-<p>The PAN of the supplier. Example: <code>hic</code></p>
+<p>The PAN of the supplier. Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_iec</code></b>&nbsp;&nbsp;
@@ -9351,10 +9384,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_iec"                data-endpoint="POSTapi-po-reports"
-               value="optio"
+               value="eos"
                data-component="body">
     <br>
-<p>The IEC of the supplier. Example: <code>optio</code></p>
+<p>The IEC of the supplier. Example: <code>eos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_gst</code></b>&nbsp;&nbsp;
@@ -9362,10 +9395,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_gst"                data-endpoint="POSTapi-po-reports"
-               value="ut"
+               value="impedit"
                data-component="body">
     <br>
-<p>The GST number of the supplier. Example: <code>ut</code></p>
+<p>The GST number of the supplier. Example: <code>impedit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_mail</code></b>&nbsp;&nbsp;
@@ -9373,10 +9406,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_mail"                data-endpoint="POSTapi-po-reports"
-               value="aperiam"
+               value="et"
                data-component="body">
     <br>
-<p>The email of the supplier. Example: <code>aperiam</code></p>
+<p>The email of the supplier. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_person</code></b>&nbsp;&nbsp;
@@ -9384,10 +9417,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_person"                data-endpoint="POSTapi-po-reports"
-               value="quas"
+               value="nisi"
                data-component="body">
     <br>
-<p>The contact person of the supplier. Example: <code>quas</code></p>
+<p>The contact person of the supplier. Example: <code>nisi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_no</code></b>&nbsp;&nbsp;
@@ -9395,10 +9428,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_no"                data-endpoint="POSTapi-po-reports"
-               value="temporibus"
+               value="sed"
                data-component="body">
     <br>
-<p>The contact number of the supplier. Example: <code>temporibus</code></p>
+<p>The contact number of the supplier. Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>igst</code></b>&nbsp;&nbsp;
@@ -9406,10 +9439,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="igst"                data-endpoint="POSTapi-po-reports"
-               value="laboriosam"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>The IGST amount. Example: <code>laboriosam</code></p>
+<p>The IGST amount. Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sgst</code></b>&nbsp;&nbsp;
@@ -9417,10 +9450,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="sgst"                data-endpoint="POSTapi-po-reports"
-               value="et"
+               value="aut"
                data-component="body">
     <br>
-<p>The SGST amount. Example: <code>et</code></p>
+<p>The SGST amount. Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cgst</code></b>&nbsp;&nbsp;
@@ -9428,10 +9461,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cgst"                data-endpoint="POSTapi-po-reports"
-               value="itaque"
+               value="et"
                data-component="body">
     <br>
-<p>The CGST amount. Example: <code>itaque</code></p>
+<p>The CGST amount. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_value</code></b>&nbsp;&nbsp;
@@ -9439,10 +9472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="total_value"                data-endpoint="POSTapi-po-reports"
-               value="ipsa"
+               value="perferendis"
                data-component="body">
     <br>
-<p>The total value of the PO. Example: <code>ipsa</code></p>
+<p>The total value of the PO. Example: <code>perferendis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
@@ -9450,10 +9483,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="amount_in_words"                data-endpoint="POSTapi-po-reports"
-               value="consequatur"
+               value="tempora"
                data-component="body">
     <br>
-<p>The total value in words. Example: <code>consequatur</code></p>
+<p>The total value in words. Example: <code>tempora</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_1</code></b>&nbsp;&nbsp;
@@ -9461,10 +9494,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_1"                data-endpoint="POSTapi-po-reports"
-               value="cum"
+               value="consequatur"
                data-component="body">
     <br>
-<p>optional Additional notes 1. Example: <code>cum</code></p>
+<p>optional Additional notes 1. Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_2</code></b>&nbsp;&nbsp;
@@ -9472,10 +9505,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_2"                data-endpoint="POSTapi-po-reports"
-               value="quasi"
+               value="sit"
                data-component="body">
     <br>
-<p>optional Additional notes 2. Example: <code>quasi</code></p>
+<p>optional Additional notes 2. Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_3</code></b>&nbsp;&nbsp;
@@ -9483,10 +9516,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_3"                data-endpoint="POSTapi-po-reports"
-               value="laboriosam"
+               value="sed"
                data-component="body">
     <br>
-<p>optional Additional notes 3. Example: <code>laboriosam</code></p>
+<p>optional Additional notes 3. Example: <code>sed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_4</code></b>&nbsp;&nbsp;
@@ -9494,10 +9527,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_4"                data-endpoint="POSTapi-po-reports"
-               value="esse"
+               value="impedit"
                data-component="body">
     <br>
-<p>optional Additional notes 4. Example: <code>esse</code></p>
+<p>optional Additional notes 4. Example: <code>impedit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -9523,10 +9556,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.product_description"                data-endpoint="POSTapi-po-reports"
-               value="ea"
+               value="quidem"
                data-component="body">
     <br>
-<p>The description of the product. Example: <code>ea</code></p>
+<p>The description of the product. Example: <code>quidem</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
@@ -9534,10 +9567,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.hsn_code"                data-endpoint="POSTapi-po-reports"
-               value="ullam"
+               value="in"
                data-component="body">
     <br>
-<p>The HSN code of the product. Example: <code>ullam</code></p>
+<p>The HSN code of the product. Example: <code>in</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
@@ -9545,10 +9578,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.quantity"                data-endpoint="POSTapi-po-reports"
-               value="deserunt"
+               value="distinctio"
                data-component="body">
     <br>
-<p>The quantity of the product. Example: <code>deserunt</code></p>
+<p>The quantity of the product. Example: <code>distinctio</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
@@ -9556,10 +9589,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.unit"                data-endpoint="POSTapi-po-reports"
-               value="perspiciatis"
+               value="rem"
                data-component="body">
     <br>
-<p>The unit of the product. Example: <code>perspiciatis</code></p>
+<p>The unit of the product. Example: <code>rem</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
@@ -9567,10 +9600,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.rate"                data-endpoint="POSTapi-po-reports"
-               value="itaque"
+               value="sed"
                data-component="body">
     <br>
-<p>The rate of the product. Example: <code>itaque</code></p>
+<p>The rate of the product. Example: <code>sed</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
@@ -9578,10 +9611,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.amount"                data-endpoint="POSTapi-po-reports"
-               value="sed"
+               value="non"
                data-component="body">
     <br>
-<p>The amount of the product. Example: <code>sed</code></p>
+<p>The amount of the product. Example: <code>non</code></p>
                     </div>
                                     </details>
         </div>
@@ -9603,41 +9636,41 @@ including associated product details.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://api.smartwrapfilms.com/api/po-reports/omnis" \
+    "https://api.smartwrapfilms.com/api/po-reports/vero" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"po_no\": \"aliquam\",
-    \"po_date\": \"ut\",
-    \"quotation_no\": \"voluptatem\",
-    \"quotation_date\": \"sed\",
-    \"buyer_name\": \"porro\",
-    \"buyer_address\": \"quis\",
-    \"buyer_pan\": \"consequatur\",
-    \"buyer_iec\": \"eius\",
-    \"buyer_gst\": \"ipsam\",
-    \"buyer_mail\": \"est\",
-    \"buyer_contact_person\": \"dolorem\",
-    \"buyer_contact_no\": \"corrupti\",
-    \"supplier_name\": \"soluta\",
-    \"supplier_address\": \"deserunt\",
-    \"supplier_pan\": \"possimus\",
-    \"supplier_iec\": \"sed\",
-    \"supplier_gst\": \"sed\",
-    \"supplier_mail\": \"ut\",
-    \"supplier_contact_person\": \"animi\",
-    \"supplier_contact_no\": \"consectetur\",
-    \"igst\": \"mollitia\",
-    \"sgst\": \"quae\",
-    \"cgst\": \"exercitationem\",
-    \"total_value\": \"quisquam\",
-    \"amount_in_words\": \"ipsum\",
-    \"notes_1\": \"excepturi\",
-    \"notes_2\": \"fuga\",
-    \"notes_3\": \"voluptatibus\",
-    \"notes_4\": \"nihil\",
+    \"po_no\": \"est\",
+    \"po_date\": \"non\",
+    \"quotation_no\": \"sint\",
+    \"quotation_date\": \"recusandae\",
+    \"buyer_name\": \"non\",
+    \"buyer_address\": \"eius\",
+    \"buyer_pan\": \"molestiae\",
+    \"buyer_iec\": \"vitae\",
+    \"buyer_gst\": \"esse\",
+    \"buyer_mail\": \"illo\",
+    \"buyer_contact_person\": \"voluptate\",
+    \"buyer_contact_no\": \"assumenda\",
+    \"supplier_name\": \"sunt\",
+    \"supplier_address\": \"quis\",
+    \"supplier_pan\": \"eum\",
+    \"supplier_iec\": \"rem\",
+    \"supplier_gst\": \"at\",
+    \"supplier_mail\": \"debitis\",
+    \"supplier_contact_person\": \"et\",
+    \"supplier_contact_no\": \"eum\",
+    \"igst\": \"possimus\",
+    \"sgst\": \"ullam\",
+    \"cgst\": \"vitae\",
+    \"total_value\": \"harum\",
+    \"amount_in_words\": \"assumenda\",
+    \"notes_1\": \"eveniet\",
+    \"notes_2\": \"totam\",
+    \"notes_3\": \"non\",
+    \"notes_4\": \"qui\",
     \"products\": [
-        \"ex\"
+        \"eos\"
     ]
 }"
 </code></pre></div>
@@ -9645,7 +9678,7 @@ including associated product details.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api.smartwrapfilms.com/api/po-reports/omnis"
+    "https://api.smartwrapfilms.com/api/po-reports/vero"
 );
 
 const headers = {
@@ -9654,37 +9687,37 @@ const headers = {
 };
 
 let body = {
-    "po_no": "aliquam",
-    "po_date": "ut",
-    "quotation_no": "voluptatem",
-    "quotation_date": "sed",
-    "buyer_name": "porro",
-    "buyer_address": "quis",
-    "buyer_pan": "consequatur",
-    "buyer_iec": "eius",
-    "buyer_gst": "ipsam",
-    "buyer_mail": "est",
-    "buyer_contact_person": "dolorem",
-    "buyer_contact_no": "corrupti",
-    "supplier_name": "soluta",
-    "supplier_address": "deserunt",
-    "supplier_pan": "possimus",
-    "supplier_iec": "sed",
-    "supplier_gst": "sed",
-    "supplier_mail": "ut",
-    "supplier_contact_person": "animi",
-    "supplier_contact_no": "consectetur",
-    "igst": "mollitia",
-    "sgst": "quae",
-    "cgst": "exercitationem",
-    "total_value": "quisquam",
-    "amount_in_words": "ipsum",
-    "notes_1": "excepturi",
-    "notes_2": "fuga",
-    "notes_3": "voluptatibus",
-    "notes_4": "nihil",
+    "po_no": "est",
+    "po_date": "non",
+    "quotation_no": "sint",
+    "quotation_date": "recusandae",
+    "buyer_name": "non",
+    "buyer_address": "eius",
+    "buyer_pan": "molestiae",
+    "buyer_iec": "vitae",
+    "buyer_gst": "esse",
+    "buyer_mail": "illo",
+    "buyer_contact_person": "voluptate",
+    "buyer_contact_no": "assumenda",
+    "supplier_name": "sunt",
+    "supplier_address": "quis",
+    "supplier_pan": "eum",
+    "supplier_iec": "rem",
+    "supplier_gst": "at",
+    "supplier_mail": "debitis",
+    "supplier_contact_person": "et",
+    "supplier_contact_no": "eum",
+    "igst": "possimus",
+    "sgst": "ullam",
+    "cgst": "vitae",
+    "total_value": "harum",
+    "amount_in_words": "assumenda",
+    "notes_1": "eveniet",
+    "notes_2": "totam",
+    "notes_3": "non",
+    "notes_4": "qui",
     "products": [
-        "ex"
+        "eos"
     ]
 };
 
@@ -9802,10 +9835,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-po-reports--id-"
-               value="omnis"
+               value="vero"
                data-component="url">
     <br>
-<p>The ID of the PO Report. Example: <code>omnis</code></p>
+<p>The ID of the PO Report. Example: <code>vero</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -9814,10 +9847,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="aliquam"
+               value="est"
                data-component="body">
     <br>
-<p>The PO number. Example: <code>aliquam</code></p>
+<p>The PO number. Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>po_date</code></b>&nbsp;&nbsp;
@@ -9825,10 +9858,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_date"                data-endpoint="PUTapi-po-reports--id-"
-               value="ut"
+               value="non"
                data-component="body">
     <br>
-<p>The date of the PO. Example: <code>ut</code></p>
+<p>The date of the PO. Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_no</code></b>&nbsp;&nbsp;
@@ -9836,10 +9869,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptatem"
+               value="sint"
                data-component="body">
     <br>
-<p>The quotation number. Example: <code>voluptatem</code></p>
+<p>The quotation number. Example: <code>sint</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quotation_date</code></b>&nbsp;&nbsp;
@@ -9847,10 +9880,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="quotation_date"                data-endpoint="PUTapi-po-reports--id-"
-               value="sed"
+               value="recusandae"
                data-component="body">
     <br>
-<p>The date of the quotation. Example: <code>sed</code></p>
+<p>The date of the quotation. Example: <code>recusandae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_name</code></b>&nbsp;&nbsp;
@@ -9858,10 +9891,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_name"                data-endpoint="PUTapi-po-reports--id-"
-               value="porro"
+               value="non"
                data-component="body">
     <br>
-<p>The name of the buyer. Example: <code>porro</code></p>
+<p>The name of the buyer. Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_address</code></b>&nbsp;&nbsp;
@@ -9869,10 +9902,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_address"                data-endpoint="PUTapi-po-reports--id-"
-               value="quis"
+               value="eius"
                data-component="body">
     <br>
-<p>The address of the buyer. Example: <code>quis</code></p>
+<p>The address of the buyer. Example: <code>eius</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_pan</code></b>&nbsp;&nbsp;
@@ -9880,10 +9913,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_pan"                data-endpoint="PUTapi-po-reports--id-"
-               value="consequatur"
+               value="molestiae"
                data-component="body">
     <br>
-<p>The PAN of the buyer. Example: <code>consequatur</code></p>
+<p>The PAN of the buyer. Example: <code>molestiae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_iec</code></b>&nbsp;&nbsp;
@@ -9891,10 +9924,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_iec"                data-endpoint="PUTapi-po-reports--id-"
-               value="eius"
+               value="vitae"
                data-component="body">
     <br>
-<p>The IEC of the buyer. Example: <code>eius</code></p>
+<p>The IEC of the buyer. Example: <code>vitae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_gst</code></b>&nbsp;&nbsp;
@@ -9902,10 +9935,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_gst"                data-endpoint="PUTapi-po-reports--id-"
-               value="ipsam"
+               value="esse"
                data-component="body">
     <br>
-<p>The GST number of the buyer. Example: <code>ipsam</code></p>
+<p>The GST number of the buyer. Example: <code>esse</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_mail</code></b>&nbsp;&nbsp;
@@ -9913,10 +9946,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_mail"                data-endpoint="PUTapi-po-reports--id-"
-               value="est"
+               value="illo"
                data-component="body">
     <br>
-<p>The email of the buyer. Example: <code>est</code></p>
+<p>The email of the buyer. Example: <code>illo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_person</code></b>&nbsp;&nbsp;
@@ -9924,10 +9957,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_person"                data-endpoint="PUTapi-po-reports--id-"
-               value="dolorem"
+               value="voluptate"
                data-component="body">
     <br>
-<p>The contact person of the buyer. Example: <code>dolorem</code></p>
+<p>The contact person of the buyer. Example: <code>voluptate</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>buyer_contact_no</code></b>&nbsp;&nbsp;
@@ -9935,10 +9968,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="buyer_contact_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="corrupti"
+               value="assumenda"
                data-component="body">
     <br>
-<p>The contact number of the buyer. Example: <code>corrupti</code></p>
+<p>The contact number of the buyer. Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_name</code></b>&nbsp;&nbsp;
@@ -9946,10 +9979,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_name"                data-endpoint="PUTapi-po-reports--id-"
-               value="soluta"
+               value="sunt"
                data-component="body">
     <br>
-<p>The name of the supplier. Example: <code>soluta</code></p>
+<p>The name of the supplier. Example: <code>sunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_address</code></b>&nbsp;&nbsp;
@@ -9957,10 +9990,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_address"                data-endpoint="PUTapi-po-reports--id-"
-               value="deserunt"
+               value="quis"
                data-component="body">
     <br>
-<p>The address of the supplier. Example: <code>deserunt</code></p>
+<p>The address of the supplier. Example: <code>quis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_pan</code></b>&nbsp;&nbsp;
@@ -9968,10 +10001,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_pan"                data-endpoint="PUTapi-po-reports--id-"
-               value="possimus"
+               value="eum"
                data-component="body">
     <br>
-<p>The PAN of the supplier. Example: <code>possimus</code></p>
+<p>The PAN of the supplier. Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_iec</code></b>&nbsp;&nbsp;
@@ -9979,10 +10012,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_iec"                data-endpoint="PUTapi-po-reports--id-"
-               value="sed"
+               value="rem"
                data-component="body">
     <br>
-<p>The IEC of the supplier. Example: <code>sed</code></p>
+<p>The IEC of the supplier. Example: <code>rem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_gst</code></b>&nbsp;&nbsp;
@@ -9990,10 +10023,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_gst"                data-endpoint="PUTapi-po-reports--id-"
-               value="sed"
+               value="at"
                data-component="body">
     <br>
-<p>The GST number of the supplier. Example: <code>sed</code></p>
+<p>The GST number of the supplier. Example: <code>at</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_mail</code></b>&nbsp;&nbsp;
@@ -10001,10 +10034,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_mail"                data-endpoint="PUTapi-po-reports--id-"
-               value="ut"
+               value="debitis"
                data-component="body">
     <br>
-<p>The email of the supplier. Example: <code>ut</code></p>
+<p>The email of the supplier. Example: <code>debitis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_person</code></b>&nbsp;&nbsp;
@@ -10012,10 +10045,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_person"                data-endpoint="PUTapi-po-reports--id-"
-               value="animi"
+               value="et"
                data-component="body">
     <br>
-<p>The contact person of the supplier. Example: <code>animi</code></p>
+<p>The contact person of the supplier. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>supplier_contact_no</code></b>&nbsp;&nbsp;
@@ -10023,10 +10056,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="supplier_contact_no"                data-endpoint="PUTapi-po-reports--id-"
-               value="consectetur"
+               value="eum"
                data-component="body">
     <br>
-<p>The contact number of the supplier. Example: <code>consectetur</code></p>
+<p>The contact number of the supplier. Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>igst</code></b>&nbsp;&nbsp;
@@ -10034,10 +10067,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="igst"                data-endpoint="PUTapi-po-reports--id-"
-               value="mollitia"
+               value="possimus"
                data-component="body">
     <br>
-<p>The IGST amount. Example: <code>mollitia</code></p>
+<p>The IGST amount. Example: <code>possimus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>sgst</code></b>&nbsp;&nbsp;
@@ -10045,10 +10078,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="sgst"                data-endpoint="PUTapi-po-reports--id-"
-               value="quae"
+               value="ullam"
                data-component="body">
     <br>
-<p>The SGST amount. Example: <code>quae</code></p>
+<p>The SGST amount. Example: <code>ullam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cgst</code></b>&nbsp;&nbsp;
@@ -10056,10 +10089,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="cgst"                data-endpoint="PUTapi-po-reports--id-"
-               value="exercitationem"
+               value="vitae"
                data-component="body">
     <br>
-<p>The CGST amount. Example: <code>exercitationem</code></p>
+<p>The CGST amount. Example: <code>vitae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_value</code></b>&nbsp;&nbsp;
@@ -10067,10 +10100,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="total_value"                data-endpoint="PUTapi-po-reports--id-"
-               value="quisquam"
+               value="harum"
                data-component="body">
     <br>
-<p>The total value of the PO. Example: <code>quisquam</code></p>
+<p>The total value of the PO. Example: <code>harum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount_in_words</code></b>&nbsp;&nbsp;
@@ -10078,10 +10111,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="amount_in_words"                data-endpoint="PUTapi-po-reports--id-"
-               value="ipsum"
+               value="assumenda"
                data-component="body">
     <br>
-<p>The total value in words. Example: <code>ipsum</code></p>
+<p>The total value in words. Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_1</code></b>&nbsp;&nbsp;
@@ -10089,10 +10122,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_1"                data-endpoint="PUTapi-po-reports--id-"
-               value="excepturi"
+               value="eveniet"
                data-component="body">
     <br>
-<p>optional Additional notes 1. Example: <code>excepturi</code></p>
+<p>optional Additional notes 1. Example: <code>eveniet</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_2</code></b>&nbsp;&nbsp;
@@ -10100,10 +10133,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_2"                data-endpoint="PUTapi-po-reports--id-"
-               value="fuga"
+               value="totam"
                data-component="body">
     <br>
-<p>optional Additional notes 2. Example: <code>fuga</code></p>
+<p>optional Additional notes 2. Example: <code>totam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_3</code></b>&nbsp;&nbsp;
@@ -10111,10 +10144,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_3"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptatibus"
+               value="non"
                data-component="body">
     <br>
-<p>optional Additional notes 3. Example: <code>voluptatibus</code></p>
+<p>optional Additional notes 3. Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes_4</code></b>&nbsp;&nbsp;
@@ -10122,10 +10155,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes_4"                data-endpoint="PUTapi-po-reports--id-"
-               value="nihil"
+               value="qui"
                data-component="body">
     <br>
-<p>optional Additional notes 4. Example: <code>nihil</code></p>
+<p>optional Additional notes 4. Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -10151,10 +10184,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.product_description"                data-endpoint="PUTapi-po-reports--id-"
-               value="sint"
+               value="qui"
                data-component="body">
     <br>
-<p>The description of the product. Example: <code>sint</code></p>
+<p>The description of the product. Example: <code>qui</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>hsn_code</code></b>&nbsp;&nbsp;
@@ -10162,10 +10195,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.hsn_code"                data-endpoint="PUTapi-po-reports--id-"
-               value="libero"
+               value="ratione"
                data-component="body">
     <br>
-<p>The HSN code of the product. Example: <code>libero</code></p>
+<p>The HSN code of the product. Example: <code>ratione</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
@@ -10173,10 +10206,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.quantity"                data-endpoint="PUTapi-po-reports--id-"
-               value="laudantium"
+               value="vel"
                data-component="body">
     <br>
-<p>The quantity of the product. Example: <code>laudantium</code></p>
+<p>The quantity of the product. Example: <code>vel</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>unit</code></b>&nbsp;&nbsp;
@@ -10184,10 +10217,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.unit"                data-endpoint="PUTapi-po-reports--id-"
-               value="sunt"
+               value="odio"
                data-component="body">
     <br>
-<p>The unit of the product. Example: <code>sunt</code></p>
+<p>The unit of the product. Example: <code>odio</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
@@ -10195,10 +10228,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.rate"                data-endpoint="PUTapi-po-reports--id-"
-               value="voluptas"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>The rate of the product. Example: <code>voluptas</code></p>
+<p>The rate of the product. Example: <code>voluptatem</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
@@ -10206,10 +10239,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="products.*.amount"                data-endpoint="PUTapi-po-reports--id-"
-               value="reprehenderit"
+               value="sit"
                data-component="body">
     <br>
-<p>The amount of the product. Example: <code>reprehenderit</code></p>
+<p>The amount of the product. Example: <code>sit</code></p>
                     </div>
                                     </details>
         </div>
@@ -10231,14 +10264,14 @@ including associated product details.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://api.smartwrapfilms.com/api/po-reports/dolor" \
+    "https://api.smartwrapfilms.com/api/po-reports/laboriosam" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://api.smartwrapfilms.com/api/po-reports/dolor"
+    "https://api.smartwrapfilms.com/api/po-reports/laboriosam"
 );
 
 const headers = {
@@ -10341,10 +10374,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-po-reports--id-"
-               value="dolor"
+               value="laboriosam"
                data-component="url">
     <br>
-<p>The ID of the PO Report. Example: <code>dolor</code></p>
+<p>The ID of the PO Report. Example: <code>laboriosam</code></p>
             </div>
                     </form>
 
@@ -10362,7 +10395,7 @@ including associated product details.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://api.smartwrapfilms.com/api/po-reports-get?po_no=dignissimos" \
+    "https://api.smartwrapfilms.com/api/po-reports-get?po_no=quas" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -10373,7 +10406,7 @@ including associated product details.</p>
 );
 
 const params = {
-    "po_no": "dignissimos",
+    "po_no": "quas",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -10514,10 +10547,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="po_no"                data-endpoint="POSTapi-po-reports-get"
-               value="dignissimos"
+               value="quas"
                data-component="query">
     <br>
-<p>The PO number of the PO Report. Example: <code>dignissimos</code></p>
+<p>The PO number of the PO Report. Example: <code>quas</code></p>
             </div>
                 </form>
 
